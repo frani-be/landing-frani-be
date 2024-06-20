@@ -40,6 +40,12 @@ a {
     transition: all .5s;
 }
 
+a.regular-link {
+    text-decoration: none;
+    color: var(--color-purple);
+    border-bottom: .075em dashed;
+}
+
 nav {
     top: 0;
     padding: 1rem 0 1.5rem;
