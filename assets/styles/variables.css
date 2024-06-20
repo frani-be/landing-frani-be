@@ -7,7 +7,7 @@
     --color-light-grey: #f1f1f1;
     --color-dark-gray: #565656;
 
-    --my-gradient: linear-gradient(45deg, var(--color-light-grey) 40%, var(--color-purple-hexa) 100%);
+    --my-gradient: linear-gradient(45deg, var(--color-light-grey) 40%, var(--color-purple) 100%);
     
     --half-opacity: .5;
     --quarter-opacity: .25;
