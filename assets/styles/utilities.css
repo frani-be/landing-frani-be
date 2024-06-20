@@ -481,16 +481,40 @@
     text-transform: capitalize;
 }
 
-.u-txt-small {
+.u-txt-xs {
+    font-size: 0.5em;
+}
+
+.u-txt-sm {
     font-size: 0.75em;
 }
 
-.u-txt-medium {
-    font-size: 1em;
+.u-txt-md {
+    font-size: 1em; /* misma que .u-txt-medium */
 }
 
-.u-txt-large {
-    font-size: 1.25em;
+.u-txt-lg {
+    font-size: 1.25em; /* misma que .u-txt-large */
+}
+
+.u-txt-xl {
+    font-size: 1.5em;
+}
+
+.u-txt-xxl {
+    font-size: 2em;
+}
+
+.u-txt-xxxl {
+    font-size: 2.5em;
+}
+
+.u-txt-xxxxl {
+    font-size: 3em;
+}
+
+.u-txt-xxxxxl {
+    font-size: 4em;
 }
 
 .u-txt-color-white {
