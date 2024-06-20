@@ -240,6 +240,46 @@
     padding-left: 0;
 }
 
+.u-p-0-25 {
+    padding: 0.25rem;
+}
+
+.u-pt-0-25 {
+    padding-top: 0.25rem;
+}
+
+.u-pr-0-25 {
+    padding-right: 0.25rem;
+}
+
+.u-pb-0-25 {
+    padding-bottom: 0.25rem;
+}
+
+.u-pl-0-25 {
+    padding-left: 0.25rem;
+}
+
+.u-p-0-5 {
+    padding: 0.5rem;
+}
+
+.u-pt-0-5 {
+    padding-top: 0.5rem;
+}
+
+.u-pr-0-25 {
+    padding-right: 0.5rem;
+}
+
+.u-pb-0-5 {
+    padding-bottom: 0.5rem;
+}
+
+.u-pl-0-5 {
+    padding-left: 0.5rem;
+}
+
 .u-p-1 {
     padding: 1rem;
 }
