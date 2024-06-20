@@ -63,7 +63,10 @@
 }
 
 #header {
-    min-height: 100%;
+    min-height: 100vh;
+    height: auto;
+    position: absolute;
+    width: 100%;
 
     #header-container {
         display: flex;
@@ -75,7 +78,7 @@
 
 @media screen and (min-width: 960px) {
     #header {
-    
+
         #header-container {
             flex-direction: row;
         }
