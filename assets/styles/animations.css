@@ -1,0 +1,7 @@
+.fade-effect {
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+    opacity: 1;
+}
