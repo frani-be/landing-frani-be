@@ -526,6 +526,204 @@
     visibility: hidden;
 }
 
+/* Flexbox and Grid Utilities */
+.u-flex-row {
+    flex-direction: row;
+}
+
+.u-flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.u-flex-column {
+    flex-direction: column;
+}
+
+.u-flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.u-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.u-flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.u-flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+.u-gap-0 {
+    gap: 0;
+}
+
+.u-gap-xs {
+    gap: 0.5rem;
+}
+
+.u-gap-sm {
+    gap: 1rem;
+}
+
+.u-gap-md {
+    gap: 1.5rem;
+}
+
+.u-gap-lg {
+    gap: 2rem;
+}
+
+.u-justify-start {
+    justify-content: flex-start;
+}
+
+.u-justify-end {
+    justify-content: flex-end;
+}
+
+.u-justify-center {
+    justify-content: center;
+}
+
+.u-justify-between {
+    justify-content: space-between;
+}
+
+.u-justify-around {
+    justify-content: space-around;
+}
+
+.u-justify-evenly {
+    justify-content: space-evenly;
+}
+
+.u-align-start {
+    align-items: flex-start;
+}
+
+.u-align-end {
+    align-items: flex-end;
+}
+
+.u-align-center {
+    align-items: center;
+}
+
+.u-align-baseline {
+    align-items: baseline;
+}
+
+.u-align-stretch {
+    align-items: stretch;
+}
+
+.u-align-content-start {
+    align-content: flex-start;
+}
+
+.u-align-content-end {
+    align-content: flex-end;
+}
+
+.u-align-content-center {
+    align-content: center;
+}
+
+.u-align-content-between {
+    align-content: space-between;
+}
+
+.u-align-content-around {
+    align-content: space-around;
+}
+
+.u-align-content-stretch {
+    align-content: stretch;
+}
+
+/* Grid Specific Utilities */
+.u-grid-columns-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.u-grid-columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.u-grid-columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.u-grid-columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.u-grid-columns-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.u-grid-columns-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.u-grid-rows-1 {
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.u-grid-rows-2 {
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.u-grid-rows-3 {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.u-grid-rows-4 {
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.u-grid-rows-5 {
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.u-grid-rows-6 {
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.u-justify-items-start {
+    justify-items: start;
+}
+
+.u-justify-items-end {
+    justify-items: end;
+}
+
+.u-justify-items-center {
+    justify-items: center;
+}
+
+.u-justify-items-stretch {
+    justify-items: stretch;
+}
+
+.u-align-items-start {
+    align-items: start;
+}
+
+.u-align-items-end {
+    align-items: end;
+}
+
+.u-align-items-center {
+    align-items: center;
+}
+
+.u-align-items-stretch {
+    align-items: stretch;
+}
+
 /* Position Utilities */
 .u-position-relative {
     position: relative;
