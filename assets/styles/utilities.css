@@ -822,3 +822,37 @@
 .u-border-radius-large { 
     border-radius: var(--border-radius-large); 
 }
+
+/* Background Color Utilities */
+
+.u-bg-color-white {
+    background-color: var(--color-white);
+}
+.u-bg-color-black {
+    background-color: var(--color-black);
+}
+
+.u-bg-color-purple {
+    background-color: var(--color-purple);
+}
+
+.u-bg-color-light-purple {
+    background-color: var(--color-light-purple);
+}
+
+.u-bg-color-dark-blue {
+    background-color: var(--color-dark-blue);
+}
+
+.u-bg-color-light-grey {
+    background-color: var(--color-light-grey);
+}
+
+.u-bg-color-dark-gray {
+    background-color: var(--color-dark-gray);
+}
+
+.u-bg-gradient {
+    background-color: var(--color-light-grey);
+    background-image: var(--my-gradient);
+}
