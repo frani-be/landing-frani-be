@@ -3,3 +3,51 @@
     border: 4px double var(--color-purple);
     max-width: 350px;
 }
+
+
+#message {
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: .25em;
+
+    .iterate-message {
+        width: 350px;
+        height: calc(1.25rem + 4px);
+        line-height: calc(1.25rem + 4px);
+        overflow: hidden;
+        position: relative;
+        vertical-align: bottom;
+
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: slideRight 13s infinite;
+            background: var(--color-purple);
+            display: inline;
+            padding: 0 .25em;
+            color: var(--color-white);
+            margin: 0;
+            border-radius: 3px;
+            text-wrap: nowrap;
+            text-transform: uppercase;
+
+            &:nth-child(1) {
+                animation-delay: -8s;
+            }
+
+            &:nth-child(2) {
+                animation-delay: -4s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0;
+            }
+        }
+    }
+}
+
+#header {
+    min-height: 100%;
+}
