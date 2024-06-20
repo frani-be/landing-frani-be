@@ -1,3 +1,17 @@
+#navigation {
+    top: 0;
+    padding: 1rem 0 1.5rem;
+    z-index: 3;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100vw;
+    overflow: visible;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    mask-image: linear-gradient(black 70%, transparent);
+    -webkit-mask-image: linear-gradient(black 70%, transparent);
+}
+
 #main-image {
     border-radius: 50% 50% 12px 12px;
     border: 4px double var(--color-purple);

@@ -46,20 +46,6 @@ a.regular-link {
     border-bottom: .075em dashed;
 }
 
-nav {
-    top: 0;
-    padding: 1rem 0 1.5rem;
-    z-index: 3;
-    left: 50%;
-    transform: translate(-50%);
-    width: 100vw;
-    overflow: visible;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    mask-image: linear-gradient(black 70%, transparent);
-    -webkit-mask-image: linear-gradient(black 70%, transparent);
-}
-
 @media (hover: hover) {
     a:hover {
         filter: brightness(125%);
