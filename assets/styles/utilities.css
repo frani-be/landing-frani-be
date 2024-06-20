@@ -493,6 +493,33 @@
     font-size: 1.25em;
 }
 
+.u-txt-color-white {
+    color: var(--color-white);
+}
+.u-txt-color-black {
+    color: var(--color-black);
+}
+
+.u-txt-color-purple {
+    color: var(--color-purple);
+}
+
+.u-txt-color-light-purple {
+    color: var(--color-light-purple);
+}
+
+.u-txt-color-dark-blue {
+    color: var(--color-dark-blue);
+}
+
+.u-txt-color-light-grey {
+    color: var(--color-light-grey);
+}
+
+.u-txt-color-dark-gray {
+    color: var(--color-dark-gray);
+}
+
 /* Display and Visibility Utilities */
 .u-display-none {
     display: none;
