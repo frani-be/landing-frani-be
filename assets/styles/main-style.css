@@ -47,6 +47,30 @@ a.regular-link {
     border-bottom: .075em dashed;
 }
 
+.glitter {
+    fill: var(--color-light-purple);
+    position: absolute;
+    z-index: 0;
+}
+
+.glitter.small {
+    width: 4px;
+    height: 4px;
+    animation: shine 1.5s .2s alternate infinite;
+}
+
+.glitter.medium {
+    width: 6px;
+    height: 6px;
+    animation: none;
+}
+
+.glitter.big {
+    width: 8px;
+    height: 8px;
+    animation: shine 1.5s alternate infinite;
+}
+
 @media (hover: hover) {
     a:hover {
         filter: brightness(125%);

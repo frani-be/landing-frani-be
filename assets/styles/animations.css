@@ -28,3 +28,13 @@
         left: -100%;
     }
 }
+
+@keyframes shine {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
