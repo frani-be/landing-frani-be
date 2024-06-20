@@ -1,0 +1,23 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #2f2f2f;
+    --color-purple: #b55aff;
+    --color-light-purple: #e8d4f9;
+    --color-dark-blue: #3333a8;
+    --color-light-grey: #f1f1f1;
+    --color-dark-gray: #565656;
+
+    --my-gradient: linear-gradient(45deg, var(--color-light-grey) 40%, var(--color-purple-hexa) 100%);
+    
+    --half-opacity: .5;
+    --quarter-opacity: .25;
+
+    --font-titles: "Work Sans", sans-serif;
+    --font-primary: 'DM Sans', sans-serif;
+    --font-size-base: 18px;
+
+    --border-radius-small: 5px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 20px;
+    --border-radius-relative: 2em;
+}

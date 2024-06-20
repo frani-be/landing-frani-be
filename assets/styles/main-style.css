@@ -1,0 +1,47 @@
+body {
+    font-family: var(--font-primary);
+    font-weight: 300;
+    color: var(--color-black);
+    font-size: var(--font-size-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-titles);
+    font-weight: 700;
+}
+
+p svg,
+h1 svg,
+h2 svg,
+h3 svg,
+h4 svg,
+h5 svg,
+h6 svg {
+    height: 1em;
+    fill: currentColor;
+    vertical-align: middle;
+}
+
+h1 {
+    color: var(--color-purple);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+@media (hover: hover) {
+    a:hover {
+        filter: brightness(125%);
+    }
+}
