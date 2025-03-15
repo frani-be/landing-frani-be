@@ -1,5 +1,5 @@
 let counter = 1;
-const cantImages = 5;
+const cantImages = 9;
 const duration = 13000; // La duración total de la animación es 13 segundos
 const initialDelay = 2000; // El span 1 tiene un delay de -8s, lo que significa que entra a los 5s
 const fadeDuration = 500; // Duración de la transición de opacidad
