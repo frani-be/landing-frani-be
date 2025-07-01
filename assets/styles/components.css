@@ -74,11 +74,19 @@
     }
 }
 
+#secondary-buttons {
+    justify-content: center;
+}
+
 @media screen and (min-width: 960px) {
     #header {
 
         #header-container {
             flex-direction: row;
         }
+    }
+
+    #secondary-buttons {
+        justify-content: left;
     }
 }
