@@ -80,7 +80,7 @@ a.regular-link {
 }
 
 @media (hover: hover) {
-    a:hover {
+    a:hover, button:hover {
         filter: brightness(125%);
     }
 }
