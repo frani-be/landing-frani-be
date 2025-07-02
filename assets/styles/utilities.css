@@ -300,6 +300,26 @@
     padding-left: 1rem;
 }
 
+.u-p-1-5 {
+    padding: 1.5rem;
+}
+
+.u-pt-1-5 {
+    padding-top: 1.5rem;
+}
+
+.u-pr-1-5 {
+    padding-right: 1.5rem;
+}
+
+.u-pb-1-5 {
+    padding-bottom: 1.5rem;
+}
+
+.u-pl-1-5 {
+    padding-left: 1.5rem;
+}
+
 .u-p-2 {
     padding: 2rem;
 }
@@ -582,6 +602,23 @@
 
 .u-txt-color-dark-gray {
     color: var(--color-dark-gray);
+}
+
+/* Timeline Category Colors - Using CSS Variables */
+.u-txt-color-laboral {
+    color: var(--color-laboral);
+}
+
+.u-txt-color-academica {
+    color: var(--color-academica);
+}
+
+.u-txt-color-docencia {
+    color: var(--color-docencia);
+}
+
+.u-txt-color-voluntariados {
+    color: var(--color-voluntariados);
 }
 
 .u-txt-line-height-1 {
@@ -988,6 +1025,23 @@
     background-color: var(--color-dark-gray);
 }
 
+/* Timeline Category Background Colors - Using CSS Variables */
+.u-bg-color-laboral {
+    background-color: var(--color-laboral);
+}
+
+.u-bg-color-academica {
+    background-color: var(--color-academica);
+}
+
+.u-bg-color-docencia {
+    background-color: var(--color-docencia);
+}
+
+.u-bg-color-voluntariados {
+    background-color: var(--color-voluntariados);
+}
+
 .u-bg-gradient {
     background-color: var(--color-light-grey);
     background-image: var(--my-gradient);
@@ -1058,6 +1112,23 @@
     border-color: var(--color-dark-gray);
 }
 
+/* Timeline Category Border Colors - Using CSS Variables */
+.u-border-color-laboral {
+    border-color: var(--color-laboral);
+}
+
+.u-border-color-academica {
+    border-color: var(--color-academica);
+}
+
+.u-border-color-docencia {
+    border-color: var(--color-docencia);
+}
+
+.u-border-color-voluntariados {
+    border-color: var(--color-voluntariados);
+}
+
 /* Border Style Utilities */
 
 .u-border-solid {
@@ -1094,4 +1165,263 @@
 
 .u-border-none {
     border-style: none;
+}
+
+/* Transform Utilities */
+.u-transform-translate-y-0 {
+    transform: translateY(0);
+}
+
+.u-transform-translate-y-1 {
+    transform: translateY(1rem);
+}
+
+.u-transform-translate-y-2 {
+    transform: translateY(2rem);
+}
+
+.u-transform-translate-y-neg-1 {
+    transform: translateY(-1rem);
+}
+
+.u-transform-translate-y-neg-2 {
+    transform: translateY(-2rem);
+}
+
+.u-transform-translate-y-20px {
+    transform: translateY(20px);
+}
+
+.u-transform-translate-y-neg-2px {
+    transform: translateY(-2px);
+}
+
+/* Transition Utilities */
+.u-transition-all {
+    transition: all 0.2s ease;
+}
+
+.u-transition-all-fast {
+    transition: all 0.3s ease;
+}
+
+.u-transition-all-slow {
+    transition: all 0.5s ease;
+}
+
+.u-transition-transform {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.u-transition-height {
+    transition: height 0.5s;
+}
+
+/* Shadow Utilities */
+.u-shadow-sm {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.u-shadow-md {
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Opacity Utilities */
+.u-opacity-0 {
+    opacity: 0;
+}
+
+.u-opacity-50 {
+    opacity: 0.5;
+}
+
+.u-opacity-100 {
+    opacity: 1;
+}
+
+/* Overflow Utilities */
+.u-overflow-hidden {
+    overflow: hidden;
+}
+
+.u-overflow-visible {
+    overflow: visible;
+}
+
+.u-overflow-auto {
+    overflow: auto;
+}
+
+/* Z-index Utilities */
+.u-z-1 {
+    z-index: 1;
+}
+
+.u-z-2 {
+    z-index: 2;
+}
+
+.u-z-10 {
+    z-index: 10;
+}
+
+/* Letter Spacing Utilities */
+.u-letter-spacing-tight {
+    letter-spacing: -0.025em;
+}
+
+.u-letter-spacing-normal {
+    letter-spacing: 0em;
+}
+
+.u-letter-spacing-wide {
+    letter-spacing: 0.025em;
+}
+
+.u-letter-spacing-wider {
+    letter-spacing: 0.05em;
+}
+
+/* Font Weight Utilities */
+.u-font-weight-400 {
+    font-weight: 400;
+}
+
+.u-font-weight-500 {
+    font-weight: 500;
+}
+
+.u-font-weight-600 {
+    font-weight: 600;
+}
+
+.u-font-weight-700 {
+    font-weight: 700;
+}
+
+/* Font Family Utilities */
+.u-font-primary {
+    font-family: var(--font-primary);
+}
+
+.u-font-titles {
+    font-family: var(--font-titles);
+}
+
+/* Sizing Utilities for specific measurements */
+.u-size-1rem {
+    width: 1rem;
+    height: 1rem;
+}
+
+.u-size-2px {
+    width: 2px;
+}
+
+.u-height-2px {
+    height: 2px;
+}
+
+/* Top/Bottom/Left/Right utilities */
+.u-top-0 {
+    top: 0;
+}
+
+.u-bottom-0 {
+    bottom: 0;
+}
+
+.u-left-1rem {
+    left: 1rem;
+}
+
+.u-left-2rem {
+    left: 2rem;
+}
+
+.u-left-neg-3rem {
+    left: -3rem;
+}
+
+.u-left-neg-4rem {
+    left: -4rem;
+}
+
+.u-top-0-75rem {
+    top: 0.75rem;
+}
+
+/* Hover utilities */
+.u-hover-transform-y-neg-2:hover {
+    transform: translateY(-2px);
+}
+
+.u-hover-shadow-md:hover {
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Cursor Utilities */
+.u-cursor-pointer {
+    cursor: pointer;
+}
+
+.u-cursor-default {
+    cursor: default;
+}
+
+/* Max Width Utilities */
+.u-max-width-280px {
+    max-width: 280px;
+}
+
+.u-max-width-600px {
+    max-width: 600px;
+}
+
+.u-max-width-800px {
+    max-width: 800px;
+}
+
+/* Margin Auto Utilities */
+.u-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small spacing utilities for precise control */
+.u-gap-0-25rem {
+    gap: 0.25rem;
+}
+
+.u-gap-0-5rem {
+    gap: 0.5rem;
+}
+
+.u-gap-0-75rem {
+    gap: 0.75rem;
+}
+
+.u-mt-0-5 {
+    margin-top: 0.5rem;
+}
+
+.u-mb-0-5 {
+    margin-bottom: 0.5rem;
+}
+
+.u-ml-1-5rem {
+    margin-left: 1.5rem;
+}
+
+.u-ml-2-5rem {
+    margin-left: 2.5rem;
+}
+
+.u-ml-4rem {
+    margin-left: 4rem;
+}
+
+/* Flex wrap utilities */
+.u-flex-wrap {
+    flex-wrap: wrap;
 }
