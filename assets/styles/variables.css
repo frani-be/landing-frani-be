@@ -7,6 +7,12 @@
     --color-light-grey: #f1f1f1;
     --color-dark-gray: #565656;
 
+    /* Timeline Category Colors */
+    --color-laboral: #2555a3;
+    --color-academica: #9f2eba;
+    --color-docencia: #7d1fc7;
+    --color-voluntariados: #bd2c97;
+
     --my-gradient: linear-gradient(45deg, var(--color-light-grey) 40%, var(--color-purple) 100%);
     
     --half-opacity: .5;
