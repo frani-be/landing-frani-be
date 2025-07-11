@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-primary);
     font-weight: 300;
@@ -96,5 +100,54 @@ a.regular-link {
 @media (hover: hover) {
     a:hover, button:hover {
         filter: brightness(125%);
+    }
+}
+
+/* Botón de scroll hacia timeline */
+.scroll-down-btn {
+    position: relative;
+    animation: pulse-bounce 2s infinite;
+}
+
+.scroll-down-btn:hover {
+    background-color: var(--color-purple) !important;
+    color: var(--color-white) !important;
+    transform: translateY(-2px);
+}
+
+.scroll-down-btn span {
+    transition: transform 0.3s ease;
+}
+
+.scroll-down-btn:hover span {
+    transform: translateY(2px);
+}
+
+@keyframes pulse-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-4px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+/* Reducir animación en móviles para mejor performance */
+@media (max-width: 768px) {
+    .scroll-down-btn {
+        animation: none;
+        font-size: 0.875rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .scroll-down-btn:hover {
+        transform: translateY(-1px);
+    }
+    
+    .scroll-down-btn span {
+        font-size: 1.1em;
     }
 }

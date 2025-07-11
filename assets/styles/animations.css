@@ -38,3 +38,33 @@
         transform: scale(1.5);
     }
 }
+
+@keyframes pulse-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-4px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+/* Reducir animación en móviles para mejor performance */
+@media (max-width: 768px) {
+    .scroll-down-btn {
+        animation: none;
+        font-size: 0.875rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .scroll-down-btn:hover {
+        transform: translateY(-1px);
+    }
+    
+    .scroll-down-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+}
