@@ -206,6 +206,75 @@ class Timeline {
         };
     }
 
+    // Convertir Markdown básico a HTML
+    parseMarkdown(text) {
+        if (!text) return '';
+        
+        // Convertir líneas que empiecen con "- " a elementos de lista
+        const lines = text.split('\n');
+        let inList = false;
+        let result = [];
+        let hasListItems = lines.some(line => line.trim().startsWith('- '));
+        
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim();
+            
+            if (line.startsWith('- ')) {
+                if (!inList) {
+                    result.push('<ul class="timeline-list">');
+                    inList = true;
+                }
+                // Procesar texto en negrita dentro del elemento de lista
+                const listContent = this.processBoldText(line.substring(2));
+                result.push(`<li>${listContent}</li>`);
+            } else {
+                if (inList) {
+                    result.push('</ul>');
+                    inList = false;
+                }
+                if (line) {
+                    // Si hay elementos de lista, tratar texto normal como párrafos
+                    // Si no hay listas, tratar todo como un párrafo continuo
+                    if (hasListItems) {
+                        const processedLine = this.processBoldText(line);
+                        result.push(`<p>${processedLine}</p>`);
+                    } else {
+                        // Si no hay viñetas, concatenar todo en un solo párrafo
+                        if (result.length === 0) {
+                            result.push('<p>');
+                        }
+                        const processedLine = this.processBoldText(line);
+                        result.push(processedLine);
+                        if (i < lines.length - 1 && lines[i + 1].trim()) {
+                            result.push(' ');
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Cerrar lista si está abierta al final
+        if (inList) {
+            result.push('</ul>');
+        }
+        
+        // Cerrar párrafo si no hay listas
+        if (!hasListItems && result.length > 0) {
+            result.push('</p>');
+        }
+        
+        return result.join('');
+    }
+
+    // Procesar texto en negrita (texto entre ** o __)
+    processBoldText(text) {
+        // Convertir **texto** a <strong>texto</strong>
+        text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Convertir __texto__ a <strong>texto</strong>
+        text = text.replace(/__(.*?)__/g, '<strong>$1</strong>');
+        return text;
+    }
+
     renderTimeline() {
         const container = document.getElementById('timeline-container');
         
@@ -278,11 +347,13 @@ class Timeline {
     }
 
     createTimelineDescription(item) {
+        const markdownHTML = this.parseMarkdown(item.description);
+        
         return `
             <div class="u-position-relative">
                 <div class="timeline-description collapsed u-txt-color-black u-overflow-hidden u-font-primary" 
                      style="line-height: 1.6;" id="description-${item.id}">
-                    ${item.description}
+                    ${markdownHTML}
                 </div>
                 <button class="timeline-toggle u-font-weight-600 u-txt-sm u-cursor-pointer u-display-flex u-align-center u-transition-all u-font-primary" 
                         style="gap: 0.25rem; margin-top: 0.5rem;" data-item-id="${item.id}">
