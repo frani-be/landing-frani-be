@@ -1,0 +1,244 @@
+{
+  "timeline": [
+    {
+      "id": 1,
+      "title": "Líder UX + Front-End",
+      "category": "laboral",
+      "startDate": "2024-04",
+      "endDate": "actualidad",
+      "description": "Lidero un equipo de plataforma **Front-End** que empodera a los squads de datos en LATAM a crear front-ends internos para nuestros colaboradores: entregamos una librería de componentes (React + Ant Design) consumible por Dash y Next.js, liberando a los equipos de la carga de levantar UI desde cero y permitiéndoles enfocarse en la lógica de negocio.\n- **Front-end →** habilitamos equipos, promovemos la creación de interfaces coherentes y agilizamos los ciclos de desarrollo mediante guías y soporte continuo.\n- **UI →** abstraemos la capa de estilo, estandarizamos la presentación visual y visibilizamos el uso de componentes con dashboards de monitoreo.\n- **UX →** co-diseñamos flujos centrados en el usuario, garantizando productos usables y orientados a resolver problemas reales.\n- **DevEx →** creamos una experiencia de desarrollo self-service y fomentamos una cultura de ingeniería enfocada en el usuario dentro de la tribu de datos y AI.",
+      "company": "LATAM Airlines",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 2,
+      "title": "Desarrolladora UX + Front-End",
+      "category": "laboral",
+      "startDate": "2023-09",
+      "endDate": "2024-04",
+      "description": "Impulsé cambios basados en datos a nivel de componentes para mejorar la usabilidad y coherencia de los sitios web de Cencosud S.A., habilitando a los equipos mediante experimentación continua.\n- Diseñé y prototipé mejoras de componentes web centradas en usabilidad, accesibilidad y rendimiento.\n- Lideré la adopción y la capacitación interna en VWO para ejecutar pruebas A/B.\n- Prototipé, codifiqué, supervisé y analicé experimentos, monitorizando la implementación de los cambios en producción.\n- Comuniqué insights accionables a los stakeholders para guiar decisiones basadas en evidencia y priorizar iteraciones.",
+      "company": "Cencosud S.A.",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 3,
+      "title": "Analista de Negocio (CRO)",
+      "category": "laboral",
+      "startDate": "2022-03",
+      "endDate": "2023-09",
+      "description": "Me desempeñé como analista de negocio **CRO**, impulsando la optimización del e-commerce regional con foco en experiencia y conversión.\n- Propuse iniciativas de optimización en e-commerce para varios países, enfocadas en conversión y experiencia.\n- Coordiné esfuerzos conjuntos entre áreas comerciales, UX, desarrollo y analítica.\n- Diseñé tableros Google Data Studio (Looker Studio) que facilitaron el seguimiento continuo del funnel digital.\n- Detecté puntos de fricción clave, priorizando soluciones de alto impacto para los equipos de Argentina, Brasil, Colombia y Perú.",
+      "company": "Cencosud S.A.",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 4,
+      "title": "Diseñadora UX/UI",
+      "category": "laboral",
+      "startDate": "2021-03",
+      "endDate": "2022-03",
+      "description": "Me desempeñé como diseñadora **UX/UI**, elevando la calidad de la experiencia digital en proyectos internos y de clientes mediante prototipado avanzado y colaboración estrecha con desarrollo.\n- Elaboré prototipos de alta fidelidad en Figma para validar conceptos tempranamente.\n- Apliqué evaluaciones heurísticas basadas en Nielsen para detectar oportunidades de mejora.\n- Facilitó el *hand-off* a desarrollo, reduciendo retrabajo y asegurando coherencia visual.\n- Promoví prácticas colaborativas entre diseño y desarrollo mediante workshops internos.",
+      "company": "WiTI",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 5,
+      "title": "Gestora de Cuentas Clave (KAM)",
+      "category": "laboral",
+      "startDate": "2021-01",
+      "endDate": "2021-08",
+      "description": "Me desempeñé como gestora de cuentas clave **KAM** en Technovation Girls Chile, liderando la implementación del currículo de programación e innovación para niñas y jóvenes.\n- Coordiné equipos de voluntariado para ejecutar jornadas intercolegiales de Technovation.\n- Supervisé la adopción del programa en colegios, acompañando a docentes y estudiantes.\n- Organicé eventos y entregables que despertaron el interés de las jóvenes por la tecnología y el emprendimiento.\n- Impartí charlas informativas para atraer y motivar nuevos voluntarios al programa.",
+      "company": "Technovation Girls Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 6,
+      "title": "Diseñadora Gráfica & Desarrolladora Web Freelance",
+      "category": "laboral",
+      "startDate": "2016-07",
+      "endDate": "actualidad",
+      "description": "Trabajo como **diseñadora gráfica** y **desarrolladora web freelance**, creando sitios WordPress que combinan identidad de marca y alto rendimiento.\n- Diseño material gráfico multiplataforma (redes sociales y papelería) que refuerza la comunicación visual.\n- Implemento SEO on-page y estrategias de contenido para aumentar la visibilidad orgánica.\n- Configuro buenas prácticas de seguridad y backups, manteniendo los sitios protegidos.\n- Acompaño a clientes en UX y contenido, fortaleciendo su presencia digital integral.\n- Algunos proyectos destacados incluyen sitios para artistas, emprendedores y ONGs.",
+      "company": "Independiente",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 7,
+      "title": "Diplomado Postítulo en Ingeniería de Software",
+      "category": "academica",
+      "startDate": "2025-04",
+      "endDate": "actualidad",
+      "description": "Curso el **Diploma de Postítulo en Ingeniería de Software** (162 h) donde profundizo en técnicas de ingeniería de software, con foco en aplicar prácticas industriales y planificar técnicamente proyectos.\n- **Plan de estudios:** ingeniería de requisitos, programación orientada a objetos, arquitectura de software, seminario de actualización tecnológica y taller práctico.\n- **Objetivo principal:** dominar las técnicas actuales para diseñar, programar y dirigir el desarrollo de software de calidad.\n- **Proyecto final:** microservicio de filtrado inteligente de licitaciones públicas.",
+      "company": "Universidad de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 8,
+      "title": "Diplomado en Desarrollo Web",
+      "category": "academica",
+      "startDate": "2023-05",
+      "endDate": "2023-11",
+      "description": "Cursé el **Diplomado en Desarrollo Web** (267 h) donde consolidé competencias full-stack para diseñar y construir aplicaciones web modernas.\n- **Plan de estudios:** herramientas básicas de programación en Python, Python & la WWW (Django/Flask), JavaScript avanzado, desarrollo con React y taller integrador full-stack.\n- **Objetivo principal:** dominar los estándares y tecnologías que sustentan la Web para crear soluciones SaaS robustas y escalables.\n- **Proyecto final:** aplicación web completa (frontend React-Vite + backend Python-Django) sobre exchange, que demuestra arquitectura de componentes y gestión de estado.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 9,
+      "title": "Diplomado en Diseño y Medición de Experiencia de Usuario",
+      "category": "academica",
+      "startDate": "2022-03",
+      "endDate": "2022-09",
+      "description": "Cursé el **Diplomado en UX: diseño y medición** (360 h) donde profundicé en diseño de experiencias y medición de UX.\n- **Plan de estudios:** fundamentos de UX, comportamiento de usuarios, estudios de usabilidad, diseño y gestión de UX en procesos de transformación digital.\n- **Objetivo principal:** diseñar y medir experiencias digitales mediante investigación cuali-cuantitativa y definición de KPIs.\n- **Proyecto final:** propuesta integral de UX con framework de métricas y plan de medición para un producto digital sobre finanzas personales.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 10,
+      "title": "Foundations of User Experience (UX) Design",
+      "category": "academica",
+      "startDate": "2021-01",
+      "endDate": "2021-06",
+      "description": "Cursé el **Foundations of User Experience (UX) Design** (≈13 h) donde adquirí los fundamentos del diseño centrado en el usuario y el rol de un diseñador UX inicial.\n- **Plan de estudios:** user-centered design, design thinking framework, accesibilidad, equity-focused design, design sprints y rutas de carrera UX.\n- **Objetivo principal:** comprender el proceso de UX y las responsabilidades de un diseñador de nivel inicial para crear experiencias accesibles y valiosas.\n- **Proyecto final:** actividades prácticas que simulan escenarios reales —investigación, wireframes y prototipado— aplicadas a un caso de producto digital.",
+      "company": "Coursera × Google",
+      "location": "Online"
+    },
+    {
+      "id": 11,
+      "title": "Diseño Inclusivo para Plataformas Digitales",
+      "category": "academica",
+      "startDate": "2020-11",
+      "endDate": "2020-12",
+      "description": "Cursé el **Curso Diseño Inclusivo para Plataformas Digitales** (4 clases) donde profundicé en accesibilidad digital y el rol del diseño inclusivo.\n- **Plan de estudios:** nuevo paradigma de la discapacidad, marco normativo y pautas (WCAG 2.1, WAI-ARIA), técnicas y herramientas de accesibilidad, testeo con usuarios con discapacidad.\n- **Objetivo principal:** diseñar productos digitales accesibles que cumplan normativa y mejoren la experiencia para todas las personas.\n- **Proyecto final:** auditoría de accesibilidad y recomendaciones de mejora para una plataforma existente.",
+      "company": "Universidad del Desarrollo",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 12,
+      "title": "Título de Diseñadora Estratégica",
+      "category": "academica",
+      "startDate": "2015-03",
+      "endDate": "2020-12",
+      "description": "Obtuve el **Título Profesional de Diseñadora Integral**, completando la malla de bachillerato + licenciatura + título.\n- **Plan de estudios:** talleres de proyecto, identidad y producto; ergonomía, estructuras y materiales, procesos de producción, interacción y UX, programación creativa y visualización de datos.\n- **Prácticas profesionales:** 240 h en Cencosud (diseño UX/e-commerce) y 360 h en TECHO-Chile (diseño gráfico y comunicaciones).\n- **Proyecto de pre-título:** *Neotipos* — exploración de isotipos algorítmicos para identidades visuales adaptativas.\n- **Proyecto de título:** *Algórica* — plataforma web que utiliza visualizaciones interactivas para enseñar matemáticas en educación básica.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 13,
+      "title": "Certificado Interdisciplinario en Desarrollo de Productos y Servicios Digitales",
+      "category": "academica",
+      "startDate": "2017-03",
+      "endDate": "2020-12",
+      "description": "Obtuve el **Certificado Académico en Desarrollo de Productos y Servicios Digitales** (50 créditos) que integra diseño, programación y comunicación para crear soluciones digitales.\n- **Plan de estudios:** Metodologías de Investigación en Psicología, Tecnologías de la Comunicación, Introducción a la Programación, Narración Interactiva y Taller de Convergencia Medial.\n- **Objetivo principal:** dominar el ciclo completo de diseño y desarrollo de productos digitales orientados al usuario.\n- **Enfoque aplicado:** proyectos interdisciplinarios que combinan storytelling, UX y programación para prototipar experiencias digitales.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 14,
+      "title": "Profesora Adjunta – Narración Gráfica de No Ficción",
+      "category": "docencia",
+      "startDate": "2023-08",
+      "endDate": "2024-08",
+      "description": "Me desempeñé como profesora adjunta de **Narración Gráfica de No Ficción** en la Pontificia Universidad Católica de Chile, diseñando y facilitando un programa que integraba storytelling visual, periodismo de datos y programación.\n- Rediseñé el syllabus incorporando visualización de datos y análisis crítico de fuentes.\n- Enseñé Python, Pandas y Altair para procesar datasets y crear visualizaciones interactivas.\n- Guié proyectos estudiantiles publicados en medios internos y presentados en encuentros académicos.\n- Implementé feedback iterativo que elevó la claridad narrativa y la calidad visual de los entregables.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 15,
+      "title": "Docente – Introducción a la IA para Niñas",
+      "category": "docencia",
+      "startDate": "2021-03",
+      "endDate": "2021-06",
+      "description": "Me dicté el curso **Introducción a la IA para Niñas** (4 sesiones) para Fundación Mustakis & Tec Mujer, acercando los fundamentos de la inteligencia artificial a adolescentes mediante actividades lúdicas y reflexión crítica.\n- Diseñé un plan de estudios que abordó historia, aplicaciones, ética y escenarios futuros de la IA.\n- Guié debates y juegos interactivos para estimular la participación y el pensamiento crítico.\n- Demostré aprendizaje automático en vivo usando Teachable Machine y ejemplos de redes neuronales.\n- Promoví la conciencia sobre sesgos algorítmicos y la relevancia de equipos diversos en tecnología.",
+      "company": "Fundación Mustakis & Tec Mujer",
+      "location": "Online"
+    },
+    {
+      "id": 16,
+      "title": "Coordinadora académica – Diplomado Visualización de Datos",
+      "category": "docencia",
+      "startDate": "2021-04",
+      "endDate": "2021-07",
+      "description": "Me desempeñé como coordinadora académica del **Diplomado en Visualización de Datos** de Educación Continua UC, brindando soporte integral a docentes y estudiantes para asegurar el buen desarrollo del programa.\n- Administré la plataforma académica (Canvas), subiendo material, gestionando foros y monitoreando el progreso del alumnado.\n- Coordiné la comunicación entre profesores y más de 40 participantes, garantizando claridad en expectativas y plazos.\n- Automatizé la entrega de feedback y certificaciones parciales, agilizando los tiempos de respuesta.\n- Brindé asistencia técnica en clases sincrónicas (herramientas de dataviz como Tableau, D3, Flourish), resolviendo incidentes en tiempo real.\n- Recopilé métricas de participación y satisfacción para informar mejoras del programa en futuras versiones.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 17,
+      "title": "Docente – Blended Learning y Planificación de Aulas Semi-presenciales",
+      "category": "docencia",
+      "startDate": "2021-01",
+      "endDate": "2021-03",
+      "description": "Dicté el curso **Blended Learning y Planificación de Aulas Semi-presenciales** capacitando a docentes en metodologías mixtas y herramientas digitales.\n- Diseñé un programa intensivo de 4 módulos (intro, ecosistema, diseño inverso y planificación) con sesiones asíncronas y workshops en línea.\n- Formé a más de un centenar de profesores en el uso pedagógico de Canvas, Google Classroom y recursos multimedia.\n- Proporcioné plantillas de planificación inversa y guías de retroalimentación para facilitar la implementación inmediata en sus clases.\n- Coordiné espacios de seguimiento y resolución de dudas, fomentando la adopción sostenible de aulas semi-presenciales.",
+      "company": "Technovation Girls Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 18,
+      "title": "Docente – Introducción a Ruby on Rails",
+      "category": "docencia",
+      "startDate": "2020-03",
+      "endDate": "2020-03",
+      "description": "Impartí el **Bootcamp Introducción a Ruby on Rails**, llevando a desarrolladores/as junior desde cero hasta desplegar su primera aplicación web.\n- Estructuré un programa intensivo de 40 h que cubrió MVC, Active Record, rutas REST y pruebas automatizadas.\n- Guié a cada estudiante en la configuración de entorno, flujo de trabajo con Git y despliegue continuo en Heroku.\n- Diseñé desafíos prácticos que consolidaron buenas prácticas de código limpio y TDD.\n- Facilité la presentación de proyectos finales donde los estudiantes demostraron sus habilidades construyendo aplicaciones funcionales.\n- Implementé retroalimentación personalizada que ayudó a cada participante a mejorar su código y comprensión del framework.",
+      "company": "Academia Desafío Latam",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 19,
+      "title": "Docente – Bootcamp Front-End Mujeres Programadoras Quilicura",
+      "category": "docencia",
+      "startDate": "2018-03",
+      "endDate": "2018-11",
+      "description": "Dicté el **Bootcamp Front-End Mujeres Programadoras Quilicura**, formando a mujeres de la comuna en desarrollo web y empleabilidad.\n- Diseñé un currículo introductorio en HTML, CSS y JavaScript orientado a proyectos prácticos.\n- Facilité talleres semanales presenciales, mentorías 1:1 y revisión de código.\n- Acompañé la creación de proyectos *capstone* que resolvían necesidades locales y fortalecían portafolios digitales.",
+      "company": "Fundación Kodea & Desafío Latam",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 20,
+      "title": "Tutora Particular de Diseño y Desarrollo Web",
+      "category": "docencia",
+      "startDate": "2018-03",
+      "endDate": "2018-11",
+      "description": "Impartí clases particulares de **Diseño Gráfico y Desarrollo Web** adaptadas a una estudiante sorda, comunicándonos directamente mediante lenguaje visual, gestos y apuntes escritos.\n- Enseñé herramientas Adobe (Illustrator, Photoshop e InDesign) para crear identidad visual y maquetar piezas gráficas.\n- Introduje HTML5 y CSS3, guiándola en la construcción de un portafolio web responsivo.\n- Preparé material de apoyo de alto contraste, diagramas paso a paso y video-tutoriales subtitulados para reforzar el aprendizaje.\n- Fomenté su autonomía y confianza, entregándole recursos inclusivos y rutas de aprendizaje continuo.",
+      "company": "Independiente",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 21,
+      "title": "Voluntaria – Conferencia JavaScript Chile",
+      "category": "voluntariados",
+      "startDate": "2022-11",
+      "endDate": "2023-03",
+      "description": "Fui voluntaria en la **Conferencia JavaScript Chile (JSConf CL)**, colaborando en la organización y difusión del evento de comunidad.\n- Diseñé piezas gráficas y contenidos para redes sociales, consolidando la identidad visual del encuentro.\n- Coordiné logística de speakers internacionales, salas y streaming, garantizando una experiencia fluida para más de 500 asistentes.\n- Gestioné el equipo de registro y atención, optimizando el flujo de acreditación y resolviendo dudas en tiempo real.",
+      "company": "JSConf Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 22,
+      "title": "Líder de Comunidad Front-End",
+      "category": "voluntariados",
+      "startDate": "2022-06",
+      "endDate": "2023-08",
+      "description": "Me desempeñé como líder de la Comunidad **Front-End** interna en Cencosud S.A., articulando buenas prácticas y aprendizaje colectivo entre desarrolladores de los distintos negocios retail y e-commerce.\n- Organicé meetups mensuales y workshops, fortaleciendo la cultura de intercambio técnico y mentoría entre +50 desarrolladores.\n- Implementé un canal de comunicación activo para resolver dudas, compartir novedades y fomentar la colaboración entre equipos.",
+      "company": "Cencosud S.A.",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 23,
+      "title": "Diseñadora Gráfica – Fundación Antonia",
+      "category": "voluntariados",
+      "startDate": "2021-09",
+      "endDate": "actualidad",
+      "description": "Me desempeñé como voluntaria **Diseñadora Gráfica** en Fundación Antonia (sep 2021 – actualidad), fortaleciendo la identidad visual y la comunicación de campañas de prevención de violencia.\n- Diseñé piezas impresas y digitales para redes sociales, talleres y eventos de sensibilización.\n- Desarrollé lineamientos de marca y plantillas reutilizables, agilizando la producción de contenidos.\n- Colaboré con el equipo de comunicaciones en la planificación de calendarios y la coherencia visual de publicaciones.\n- Ilustré material educativo inclusivo y empático que conecta con audiencias jóvenes.\n- Participé en la creación de campañas de sensibilización sobre violencia de género, aportando una perspectiva visual que resuena con la misión de la fundación.",
+      "company": "Fundación Antonia",
+      "location": "Concepción, Chile / Remoto"
+    },
+    {
+      "id": 24,
+      "title": "Mentora – Programa Technovation Girls",
+      "category": "voluntariados",
+      "startDate": "2019-03",
+      "endDate": "2023-04",
+      "description": "Me desempeñé como **mentora** en el Programa Technovation Girls Chile (mar 2019 – abr 2023), acompañando a equipos de niñas en la creación de apps con impacto social.\n- Guié el proceso de ideación, prototipado y pitch, fomentando habilidades de liderazgo y pensamiento crítico.\n- Utilicé design thinking y herramientas low-code para que las participantes materializaran sus soluciones.\n- Acompañé la preparación para competencias regionales y nacionales; uno de los equipos obtuvo reconocimiento destacado en Valparaíso y 2.º lugar nacional en “Los Creadores”.\n- Promoví carreras STEM a largo plazo mediante mentorías continuas y redes de apoyo.\n- Fomenté la confianza y el empoderamiento de las participantes, ayudándolas a superar barreras de género en tecnología.",
+      "company": "Technovation Girls Chile",
+      "location": "Santiago, Chile"
+    }
+  ]
+}
