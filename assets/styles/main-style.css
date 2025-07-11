@@ -104,21 +104,9 @@ a.regular-link {
 }
 
 /* Botón de scroll hacia timeline */
-.scroll-down-btn {
+.scroll-btn {
     position: relative;
     animation: pulse-bounce 2s infinite;
-}
-
-.scroll-down-btn:hover {
-    transform: translateY(-2px);
-}
-
-.scroll-down-btn span {
-    transition: transform 0.3s ease;
-}
-
-.scroll-down-btn:hover span {
-    transform: translateY(2px);
 }
 
 /* Footer */
