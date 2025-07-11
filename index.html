@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/styles/containers.css">
     <link rel="stylesheet" href="assets/styles/components.css">
     <link rel="stylesheet" href="assets/styles/animations.css">
+    <link rel="stylesheet" href="assets/styles/timeline.css">
 </head>
 
 <body>
@@ -96,7 +97,45 @@
         </div>
     </header>
 
+    <!-- Timeline Section -->
+    <section class="u-bg-color-light-grey u-pt-10 u-pb-10" style="border-top: 1px solid rgba(86, 86, 86, 0.25);" id="timeline">
+        <div class="layout-container">
+            <div class="u-txt-center u-mb-5">
+                <h2 class="u-txt-xxxl u-mb-2 u-txt-color-black u-font-titles u-font-weight-700">Mi Trayectoria</h2>
+                <p class="u-txt-lg u-txt-color-dark-gray u-max-width-600px u-mx-auto u-font-primary">Experiencia profesional, académica, voluntariados y docencia</p>
+            </div>
+            
+            <!-- Filtros -->
+            <div class="u-display-flex u-flex-wrap u-justify-center u-gap-0-75rem u-mb-3 u-txt-center">
+                <button class="active filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer" data-filter="all">Todas</button>
+                <button class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-laboral u-border-color-laboral u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer" data-filter="laboral">Experiencia laboral</button>
+                <button class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-academica u-border-color-academica u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer" data-filter="academica">Formación académica</button>
+                <button class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-voluntariados u-border-color-voluntariados u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer" data-filter="voluntariados">Voluntariados</button>
+                <button class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-docencia u-border-color-docencia u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer" data-filter="docencia">Experiencia en docencia</button>
+            </div>
+
+            <!-- Botones de control global -->
+            <div class="u-display-flex u-justify-center u-gap-0-5rem u-mb-4 u-txt-center" id="global-controls">
+                <button id="expand-all-btn" class="global-control-btn u-txt-xs u-transition-all u-font-primary u-font-weight-500 u-txt-color-dark-gray u-border-color-light-gray u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-0-75 u-pr-0-75 u-border-radius-small u-cursor-pointer">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.25rem;">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Expandir todo
+                </button>
+                <button id="collapse-all-btn" class="global-control-btn u-txt-xs u-transition-all u-font-primary u-font-weight-500 u-txt-color-dark-gray u-border-color-light-gray u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-0-75 u-pr-0-75 u-border-radius-small u-cursor-pointer">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 0.25rem; transform: rotate(180deg);">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Colapsar todo
+                </button>
+            </div>
+            <div class="u-position-relative u-max-width-800px u-mx-auto" id="timeline-container">
+            </div>
+        </div>
+    </section>
+
     <script src="assets/scripts/image-transition.js"></script>
+    <script src="assets/scripts/timeline.js"></script>
     <script src="assets/scripts/glitter.js"></script>
 </body>
 
