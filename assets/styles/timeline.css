@@ -97,8 +97,54 @@
     color: var(--category-color);
 }
 
-.toggle-icon {
-    transition: transform 0.3s ease;
+/* Timeline description content - Markdown styling */
+.timeline-description p {
+    margin: 0 0 0.75rem 0;
+    line-height: 1.6;
+}
+
+.timeline-description p:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-description strong {
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.timeline-description br {
+    margin: 0.5rem 0;
+}
+
+.timeline-list {
+    margin: 0 0 0.75rem 0;
+    padding-left: 1.2rem;
+    list-style: none;
+}
+
+.timeline-list:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-list li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    padding-left: 0.25rem;
+}
+
+.timeline-list li:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-list li::before {
+    content: "•";
+    color: var(--category-color);
+    font-weight: bold;
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    font-size: 1.1em;
 }
 
 /* Filter button active states - Using CSS Variables */
