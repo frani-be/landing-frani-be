@@ -76,6 +76,9 @@
 
 #secondary-buttons {
     justify-content: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    column-gap: .5rem;
 }
 
 @media screen and (min-width: 960px) {
@@ -87,6 +90,7 @@
     }
 
     #secondary-buttons {
+        flex-direction: row;
         justify-content: left;
     }
 }
