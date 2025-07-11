@@ -55,10 +55,18 @@ a.regular-link {
     border-bottom: .075em dashed;
 }
 
+/* Contenedor de glitter - Limitado al header */
+.glitter-container {
+    position: relative;
+    overflow: hidden; /* Contiene las partículas dentro del header */
+    isolation: isolate; /* Crea un nuevo contexto de apilamiento */
+}
+
 .glitter {
     fill: var(--color-light-purple);
     position: absolute;
     z-index: 0;
+    pointer-events: none; /* Las partículas no interfieren con la interacción */
 }
 
 .glitter.small {
