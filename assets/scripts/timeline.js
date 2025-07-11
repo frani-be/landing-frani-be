@@ -509,22 +509,3 @@ class Timeline {
         });
     }
 }
-
-// Inicializar timeline cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', () => {
-    window.timeline = new Timeline();
-    
-    // Configurar botón de scroll hacia timeline
-    const scrollToTimelineBtn = document.getElementById('scroll-to-timeline');
-    if (scrollToTimelineBtn) {
-        scrollToTimelineBtn.addEventListener('click', () => {
-            const timelineSection = document.getElementById('timeline');
-            if (timelineSection) {
-                timelineSection.scrollIntoView({ 
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    }
-});

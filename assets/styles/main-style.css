@@ -1,4 +1,4 @@
-html {
+html, body {
     scroll-behavior: smooth;
 }
 
@@ -110,8 +110,6 @@ a.regular-link {
 }
 
 .scroll-down-btn:hover {
-    background-color: var(--color-purple) !important;
-    color: var(--color-white) !important;
     transform: translateY(-2px);
 }
 
@@ -123,22 +121,10 @@ a.regular-link {
     transform: translateY(2px);
 }
 
-@keyframes pulse-bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-4px);
-    }
-    60% {
-        transform: translateY(-2px);
-    }
-}
-
 /* Reducir animación en móviles para mejor performance */
 @media (max-width: 768px) {
     .scroll-down-btn {
-        animation: none;
+        /* animation: none; */ /* Comentado para mantener el bounce en móviles también */
         font-size: 0.875rem;
         padding: 0.6rem 1.2rem;
     }
