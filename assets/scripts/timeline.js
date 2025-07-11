@@ -509,3 +509,8 @@ class Timeline {
         });
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.timeline = new Timeline();
+});
