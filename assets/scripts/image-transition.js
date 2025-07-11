@@ -13,7 +13,7 @@ function changeImage() {
 
   // Cambia la imagen después de que la opacidad llegue a 0
   setTimeout(() => {
-    mainImage.src = `assets/images/image_fran-${counter}.png`;
+    mainImage.src = `assets/images/image_frani-${counter}.png`;
     mainImage.style.opacity = 1; // Vuelve a establecer la opacidad a 1 para mostrar la nueva imagen
   }, fadeDuration); 
   
