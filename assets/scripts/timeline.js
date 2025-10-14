@@ -399,25 +399,6 @@ class Timeline {
         }
     }
 
-    applyMobileFilterStyles() {
-        if (window.innerWidth <= 480) {
-            const filtersContainer = document.querySelector('.u-display-flex.u-flex-wrap');
-            if (filtersContainer) {
-                Object.assign(filtersContainer.style, {
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '0.5rem'
-                });
-                
-                const filterButtons = filtersContainer.querySelectorAll('.filter-btn');
-                filterButtons.forEach(btn => {
-                    btn.style.width = '100%';
-                    btn.style.maxWidth = '280px';
-                });
-            }
-        }
-    }
-
     setupToggleListeners() {
         this.setupDescriptionToggles();
         this.setupCategoryLabels();
