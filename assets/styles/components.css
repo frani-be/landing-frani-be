@@ -74,11 +74,10 @@
     }
 }
 
-#secondary-buttons {
-    justify-content: center;
+#social-links-header,
+#social-links-footer {
     flex-direction: column;
-    row-gap: 1.5rem;
-    column-gap: .5rem;
+    justify-content: center;
 }
 
 @media screen and (min-width: 960px) {
@@ -89,7 +88,8 @@
         }
     }
 
-    #secondary-buttons {
+    #social-links-header,
+    #social-links-footer {
         flex-direction: row;
         justify-content: left;
     }
