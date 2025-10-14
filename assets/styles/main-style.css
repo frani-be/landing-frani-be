@@ -154,7 +154,7 @@ footer::before {
     font-size: 1.5rem;
 }
 
-.footer-content p {
+.footer-content > p {
     opacity: 0.9;
     font-size: 0.9rem;
     margin: 0;
