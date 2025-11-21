@@ -33,19 +33,18 @@ h6 {
     font-weight: 700;
 }
 
-p svg,
-h1 svg,
-h2 svg,
-h3 svg,
-h4 svg,
-h5 svg,
-h6 svg {
+svg {
     height: 0.95em;
     fill: currentColor;
     vertical-align: middle;
 }
 
 h1 {
+    color: var(--color-purple);
+    font-size: 2.5rem;
+}
+
+#navigation .logo-container {
     color: var(--color-purple);
     font-size: 2.5rem;
 }
