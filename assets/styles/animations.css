@@ -7,25 +7,26 @@
 }
 
 @keyframes slideRight {
-
-    0%,
-    11% {
-        left: -200%;
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
     }
 
-    33%,
-    44% {
-        left: -300%;
+    5%,
+    20% {
+        opacity: 1;
+        transform: translateY(0);
     }
 
-    55%,
-    77% {
-        left: 0;
+    25%,
+    95% {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 
-    88%,
     100% {
-        left: -100%;
+        opacity: 0;
+        transform: translateY(10px);
     }
 }
 
