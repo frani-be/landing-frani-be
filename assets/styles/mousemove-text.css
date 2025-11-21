@@ -9,12 +9,11 @@
     left: 50%;
     top: -.8em;
     transform: translateX(-50%);
-    color: var(--color-dark-gray);
+    color: #e3e3e3;
     white-space: nowrap;
     pointer-events: none;
     font-size: 2em;
-    opacity: 0.2;
-    z-index: 1;
+    z-index: 0;
 }
 
 .text-front {
@@ -22,4 +21,5 @@
     color: var(--color-black);
     z-index: 2;
     line-height: 1;
+    position: relative;
 }
