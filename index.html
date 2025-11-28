@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8">
@@ -68,8 +68,8 @@
     <link rel="stylesheet" href="assets/styles/custom.css">
 </head>
 
-<body>
-    <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-screen py-4 pb-6 z-[3] overflow-visible" id="navigation">
+<body class="overflow-x-hidden">
+    <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation">
         <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
             <div class="logo-container">
                 <a href="index.html" aria-label="Ir al inicio">
@@ -81,8 +81,8 @@
         </div>
     </nav>
     <header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-40 pb-40 glitter-container" id="header">
-        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] gap-8 items-center justify-center w-1/2" id="header-container">
-            <div class="w-75">
+        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col lg:flex-row gap-8 items-center" id="header-container">
+            <div class="w-full lg:w-75">
                 <h1 class="text-[3em] leading-none text-custom-black">Francisca Beatriz<br /><span
                         class="text-custom-purple">Medina Concha</span></h1>
                 <h2 class="text-[1.5em] mt-4 font-bold">Strategic UX Designer & Front-End Engineer</h2>
@@ -91,7 +91,7 @@
                 <p class="text-[1.25em] mt-4"><a href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
                         class="bg-custom-purple text-white py-1 px-4 font-bold rounded-[7px] inline-block"
                         target="_blank">Agenda una videollamada</a></p>
-                <ul id="social-links-header" class="flex gap-4 flex-wrap text-base items-baseline mt-8">
+                <ul id="social-links-header" class="flex gap-4 flex-wrap text-base items-center mt-8 justify-center">
                     <li>
                         <a href="mailto:hola@frani.be"
                             class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
@@ -130,7 +130,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="flex flex-col gap-6 items-center w-1/2">
+            <div class="flex flex-col gap-6 items-center w-full lg:w-1/2">
                 <figure>
                     <img src="assets/images/image_frani-1.png" alt="Francisca Beatriz Medina Concha" id="main-image"
                         class="fade-effect">
@@ -223,7 +223,7 @@
             <!-- Botones de control global -->
             <div class="flex justify-center gap-2 mb-16 text-center" id="global-controls">
                 <button id="expand-all-btn"
-                    class="global-control-btn text-[0.5em] transition-all font-primary font-medium text-custom-dark-gray border-custom-light-grey border border-solid bg-white py-1 px-3 rounded-[7px] cursor-pointer">
+                    class="global-control-btn text-[0.5em] transition-all font-primary font-medium text-custom-dark-gray border-gray-300 border border-solid bg-white py-1 px-3 rounded-[7px] cursor-pointer hover:border-custom-purple hover:text-custom-purple">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         class="mr-1 inline">
                         <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -232,7 +232,7 @@
                     Expandir todo
                 </button>
                 <button id="collapse-all-btn"
-                    class="global-control-btn text-[0.5em] transition-all font-primary font-medium text-custom-dark-gray border-custom-light-grey border border-solid bg-white py-1 px-3 rounded-[7px] cursor-pointer">
+                    class="global-control-btn text-[0.5em] transition-all font-primary font-medium text-custom-dark-gray border-gray-300 border border-solid bg-white py-1 px-3 rounded-[7px] cursor-pointer hover:border-custom-purple hover:text-custom-purple">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                         class="mr-1 inline rotate-180">
                         <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -265,7 +265,7 @@
                         class="bg-custom-purple text-white py-1 px-4 font-bold rounded-[7px] inline-block"
                         target="_blank">Agenda una videollamada</a></p>
             </div>
-            <ul id="social-links-footer" class="flex gap-4 flex-wrap text-base items-baseline">
+            <ul id="social-links-footer" class="flex gap-4 flex-wrap text-base items-center justify-center">
                 <li>
                     <a href="mailto:hola@frani.be"
                         class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
