@@ -327,8 +327,9 @@ class Timeline {
                 <div class="text-[0.75em] text-custom-dark-gray font-medium font-primary">
                     ${this.formatDate(item.startDate)} - ${this.formatDate(item.endDate)}
                 </div>
-                <button class="timeline-category text-white rounded-[7px] font-primary font-medium text-[0.75em] py-1 px-4 cursor-pointer transition-all border border-solid"
-                        data-filter="${item.category}">
+                <button class="timeline-category text-white text-sm transition-all font-primary font-medium border-2 border-solid py-0.5 px-5 rounded-[7px] cursor-pointer"
+                        data-filter="${item.category}"
+                        style="border-color: ${categoryInfo.color};">
                     ${categoryInfo.label}
                 </button>
             </div>
@@ -355,7 +356,7 @@ class Timeline {
                         data-item-id="${item.id}">
                     <span class="toggle-text">Ver más</span>
                     <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
             </div>
