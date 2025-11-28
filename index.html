@@ -39,20 +39,38 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,700;1,700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/styles/reset.css">
-    <link rel="stylesheet" href="assets/styles/variables.css">
-    <link rel="stylesheet" href="assets/styles/utilities.css">
-    <link rel="stylesheet" href="assets/styles/main-style.css">
-    <link rel="stylesheet" href="assets/styles/containers.css">
-    <link rel="stylesheet" href="assets/styles/components.css">
-    <link rel="stylesheet" href="assets/styles/animations.css">
-    <link rel="stylesheet" href="assets/styles/timeline.css">
-    <link rel="stylesheet" href="assets/styles/mousemove-text.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-purple': '#b55aff',
+                        'custom-purple-dark': '#8b2db3',
+                        'custom-light-purple': '#e8d4f9',
+                        'custom-dark-blue': '#3333a8',
+                        'custom-light-grey': '#f1f1f1',
+                        'custom-dark-gray': '#565656',
+                        'custom-black': '#2f2f2f',
+                        'laboral': '#2555a3',
+                        'academica': '#9f2eba',
+                        'docencia': '#7d1fc7',
+                        'voluntariados': '#bd2c97',
+                    },
+                    fontFamily: {
+                        'titles': ['"Work Sans"', 'sans-serif'],
+                        'primary': ['"DM Sans"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles/custom.css">
 </head>
 
 <body>
-    <nav class="u-position-fixed u-m-auto" id="navigation">
-        <div class="layout-container">
+    <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-screen py-4 pb-6 z-[3] overflow-visible" id="navigation">
+        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
             <div class="logo-container">
                 <a href="index.html" aria-label="Ir al inicio">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70.3">
@@ -62,57 +80,57 @@
             </div>
         </div>
     </nav>
-    <header class="u-bg-gradient u-pt-10 u-pb-10 glitter-container" id="header">
-        <div class="layout-container u-gap-lg u-align-center u-justify-center u-width-50" id="header-container">
-            <div class="u-width-75">
-                <h1 class="u-txt-xxxxl u-txt-line-height-1 u-txt-color-black">Francisca Beatriz<br /><span
-                        class="u-txt-color-purple">Medina Concha</span></h1>
-                <h2 class="u-txt-xl u-mt-1 u-txt-bold">Strategic UX Designer & Front-End Engineer</h2>
-                <p class="u-txt-lg u-mt-1">Impulso talento en STEAM y creo tecnología con propósito.</p>
-                <h3 class="u-mt-2 u-txt-xl">Hablemos de tu próximo proyecto</h3>
-                <p class="u-txt-lg u-mt-1"><a href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-                        class="u-bg-color-purple u-txt-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+    <header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-40 pb-40 glitter-container" id="header">
+        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] gap-8 items-center justify-center w-1/2" id="header-container">
+            <div class="w-75">
+                <h1 class="text-[3em] leading-none text-custom-black">Francisca Beatriz<br /><span
+                        class="text-custom-purple">Medina Concha</span></h1>
+                <h2 class="text-[1.5em] mt-4 font-bold">Strategic UX Designer & Front-End Engineer</h2>
+                <p class="text-[1.25em] mt-4">Impulso talento en STEAM y creo tecnología con propósito.</p>
+                <h3 class="mt-8 text-[1.5em]">Hablemos de tu próximo proyecto</h3>
+                <p class="text-[1.25em] mt-4"><a href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+                        class="bg-custom-purple text-white py-1 px-4 font-bold rounded-[7px] inline-block"
                         target="_blank">Agenda una videollamada</a></p>
-                <ul id="social-links-header" class="u-display-flex u-gap-sm u-flex-wrap u-txt-md u-align-bottom u-mt-2">
+                <ul id="social-links-header" class="flex gap-4 flex-wrap text-base items-baseline mt-8">
                     <li>
-                        <a href="mailto:hola@frani.be" style="padding-bottom: 0.35rem;"
-                            class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                        <a href="mailto:hola@frani.be"
+                            class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                             target="_blank" rel="noopener noreferrer"><svg
-                                style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                                class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 400 400">
                                 <use href="assets/images/icons.svg#mail"></use>
                             </svg> Mail</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/frani-be/" style="padding-bottom: 0.35rem;"
-                            class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                        <a href="https://www.linkedin.com/in/frani-be/"
+                            class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                             target="_blank" rel="noopener noreferrer"><svg
-                                style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                                class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 400 400">
                                 <use href="assets/images/icons.svg#linkedin"></use>
                             </svg> LinkedIn</a>
                     </li>
                     <li>
-                        <a href="https://github.com/frani-be" style="padding-bottom: 0.35rem;"
-                            class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                        <a href="https://github.com/frani-be"
+                            class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                             target="_blank" rel="noopener noreferrer"><svg
-                                style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                                class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 400 400">
                                 <use href="assets/images/icons.svg#github"></use>
                             </svg> GitHub</a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/frani.be/" style="padding-bottom: 0.35rem;"
-                            class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                        <a href="https://www.instagram.com/frani.be/"
+                            class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                             target="_blank" rel="noopener noreferrer"><svg
-                                style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                                class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 400 400">
                                 <use href="assets/images/icons.svg#instagram"></use>
                             </svg> Instagram</a>
                     </li>
                 </ul>
             </div>
-            <div class="u-display-flex u-flex-column u-gap-md u-align-center u-width-50">
+            <div class="flex flex-col gap-6 items-center w-1/2">
                 <figure>
                     <img src="assets/images/image_frani-1.png" alt="Francisca Beatriz Medina Concha" id="main-image"
                         class="fade-effect">
@@ -131,7 +149,7 @@
                 </noscript>
                 <p id="message">
                     <span class="static-message">Soy Francisca Beatriz,</span>
-                    <span class="iterate-message u-txt-color-purple">
+                    <span class="iterate-message text-custom-purple">
                         <span>Strategic UX Designer</span>
                         <span>Front-End Engineer</span>
                         <span>Tech Speaker</span>
@@ -142,11 +160,11 @@
         </div>
 
         <!-- Botón de scroll hacia timeline -->
-        <div class="u-txt-center u-mt-4 scroll-btn ">
+        <div class="text-center mt-16 scroll-btn">
             <a href="#timeline" id="scroll-to-timeline"
-                class="u-txt-color-purple u-pt-0-75 u-pb-0-75 u-pl-1-5 u-pr-1-5 u-cursor-pointer u-transition-all u-font-primary u-font-weight-500"
+                class="text-custom-purple py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
                 aria-label="Ir a la sección de trayectoria profesional" title="Conoce mi trayectoria profesional">
-                <span style="margin-right: 0.5rem; font-size: 1.2em; vertical-align: middle;"
+                <span class="mr-2 text-[1.2em] align-middle"
                     aria-hidden="true">↓</span>
                 Mi trayectoria
             </a>
@@ -154,138 +172,138 @@
     </header>
 
     <!-- Timeline Section -->
-    <section class="u-bg-color-light-grey u-pt-10 u-pb-10" style="border-top: 1px solid rgba(86, 86, 86, 0.25);"
+    <section class="bg-custom-light-grey pt-40 pb-40 border-t border-custom-dark-gray/25"
         id="timeline">
-        <div class="layout-container">
-            <div class="u-txt-center u-mb-5">
+        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+            <div class="text-center mb-20">
                 <div class="text-wrapper">
                     <h3 class="text-back" aria-hidden="true" role="presentation"">Mi trayectoria</h3>
                     <h3 class="text-front">Mi trayectoria</h3>
                 </div>
-                <div class="u-display-flex u-flex-wrap u-justify-center u-gap-lg u-mt-4 u-mb-5">
-                    <div class="u-txt-center u-mb-3" style="flex: 1; min-width: 280px;">
-                        <div class="u-txt-xxl u-mb-1" aria-hidden="true">💻</div>
-                        <h4 class="u-txt-lg u-txt-bold u-mb-1">Estrategia & Código</h4>
-                        <p class="u-txt-color-dark-gray">Líder UX + Front-End. Traduzco necesidades corporativas complejas en interfaces escalables.</p>
+                <div class="flex flex-wrap justify-center gap-8 mt-16 mb-20">
+                    <div class="text-center mb-12 flex-1 min-w-[280px]">
+                        <div class="text-[2em] mb-4" aria-hidden="true">💻</div>
+                        <h4 class="text-[1.25em] font-bold mb-4">Estrategia & Código</h4>
+                        <p class="text-custom-dark-gray">Líder UX + Front-End. Traduzco necesidades corporativas complejas en interfaces escalables.</p>
                     </div>
 
-                    <div class="u-txt-center u-mb-3" style="flex: 1; min-width: 280px;">
-                        <div class="u-txt-xxl u-mb-1" aria-hidden="true">🎓</div>
-                        <h4 class="u-txt-lg u-txt-bold u-mb-1">Formación Sólida</h4>
-                        <p class="u-txt-color-dark-gray">Diplomada en Ing. de Software y Diseño. Docente en universidades y bootcamps.</p>
+                    <div class="text-center mb-12 flex-1 min-w-[280px]">
+                        <div class="text-[2em] mb-4" aria-hidden="true">🎓</div>
+                        <h4 class="text-[1.25em] font-bold mb-4">Formación Sólida</h4>
+                        <p class="text-custom-dark-gray">Diplomada en Ing. de Software y Diseño. Docente en universidades y bootcamps.</p>
                     </div>
 
-                    <div class="u-txt-center u-mb-3" style="flex: 1; min-width: 280px;">
-                        <div class="u-txt-xxl u-mb-1" aria-hidden="true">🌟</div>
-                        <h4 class="u-txt-lg u-txt-bold u-mb-1">Comunidad & Speaker</h4>
-                        <p class="u-txt-color-dark-gray">Speaker internacional y activista STEAM. Promoviendo inclusión real en tech.</p>
+                    <div class="text-center mb-12 flex-1 min-w-[280px]">
+                        <div class="text-[2em] mb-4" aria-hidden="true">🌟</div>
+                        <h4 class="text-[1.25em] font-bold mb-4">Comunidad & Speaker</h4>
+                        <p class="text-custom-dark-gray">Speaker internacional y activista STEAM. Promoviendo inclusión real en tech.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Filtros -->
-            <div class="u-display-flex u-flex-wrap u-justify-center u-gap-0-75rem u-mb-3 u-txt-center">
+            <div class="flex flex-wrap justify-center gap-3 mb-12 text-center">
                 <button
-                    class="active filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer u-txt-uppercase"
+                    class="active filter-btn text-[0.75em] transition-all font-primary font-medium text-custom-purple border-custom-purple border border-solid bg-white py-1 px-4 rounded-[7px] cursor-pointer uppercase"
                     data-filter="all">Todas</button>
                 <button
-                    class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-laboral u-border-color-laboral u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer"
+                    class="filter-btn text-[0.75em] transition-all font-primary font-medium text-laboral border-laboral border border-solid bg-white py-1 px-4 rounded-[7px] cursor-pointer"
                     data-filter="laboral">Experiencia laboral</button>
                 <button
-                    class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-academica u-border-color-academica u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer"
+                    class="filter-btn text-[0.75em] transition-all font-primary font-medium text-academica border-academica border border-solid bg-white py-1 px-4 rounded-[7px] cursor-pointer"
                     data-filter="academica">Formación académica</button>
                 <button
-                    class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-voluntariados u-border-color-voluntariados u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer"
+                    class="filter-btn text-[0.75em] transition-all font-primary font-medium text-voluntariados border-voluntariados border border-solid bg-white py-1 px-4 rounded-[7px] cursor-pointer"
                     data-filter="voluntariados">Voluntariados</button>
                 <button
-                    class="filter-btn u-txt-sm u-transition-all u-font-primary u-font-weight-500 u-txt-color-docencia u-border-color-docencia u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-border-radius-small u-cursor-pointer"
+                    class="filter-btn text-[0.75em] transition-all font-primary font-medium text-docencia border-docencia border border-solid bg-white py-1 px-4 rounded-[7px] cursor-pointer"
                     data-filter="docencia">Experiencia en docencia</button>
             </div>
 
             <!-- Botones de control global -->
-            <div class="u-display-flex u-justify-center u-gap-0-5rem u-mb-4 u-txt-center" id="global-controls">
+            <div class="flex justify-center gap-2 mb-16 text-center" id="global-controls">
                 <button id="expand-all-btn"
-                    class="global-control-btn u-txt-xs u-transition-all u-font-primary u-font-weight-500 u-txt-color-dark-gray u-border-color-light-gray u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-0-75 u-pr-0-75 u-border-radius-small u-cursor-pointer">
+                    class="global-control-btn text-[0.5em] transition-all font-primary font-medium text-custom-dark-gray border-custom-light-grey border border-solid bg-white py-1 px-3 rounded-[7px] cursor-pointer">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        style="margin-right: 0.25rem;">
+                        class="mr-1 inline">
                         <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
                     Expandir todo
                 </button>
                 <button id="collapse-all-btn"
-                    class="global-control-btn u-txt-xs u-transition-all u-font-primary u-font-weight-500 u-txt-color-dark-gray u-border-color-light-gray u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pb-0-25 u-pl-0-75 u-pr-0-75 u-border-radius-small u-cursor-pointer">
+                    class="global-control-btn text-[0.5em] transition-all font-primary font-medium text-custom-dark-gray border-custom-light-grey border border-solid bg-white py-1 px-3 rounded-[7px] cursor-pointer">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        style="margin-right: 0.25rem; transform: rotate(180deg);">
+                        class="mr-1 inline rotate-180">
                         <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
                     Colapsar todo
                 </button>
             </div>
-            <div class="u-position-relative u-max-width-800px u-mx-auto" id="timeline-container">
+            <div class="relative max-w-[800px] mx-auto" id="timeline-container">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="u-pt-5 u-pb-2">
+    <footer class="pt-20 pb-8 bg-gradient-to-br from-custom-purple to-custom-purple-dark text-white relative overflow-hidden">
         <div
-            class="layout-container u-display-flex u-flex-column u-gap-lg u-txt-center u-justify-center u-align-center">
-            <div class="u-txt-center scroll-btn">
+            class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col gap-8 text-center justify-center items-center">
+            <div class="text-center scroll-btn">
                 <a href="#header"
-                    class="u-pt-0-75 u-pb-0-75 u-pl-1-5 u-pr-1-5 u-cursor-pointer u-transition-all u-font-primary u-font-weight-500"
+                    class="py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
                     aria-label="Ir a la sección principal" title="Vuelve al inicio">
-                    <span style="margin-right: 0.5rem; font-size: 1.2em; vertical-align: middle;"
+                    <span class="mr-2 text-[1.2em] align-middle"
                         aria-hidden="true">↑</span>
                     Volver a arriba
                 </a>
             </div>
             <div>
-                <h3 class="u-txt-xl">Hablemos de tu próximo proyecto</h3>
-                <p class="u-txt-lg u-mt-1"><a href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-                        class="u-bg-color-purple u-txt-color-white u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                <h3 class="text-[1.5em]">Hablemos de tu próximo proyecto</h3>
+                <p class="text-[1.25em] mt-4"><a href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+                        class="bg-custom-purple text-white py-1 px-4 font-bold rounded-[7px] inline-block"
                         target="_blank">Agenda una videollamada</a></p>
             </div>
-            <ul id="social-links-footer" class="u-display-flex u-gap-sm u-flex-wrap u-txt-md u-align-bottom">
+            <ul id="social-links-footer" class="flex gap-4 flex-wrap text-base items-baseline">
                 <li>
-                    <a href="mailto:hola@frani.be" style="padding-bottom: 0.35rem;"
-                        class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                    <a href="mailto:hola@frani.be"
+                        class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                         target="_blank" rel="noopener noreferrer"><svg
-                            style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                            class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 400 400">
                             <use href="assets/images/icons.svg#mail"></use>
                         </svg> Mail</a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/frani-be/" style="padding-bottom: 0.35rem;"
-                        class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                    <a href="https://www.linkedin.com/in/frani-be/"
+                        class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                         target="_blank" rel="noopener noreferrer"><svg
-                            style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                            class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 400 400">
                             <use href="assets/images/icons.svg#linkedin"></use>
                         </svg> LinkedIn</a>
                 </li>
                 <li>
-                    <a href="https://github.com/frani-be" style="padding-bottom: 0.35rem;"
-                        class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                    <a href="https://github.com/frani-be"
+                        class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                         target="_blank" rel="noopener noreferrer"><svg
-                            style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                            class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 400 400">
                             <use href="assets/images/icons.svg#github"></use>
                         </svg> GitHub</a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/frani.be/" style="padding-bottom: 0.35rem;"
-                        class="u-txt-sm u-txt-color-purple u-border-color-purple u-border-1 u-border-solid u-bg-color-white u-pt-0-25 u-pl-1 u-pr-1 u-txt-bold u-border-radius-small"
+                    <a href="https://www.instagram.com/frani.be/"
+                        class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
                         target="_blank" rel="noopener noreferrer"><svg
-                            style="margin-right: 0.2rem; margin-bottom: 0.2rem" xmlns="http://www.w3.org/2000/svg"
+                            class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 400 400">
                             <use href="assets/images/icons.svg#instagram"></use>
                         </svg> Instagram</a>
                 </li>
             </ul>
-            <p class="u-txt-sm u-opacity-90 u-txt-center u-mt-3">© <span id="current-year">2025</span> frani.be •
+            <p class="text-[0.75em] opacity-90 text-center mt-12">© <span id="current-year">2025</span> frani.be •
                 Desarrollando y diseñado con propósito <span aria-hidden="true">✨</span></p>
         </div>
     </footer>
