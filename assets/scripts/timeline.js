@@ -14,36 +14,36 @@ class Timeline {
                 label: 'Experiencia laboral',
                 color: '#2555a3',
                 cssClasses: {
-                    text: 'u-txt-color-laboral',
-                    bg: 'u-bg-color-laboral',
-                    border: 'u-border-color-laboral'
+                    text: 'text-laboral',
+                    bg: 'bg-laboral',
+                    border: 'border-laboral'
                 }
             },
             academica: {
                 label: 'Formación académica',
                 color: '#9f2eba',
                 cssClasses: {
-                    text: 'u-txt-color-academica',
-                    bg: 'u-bg-color-academica',
-                    border: 'u-border-color-academica'
+                    text: 'text-academica',
+                    bg: 'bg-academica',
+                    border: 'border-academica'
                 }
             },
             docencia: {
                 label: 'Experiencia en docencia',
                 color: '#7d1fc7',
                 cssClasses: {
-                    text: 'u-txt-color-docencia',
-                    bg: 'u-bg-color-docencia',
-                    border: 'u-border-color-docencia'
+                    text: 'text-docencia',
+                    bg: 'bg-docencia',
+                    border: 'border-docencia'
                 }
             },
             voluntariados: {
                 label: 'Voluntariados',
                 color: '#bd2c97',
                 cssClasses: {
-                    text: 'u-txt-color-voluntariados',
-                    bg: 'u-bg-color-voluntariados',
-                    border: 'u-border-color-voluntariados'
+                    text: 'text-voluntariados',
+                    bg: 'bg-voluntariados',
+                    border: 'border-voluntariados'
                 }
             }
         };
@@ -144,15 +144,15 @@ class Timeline {
         
         if (filter === 'all') {
             this.applyButtonStyles(button, {
-                remove: ['u-bg-color-purple', 'u-txt-color-white'],
-                add: ['u-bg-color-white', 'u-txt-color-purple', 'u-border-color-purple']
+                remove: ['bg-custom-purple', 'text-white'],
+                add: ['bg-white', 'text-custom-purple', 'border-custom-purple']
             });
         } else {
             const category = Timeline.CATEGORIES[filter];
             if (category) {
                 this.applyButtonStyles(button, {
-                    remove: [category.cssClasses.bg, 'u-txt-color-white'],
-                    add: ['u-bg-color-white', category.cssClasses.text, category.cssClasses.border]
+                    remove: [category.cssClasses.bg, 'text-white'],
+                    add: ['bg-white', category.cssClasses.text, category.cssClasses.border]
                 });
             }
         }
@@ -164,15 +164,15 @@ class Timeline {
         
         if (filter === 'all') {
             this.applyButtonStyles(button, {
-                remove: ['u-bg-color-white', 'u-txt-color-purple'],
-                add: ['u-bg-color-purple', 'u-txt-color-white', 'u-border-color-purple']
+                remove: ['bg-white', 'text-custom-purple'],
+                add: ['bg-custom-purple', 'text-white', 'border-custom-purple']
             });
         } else {
             const category = Timeline.CATEGORIES[filter];
             if (category) {
                 this.applyButtonStyles(button, {
-                    remove: ['u-bg-color-white', category.cssClasses.text],
-                    add: [category.cssClasses.bg, 'u-txt-color-white', category.cssClasses.border]
+                    remove: ['bg-white', category.cssClasses.text],
+                    add: [category.cssClasses.bg, 'text-white', category.cssClasses.border]
                 });
             }
         }
@@ -202,7 +202,7 @@ class Timeline {
         return Timeline.CATEGORIES[category] || {
             label: category,
             color: '#565656',
-            cssClasses: { text: 'u-txt-color-dark-gray', bg: 'u-bg-color-dark-gray', border: 'u-border-color-dark-gray' }
+            cssClasses: { text: 'text-custom-dark-gray', bg: 'bg-custom-dark-gray', border: 'border-custom-dark-gray' }
         };
     }
 
@@ -279,7 +279,7 @@ class Timeline {
         const container = document.getElementById('timeline-container');
         
         if (this.filteredData.length === 0) {
-            container.innerHTML = '<p class="u-txt-center u-txt-color-dark-gray u-font-primary">No hay elementos para mostrar</p>';
+            container.innerHTML = '<p class="text-center text-custom-dark-gray font-primary">No hay elementos para mostrar</p>';
             return;
         }
 
@@ -295,9 +295,9 @@ class Timeline {
         const categoryInfo = this.getCategoryInfo(item.category);
         
         return `
-            <div class="u-position-relative u-mb-2 u-opacity-0 u-transition-all-slow timeline-item" 
+            <div class="relative mb-8 opacity-0 transition-all duration-500 timeline-item ml-16" 
                  data-category="${item.category}" 
-                 style="--category-color: ${categoryInfo.color}; margin-left: 4rem; transform: translateY(20px);">
+                 style="--category-color: ${categoryInfo.color}; transform: translateY(20px);">
                 ${this.createTimelineMarker()}
                 ${this.createTimelineContent(item, categoryInfo)}
             </div>
@@ -306,15 +306,14 @@ class Timeline {
 
     createTimelineMarker() {
         return `
-            <div class="timeline-marker u-position-absolute u-border-radius-large u-z-2" 
-                 style="left: -4rem; top: 0.75rem; width: 1rem; height: 1rem; margin-left: 1.5rem;"></div>
+            <div class="timeline-marker absolute rounded-full z-[2] w-4 h-4" 
+                 style="left: -4rem; top: 0.75rem; margin-left: 1.5rem;"></div>
         `;
     }
 
     createTimelineContent(item, categoryInfo) {
         return `
-            <div class="timeline-content u-bg-color-white u-border-radius-medium u-shadow-sm u-transition-transform u-font-primary" 
-                 style="padding: 1.5rem;">
+            <div class="timeline-content bg-white rounded-[10px] shadow-sm transition-transform font-primary p-6">
                 ${this.createTimelineHeader(item, categoryInfo)}
                 ${this.createTimelineBody(item)}
                 ${this.createTimelineDescription(item)}
@@ -324,12 +323,11 @@ class Timeline {
 
     createTimelineHeader(item, categoryInfo) {
         return `
-            <div class="u-display-flex u-justify-between u-align-center u-flex-wrap timeline-header-content" 
-                 style="margin-bottom: 0.5rem; gap: 0.5rem;">
-                <div class="u-txt-sm u-txt-color-dark-gray u-font-weight-500 u-font-primary">
+            <div class="flex justify-between items-center flex-wrap timeline-header-content mb-2 gap-2">
+                <div class="text-[0.75em] text-custom-dark-gray font-medium font-primary">
                     ${this.formatDate(item.startDate)} - ${this.formatDate(item.endDate)}
                 </div>
-                <button class="timeline-category u-txt-color-white u-border-radius-small u-font-primary u-font-weight-500 u-txt-sm u-pt-0-25 u-pb-0-25 u-pl-1 u-pr-1 u-cursor-pointer u-transition-all u-border-1 u-border-solid"
+                <button class="timeline-category text-white rounded-[7px] font-primary font-medium text-[0.75em] py-1 px-4 cursor-pointer transition-all border border-solid"
                         data-filter="${item.category}">
                     ${categoryInfo.label}
                 </button>
@@ -339,10 +337,8 @@ class Timeline {
 
     createTimelineBody(item) {
         return `
-            <h3 class="u-txt-lg u-font-weight-700 u-txt-color-black u-m-0 u-font-titles" 
-                style="margin-bottom: 0.5rem; line-height: 1.3;">${item.title}</h3>
-            <div class="u-txt-md u-txt-color-dark-gray u-font-weight-500 u-font-primary" 
-                 style="margin-bottom: 1rem;">${item.company} • ${item.location}</div>
+            <h3 class="text-[1.25em] font-bold text-custom-black m-0 font-titles mb-2 leading-tight">${item.title}</h3>
+            <div class="text-base text-custom-dark-gray font-medium font-primary mb-4">${item.company} • ${item.location}</div>
         `;
     }
 
@@ -350,13 +346,13 @@ class Timeline {
         const markdownHTML = this.parseMarkdown(item.description);
         
         return `
-            <div class="u-position-relative">
-                <div class="timeline-description collapsed u-txt-color-black u-overflow-hidden u-font-primary" 
-                     style="line-height: 1.6;" id="description-${item.id}">
+            <div class="relative">
+                <div class="timeline-description collapsed text-custom-black overflow-hidden font-primary leading-relaxed" 
+                     id="description-${item.id}">
                     ${markdownHTML}
                 </div>
-                <button class="timeline-toggle u-font-weight-600 u-txt-sm u-cursor-pointer u-display-flex u-align-center u-transition-all u-font-primary" 
-                        style="gap: 0.25rem; margin-top: 0.5rem;" data-item-id="${item.id}">
+                <button class="timeline-toggle font-semibold text-[0.75em] cursor-pointer flex items-center transition-all font-primary gap-1 mt-2" 
+                        data-item-id="${item.id}">
                     <span class="toggle-text">Ver más</span>
                     <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -370,33 +366,9 @@ class Timeline {
         setTimeout(() => {
             const items = document.querySelectorAll('.timeline-item');
             items.forEach((item, index) => {
-                this.applyResponsiveStyles(item);
                 setTimeout(() => item.classList.add('animate-in'), index * 100);
             });
-            
-            this.applyMobileFilterStyles();
         }, 50);
-    }
-
-    applyResponsiveStyles(item) {
-        if (window.innerWidth <= 768) {
-            item.style.marginLeft = '2.5rem';
-            
-            const marker = item.querySelector('.timeline-marker');
-            if (marker) {
-                marker.style.left = '-3rem';
-                marker.style.marginLeft = '1rem';
-            }
-            
-            const headerContent = item.querySelector('.timeline-header-content');
-            if (headerContent) {
-                headerContent.style.flexDirection = 'column';
-                headerContent.style.alignItems = 'flex-start';
-            }
-            
-            const content = item.querySelector('.timeline-content');
-            if (content) content.style.padding = '1rem';
-        }
     }
 
     setupToggleListeners() {

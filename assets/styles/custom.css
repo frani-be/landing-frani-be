@@ -285,6 +285,24 @@ footer::before {
     .timeline-line {
         left: 1rem;
     }
+    
+    .timeline-item {
+        margin-left: 2.5rem !important;
+    }
+    
+    .timeline-marker {
+        left: -3rem !important;
+        margin-left: 1rem !important;
+    }
+    
+    .timeline-header-content {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .timeline-content {
+        padding: 1rem !important;
+    }
 }
 
 .timeline-item.animate-in {
