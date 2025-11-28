@@ -24,7 +24,13 @@ function generateStar() {
   svg.appendChild(el);
 
   const sizes = ["small", "medium", "big"];
-  svg.classList.add("glitter", sizes[getRandomInt(0, sizes.length - 1)]);
+  const sizeClasses = {
+    "small": "w-1 h-1",
+    "medium": "w-1.5 h-1.5",
+    "big": "w-2 h-2"
+  };
+  const randomSize = sizes[getRandomInt(0, sizes.length - 1)];
+  svg.classList.add("glitter", randomSize, "fill-custom-light-purple", "absolute", "z-0", "pointer-events-none", ...sizeClasses[randomSize].split(" "));
   svg.style.top = `${getRandomInt(2, 98)}%`;
   svg.style.left = `${getRandomInt(2, 98)}%`;
 
