@@ -68,7 +68,7 @@
     <link rel="stylesheet" href="assets/styles/custom.css">
 </head>
 
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
     <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation">
         <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
             <div class="logo-container">
@@ -80,9 +80,9 @@
             </div>
         </div>
     </nav>
-    <header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-40 pb-40 glitter-container" id="header">
-        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col lg:flex-row gap-8 items-center" id="header-container">
-            <div class="w-full lg:w-75">
+    <header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-40 pb-40 glitter-container text-center lg:text-left min-h-screen w-screen relative overflow-hidden isolate" id="header">
+        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col lg:flex-row gap-8 items-center relative z-[1]" id="header-container">
+            <div class="w-full lg:w-3/4">
                 <h1 class="text-[3em] leading-none text-custom-black">Francisca Beatriz<br /><span
                         class="text-custom-purple">Medina Concha</span></h1>
                 <h2 class="text-[1.5em] mt-4 font-bold">Strategic UX Designer & Front-End Engineer</h2>
@@ -91,7 +91,7 @@
                 <p class="text-[1.25em] mt-4"><a href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
                         class="bg-custom-purple text-white py-1 px-4 font-bold rounded-[7px] inline-block"
                         target="_blank">Agenda una videollamada</a></p>
-                <ul id="social-links-header" class="flex gap-4 flex-wrap text-base items-center mt-8 justify-center">
+                <ul id="social-links-header" class="flex flex-col lg:flex-row gap-4 flex-wrap text-base items-center mt-8 justify-center lg:justify-start">
                     <li>
                         <a href="mailto:hola@frani.be"
                             class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"
@@ -133,7 +133,7 @@
             <div class="flex flex-col gap-6 items-center w-full lg:w-1/2">
                 <figure>
                     <img src="assets/images/image_frani-1.png" alt="Francisca Beatriz Medina Concha" id="main-image"
-                        class="fade-effect">
+                        class="fade-effect transition-opacity duration-500 opacity-100">
                 </figure>
 
                 <noscript>
@@ -160,7 +160,7 @@
         </div>
 
         <!-- Botón de scroll hacia timeline -->
-        <div class="text-center mt-16 scroll-btn">
+        <div class="text-center mt-16 scroll-btn relative">
             <a href="#timeline" id="scroll-to-timeline"
                 class="text-custom-purple py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
                 aria-label="Ir a la sección de trayectoria profesional" title="Conoce mi trayectoria profesional">
@@ -176,9 +176,9 @@
         id="timeline">
         <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
             <div class="text-center mb-20">
-                <div class="text-wrapper">
-                    <h3 class="text-back" aria-hidden="true" role="presentation"">Mi trayectoria</h3>
-                    <h3 class="text-front">Mi trayectoria</h3>
+                <div class="text-wrapper relative text-center text-[2.75rem]">
+                    <h3 class="text-back absolute left-1/2 -top-[0.8em] -translate-x-1/2 text-[#e3e3e3] whitespace-nowrap pointer-events-none text-[2em] z-0" aria-hidden="true" role="presentation"">Mi trayectoria</h3>
+                    <h3 class="text-front mx-auto text-custom-black z-[2] leading-none relative">Mi trayectoria</h3>
                 </div>
                 <div class="flex flex-wrap justify-center gap-8 mt-16 mb-20">
                     <div class="text-center mb-12 flex-1 min-w-[280px]">
@@ -250,7 +250,7 @@
     <footer class="pt-20 pb-8 bg-gradient-to-br from-custom-purple to-custom-purple-dark text-white relative overflow-hidden">
         <div
             class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col gap-8 text-center justify-center items-center">
-            <div class="text-center scroll-btn">
+            <div class="text-center scroll-btn relative">
                 <a href="#header"
                     class="py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
                     aria-label="Ir a la sección principal" title="Vuelve al inicio">
@@ -265,7 +265,7 @@
                         class="bg-custom-purple text-white py-1 px-4 font-bold rounded-[7px] inline-block"
                         target="_blank">Agenda una videollamada</a></p>
             </div>
-            <ul id="social-links-footer" class="flex gap-4 flex-wrap text-base items-center justify-center">
+            <ul id="social-links-footer" class="flex flex-col lg:flex-row gap-4 flex-wrap text-base items-center justify-center lg:justify-start">
                 <li>
                     <a href="mailto:hola@frani.be"
                         class="text-[0.75em] text-custom-purple border-custom-purple border border-solid bg-white pt-1 pb-[0.35rem] px-4 font-bold rounded-[7px] inline-block"

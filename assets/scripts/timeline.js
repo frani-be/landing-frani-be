@@ -284,7 +284,7 @@ class Timeline {
         }
 
         const timelineHTML = this.filteredData.map(item => this.createTimelineItem(item)).join('');
-        container.innerHTML = `<div class="timeline-line"></div>${timelineHTML}`;
+        container.innerHTML = `<div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5 md:left-8"></div>${timelineHTML}`;
         
         this.setupToggleListeners();
         this.setupGlobalControlButtons(); // Re-configurar listeners globales después del re-render
@@ -351,7 +351,7 @@ class Timeline {
                      id="description-${item.id}">
                     ${markdownHTML}
                 </div>
-                <button class="timeline-toggle font-semibold text-[0.75em] cursor-pointer flex items-center transition-all font-primary gap-1 mt-2" 
+                <button class="timeline-toggle font-semibold text-[0.75em] cursor-pointer flex items-center transition-all font-primary gap-1 mt-2 bg-transparent border-none" 
                         data-item-id="${item.id}">
                     <span class="toggle-text">Ver más</span>
                     <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

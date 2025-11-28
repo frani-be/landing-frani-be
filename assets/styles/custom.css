@@ -5,20 +5,10 @@ html, body {
 
 body {
     font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    color: #2f2f2f;
-    font-size: 16px;
 }
 
-header {
-    text-align: center;
-}
 
 @media screen and (min-width: 960px) {
-    body {
-        font-size: 18px;
-    }
-    
     header {
         text-align: left;
     }
@@ -161,69 +151,16 @@ a.regular-link {
     }
 }
 
-/* Header */
-#header {
-    min-height: 100vh;
-    width: 100vw;
-}
-
-#header #header-container {
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    position: relative;
-}
-
-@media screen and (min-width: 960px) {
-    #header #header-container {
-        flex-direction: row;
-    }
-}
-
-/* Social links */
-#social-links-header,
-#social-links-footer {
-    flex-direction: column;
-    justify-content: center;
-}
-
-@media screen and (min-width: 960px) {
-    #social-links-header,
-    #social-links-footer {
-        flex-direction: row;
-        justify-content: left;
-    }
-}
-
 /* Glitter effects */
-.glitter-container {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-}
-
-.glitter {
-    fill: #e8d4f9;
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-}
-
 .glitter.small {
-    width: 4px;
-    height: 4px;
     animation: shine 1.5s 0.2s alternate infinite;
 }
 
 .glitter.medium {
-    width: 6px;
-    height: 6px;
     animation: none;
 }
 
 .glitter.big {
-    width: 8px;
-    height: 8px;
     animation: shine 1.5s alternate infinite;
 }
 
@@ -240,40 +177,8 @@ footer::before {
     pointer-events: none;
 }
 
-/* Mousemove text effect */
-.text-wrapper {
-    position: relative;
-    text-align: center;
-    font-size: 2.75rem;
-}
-
-.text-back {
-    position: absolute;
-    left: 50%;
-    top: -0.8em;
-    transform: translateX(-50%);
-    color: #e3e3e3;
-    white-space: nowrap;
-    pointer-events: none;
-    font-size: 2em;
-    z-index: 0;
-}
-
-.text-front {
-    margin: 0 auto;
-    color: #2f2f2f;
-    z-index: 2;
-    line-height: 1;
-    position: relative;
-}
-
 /* Timeline styles */
 .timeline-line {
-    position: absolute;
-    left: 2rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
     background: linear-gradient(to bottom, 
         rgba(86, 86, 86, 0.25), 
         #565656, 
@@ -283,7 +188,7 @@ footer::before {
 
 @media (max-width: 768px) {
     .timeline-line {
-        left: 1rem;
+        left: 1rem !important;
     }
     
     .timeline-item {
@@ -347,8 +252,6 @@ footer::before {
 }
 
 .timeline-toggle {
-    background: none;
-    border: none;
     color: var(--category-color);
 }
 
@@ -483,11 +386,6 @@ footer::before {
 }
 
 /* Animations */
-.fade-effect {
-    transition: opacity 0.5s;
-    opacity: 1;
-}
-
 @keyframes slideRight {
     0% {
         opacity: 0;
@@ -534,7 +432,6 @@ footer::before {
 }
 
 .scroll-btn {
-    position: relative;
     animation: pulse-bounce 2s infinite;
 }
 
@@ -555,7 +452,3 @@ footer::before {
     }
 }
 
-/* Width utilities for specific percentages */
-.w-75 {
-    width: 75%;
-}
