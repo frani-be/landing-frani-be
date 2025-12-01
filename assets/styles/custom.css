@@ -452,3 +452,44 @@ footer::before {
     }
 }
 
+/* Projects Portfolio Styles */
+.project-card {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Category filter buttons */
+.category-filter-btn.active {
+    background: #b55aff !important;
+    border-color: #b55aff !important;
+    color: white !important;
+}
+
+/* Project detail prose styles */
+.prose h1, .prose h2, .prose h3 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.prose p {
+    margin-bottom: 1rem;
+}
+
+.prose ul {
+    margin: 1rem 0;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for project cards */
+@media (max-width: 768px) {
+    .project-card {
+        transform: translateY(10px);
+    }
+}
+
