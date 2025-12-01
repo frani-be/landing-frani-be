@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es" class="overflow-x-hidden">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Proyecto | Francisca Beatriz Medina Concha</title>
+    <meta name="author" content="Francisca Beatriz Medina Concha">
+    <meta name="description" id="page-description" content="Detalle del proyecto">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://frani.be/project-detail.html">
+    <meta property="og:title" id="og-title" content="Proyecto | Francisca Beatriz Medina Concha">
+    <meta property="og:description" id="og-description" content="Detalle del proyecto">
+    <meta property="og:image" id="og-image" content="https://frani.be/assets/images/image_frani-1.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://frani.be/project-detail.html">
+    <meta name="twitter:title" id="twitter-title" content="Proyecto | Francisca Beatriz Medina Concha">
+    <meta name="twitter:description" id="twitter-description" content="Detalle del proyecto">
+    <meta name="twitter:image" id="twitter-image" content="https://frani.be/assets/images/image_frani-1.png">
+
+    <link href="assets/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="assets/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="assets/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="assets/favicons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="assets/favicons/icon-hires.png" rel="icon" sizes="192x192" />
+    <link href="assets/favicons/icon-normal.png" rel="icon" sizes="128x128" />
+    <link href="assets/favicons/icon.svg" rel="mask-icon" sizes="any">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-purple': '#b55aff',
+                        'custom-purple-dark': '#8b2db3',
+                        'custom-light-purple': '#e8d4f9',
+                        'custom-dark-blue': '#3333a8',
+                        'custom-light-grey': '#f1f1f1',
+                        'custom-dark-gray': '#565656',
+                        'custom-black': '#2f2f2f',
+                        'laboral': '#2555a3',
+                        'academica': '#9f2eba',
+                        'docencia': '#7d1fc7',
+                        'voluntariados': '#bd2c97',
+                    },
+                    fontFamily: {
+                        'titles': ['"Work Sans"', 'sans-serif'],
+                        'primary': ['"DM Sans"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/styles/custom.css">
+</head>
+
+<body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
+    <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible bg-white/90 backdrop-blur-sm" id="navigation">
+        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+            <div class="logo-container">
+                <a href="index.html" aria-label="Ir al inicio">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70.3">
+                        <use href="assets/images/icons.svg#logo"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="loading-state" class="min-h-screen flex items-center justify-center">
+        <div class="text-center">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-custom-purple"></div>
+            <p class="mt-4 text-custom-dark-gray">Cargando proyecto...</p>
+        </div>
+    </div>
+
+    <!-- Error State -->
+    <div id="error-state" class="hidden min-h-screen flex items-center justify-center">
+        <div class="text-center max-w-md mx-auto px-4">
+            <h1 class="text-4xl font-bold text-custom-black mb-4 font-titles">Proyecto no encontrado</h1>
+            <p class="text-xl text-custom-dark-gray mb-8">Lo sentimos, el proyecto que buscas no existe o ha sido movido.</p>
+            <a href="projects.html" class="inline-block bg-custom-purple text-white py-3 px-8 font-bold rounded-[7px] transition-all hover:bg-custom-purple-dark">
+                Ver todos los proyectos
+            </a>
+        </div>
+    </div>
+
+    <!-- Project Content -->
+    <div id="project-content" class="hidden">
+        <!-- Hero Section -->
+        <header class="relative pt-32 pb-20 overflow-hidden">
+            <div id="hero-background" class="absolute inset-0 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple"></div>
+            <div class="relative z-10 w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+                <div class="mb-6">
+                    <a href="projects.html" class="inline-flex items-center text-custom-purple hover:text-custom-purple-dark transition-colors font-medium">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                        Volver a proyectos
+                    </a>
+                </div>
+                <div class="mb-4">
+                    <span id="project-category" class="inline-block text-xs font-bold uppercase tracking-wide text-custom-purple bg-white px-3 py-1 rounded-full"></span>
+                </div>
+                <h1 id="project-title" class="text-4xl md:text-5xl lg:text-6xl font-bold text-custom-black mb-6 font-titles"></h1>
+                <p id="project-description" class="text-xl text-custom-dark-gray max-w-3xl"></p>
+            </div>
+        </header>
+
+        <!-- Project Image -->
+        <section class="py-12 bg-white">
+            <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+                <img id="project-image" src="" alt="" class="w-full aspect-video object-cover rounded-xl shadow-lg">
+            </div>
+        </section>
+
+        <!-- Project Details -->
+        <section class="py-12 bg-custom-light-grey">
+            <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl p-8 shadow-sm">
+                            <div id="project-full-description" class="prose prose-lg max-w-none">
+                                <!-- Contenido dinámico -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="lg:col-span-1">
+                        <!-- Metadata Card -->
+                        <div class="bg-white rounded-xl p-6 shadow-sm mb-6 sticky top-24">
+                            <h3 class="text-xl font-bold text-custom-black mb-4 font-titles">Detalles del Proyecto</h3>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Cliente</h4>
+                                    <p id="project-client" class="text-custom-black"></p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Fecha</h4>
+                                    <p id="project-date" class="text-custom-black"></p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Rol</h4>
+                                    <p id="project-role" class="text-custom-black"></p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Stack Tecnológico</h4>
+                                    <p id="project-stack" class="text-custom-black"></p>
+                                </div>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="mt-6">
+                                <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-3">Tecnologías</h4>
+                                <div id="project-tags" class="flex flex-wrap gap-2">
+                                    <!-- Tags dinámicos -->
+                                </div>
+                            </div>
+
+                            <!-- Links -->
+                            <div id="project-links" class="mt-6 space-y-3">
+                                <!-- Links dinámicos -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-white">
+            <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-custom-black mb-6 font-titles">¿Interesado en trabajar juntos?</h2>
+                <p class="text-xl text-custom-dark-gray mb-8 max-w-2xl mx-auto">
+                    Estoy disponible para proyectos de diseño UX y desarrollo front-end. Conversemos sobre tu próxima idea.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://calendar.app.google/NjSZEbvWrLfj56wy6" target="_blank" class="inline-block bg-custom-purple text-white py-3 px-8 font-bold rounded-[7px] transition-all hover:bg-custom-purple-dark">
+                        Agenda una videollamada
+                    </a>
+                    <a href="projects.html" class="inline-block bg-white text-custom-purple border-2 border-custom-purple py-3 px-8 font-bold rounded-[7px] transition-all hover:bg-custom-purple hover:text-white">
+                        Ver más proyectos
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-20 pb-8 bg-gradient-to-br from-custom-purple to-custom-purple-dark text-white relative overflow-hidden">
+        <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col gap-8 text-center justify-center items-center">
+            <div class="text-center scroll-btn relative">
+                <a href="#header" class="py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block" aria-label="Ir a la sección principal" title="Vuelve al inicio">
+                    <span class="mr-2 text-[1.2em] align-middle" aria-hidden="true">↑</span>
+                    Volver a arriba
+                </a>
+            </div>
+            <div>
+                <h3 class="text-[1.5em]">Hablemos de tu próximo proyecto</h3>
+                <p class="text-[1.25em] mt-4"><a href="https://calendar.app.google/NjSZEbvWrLfj56wy6" class="bg-custom-purple text-white py-1 px-4 font-bold rounded-[7px] inline-block" target="_blank">Agenda una videollamada</a></p>
+            </div>
+            <ul id="social-links-footer" class="flex flex-col lg:flex-row gap-4 flex-wrap text-base items-center justify-center lg:justify-start">
+                <li>
+                    <a href="mailto:hola@frani.be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+                        <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                            <use href="assets/images/icons.svg#mail"></use>
+                        </svg> Mail
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/frani-be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+                        <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                            <use href="assets/images/icons.svg#linkedin"></use>
+                        </svg> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/frani-be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+                        <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                            <use href="assets/images/icons.svg#github"></use>
+                        </svg> GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/frani.be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+                        <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                            <use href="assets/images/icons.svg#instagram"></use>
+                        </svg> Instagram
+                    </a>
+                </li>
+            </ul>
+            <p class="text-[0.75em] opacity-90 text-center mt-12">© <span id="current-year">2025</span> frani.be • Desarrollando y diseñado con propósito <span aria-hidden="true">✨</span></p>
+        </div>
+    </footer>
+
+    <script src="assets/scripts/projects.js"></script>
+    <script src="assets/scripts/curren-year.js"></script>
+</body>
+
+</html>
