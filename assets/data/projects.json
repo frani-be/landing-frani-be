@@ -1,0 +1,61 @@
+{
+  "projects": [
+    {
+      "id": "sistema-design-bank",
+      "title": "Sistema de Diseño Bancario",
+      "category": "Proyecto Laboral",
+      "description": "Creación de un sistema de diseño completo para plataforma bancaria digital, incluyendo componentes reutilizables y guías de implementación.",
+      "fullDescription": "Lideré el desarrollo de un sistema de diseño integral para una plataforma bancaria digital, enfocado en escalabilidad y coherencia visual.\n\n## Desafío\nEl banco necesitaba unificar la experiencia de usuario en múltiples productos digitales, reduciendo tiempos de desarrollo y garantizando accesibilidad.\n\n## Solución\n- Diseñé una librería de componentes en React con TypeScript\n- Implementé tokens de diseño con Tailwind CSS\n- Creé documentación interactiva con Storybook\n- Establecí guías de accesibilidad WCAG 2.1 AA\n\n## Impacto\n- Reducción del 40% en tiempo de desarrollo de nuevas features\n- Mejora del 35% en métricas de usabilidad\n- Adopción del sistema en 8 equipos de producto",
+      "tags": ["React", "TypeScript", "Tailwind CSS", "Storybook", "Design Systems", "UX Research"],
+      "image": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&h=450&fit=crop",
+      "links": {
+        "demo": "",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": true,
+      "client": "Banco Internacional",
+      "date": "2024",
+      "role": "Líder UX + Front-End",
+      "stack": "React, TypeScript, Tailwind CSS, Figma"
+    },
+    {
+      "id": "plataforma-ecommerce-analytics",
+      "title": "Plataforma de Analytics para E-commerce",
+      "category": "Proyecto Laboral",
+      "description": "Dashboard interactivo para análisis de conversión y optimización de experiencia en e-commerce regional.",
+      "fullDescription": "Desarrollé una plataforma de analytics avanzada para optimizar la conversión en e-commerce, integrando datos de múltiples países.\n\n## Contexto\nCencosud necesitaba una herramienta centralizada para monitorear el funnel de conversión en Argentina, Brasil, Colombia y Perú.\n\n## Desarrollo\n- Diseñé dashboards interactivos con Google Data Studio (Looker Studio)\n- Implementé tracking avanzado con Google Analytics 4\n- Creé sistema de alertas automáticas para anomalías\n- Desarrollé reportes personalizados por país y categoría\n\n## Resultados\n- Incremento del 25% en tasa de conversión regional\n- Identificación de 15+ puntos de fricción críticos\n- Ahorro de 20 horas semanales en reportería manual",
+      "tags": ["Data Analytics", "Google Analytics", "Looker Studio", "CRO", "A/B Testing", "UX"],
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
+      "links": {
+        "demo": "",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": true,
+      "client": "Cencosud S.A.",
+      "date": "2023",
+      "role": "Analista CRO",
+      "stack": "Google Analytics 4, Looker Studio, VWO, SQL"
+    },
+    {
+      "id": "app-educativa-steam",
+      "title": "App Educativa STEAM para Niñas",
+      "category": "Voluntariado",
+      "description": "Aplicación móvil educativa para fomentar el interés de niñas y jóvenes en ciencia, tecnología, ingeniería, arte y matemáticas.",
+      "fullDescription": "Diseñé y desarrollé una aplicación educativa como parte de mi trabajo con Technovation Girls Chile, enfocada en empoderar a niñas en STEAM.\n\n## Misión\nCrear una herramienta accesible que inspire a niñas de 10-18 años a explorar carreras tecnológicas mediante proyectos prácticos.\n\n## Características\n- Tutoriales interactivos de programación en bloques\n- Desafíos gamificados por niveles\n- Comunidad para compartir proyectos\n- Recursos en español adaptados al contexto latinoamericano\n\n## Impacto Social\n- 500+ usuarias activas en el primer año\n- 12 colegios adoptaron la app en sus programas\n- 85% de las usuarias reportaron mayor interés en tecnología\n- Reconocimiento en Technovation World Summit 2022",
+      "tags": ["React Native", "Figma", "UX Research", "Educación", "Impacto Social", "STEAM"],
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=450&fit=crop",
+      "links": {
+        "demo": "",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": true,
+      "client": "Technovation Girls Chile",
+      "date": "2022",
+      "role": "UX Designer & Developer",
+      "stack": "React Native, Firebase, Figma, Expo"
+    }
+  ]
+}
