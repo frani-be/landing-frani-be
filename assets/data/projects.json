@@ -23,6 +23,30 @@
       "date": "2024",
       "role": "Frontend Engineer",
       "stack": "React, Vite, Cypress"
+    },
+    {
+      "id": "logofolio-collection",
+      "title": "Logofolio & Brand Identity",
+      "category": "Visual Design",
+      "description": "Selección de identidades visuales y logotipos creados para startups y marcas personales. Síntesis gráfica y comunicación visual.",
+      "fullDescription": "## Identidad Visual\nEl diseño de una marca requiere capacidad de síntesis y entendimiento profundo de los valores del cliente. A continuación presento una colección de logotipos desarrollados para diversos sectores.\n\n### Colección 2023-2024\n\n![Logotipo Cliente A](assets/images/projects/logos/logo1.png)\n*Descripción breve del concepto A.*\n\n---\n\n![Logotipo Cliente B](assets/images/projects/logos/logo2.png)\n*Descripción breve del concepto B.*\n\n---\n\n![Logotipo Cliente C](assets/images/projects/logos/logo3.png)\n*Descripción breve del concepto C.*\n\n### Herramientas\nTodo el trabajo vectorial ha sido realizado en **Adobe Illustrator**, priorizando la legibilidad en tamaños reducidos y la versatilidad de aplicaciones (monocromo, negativo, etc.).",
+      "tags": [
+        "Adobe Illustrator",
+        "Branding",
+        "Vector Art",
+        "Graphic Design"
+      ],
+      "image": "assets/images/projects/logofolio-cover.png",
+      "links": {
+        "demo": "",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": false,
+      "client": "Varios Clientes",
+      "date": "2020 - Presente",
+      "role": "Visual Designer",
+      "stack": "Illustrator, Photoshop"
     }
   ]
 }
