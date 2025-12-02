@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -56,11 +56,27 @@
                         'titles': ['"Work Sans"', 'sans-serif'],
                         'primary': ['"DM Sans"', 'sans-serif'],
                     },
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                color: '#565656',
+                                h1: { color: '#2f2f2f', fontFamily: '"Work Sans", sans-serif' },
+                                h2: { color: '#2f2f2f', fontFamily: '"Work Sans", sans-serif' },
+                                h3: { color: '#2f2f2f', fontFamily: '"Work Sans", sans-serif' },
+                                strong: { color: '#2f2f2f' },
+                                a: { color: '#b55aff', '&:hover': { color: '#8b2db3' } },
+                                img: { borderRadius: '0.75rem', marginLeft: 'auto', marginRight: 'auto' },
+                            },
+                        },
+                    },
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="assets/styles/custom.css">
+    
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
@@ -131,7 +147,7 @@
                     <!-- Main Content -->
                     <div class="lg:col-span-2">
                         <div class="bg-white rounded-xl p-8 shadow-sm">
-                            <div id="project-full-description" class="prose prose-lg max-w-none">
+                            <div id="project-full-description" class="prose prose-lg prose-purple max-w-none text-gray-700 mx-auto prose-headings:font-titles prose-img:rounded-xl prose-img:shadow-md prose-a:text-custom-purple prose-a:no-underline hover:prose-a:underline">
                                 <!-- Contenido dinámico -->
                             </div>
                         </div>

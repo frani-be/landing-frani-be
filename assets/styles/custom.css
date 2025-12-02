@@ -493,3 +493,63 @@ footer::before {
     }
 }
 
+/* Markdown content styles (for marked.js rendered content) */
+#project-full-description img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#project-full-description hr {
+    border-color: #e5e7eb;
+    margin: 2rem 0;
+}
+
+#project-full-description em {
+    color: #6b7280;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+}
+
+#project-full-description h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#project-full-description h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#project-full-description p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+}
+
+#project-full-description ul,
+#project-full-description ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+#project-full-description li {
+    margin-bottom: 0.5rem;
+}
+
+/* Asegurar que las imágenes en Markdown se vean bien en móvil */
+@media (max-width: 768px) {
+    #project-full-description img {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+

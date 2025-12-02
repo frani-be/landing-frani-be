@@ -216,9 +216,22 @@ class ProjectsPortfolio {
         document.getElementById('project-image').src = project.image;
         document.getElementById('project-image').alt = project.title;
 
-        // Parse and render full description (Markdown-like)
-        const fullDescriptionHTML = this.parseMarkdown(project.fullDescription);
-        document.getElementById('project-full-description').innerHTML = fullDescriptionHTML;
+        // Parse and render full description with marked.js
+        if (typeof marked !== 'undefined') {
+            // Configurar marked para mejor renderizado
+            marked.setOptions({
+                breaks: true,
+                gfm: true,
+                headerIds: true,
+                mangle: false
+            });
+            const fullDescriptionHTML = marked.parse(project.fullDescription);
+            document.getElementById('project-full-description').innerHTML = fullDescriptionHTML;
+        } else {
+            // Fallback al parser básico si marked.js no está disponible
+            const fullDescriptionHTML = this.parseMarkdown(project.fullDescription);
+            document.getElementById('project-full-description').innerHTML = fullDescriptionHTML;
+        }
 
         // Sidebar metadata
         document.getElementById('project-client').textContent = project.client || 'N/A';
