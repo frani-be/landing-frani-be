@@ -122,6 +122,29 @@
       "date": "2021 - Presente",
       "role": "Full Stack Developer",
       "stack": "WordPress, ACF, Bootstrap"
+    },
+    {
+      "id": "bitluxe",
+      "title": "Bitluxe",
+      "category": "Full Stack Development",
+      "description": "Dashboard de seguimiento de criptomonedas con arquitectura desacoplada. Frontend reactivo en Vite y Backend API REST en Django.",
+      "fullDescription": "## El Reto Técnico\nDesarrollar una aplicación Full Stack robusta como examen final para el Diplomado en Desarrollo Web (PUC Ingeniería). El requisito era consumir datos externos, procesarlos en un backend propio y servirlos a una interfaz moderna.\n\n## Arquitectura de Solución\nImplementé una arquitectura **Headless/Decoupled** para separar la lógica de negocio de la capa de presentación.\n\n### Backend (Django & Python)\n- Creación de una API RESTful que actúa como middleware, gestionando la lógica de negocio y la seguridad de las peticiones.\n- Modelado de datos para usuarios y favoritos.\n\n### Frontend (Vite)\n- Desarrollo de una aplicación optimizada con Vite para tiempos de carga instantáneos.\n- Consumo de APIs financieras en tiempo real con manejo asíncrono de estados.\n- Implementación de gráficos interactivos para visualizar la volatilidad del mercado.\n\n### Resultado\nUna aplicación escalable que demuestra el ciclo completo de desarrollo de software, desde el diseño de la base de datos hasta la interfaz de usuario.",
+      "tags": [
+        "React/Vite",
+        "Django",
+        "Python",
+        "REST API",
+        "Full Stack"
+      ],
+      "image": "assets/images/projects/bitluxe-cover.png",
+      "links": {
+        "repo": ""
+      },
+      "featured": true,
+      "client": "Examen final para Diplomado en Desarrollo Web (PUC Ingeniería)",
+      "date": "2023",
+      "role": "Full Stack Developer",
+      "stack": "Vite, Django, Python"
     }
   ]
 }
