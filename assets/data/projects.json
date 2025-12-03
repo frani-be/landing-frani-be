@@ -47,6 +47,31 @@
       "date": "2015 - 2025",
       "role": "Visual Designer",
       "stack": "Adobe Illustrator"
+    },
+    {
+      "id": "agencia-de-borde",
+      "title": "Agencia de Borde",
+      "category": "Proyecto a Cliente",
+      "description": "Desarrollo de tema WordPress 100% a medida sin dependencias. Arquitectura modular con Gutenberg nativo y sistema de filtrado avanzado.",
+      "fullDescription": "## El Reto\nLa agencia requería una identidad digital única que no se viera limitada por las restricciones de plantillas comerciales o page builders pesados (como Elementor). El objetivo era lograr un rendimiento óptimo (Core Web Vitals) manteniendo una gestión de contenido flexible para el cliente.\n\n## La Solución\nDesarrollé una arquitectura **WordPress Full Custom**, traduciendo el diseño de Figma a código con precisión pixel-perfect.\n\n### Arquitectura Técnica\n- **Theme from Scratch:** Desarrollo desde cero (sin frameworks pesados) para garantizar velocidad y limpieza de código.\n- **Bloques Nativos (Gutenberg):** En lugar de usar plugins de construcción, desarrollé bloques personalizados nativos, permitiendo al cliente editar layouts complejos sin romper el diseño.\n- **Lógica de Filtrado:** Implementación de un sistema de filtrado de proyectos por categorías (Taxonomías) con carga asíncrona para una UX fluida.\n- **Internacionalización (i18n):** Arquitectura preparada para soporte multi-idioma (Español/Inglés) sin duplicidad innecesaria de estructuras.\n\n### Stack Tecnológico\nSe priorizó el uso de **PHP moderno** y **JavaScript vainilla** para reducir la deuda técnica y facilitar el mantenimiento a largo plazo.",
+      "tags": [
+        "WordPress Development",
+        "PHP",
+        "Gutenberg Blocks",
+        "Figma to Code",
+        "JavaScript"
+      ],
+      "image": "assets/images/projects/borde-cover.png",
+      "links": {
+        "demo": "https://agenciadeborde.com/en/",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": true,
+      "client": "Agencia de Borde",
+      "date": "2022",
+      "role": "Full Stack Developer",
+      "stack": "WordPress, PHP, Gutenberg"
     }
   ]
 }
