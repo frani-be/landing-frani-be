@@ -145,6 +145,29 @@
       "date": "2023",
       "role": "Full Stack Developer",
       "stack": "Vite, Django, Python"
+    },
+    {
+      "id": "tanta-plata",
+      "title": "Tanta Plata: Gestión Financiera",
+      "category": "UX Research & Strategy",
+      "description": "Investigación, ideación y prototipado de una App Fintech agnóstica para la gestión unificada de gastos y deudas.",
+      "fullDescription": "## 1. El Problema y el Contexto\nLa ansiedad financiera es un problema sistémico en Chile. Nuestra investigación inicial reveló datos alarmantes sobre el endeudamiento y la falta de educación financiera, exacerbados por la inflación y el fácil acceso al crédito.\n\n![Contexto del endeudamiento en Chile](assets/images/projects/tantaplata/contexto-investigacion.png)\n\n## 2. Empatizando con el Usuario\nPara centrar el diseño, creamos arquetipos basados en entrevistas en profundidad, representando a los usuarios que luchan con la gestión de múltiples deudas y la incertidumbre del \"fin de mes\".\n\n![Arquetipos de usuario de Tanta Plata](assets/images/projects/tantaplata/personas.png)\n\n## 3. User Journey Mapping\nMapeamos la experiencia actual del usuario al intentar proyectar sus gastos, identificando los puntos de dolor (pain points) y las oportunidades clave para automatizar el ingreso de datos y reducir la carga cognitiva.\n\n![User Journey Map de Alejandro Ibáñez](assets/images/projects/tantaplata/user-journey.png)\n\n## 4. Estrategia y Competencia\nAnalizamos la competencia (Tenpo, Mobills, Monefy) y definimos una propuesta de valor única centrada en una visualización intuitiva, un lenguaje cercano y un modelo de negocio freemium viable.\n\n![Análisis competitivo y modelo de negocio](assets/images/projects/tantaplata/estrategia-negocio.png)\n\n## 5. Prototipado y Solución\nEl resultado fue un prototipo de baja fidelidad en Figma enfocado en la claridad visual y la accesibilidad, diseñado para reducir la ansiedad mediante una interfaz amigable que centraliza la salud financiera del usuario.\n\n![Prototipo Tanta Plata](assets/images/projects/tantaplata/prototipo.png)",
+      "tags": [
+        "UX Research",
+        "User Journey Map",
+        "Figma",
+        "User Flows",
+        "Business Strategy"
+      ],
+      "image": "assets/images/projects/tantaplata-cover.png",
+      "links": {
+        "caseStudy": "#"
+      },
+      "featured": true,
+      "client": "Proyecto troncal para Diplomado en Diseño y Medición de Experiencia de Usuario (PUC)",
+      "date": "2022",
+      "role": "UX Researcher & Product Designer",
+      "stack": "Figma, Miro, Trello"
     }
   ]
 }
