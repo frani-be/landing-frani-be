@@ -166,7 +166,7 @@
                 class="text-custom-purple py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
                 aria-label="Ir a la sección de trayectoria profesional" title="Conoce mi trayectoria profesional">
                 <span class="mr-2 text-[1.2em] align-middle" aria-hidden="true">↓</span>
-                Mi trayectoria
+                Ver mi trayectoria
             </a>
         </div>
     </header>
@@ -175,54 +175,13 @@
     <section class="bg-custom-light-grey py-40 border-t border-custom-dark-gray/25" id="timeline">
         <div
             class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
-            <div class="text-center mb-20">
-                <div class="text-wrapper relative text-center text-[2.75rem]">
-                    <h3 class="text-back absolute left-1/2 -top-[0.25em] -translate-x-1/2 text-[#e3e3e3] whitespace-nowrap pointer-events-none text-[2em] z-0"
-                        aria-hidden="true" role="presentation">Mi trayectoria</h3>
-                    <h3 class="text-front mx-auto text-custom-black z-[2] leading-none relative">Mi trayectoria</h3>
-                </div>
-                <div class="flex flex-wrap justify-center gap-8 mt-16 mb-20">
-                    <div class="text-center mb-12 flex-1 min-w-[280px]">
-                        <div class="text-[2em] mb-4" aria-hidden="true">💻</div>
-                        <h4 class="text-[1.25em] font-bold mb-4">Estrategia & Código</h4>
-                        <p class="text-custom-dark-gray">Líder UX + Front-End. Traduzco necesidades corporativas
-                            complejas en interfaces escalables.</p>
-                    </div>
-
-                    <div class="text-center mb-12 flex-1 min-w-[280px]">
-                        <div class="text-[2em] mb-4" aria-hidden="true">🎓</div>
-                        <h4 class="text-[1.25em] font-bold mb-4">Formación Sólida</h4>
-                        <p class="text-custom-dark-gray">Diplomada en Ing. de Software y Diseño. Docente en
-                            universidades y bootcamps.</p>
-                    </div>
-
-                    <div class="text-center mb-12 flex-1 min-w-[280px]">
-                        <div class="text-[2em] mb-4" aria-hidden="true">🌟</div>
-                        <h4 class="text-[1.25em] font-bold mb-4">Comunidad & Speaker</h4>
-                        <p class="text-custom-dark-gray">Speaker internacional y activista STEAM. Promoviendo inclusión
-                            real en tech.</p>
-                    </div>
-                </div>
+            <!-- Title with Ghost Effect -->
+            <div class="text-wrapper relative text-center text-[2.75rem] mb-20">
+                <h3 class="text-back absolute left-1/2 -top-[0.25em] -translate-x-1/2 text-[#e3e3e3] whitespace-nowrap pointer-events-none text-[2em] z-0"
+                    aria-hidden="true" role="presentation">Mi trayectoria</h3>
+                <h3 class="text-front mx-auto text-custom-black z-[2] leading-none relative">Mi trayectoria</h3>
             </div>
 
-            <!-- Filtros -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12 text-center">
-                <button
-                    class="active filter-btn text-sm transition-all font-primary font-medium text-custom-purple border-custom-purple border border-solid bg-white py-1 px-4 rounded-[7px] cursor-pointer uppercase"
-                    data-filter="all">Todas</button>
-                <button
-                    class="filter-btn text-sm transition-all font-primary font-medium text-laboral border-laboral border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer"
-                    data-filter="laboral">Experiencia laboral</button>
-                <button
-                    class="filter-btn text-sm transition-all font-primary font-medium text-academica border-academica border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer"
-                    data-filter="academica">Formación académica</button>
-                <button
-                    class="filter-btn text-sm transition-all font-primary font-medium text-voluntariados border-voluntariados border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer"
-                    data-filter="voluntariados">Voluntariados</button>
-                <button
-                    class="filter-btn text-sm transition-all font-primary font-medium text-docencia border-docencia border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer"
-                    data-filter="docencia">Experiencia en docencia</button>
-            </div>
 
             <!-- Botones de control global -->
             <div class="flex justify-center gap-2 mb-16 text-center" id="global-controls">
@@ -245,7 +204,20 @@
                     Colapsar todo
                 </button>
             </div>
-            <div class="relative max-w-[800px] mx-auto" id="timeline-container">
+            <!-- Timeline Container with Fade Effect -->
+            <div class="relative max-w-[800px] mx-auto">
+                <div id="timeline-container" class="relative"></div>
+                
+                <!-- Gradient Overlay for Fade Effect -->
+                <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-custom-light-grey via-custom-light-grey/80 to-transparent pointer-events-none z-10"></div>
+                
+                <!-- CTA Button (positioned over gradient) -->
+                <div class="relative text-center -mt-12 z-20">
+                    <a href="trayectoria.html"
+                        class="inline-block bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] transition-all">
+                        Ver trayectoria completa
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -269,7 +241,7 @@
             <!-- Botón Ver Todos -->
             <div class="text-center mt-12">
                 <a href="projects.html"
-                    class="inline-block bg-custom-purple text-white py-1 px-8 font-bold rounded-[7px] transition-all">
+                    class="inline-block bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] transition-all">
                     Ver todos los proyectos
                 </a>
             </div>

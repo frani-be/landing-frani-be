@@ -4,7 +4,14 @@ class Timeline {
         this.timelineData = [];
         this.filteredData = [];
         this.currentFilter = 'all';
+        this.isHomePage = this.detectHomePage();
+        this.itemLimit = this.isHomePage ? 4 : null;
         this.init();
+    }
+
+    detectHomePage() {
+        const path = window.location.pathname;
+        return path === '/' || path.endsWith('index.html') || path === '';
     }
 
     // Configuración de categorías centralizada
@@ -93,10 +100,13 @@ class Timeline {
     }
 
     setupFilterButtons() {
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', this.handleFilterClick.bind(this));
-        });
+        // Only setup filter buttons if not on home page
+        if (!this.isHomePage) {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', this.handleFilterClick.bind(this));
+            });
+        }
     }
 
     setupGlobalControlButtons() {
@@ -113,9 +123,17 @@ class Timeline {
     }
 
     handleFilterClick(e) {
-        const filter = e.target.dataset.filter;
-        this.filterTimeline(filter);
-        this.updateActiveFilter(e.target);
+        const button = e.target;
+        const filter = button.dataset.filter;
+        
+        // Toggle logic: if already active, deactivate it
+        if (button.classList.contains('active')) {
+            this.filterTimeline('all');
+            this.clearActiveFilters();
+        } else {
+            this.filterTimeline(filter);
+            this.updateActiveFilter(button);
+        }
     }
 
     filterTimeline(filter) {
@@ -130,31 +148,28 @@ class Timeline {
 
     updateActiveFilter(activeButton) {
         // Resetear todos los botones
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            this.resetButtonStyles(btn);
-        });
+        this.clearActiveFilters();
         
         // Activar el botón seleccionado
         this.activateButton(activeButton);
+    }
+
+    clearActiveFilters() {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            this.resetButtonStyles(btn);
+        });
     }
 
     resetButtonStyles(button) {
         button.classList.remove('active');
         const filter = button.getAttribute('data-filter');
         
-        if (filter === 'all') {
+        const category = Timeline.CATEGORIES[filter];
+        if (category) {
             this.applyButtonStyles(button, {
-                remove: ['bg-custom-purple', 'text-white'],
-                add: ['bg-white', 'text-custom-purple', 'border-custom-purple']
+                remove: [category.cssClasses.bg, 'text-white'],
+                add: ['bg-white', category.cssClasses.text, category.cssClasses.border]
             });
-        } else {
-            const category = Timeline.CATEGORIES[filter];
-            if (category) {
-                this.applyButtonStyles(button, {
-                    remove: [category.cssClasses.bg, 'text-white'],
-                    add: ['bg-white', category.cssClasses.text, category.cssClasses.border]
-                });
-            }
         }
     }
 
@@ -162,19 +177,12 @@ class Timeline {
         button.classList.add('active');
         const filter = button.getAttribute('data-filter');
         
-        if (filter === 'all') {
+        const category = Timeline.CATEGORIES[filter];
+        if (category) {
             this.applyButtonStyles(button, {
-                remove: ['bg-white', 'text-custom-purple'],
-                add: ['bg-custom-purple', 'text-white', 'border-custom-purple']
+                remove: ['bg-white', category.cssClasses.text],
+                add: [category.cssClasses.bg, 'text-white', category.cssClasses.border]
             });
-        } else {
-            const category = Timeline.CATEGORIES[filter];
-            if (category) {
-                this.applyButtonStyles(button, {
-                    remove: ['bg-white', category.cssClasses.text],
-                    add: [category.cssClasses.bg, 'text-white', category.cssClasses.border]
-                });
-            }
         }
     }
 
@@ -283,7 +291,9 @@ class Timeline {
             return;
         }
 
-        const timelineHTML = this.filteredData.map(item => this.createTimelineItem(item)).join('');
+        // Apply item limit if on home page
+        const dataToRender = this.itemLimit ? this.filteredData.slice(0, this.itemLimit) : this.filteredData;
+        const timelineHTML = dataToRender.map(item => this.createTimelineItem(item)).join('');
         container.innerHTML = `<div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5 md:left-8"></div>${timelineHTML}`;
         
         this.setupToggleListeners();
