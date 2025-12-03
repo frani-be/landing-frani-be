@@ -18,7 +18,7 @@
         "demo": "https://frani-be.github.io/neuralclocks-pomodoro/",
         "repo": "https://github.com/frani-be/neuralclocks-pomodoro/"
       },
-      "featured": true,
+      "featured": false,
       "client": "Proyecto Personal",
       "date": "2024",
       "role": "Frontend Engineer",
@@ -92,7 +92,7 @@
         "repo": "",
         "caseStudy": ""
       },
-      "featured": true,
+      "featured": false,
       "client": "Claudia Ortega",
       "date": "2021",
       "role": "UI/UX Designer & Developer",
