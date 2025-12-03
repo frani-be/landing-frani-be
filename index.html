@@ -334,6 +334,18 @@
         </div>
     </footer>
 
+    <!-- Modal para links de proyectos -->
+    <div id="links-modal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="relative bg-white rounded-2xl p-8 max-w-lg w-[90%] shadow-2xl animate-[modalSlideIn_0.3s_ease-out]">
+            <button class="absolute top-4 right-4 text-4xl text-gray-400 hover:text-gray-600 transition-colors leading-none w-8 h-8 flex items-center justify-center" aria-label="Cerrar">&times;</button>
+            <h3 class="font-titles text-2xl font-bold text-custom-black mb-6 pr-8">Enlaces del proyecto</h3>
+            <div id="links-modal-body" class="flex flex-col gap-3">
+                <!-- Links se insertan dinámicamente -->
+            </div>
+        </div>
+    </div>
+
     <script src="assets/scripts/iterate-message.js"></script>
     <script src="assets/scripts/image-transition.js"></script>
     <script src="assets/scripts/timeline.js"></script>

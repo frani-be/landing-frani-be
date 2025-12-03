@@ -569,6 +569,18 @@ footer::before {
     margin-bottom: 0.75rem;
 }
 
+/* Animación para el modal */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #project-full-description p {
     margin-bottom: 1rem;
     line-height: 1.75;
