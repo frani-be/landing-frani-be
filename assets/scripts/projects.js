@@ -1,0 +1,434 @@
+// Projects Portfolio System
+class ProjectsPortfolio {
+    constructor() {
+        this.projectsData = [];
+        this.currentFilter = 'all';
+        this.init();
+    }
+
+    async init() {
+        try {
+            await this.loadProjectsData();
+            this.detectPageAndRender();
+        } catch (error) {
+            console.error('Error initializing projects:', error);
+        }
+    }
+
+    async loadProjectsData() {
+        try {
+            const response = await fetch('assets/data/projects.json');
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            
+            const data = await response.json();
+            this.projectsData = data.projects || [];
+            
+            // Sort projects by date (newest to oldest)
+            this.sortProjectsByDate();
+        } catch (error) {
+            console.error('Error loading projects data:', error);
+            this.projectsData = [];
+        }
+    }
+
+    sortProjectsByDate() {
+        this.projectsData.sort((a, b) => {
+            const yearA = this.extractYear(a.date);
+            const yearB = this.extractYear(b.date);
+            return yearB - yearA; // Descending order (newest first)
+        });
+    }
+
+    extractYear(dateString) {
+        if (!dateString) return 0;
+        // Extract the most recent year from strings like "2023", "2021 - Present", "2020 - 2022"
+        const matches = dateString.match(/\d{4}/g);
+        if (!matches) return 0;
+        // Return the highest year found
+        return Math.max(...matches.map(y => parseInt(y)));
+    }
+
+    detectPageAndRender() {
+        const currentPage = window.location.pathname.split('/').pop();
+        
+        if (currentPage === 'index.html' || currentPage === '') {
+            this.renderFeaturedProjects();
+        } else if (currentPage === 'projects.html') {
+            this.renderAllProjects();
+        } else if (currentPage === 'project-detail.html') {
+            this.renderProjectDetail();
+        }
+    }
+
+    // ========== FEATURED PROJECTS (Home) ==========
+    renderFeaturedProjects() {
+        const container = document.getElementById('featured-projects-container');
+        if (!container) return;
+
+        const featuredProjects = this.projectsData.filter(project => project.featured === true);
+
+        if (featuredProjects.length === 0) {
+            container.innerHTML = '<p class="text-center text-custom-dark-gray col-span-full">No hay proyectos destacados disponibles.</p>';
+            return;
+        }
+
+        const projectsHTML = featuredProjects.map(project => this.createProjectCard(project)).join('');
+        container.innerHTML = projectsHTML;
+        
+        this.animateCards();
+    }
+
+    // ========== ALL PROJECTS (Listing Page) ==========
+    renderAllProjects() {
+        const container = document.getElementById('all-projects-container');
+        if (!container) return;
+
+        if (this.projectsData.length === 0) {
+            container.innerHTML = '<p class="text-center text-custom-dark-gray col-span-full">No hay proyectos disponibles.</p>';
+            return;
+        }
+
+        const projectsHTML = this.projectsData.map(project => this.createProjectCard(project)).join('');
+        container.innerHTML = projectsHTML;
+        
+        this.animateCards();
+    }
+
+    createProjectCard(project) {
+        const tagsHTML = project.tags.slice(0, 4).map(tag => 
+            `<span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">${tag}</span>`
+        ).join('');
+
+        const hasLinks = project.links.demo || project.links.repo || project.links.caseStudy;
+
+        return `
+            <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group opacity-0 project-card">
+                <div class="aspect-video w-full overflow-hidden">
+                    <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <span class="text-xs font-bold uppercase tracking-wide text-custom-purple mb-2">${project.category}</span>
+                    <h3 class="text-xl font-bold text-custom-black mb-3 font-titles leading-tight">${project.title}</h3>
+                    <p class="text-custom-dark-gray mb-4 flex-1">${project.description}</p>
+                    
+                    <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">
+                        ${tagsHTML}
+                    </div>
+                    
+                    <div class="mt-6 flex gap-3">
+                        <a href="project-detail.html?id=${project.id}" class="flex-1 text-center bg-custom-purple border border-custom-purple text-white py-1 px-6 rounded-[7px] font-bold text-sm transition-all">
+                            Ver proyecto
+                        </a>
+                        ${hasLinks ? `
+                            <button onclick="window.projectsPortfolio.showProjectLinks('${project.id}')" class="bg-white text-custom-purple border border-custom-purple py-1 px-6 rounded-[7px] font-bold text-sm transition-all">
+                                Links
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    showProjectLinks(projectId) {
+        const project = this.projectsData.find(p => p.id === projectId);
+        if (!project) return;
+
+        const links = [];
+        if (project.links.demo) {
+            links.push(`<a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" 
+                class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black no-underline font-semibold transition-all hover:translate-x-1">
+                🔗 Preview
+            </a>`);
+        }
+        if (project.links.repo) {
+            links.push(`<a href="${project.links.repo}" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black no-underline font-semibold transition-all hover:translate-x-1">
+                💻 Repositorio
+            </a>`);
+        }
+        if (project.links.caseStudy) {
+            links.push(`<a href="${project.links.caseStudy}" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black no-underline font-semibold transition-all hover:translate-x-1">
+                📄 Caso de estudio
+            </a>`);
+        }
+
+        if (links.length > 0) {
+            this.openLinksModal(links);
+        }
+    }
+
+    openLinksModal(links) {
+        const modal = document.getElementById('links-modal');
+        const modalBody = document.getElementById('links-modal-body');
+        const closeBtn = modal.querySelector('button[aria-label="Cerrar"]');
+        const overlay = modal.querySelector('.absolute.inset-0');
+
+        // Insertar links
+        modalBody.innerHTML = links.join('');
+
+        // Mostrar modal
+        modal.classList.remove('hidden');
+
+        // Cerrar al hacer click en X o en el overlay
+        const closeModal = () => {
+            modal.classList.add('hidden');
+        };
+
+        closeBtn.onclick = closeModal;
+        overlay.onclick = closeModal;
+
+        // Cerrar con tecla ESC
+        const handleEsc = (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                document.removeEventListener('keydown', handleEsc);
+            }
+        };
+        document.addEventListener('keydown', handleEsc);
+    }
+
+    animateCards() {
+        setTimeout(() => {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }, 50);
+    }
+
+
+    // ========== PROJECT DETAIL PAGE ==========
+    renderProjectDetail() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        if (!projectId) {
+            this.showError();
+            return;
+        }
+
+        const project = this.projectsData.find(p => p.id === projectId);
+
+        if (!project) {
+            this.showError();
+            return;
+        }
+
+        this.populateProjectDetail(project);
+    }
+
+    populateProjectDetail(project) {
+        // Hide loading, show content
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('project-content').classList.remove('hidden');
+
+        // Update page title and meta tags
+        document.getElementById('page-title').textContent = `${project.title} | Francisca Beatriz Medina Concha`;
+        document.getElementById('page-description').setAttribute('content', project.description);
+        document.getElementById('og-title').setAttribute('content', `${project.title} | Francisca Beatriz Medina Concha`);
+        document.getElementById('og-description').setAttribute('content', project.description);
+        document.getElementById('og-image').setAttribute('content', project.image);
+        document.getElementById('twitter-title').setAttribute('content', `${project.title} | Francisca Beatriz Medina Concha`);
+        document.getElementById('twitter-description').setAttribute('content', project.description);
+        document.getElementById('twitter-image').setAttribute('content', project.image);
+
+        // Populate content
+        document.getElementById('project-category').textContent = project.category;
+        document.getElementById('project-title').textContent = project.title;
+        document.getElementById('breadcrumb-title').textContent = project.title;
+        document.getElementById('project-description').textContent = project.description;
+        document.getElementById('project-image').src = project.image;
+        document.getElementById('project-image').alt = project.title;
+        
+        // Setup prev/next navigation
+        this.setupProjectNavigation(project.id);
+
+        // Parse and render full description with marked.js
+        if (typeof marked !== 'undefined') {
+            // Configurar marked para mejor renderizado
+            marked.setOptions({
+                breaks: true,
+                gfm: true,
+                headerIds: true,
+                mangle: false
+            });
+            
+            // Pre-procesar bloques ::: showcase
+            const processedMarkdown = this.processShowcaseBlocks(project.fullDescription);
+            const fullDescriptionHTML = marked.parse(processedMarkdown);
+            
+            document.getElementById('project-full-description').innerHTML = fullDescriptionHTML;
+        } else {
+            // Fallback al parser básico si marked.js no está disponible
+            const fullDescriptionHTML = this.parseMarkdown(project.fullDescription);
+            document.getElementById('project-full-description').innerHTML = fullDescriptionHTML;
+        }
+
+        // Sidebar metadata
+        document.getElementById('project-client').textContent = project.client || 'N/A';
+        document.getElementById('project-date').textContent = project.date || 'N/A';
+        document.getElementById('project-role').textContent = project.role || 'N/A';
+        document.getElementById('project-stack').textContent = project.stack || 'N/A';
+
+        // Tags
+        const tagsHTML = project.tags.map(tag => 
+            `<span class="px-3 py-1 bg-custom-light-purple text-custom-purple text-sm rounded-full font-medium">${tag}</span>`
+        ).join('');
+        document.getElementById('project-tags').innerHTML = tagsHTML;
+
+        // Links
+        const linksContainer = document.getElementById('project-links');
+        let linksHTML = '';
+
+        if (project.links.demo) {
+            linksHTML += `
+                <a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" 
+                   class="block w-full text-center bg-custom-purple text-white py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                    🔗 Preview
+                </a>
+            `;
+        }
+
+        if (project.links.repo) {
+            linksHTML += `
+                <a href="${project.links.repo}" target="_blank" rel="noopener noreferrer" 
+                   class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                    💻 Repositorio
+                </a>
+            `;
+        }
+
+        if (project.links.caseStudy) {
+            linksHTML += `
+                <a href="${project.links.caseStudy}" target="_blank" rel="noopener noreferrer" 
+                   class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                    📄 Caso de estudio
+                </a>
+            `;
+        }
+
+        linksContainer.innerHTML = linksHTML;
+    }
+
+    parseMarkdown(text) {
+        if (!text) return '';
+
+        let html = text;
+
+        // Headers
+        html = html.replace(/^### (.*$)/gim, '<h3 class="text-xl font-bold text-custom-black mt-6 mb-3 font-titles">$1</h3>');
+        html = html.replace(/^## (.*$)/gim, '<h2 class="text-2xl font-bold text-custom-black mt-8 mb-4 font-titles">$1</h2>');
+        html = html.replace(/^# (.*$)/gim, '<h1 class="text-3xl font-bold text-custom-black mt-8 mb-4 font-titles">$1</h1>');
+
+        // Bold
+        html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-custom-black">$1</strong>');
+        html = html.replace(/__(.*?)__/g, '<strong class="font-bold text-custom-black">$1</strong>');
+
+        // Lists
+        const lines = html.split('\n');
+        let inList = false;
+        let result = [];
+
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i].trim();
+
+            if (line.startsWith('- ')) {
+                if (!inList) {
+                    result.push('<ul class="list-disc list-inside space-y-2 my-4 text-custom-dark-gray">');
+                    inList = true;
+                }
+                result.push(`<li class="ml-4">${line.substring(2)}</li>`);
+            } else {
+                if (inList) {
+                    result.push('</ul>');
+                    inList = false;
+                }
+                if (line && !line.startsWith('<h')) {
+                    result.push(`<p class="text-custom-dark-gray leading-relaxed mb-4">${line}</p>`);
+                } else if (line.startsWith('<h')) {
+                    result.push(line);
+                }
+            }
+        }
+
+        if (inList) {
+            result.push('</ul>');
+        }
+
+        return result.join('');
+    }
+
+    showError() {
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('error-state').classList.remove('hidden');
+    }
+
+    processShowcaseBlocks(markdown) {
+        // Patrón para detectar bloques ::: showcase ... :::
+        const showcasePattern = /:::\s*showcase\s*\n([\s\S]*?)\n:::/g;
+        
+        return markdown.replace(showcasePattern, (match, content) => {
+            // Extraer imagen: ![alt](url)
+            const imgMatch = content.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+            // Extraer descripción en cursiva: *texto*
+            const descMatch = content.match(/\*([^*]+)\*/);
+            
+            if (imgMatch && descMatch) {
+                const alt = imgMatch[1];
+                const url = imgMatch[2];
+                const description = descMatch[1];
+                
+                // Retornar HTML personalizado que marked.js no procesará
+                return `<div class="logo-showcase">
+    <img src="${url}" alt="${alt}">
+    <div class="logo-description">
+        <em>${description}</em>
+    </div>
+</div>`;
+            }
+            
+            // Si no coincide el patrón, retornar el contenido original
+            return content;
+        });
+    }
+
+    // ========== PROJECT NAVIGATION (Prev/Next) ==========
+    setupProjectNavigation(currentProjectId) {
+        const currentIndex = this.projectsData.findIndex(p => p.id === currentProjectId);
+        
+        if (currentIndex === -1) return;
+
+        // Calculate prev/next indices with circular logic
+        const prevIndex = currentIndex === 0 ? this.projectsData.length - 1 : currentIndex - 1;
+        const nextIndex = currentIndex === this.projectsData.length - 1 ? 0 : currentIndex + 1;
+
+        const prevProject = this.projectsData[prevIndex];
+        const nextProject = this.projectsData[nextIndex];
+
+        // Update prev project link
+        const prevLink = document.getElementById('prev-project-link');
+        const prevTitle = document.getElementById('prev-project-title');
+        if (prevLink && prevTitle && prevProject) {
+            prevLink.href = `project-detail.html?id=${prevProject.id}`;
+            prevTitle.textContent = prevProject.title;
+        }
+
+        // Update next project link
+        const nextLink = document.getElementById('next-project-link');
+        const nextTitle = document.getElementById('next-project-title');
+        if (nextLink && nextTitle && nextProject) {
+            nextLink.href = `project-detail.html?id=${nextProject.id}`;
+            nextTitle.textContent = nextProject.title;
+        }
+    }
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+    window.projectsPortfolio = new ProjectsPortfolio();
+});

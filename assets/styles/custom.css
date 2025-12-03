@@ -452,3 +452,163 @@ footer::before {
     }
 }
 
+/* Projects Portfolio Styles */
+.project-card {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Category filter buttons */
+.category-filter-btn.active {
+    background: #b55aff !important;
+    border-color: #b55aff !important;
+    color: white !important;
+}
+
+/* Project detail prose styles */
+.prose h1, .prose h2, .prose h3 {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.prose p {
+    margin-bottom: 1rem;
+}
+
+.prose ul {
+    margin: 1rem 0;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for project cards */
+@media (max-width: 768px) {
+    .project-card {
+        transform: translateY(10px);
+    }
+}
+
+/* Markdown content styles (for marked.js rendered content) */
+#project-full-description img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#project-full-description hr {
+    border-color: #e5e7eb;
+    margin: 2rem 0;
+}
+
+/* Layout especial para logofolio: imagen izquierda + texto derecha */
+.logo-showcase {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.logo-showcase img {
+    margin: 0;
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 0.5rem;
+}
+
+.logo-showcase .logo-description {
+    margin: 0;
+}
+
+.logo-showcase .logo-description em {
+    font-style: normal;
+    color: #4b5563;
+    text-align: left;
+    display: block;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive: en móvil volver a layout vertical */
+@media (max-width: 768px) {
+    .logo-showcase {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .logo-showcase img {
+        margin: 0 auto;
+    }
+    
+    .logo-showcase .logo-description em {
+        text-align: center;
+    }
+}
+
+#project-full-description h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#project-full-description h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Animación para el modal */
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#project-full-description p {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+}
+
+#project-full-description ul,
+#project-full-description ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+#project-full-description li {
+    margin-bottom: 0.5rem;
+}
+
+/* Asegurar que las imágenes en Markdown se vean bien en móvil */
+@media (max-width: 768px) {
+    #project-full-description img {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Sticky sidebar en project detail */
+@media (min-width: 1024px) {
+    #project-content .project-sidebar-sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 8rem !important;
+        align-self: flex-start !important;
+    }
+}

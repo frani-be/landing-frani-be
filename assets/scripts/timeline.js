@@ -327,7 +327,7 @@ class Timeline {
                 <div class="text-[0.75em] text-custom-dark-gray font-medium font-primary">
                     ${this.formatDate(item.startDate)} - ${this.formatDate(item.endDate)}
                 </div>
-                <button class="timeline-category text-white text-sm transition-all font-primary font-medium border-2 border-solid py-0.5 px-5 rounded-[7px] cursor-pointer"
+                <button class="timeline-category text-white text-sm transition-all font-primary font-medium border border-solid py-0.5 px-5 rounded-[7px] cursor-pointer"
                         data-filter="${item.category}"
                         style="border-color: ${categoryInfo.color};">
                     ${categoryInfo.label}
