@@ -132,28 +132,19 @@ class ProjectsPortfolio {
         if (project.links.demo) {
             links.push(`<a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" 
                 class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black no-underline font-semibold transition-all hover:translate-x-1">
-                <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                Ver Demo
+                🔗 Preview
             </a>`);
         }
         if (project.links.repo) {
             links.push(`<a href="${project.links.repo}" target="_blank" rel="noopener noreferrer"
                 class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black no-underline font-semibold transition-all hover:translate-x-1">
-                <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
-                Ver Repositorio
+                💻 Repositorio
             </a>`);
         }
         if (project.links.caseStudy) {
             links.push(`<a href="${project.links.caseStudy}" target="_blank" rel="noopener noreferrer"
                 class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black no-underline font-semibold transition-all hover:translate-x-1">
-                <svg class="w-5 h-5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Ver Case Study
+                📄 Caso de estudio
             </a>`);
         }
 
@@ -311,7 +302,7 @@ class ProjectsPortfolio {
             linksHTML += `
                 <a href="${project.links.demo}" target="_blank" rel="noopener noreferrer" 
                    class="block w-full text-center bg-custom-purple text-white py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
-                    🔗 Ver Demo
+                    🔗 Preview
                 </a>
             `;
         }
@@ -320,7 +311,7 @@ class ProjectsPortfolio {
             linksHTML += `
                 <a href="${project.links.repo}" target="_blank" rel="noopener noreferrer" 
                    class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
-                    💻 Ver Código
+                    💻 Repositorio
                 </a>
             `;
         }
@@ -329,7 +320,7 @@ class ProjectsPortfolio {
             linksHTML += `
                 <a href="${project.links.caseStudy}" target="_blank" rel="noopener noreferrer" 
                    class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
-                    📄 Case Study
+                    📄 Caso de estudio
                 </a>
             `;
         }
