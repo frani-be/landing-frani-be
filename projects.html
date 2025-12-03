@@ -92,33 +92,22 @@
     <!-- Projects Section -->
     <section class="py-20 bg-custom-light-grey">
         <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
-            <!-- Filtros por categoría -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button class="category-filter-btn active text-sm transition-all font-primary font-medium text-custom-purple border-custom-purple border-2 border-solid bg-white py-2 px-6 rounded-[7px] cursor-pointer hover:bg-custom-purple hover:text-white" data-category="all">
-                    Todos
-                </button>
-                <button class="category-filter-btn text-sm transition-all font-primary font-medium text-custom-purple border-custom-purple border-2 border-solid bg-white py-2 px-6 rounded-[7px] cursor-pointer hover:bg-custom-purple hover:text-white" data-category="Proyecto Laboral">
-                    Proyectos Laborales
-                </button>
-                <button class="category-filter-btn text-sm transition-all font-primary font-medium text-custom-purple border-custom-purple border-2 border-solid bg-white py-2 px-6 rounded-[7px] cursor-pointer hover:bg-custom-purple hover:text-white" data-category="Voluntariado">
-                    Voluntariados
-                </button>
-                <button class="category-filter-btn text-sm transition-all font-primary font-medium text-custom-purple border-custom-purple border-2 border-solid bg-white py-2 px-6 rounded-[7px] cursor-pointer hover:bg-custom-purple hover:text-white" data-category="Proyecto Académico">
-                    Proyectos Académicos
-                </button>
-                <button class="category-filter-btn text-sm transition-all font-primary font-medium text-custom-purple border-custom-purple border-2 border-solid bg-white py-2 px-6 rounded-[7px] cursor-pointer hover:bg-custom-purple hover:text-white" data-category="Personal">
-                    Proyectos Personales
-                </button>
-            </div>
+            <!-- Breadcrumbs -->
+            <nav class="mb-8" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li>
+                        <a href="index.html" class="text-custom-purple hover:underline font-medium">Inicio</a>
+                    </li>
+                    <li class="text-gray-400">/</li>
+                    <li>
+                        <span class="text-gray-500">Proyectos</span>
+                    </li>
+                </ol>
+            </nav>
 
             <!-- Grid de Proyectos -->
             <div id="all-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Los proyectos se cargarán dinámicamente aquí -->
-            </div>
-
-            <!-- Mensaje cuando no hay proyectos -->
-            <div id="no-projects-message" class="hidden text-center py-12">
-                <p class="text-xl text-custom-dark-gray">No hay proyectos en esta categoría.</p>
             </div>
         </div>
     </section>

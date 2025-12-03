@@ -22,10 +22,30 @@ class ProjectsPortfolio {
             
             const data = await response.json();
             this.projectsData = data.projects || [];
+            
+            // Sort projects by date (newest to oldest)
+            this.sortProjectsByDate();
         } catch (error) {
             console.error('Error loading projects data:', error);
             this.projectsData = [];
         }
+    }
+
+    sortProjectsByDate() {
+        this.projectsData.sort((a, b) => {
+            const yearA = this.extractYear(a.date);
+            const yearB = this.extractYear(b.date);
+            return yearB - yearA; // Descending order (newest first)
+        });
+    }
+
+    extractYear(dateString) {
+        if (!dateString) return 0;
+        // Extract the most recent year from strings like "2023", "2021 - Present", "2020 - 2022"
+        const matches = dateString.match(/\d{4}/g);
+        if (!matches) return 0;
+        // Return the highest year found
+        return Math.max(...matches.map(y => parseInt(y)));
     }
 
     detectPageAndRender() {
@@ -35,7 +55,6 @@ class ProjectsPortfolio {
             this.renderFeaturedProjects();
         } else if (currentPage === 'projects.html') {
             this.renderAllProjects();
-            this.setupCategoryFilters();
         } else if (currentPage === 'project-detail.html') {
             this.renderProjectDetail();
         }
@@ -60,29 +79,16 @@ class ProjectsPortfolio {
     }
 
     // ========== ALL PROJECTS (Listing Page) ==========
-    renderAllProjects(category = 'all') {
+    renderAllProjects() {
         const container = document.getElementById('all-projects-container');
-        const noProjectsMessage = document.getElementById('no-projects-message');
-        
         if (!container) return;
 
-        let filteredProjects = category === 'all' 
-            ? [...this.projectsData]
-            : this.projectsData.filter(project => project.category === category);
-
-        if (filteredProjects.length === 0) {
-            container.innerHTML = '';
-            if (noProjectsMessage) {
-                noProjectsMessage.classList.remove('hidden');
-            }
+        if (this.projectsData.length === 0) {
+            container.innerHTML = '<p class="text-center text-custom-dark-gray col-span-full">No hay proyectos disponibles.</p>';
             return;
         }
 
-        if (noProjectsMessage) {
-            noProjectsMessage.classList.add('hidden');
-        }
-
-        const projectsHTML = filteredProjects.map(project => this.createProjectCard(project)).join('');
+        const projectsHTML = this.projectsData.map(project => this.createProjectCard(project)).join('');
         container.innerHTML = projectsHTML;
         
         this.animateCards();
@@ -195,29 +201,6 @@ class ProjectsPortfolio {
         }, 50);
     }
 
-    // ========== CATEGORY FILTERS (Projects Page) ==========
-    setupCategoryFilters() {
-        const filterButtons = document.querySelectorAll('.category-filter-btn');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const category = e.target.dataset.category;
-                this.currentFilter = category;
-                
-                // Update active button
-                filterButtons.forEach(btn => {
-                    btn.classList.remove('bg-custom-purple', 'text-white');
-                    btn.classList.add('bg-white', 'text-custom-purple');
-                });
-                
-                e.target.classList.remove('bg-white', 'text-custom-purple');
-                e.target.classList.add('bg-custom-purple', 'text-white');
-                
-                // Render filtered projects
-                this.renderAllProjects(category);
-            });
-        });
-    }
 
     // ========== PROJECT DETAIL PAGE ==========
     renderProjectDetail() {
@@ -257,9 +240,13 @@ class ProjectsPortfolio {
         // Populate content
         document.getElementById('project-category').textContent = project.category;
         document.getElementById('project-title').textContent = project.title;
+        document.getElementById('breadcrumb-title').textContent = project.title;
         document.getElementById('project-description').textContent = project.description;
         document.getElementById('project-image').src = project.image;
         document.getElementById('project-image').alt = project.title;
+        
+        // Setup prev/next navigation
+        this.setupProjectNavigation(project.id);
 
         // Parse and render full description with marked.js
         if (typeof marked !== 'undefined') {
@@ -408,6 +395,36 @@ class ProjectsPortfolio {
             // Si no coincide el patrón, retornar el contenido original
             return content;
         });
+    }
+
+    // ========== PROJECT NAVIGATION (Prev/Next) ==========
+    setupProjectNavigation(currentProjectId) {
+        const currentIndex = this.projectsData.findIndex(p => p.id === currentProjectId);
+        
+        if (currentIndex === -1) return;
+
+        // Calculate prev/next indices with circular logic
+        const prevIndex = currentIndex === 0 ? this.projectsData.length - 1 : currentIndex - 1;
+        const nextIndex = currentIndex === this.projectsData.length - 1 ? 0 : currentIndex + 1;
+
+        const prevProject = this.projectsData[prevIndex];
+        const nextProject = this.projectsData[nextIndex];
+
+        // Update prev project link
+        const prevLink = document.getElementById('prev-project-link');
+        const prevTitle = document.getElementById('prev-project-title');
+        if (prevLink && prevTitle && prevProject) {
+            prevLink.href = `project-detail.html?id=${prevProject.id}`;
+            prevTitle.textContent = prevProject.title;
+        }
+
+        // Update next project link
+        const nextLink = document.getElementById('next-project-link');
+        const nextTitle = document.getElementById('next-project-title');
+        if (nextLink && nextTitle && nextProject) {
+            nextLink.href = `project-detail.html?id=${nextProject.id}`;
+            nextTitle.textContent = nextProject.title;
+        }
     }
 }
 
