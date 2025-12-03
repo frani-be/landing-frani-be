@@ -110,11 +110,11 @@ class ProjectsPortfolio {
                     </div>
                     
                     <div class="mt-6 flex gap-3">
-                        <a href="project-detail.html?id=${project.id}" class="flex-1 text-center bg-custom-purple text-white py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                        <a href="project-detail.html?id=${project.id}" class="flex-1 text-center bg-custom-purple border-2 border-custom-purple text-white py-1 px-6 rounded-[7px] font-bold text-sm transition-all">
                             Ver proyecto
                         </a>
                         ${hasLinks ? `
-                            <button onclick="window.projectsPortfolio.showProjectLinks('${project.id}')" class="bg-white text-custom-purple border-2 border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                            <button onclick="window.projectsPortfolio.showProjectLinks('${project.id}')" class="bg-white text-custom-purple border-2 border-custom-purple py-1 px-6 rounded-[7px] font-bold text-sm transition-all">
                                 Links
                             </button>
                         ` : ''}
