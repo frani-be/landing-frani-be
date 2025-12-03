@@ -4,7 +4,14 @@ class Timeline {
         this.timelineData = [];
         this.filteredData = [];
         this.currentFilter = 'all';
+        this.isHomePage = this.detectHomePage();
+        this.itemLimit = this.isHomePage ? 4 : null;
         this.init();
+    }
+
+    detectHomePage() {
+        const path = window.location.pathname;
+        return path === '/' || path.endsWith('index.html') || path === '';
     }
 
     // Configuración de categorías centralizada
@@ -93,10 +100,13 @@ class Timeline {
     }
 
     setupFilterButtons() {
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', this.handleFilterClick.bind(this));
-        });
+        // Only setup filter buttons if not on home page
+        if (!this.isHomePage) {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', this.handleFilterClick.bind(this));
+            });
+        }
     }
 
     setupGlobalControlButtons() {
@@ -283,7 +293,9 @@ class Timeline {
             return;
         }
 
-        const timelineHTML = this.filteredData.map(item => this.createTimelineItem(item)).join('');
+        // Apply item limit if on home page
+        const dataToRender = this.itemLimit ? this.filteredData.slice(0, this.itemLimit) : this.filteredData;
+        const timelineHTML = dataToRender.map(item => this.createTimelineItem(item)).join('');
         container.innerHTML = `<div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5 md:left-8"></div>${timelineHTML}`;
         
         this.setupToggleListeners();
