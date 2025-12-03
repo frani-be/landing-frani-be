@@ -603,3 +603,12 @@ footer::before {
     }
 }
 
+/* Sticky sidebar en project detail */
+@media (min-width: 1024px) {
+    #project-content .project-sidebar-sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 8rem !important;
+        align-self: flex-start !important;
+    }
+}

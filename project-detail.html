@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="overflow-x-hidden">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -79,7 +79,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
-<body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
+<body class="font-primary font-light text-custom-black text-base lg:text-lg">
     <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible bg-white/90 backdrop-blur-sm" id="navigation">
         <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
             <div class="logo-container">
@@ -112,7 +112,7 @@
     </div>
 
     <!-- Project Content -->
-    <div id="project-content" class="hidden">
+    <div id="project-content" class="hidden overflow-visible">
         <!-- Hero Section -->
         <header class="relative pt-32 pb-20 overflow-hidden">
             <div id="hero-background" class="absolute inset-0 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple"></div>
@@ -143,9 +143,9 @@
         <!-- Project Details -->
         <section class="py-12 bg-custom-light-grey">
             <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:flex lg:gap-12 lg:items-start lg:min-h-screen">
                     <!-- Main Content -->
-                    <div class="lg:col-span-2">
+                    <div class="lg:flex-[2]">
                         <div class="bg-white rounded-xl p-8 shadow-sm">
                             <div id="project-full-description" class="prose prose-lg prose-purple max-w-none text-gray-700 mx-auto prose-headings:font-titles prose-img:rounded-xl prose-img:shadow-md prose-a:text-custom-purple prose-a:no-underline hover:prose-a:underline">
                                 <!-- Contenido dinámico -->
@@ -154,9 +154,7 @@
                     </div>
 
                     <!-- Sidebar -->
-                    <div class="lg:col-span-1">
-                        <!-- Metadata Card -->
-                        <div class="bg-white rounded-xl p-6 shadow-sm mb-6 sticky top-24">
+                    <div class="bg-white rounded-xl p-6 shadow-sm mt-8 lg:mt-0 lg:flex-1 project-sidebar-sticky">
                             <h3 class="text-xl font-bold text-custom-black mb-4 font-titles">Detalles del Proyecto</h3>
                             
                             <div class="space-y-4">
