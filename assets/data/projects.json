@@ -1,0 +1,173 @@
+{
+  "projects": [
+    {
+      "id": "pomodoro-timer",
+      "title": "Pomodoro Timer",
+      "category": "Proyecto Personal",
+      "description": "Aplicación de productividad con ciclos altamente personalizables y testing automatizado E2E. Enfocada en la prevención del agotamiento.",
+      "fullDescription": "## El Reto\nCrear una herramienta de gestión de tiempo que fuera más flexible que los temporizadores estándar, permitiendo a los usuarios adaptar la técnica Pomodoro a sus propios ritmos biológicos y de concentración.\n\n## La Solución\nDesarrollé una SPA (Single Page Application) que permite una personalización granular de los tiempos de enfoque y descanso. La aplicación gestiona estados complejos para asegurar que el usuario no rompa la consistencia de la técnica.\n\n### Funcionalidades Clave\n- **Personalización Avanzada:** Configuración de ciclos de 1 a 60 minutos y límites de repeticiones.\n- **Prevención de Errores:** Sistema de bloqueo de configuración durante la ejecución (UX defensiva).\n- **Feedback Auditivo y Visual:** Indicadores de progreso circular y notificaciones sonoras sutiles.\n- **Modo Autoplay:** Para usuarios que buscan un flujo de trabajo ininterrumpido.\n\n### Calidad y Testing\nPara garantizar la estabilidad, implementé pruebas E2E con **Cypress**, asegurando que los flujos críticos (inicio, pausa, reinicio y cambio de ciclo) funcionen perfectamente en cada deploy.",
+      "tags": [
+        "React",
+        "Vite",
+        "Cypress",
+        "Sass",
+        "Bootstrap"
+      ],
+      "image": "assets/images/projects/pomodoro-cover.png",
+      "links": {
+        "demo": "https://frani-be.github.io/neuralclocks-pomodoro/",
+        "repo": "https://github.com/frani-be/neuralclocks-pomodoro/"
+      },
+      "featured": false,
+      "client": "Proyecto Personal",
+      "date": "2024",
+      "role": "Front-end Engineer",
+      "stack": "React, Vite, Cypress"
+    },
+    {
+      "id": "logofolio-collection",
+      "title": "Logofolio e identidad de marca",
+      "category": "Visual Design",
+      "description": "Selección de identidades visuales y logotipos creados para startups y marcas personales. Síntesis gráfica y comunicación visual.",
+      "fullDescription": "## Identidad Visual\nEl diseño de una marca requiere capacidad de síntesis y entendimiento profundo de los valores del cliente. A continuación presento una colección de logotipos desarrollados para diversos sectores.\n\n### Ejemplos de la colección 2015-2025\n\n::: showcase\n![Liquida Solutions](assets/images/projects/logos/liquida-solutions.png)\n*Identidad visual para soluciones digitales. La geometría circular y las ondas representan adaptabilidad y flujo constante.*\n:::\n\n::: showcase\n![Orquesta USM](assets/images/projects/logos/orquesta-usm.png)\n*Identidad que equilibra el prestigio institucional con la sensibilidad artística. Uso de tipografía serif y tonos vino para denotar elegancia y tradición cultural.*\n:::\n\n::: showcase\n![Cure All](assets/images/projects/logos/cure-all.png)\n*Branding para HealthTech centrado en la empatía. La unión fluida entre corazón y estetoscopio, junto a tonos menta, reduce la fricción clínica y genera confianza.*\n:::\n\n### Herramientas\nTodo el trabajo vectorial ha sido realizado en **Adobe Illustrator**, priorizando la legibilidad en tamaños reducidos y la versatilidad de aplicaciones (monocromo, negativo, etc.).",
+      "tags": [
+        "Adobe Illustrator",
+        "Branding",
+        "Vector Art",
+        "Graphic Design"
+      ],
+      "image": "assets/images/projects/logofolio-cover.png",
+      "links": {
+        "demo": "",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": false,
+      "client": "Varios Clientes",
+      "date": "2015 - Presente",
+      "role": "Visual Designer",
+      "stack": "Adobe Illustrator"
+    },
+    {
+      "id": "agencia-de-borde",
+      "title": "Agencia de Borde",
+      "category": "Proyecto a cliente",
+      "description": "Desarrollo de tema WordPress 100% a medida sin dependencias. Arquitectura modular con Gutenberg nativo y sistema de filtrado avanzado.",
+      "fullDescription": "## El Reto\nLa agencia requería una identidad digital única que no se viera limitada por las restricciones de plantillas comerciales o page builders pesados (como Elementor). El objetivo era lograr un rendimiento óptimo (Core Web Vitals) manteniendo una gestión de contenido flexible para el cliente.\n\n## La Solución\nDesarrollé una arquitectura **WordPress Full Custom**, traduciendo el diseño de Figma a código con precisión pixel-perfect.\n\n### Arquitectura Técnica\n- **Theme from Scratch:** Desarrollo desde cero (sin frameworks pesados) para garantizar velocidad y limpieza de código.\n- **Bloques Nativos (Gutenberg):** En lugar de usar plugins de construcción, desarrollé bloques personalizados nativos, permitiendo al cliente editar layouts complejos sin romper el diseño.\n- **Lógica de Filtrado:** Implementación de un sistema de filtrado de proyectos por categorías (Taxonomías) con carga asíncrona para una UX fluida.\n- **Internacionalización (i18n):** Arquitectura preparada para soporte multi-idioma (Español/Inglés) sin duplicidad innecesaria de estructuras.\n\n### Stack Tecnológico\nSe priorizó el uso de **PHP moderno** y **JavaScript vainilla** para reducir la deuda técnica y facilitar el mantenimiento a largo plazo.",
+      "tags": [
+        "WordPress Development",
+        "PHP",
+        "Gutenberg Blocks",
+        "Figma to Code",
+        "JavaScript"
+      ],
+      "image": "assets/images/projects/borde-cover.png",
+      "links": {
+        "demo": "https://agenciadeborde.com/en/",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": true,
+      "client": "Agencia de Borde",
+      "date": "2022",
+      "role": "Full Stack Developer",
+      "stack": "WordPress, PHP, Gutenberg"
+    },
+    {
+      "id": "claudia-ortega",
+      "title": "Claudia Ortega: Portafolio de artista",
+      "category": "Proyecto a cliente",
+      "description": "Sitio web para artista visual con galería masonry personalizada y estrategia SEO para posicionamiento de marca en un nicho competitivo.",
+      "fullDescription": "## El Reto\nLa artista requería una plataforma digital urgente para postular a fondos concursables. El desafío principal no fue solo técnico, sino estratégico: **Posicionamiento SEO**. Al compartir nombre con una actriz famosa, la marca personal digital era inexistente en Google. Además, el diseño debía equilibrar una estética \"ornamentada\" (con texturas y brochazos) sin sacrificar la usabilidad ni eclipsar las obras.\n\n## La Solución\nDesarrollé un portafolio en **WordPress Nativo** con un sistema de gestión de contenido a medida, permitiendo vincular obras visuales con poemas relacionados.\n\n### Detalles de Implementación\n- **Galería Masonry Avanzada:** Arquitectura de información dividida en 5 técnicas (Pintura, Nuevos Medios, Grabados, Dibujos y Acuarelas) con carga optimizada.\n- **Protección de Propiedad Intelectual:** Sistema automatizado de marcas de agua para proteger la autoría de las imágenes.\n- **Micro-interacciones UI:** Detalles que reflejan la identidad de la artista, como el efecto de \"brochazo\" en el menú activo y hovers con la paleta de colores específica de su obra.\n- **Estrategia SEO:** Optimización técnica y de contenidos que logró posicionar el sitio en la primera página de Google, diferenciando a la artista visual de su homónima.\n- **Experiencia de Detalle:** Carruseles internos para visualizar texturas y detalles macro de cada obra pictórica.",
+      "tags": [
+        "WordPress",
+        "SEO Strategy",
+        "Gutenberg Blocks",
+        "UI Design",
+        "Masonry Layout"
+      ],
+      "image": "assets/images/projects/claudia-cover.png",
+      "links": {
+        "demo": "http://claudiaortega.cl",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": false,
+      "client": "Claudia Ortega",
+      "date": "2021",
+      "role": "UI/UX Designer & Developer",
+      "stack": "WordPress, PHP, JavaScript, CSS3"
+    },
+    {
+      "id": "sindicato-nacional",
+      "title": "Sindicato Nacional Mutual de Seguridad CChC",
+      "category": "Proyecto a cliente",
+      "description": "Plataforma de gestión sindical con automatización de trámites (inscripciones/beneficios) y panel de administración simplificado para usuarios no nativos digitales.",
+      "fullDescription": "## El Reto\nEl Sindicato necesitaba modernizar su comunicación y digitalizar procesos burocráticos (inscripciones, beneficios), pero enfrentaba una barrera crítica: el equipo encargado de subir contenido no poseía conocimientos técnicos avanzados. Necesitaban una herramienta robusta pero extremadamente intuitiva, donde fuera imposible \"romper\" el diseño por error.\n\n## La Solución\nDesarrollé un **Tema de WordPress a Medida** enfocado en la usabilidad del editor (Backend UX).\n\n### Digitalización de Procesos\n- **Sistema de Trámites Digitales:** Implementación de flujos complejos para inscripción de socios y solicitud de beneficios (nacimiento, nupcialidad, etc.). El sistema gestiona la descarga de documentos legales obligatorios y permite la subida segura de los archivos firmados.\n- **Arquitectura de Información:** Organización de grandes volúmenes de datos (cláusulas, noticias, galerías, directorio) mediante taxonomías personalizadas y filtros dinámicos.\n\n### Experiencia de Edición (Editor Experience)\n- **ACF + Classic Editor:** En lugar de usar constructores visuales complejos, creé una interfaz de \"campos rígidos\" con **Advanced Custom Fields**. Esto permite a los administradores simplemente \"llenar espacios\" (texto, foto, archivo) asegurando que el diseño front-end (basado en **Bootstrap**) se mantenga siempre consistente.\n- **Escalabilidad:** El sitio se mantiene activo y actualizado por el cliente desde 2021, probando la eficacia de la interfaz de administración construida.",
+      "tags": [
+        "WordPress Custom Theme",
+        "ACF Pro",
+        "Bootstrap",
+        "PHP",
+        "Digitalización"
+      ],
+      "image": "assets/images/projects/sindicato-cover.png",
+      "links": {
+        "demo": "https://www.sindicatonacional.cl/",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": false,
+      "client": "Sindicato Nacional Mutual de Seguridad CChC",
+      "date": "2021",
+      "role": "Full Stack Developer",
+      "stack": "WordPress, ACF, Bootstrap"
+    },
+    {
+      "id": "bitluxe",
+      "title": "Bitluxe",
+      "category": "Full Stack Development",
+      "description": "Dashboard de seguimiento de criptomonedas con arquitectura desacoplada. Front-end reactivo en Vite y Backend API REST en Django.",
+      "fullDescription": "## El Reto Técnico\nDesarrollar una aplicación Full Stack robusta como examen final para el Diplomado en Desarrollo Web (PUC Ingeniería). El requisito era consumir datos externos, procesarlos en un backend propio y servirlos a una interfaz moderna.\n\n## Arquitectura de Solución\nImplementé una arquitectura **Headless/Decoupled** para separar la lógica de negocio de la capa de presentación.\n\n### Backend (Django & Python)\n- Creación de una API RESTful que actúa como middleware, gestionando la lógica de negocio y la seguridad de las peticiones.\n- Modelado de datos para usuarios y favoritos.\n\n### Front-end (Vite)\n- Desarrollo de una aplicación optimizada con Vite para tiempos de carga instantáneos.\n- Consumo de APIs financieras en tiempo real con manejo asíncrono de estados.\n- Implementación de gráficos interactivos para visualizar la volatilidad del mercado.\n\n### Resultado\nUna aplicación escalable que demuestra el ciclo completo de desarrollo de software, desde el diseño de la base de datos hasta la interfaz de usuario.",
+      "tags": [
+        "React/Vite",
+        "Django",
+        "Python",
+        "REST API",
+        "Full Stack"
+      ],
+      "image": "assets/images/projects/bitluxe-cover.png",
+      "links": {
+        "repo": ""
+      },
+      "featured": true,
+      "client": "Examen final para Diplomado en Desarrollo Web (PUC Ingeniería)",
+      "date": "2023",
+      "role": "Full Stack Developer",
+      "stack": "Vite, Django, Python"
+    },
+    {
+      "id": "tanta-plata",
+      "title": "Tanta Plata: Gestión financiera",
+      "category": "UX Research & Strategy",
+      "description": "Investigación, ideación y prototipado de una App Fintech agnóstica para la gestión unificada de gastos y deudas.",
+      "fullDescription": "## 1. El Problema y el Contexto\nLa ansiedad financiera es un problema sistémico en Chile. Nuestra investigación inicial reveló datos alarmantes sobre el endeudamiento y la falta de educación financiera, exacerbados por la inflación y el fácil acceso al crédito.\n\n![Contexto del endeudamiento en Chile](assets/images/projects/tantaplata/contexto-investigacion.png)\n\n## 2. Empatizando con el Usuario\nPara centrar el diseño, creamos arquetipos basados en entrevistas en profundidad, representando a los usuarios que luchan con la gestión de múltiples deudas y la incertidumbre del \"fin de mes\".\n\n![Arquetipos de usuario de Tanta Plata](assets/images/projects/tantaplata/personas.png)\n\n## 3. User Journey Mapping\nMapeamos la experiencia actual del usuario al intentar proyectar sus gastos, identificando los puntos de dolor (pain points) y las oportunidades clave para automatizar el ingreso de datos y reducir la carga cognitiva.\n\n![User Journey Map de Alejandro Ibáñez](assets/images/projects/tantaplata/user-journey.png)\n\n## 4. Estrategia y Competencia\nAnalizamos la competencia (Tenpo, Mobills, Monefy) y definimos una propuesta de valor única centrada en una visualización intuitiva, un lenguaje cercano y un modelo de negocio freemium viable.\n\n![Análisis competitivo y modelo de negocio](assets/images/projects/tantaplata/estrategia-negocio.png)\n\n## 5. Prototipado y Solución\nEl resultado fue un prototipo de baja fidelidad en Figma enfocado en la claridad visual y la accesibilidad, diseñado para reducir la ansiedad mediante una interfaz amigable que centraliza la salud financiera del usuario.\n\n![Prototipo Tanta Plata](assets/images/projects/tantaplata/prototipo.png)",
+      "tags": [
+        "UX Research",
+        "User Journey Map",
+        "Figma",
+        "User Flows",
+        "Business Strategy"
+      ],
+      "image": "assets/images/projects/tantaplata-cover.png",
+      "links": {
+        "caseStudy": ""
+      },
+      "featured": true,
+      "client": "Proyecto troncal para Diplomado en Diseño y Medición de Experiencia de Usuario (PUC)",
+      "date": "2022",
+      "role": "UX Researcher & Product Designer",
+      "stack": "Figma, Miro, Trello"
+    }
+  ]
+}

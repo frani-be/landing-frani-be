@@ -76,7 +76,7 @@
       "category": "academica",
       "startDate": "2023-05",
       "endDate": "2023-12",
-      "description": "Cursé el **Diplomado en Desarrollo Web** donde consolidé competencias full-stack para diseñar y construir aplicaciones web modernas.\n- **Plan de estudios:** herramientas básicas de programación en Python, Python & la WWW (Django/Flask), JavaScript avanzado, desarrollo con React y taller integrador full-stack.\n- **Objetivo principal:** dominar los estándares y tecnologías que sustentan la Web para crear soluciones SaaS robustas y escalables.\n- **Proyecto final:** aplicación web completa (frontend React-Vite + backend Python-Django) sobre exchange, que demuestra arquitectura de componentes y gestión de estado.",
+      "description": "Cursé el **Diplomado en Desarrollo Web** donde consolidé competencias full-stack para diseñar y construir aplicaciones web modernas.\n- **Plan de estudios:** herramientas básicas de programación en Python, Python & la WWW (Django/Flask), JavaScript avanzado, desarrollo con React y taller integrador full-stack.\n- **Objetivo principal:** dominar los estándares y tecnologías que sustentan la Web para crear soluciones SaaS robustas y escalables.\n- **Proyecto final:** aplicación web completa (front-end React-Vite + backend Python-Django) sobre exchange, que demuestra arquitectura de componentes y gestión de estado.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
