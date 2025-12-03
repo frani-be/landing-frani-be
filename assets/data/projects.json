@@ -97,6 +97,31 @@
       "date": "2021",
       "role": "UI/UX Designer & Developer",
       "stack": "WordPress, PHP, JavaScript, CSS3"
+    },
+    {
+      "id": "sindicato-nacional",
+      "title": "Sindicato Nacional Mutual de Seguridad CChC",
+      "category": "Proyecto a Cliente",
+      "description": "Plataforma de gestión sindical con automatización de trámites (inscripciones/beneficios) y panel de administración simplificado para usuarios no nativos digitales.",
+      "fullDescription": "## El Reto\nEl Sindicato necesitaba modernizar su comunicación y digitalizar procesos burocráticos (inscripciones, beneficios), pero enfrentaba una barrera crítica: el equipo encargado de subir contenido no poseía conocimientos técnicos avanzados. Necesitaban una herramienta robusta pero extremadamente intuitiva, donde fuera imposible \"romper\" el diseño por error.\n\n## La Solución\nDesarrollé un **Tema de WordPress a Medida** enfocado en la usabilidad del editor (Backend UX).\n\n### Digitalización de Procesos\n- **Sistema de Trámites Digitales:** Implementación de flujos complejos para inscripción de socios y solicitud de beneficios (nacimiento, nupcialidad, etc.). El sistema gestiona la descarga de documentos legales obligatorios y permite la subida segura de los archivos firmados.\n- **Arquitectura de Información:** Organización de grandes volúmenes de datos (cláusulas, noticias, galerías, directorio) mediante taxonomías personalizadas y filtros dinámicos.\n\n### Experiencia de Edición (Editor Experience)\n- **ACF + Classic Editor:** En lugar de usar constructores visuales complejos, creé una interfaz de \"campos rígidos\" con **Advanced Custom Fields**. Esto permite a los administradores simplemente \"llenar espacios\" (texto, foto, archivo) asegurando que el diseño frontend (basado en **Bootstrap**) se mantenga siempre consistente.\n- **Escalabilidad:** El sitio se mantiene activo y actualizado por el cliente desde 2021, probando la eficacia de la interfaz de administración construida.",
+      "tags": [
+        "WordPress Custom Theme",
+        "ACF Pro",
+        "Bootstrap",
+        "PHP",
+        "Digitalización"
+      ],
+      "image": "assets/images/projects/sindicato-cover.png",
+      "links": {
+        "demo": "https://www.sindicatonacional.cl/",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": false,
+      "client": "Sindicato Nacional Mutual de Seguridad CChC",
+      "date": "2021 - Presente",
+      "role": "Full Stack Developer",
+      "stack": "WordPress, ACF, Bootstrap"
     }
   ]
 }
