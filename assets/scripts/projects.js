@@ -225,7 +225,11 @@ class ProjectsPortfolio {
                 headerIds: true,
                 mangle: false
             });
-            const fullDescriptionHTML = marked.parse(project.fullDescription);
+            
+            // Pre-procesar bloques ::: showcase
+            const processedMarkdown = this.processShowcaseBlocks(project.fullDescription);
+            const fullDescriptionHTML = marked.parse(processedMarkdown);
+            
             document.getElementById('project-full-description').innerHTML = fullDescriptionHTML;
         } else {
             // Fallback al parser básico si marked.js no está disponible
@@ -330,6 +334,35 @@ class ProjectsPortfolio {
     showError() {
         document.getElementById('loading-state').classList.add('hidden');
         document.getElementById('error-state').classList.remove('hidden');
+    }
+
+    processShowcaseBlocks(markdown) {
+        // Patrón para detectar bloques ::: showcase ... :::
+        const showcasePattern = /:::\s*showcase\s*\n([\s\S]*?)\n:::/g;
+        
+        return markdown.replace(showcasePattern, (match, content) => {
+            // Extraer imagen: ![alt](url)
+            const imgMatch = content.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+            // Extraer descripción en cursiva: *texto*
+            const descMatch = content.match(/\*([^*]+)\*/);
+            
+            if (imgMatch && descMatch) {
+                const alt = imgMatch[1];
+                const url = imgMatch[2];
+                const description = descMatch[1];
+                
+                // Retornar HTML personalizado que marked.js no procesará
+                return `<div class="logo-showcase">
+    <img src="${url}" alt="${alt}">
+    <div class="logo-description">
+        <em>${description}</em>
+    </div>
+</div>`;
+            }
+            
+            // Si no coincide el patrón, retornar el contenido original
+            return content;
+        });
     }
 }
 
