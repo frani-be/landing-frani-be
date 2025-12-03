@@ -72,6 +72,31 @@
       "date": "2022",
       "role": "Full Stack Developer",
       "stack": "WordPress, PHP, Gutenberg"
+    },
+    {
+      "id": "claudia-ortega",
+      "title": "Claudia Ortega: Art Portfolio",
+      "category": "Proyecto a Cliente",
+      "description": "Sitio web para artista visual con galería masonry personalizada y estrategia SEO para posicionamiento de marca en un nicho competitivo.",
+      "fullDescription": "## El Reto\nLa artista requería una plataforma digital urgente para postular a fondos concursables. El desafío principal no fue solo técnico, sino estratégico: **Posicionamiento SEO**. Al compartir nombre con una actriz famosa, la marca personal digital era inexistente en Google. Además, el diseño debía equilibrar una estética \"ornamentada\" (con texturas y brochazos) sin sacrificar la usabilidad ni eclipsar las obras.\n\n## La Solución\nDesarrollé un portafolio en **WordPress Nativo** con un sistema de gestión de contenido a medida, permitiendo vincular obras visuales con poemas relacionados.\n\n### Detalles de Implementación\n- **Galería Masonry Avanzada:** Arquitectura de información dividida en 5 técnicas (Pintura, Nuevos Medios, Grabados, Dibujos y Acuarelas) con carga optimizada.\n- **Protección de Propiedad Intelectual:** Sistema automatizado de marcas de agua para proteger la autoría de las imágenes.\n- **Micro-interacciones UI:** Detalles que reflejan la identidad de la artista, como el efecto de \"brochazo\" en el menú activo y hovers con la paleta de colores específica de su obra.\n- **Estrategia SEO:** Optimización técnica y de contenidos que logró posicionar el sitio en la primera página de Google, diferenciando a la artista visual de su homónima.\n- **Experiencia de Detalle:** Carruseles internos para visualizar texturas y detalles macro de cada obra pictórica.",
+      "tags": [
+        "WordPress",
+        "SEO Strategy",
+        "Gutenberg Blocks",
+        "UI Design",
+        "Masonry Layout"
+      ],
+      "image": "assets/images/projects/claudia-cover.png",
+      "links": {
+        "demo": "http://claudiaortega.cl",
+        "repo": "",
+        "caseStudy": ""
+      },
+      "featured": true,
+      "client": "Claudia Ortega",
+      "date": "2021",
+      "role": "UI/UX Designer & Developer",
+      "stack": "WordPress, PHP, JavaScript, CSS3"
     }
   ]
 }
