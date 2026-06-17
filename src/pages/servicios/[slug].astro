@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'desarrollo-web' } },
+    { params: { slug: 'diseno-grafico' } },
+    { params: { slug: 'estrategia-ux' } },
+    { params: { slug: 'clases-particulares' } },
+  ];
+}
+
+const services: Record<string, {
+  icon: string;
+  title: string;
+  tagline: string;
+  description: string;
+  bullets: string[];
+  cta: string;
+}> = {
+  'desarrollo-web': {
+    icon: '🌐',
+    title: 'Desarrollo web',
+    tagline: 'Sitios rápidos, accesibles y a medida — sin plantillas genéricas.',
+    description: 'Desde un sitio institucional hasta una aplicación web compleja, desarrollo soluciones que equilibran estética, rendimiento y mantenibilidad. Trabajo con HTML, CSS y JavaScript vainilla para proyectos que priorizan velocidad, o con frameworks modernos (React, Astro, Next.js) cuando la escala lo justifica. Para clientes que gestionan su propio contenido, WordPress sigue siendo la herramienta más potente del mercado.',
+    bullets: [
+      'Desarrollo pixel-perfect desde Figma o boceto',
+      'WordPress a medida (sin page builders pesados)',
+      'React, Astro y Next.js para proyectos escalables',
+      'Core Web Vitals y rendimiento real en producción',
+      'Accesibilidad (WCAG) y SEO técnico incluidos',
+      'Entrega con documentación y handoff al equipo',
+    ],
+    cta: 'Hablemos de tu proyecto',
+  },
+  'diseno-grafico': {
+    icon: '🎨',
+    title: 'Diseño gráfico',
+    tagline: 'Identidades visuales que comunican antes de que el usuario lea una palabra.',
+    description: 'El diseño gráfico es síntesis: tomar la esencia de una marca y traducirla a formas, colores y tipografías que funcionen en cualquier contexto. He desarrollado identidades para startups tecnológicas, instituciones educativas, artistas y ONG. Cada proyecto parte de un brief en profundidad y termina con un sistema de marca que el cliente puede usar de forma autónoma.',
+    bullets: [
+      'Logotipos y sistemas de identidad visual',
+      'Branding para startups y marcas personales',
+      'Piezas gráficas para redes sociales y prensa',
+      'Diseño editorial (presentaciones, informes, libros)',
+      'Guías de marca y manual de uso',
+      'Vectorial listo para imprenta y medios digitales',
+    ],
+    cta: 'Solicitar cotización',
+  },
+  'estrategia-ux': {
+    icon: '🎯',
+    title: 'Estrategia UX',
+    tagline: 'Diseño centrado en la persona, respaldado por evidencia.',
+    description: 'Las malas experiencias de usuario cuestan dinero. La estrategia UX consiste en investigar, mapear y validar antes de construir. Trabajo en la fase de discovery (entrevistas, benchmarks, análisis heurístico), en la arquitectura de información, en el prototipado iterativo y en las pruebas de usabilidad. El resultado es un producto que la gente entiende y quiere volver a usar.',
+    bullets: [
+      'Research cualitativo y cuantitativo',
+      'Arquetipos de usuario y user journeys',
+      'Arquitectura de información y card sorting',
+      'Wireframes y prototipos en Figma',
+      'Pruebas de usabilidad moderadas y no moderadas',
+      'Análisis heurístico y recomendaciones accionables',
+    ],
+    cta: 'Agendar una consultoría',
+  },
+  'clases-particulares': {
+    icon: '📚',
+    title: 'Clases particulares',
+    tagline: 'Aprende a tu ritmo con proyectos reales y feedback directo.',
+    description: 'Las clases son personalizadas: empezamos con tus objetivos, tu nivel actual y el tiempo que podés dedicar. Trabajo contigo en proyectos concretos (nada de ejercicios abstractos) y te doy retroalimentación honesta en cada sesión. He acompañado a estudiantes de diseño, desarrolladores que quieren aprender UX y profesionales que buscan reconvertirse.',
+    bullets: [
+      'HTML, CSS y JavaScript desde cero',
+      'Diseño web y UI con Figma',
+      'Fundamentos de UX y pensamiento de diseño',
+      'React y ecosistema moderno de front-end',
+      'WordPress para diseñadores',
+      'Sesiones individuales o grupales (hasta 4 personas)',
+    ],
+    cta: 'Consultar disponibilidad',
+  },
+};
+
+const { slug } = Astro.params;
+const service = services[slug as string];
+if (!service) return Astro.redirect('/servicios');
+---
+
+<BaseLayout
+  title={`${service.title} | Francisca Beatriz Medina Concha`}
+  description={service.tagline}
+  ogUrl={`https://frani.be/servicios/${slug}`}
+>
+  <!-- Hero del servicio -->
+  <section class="pt-48 pb-24 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple">
+    <div class="container-narrow text-center">
+      <div class="text-6xl mb-6" data-reveal>{service.icon}</div>
+      <h1 class="text-[3rem] lg:text-[4rem] font-bold leading-tight text-custom-black" data-reveal data-reveal-delay="100">
+        {service.title}
+      </h1>
+      <p class="text-xl text-custom-dark-gray mt-4 max-w-xl mx-auto" data-reveal data-reveal-delay="250">
+        {service.tagline}
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center mt-8" data-reveal data-reveal-delay="400">
+        <a
+          href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+          target="_blank"
+          class="bg-custom-purple text-white py-2 px-7 font-bold rounded-[7px] inline-block"
+        >{service.cta}</a>
+        <a href="/servicios" class="text-custom-purple border-custom-purple border border-solid bg-white py-2 px-7 font-bold rounded-[7px] inline-block">
+          Ver todos los servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cuerpo -->
+  <section class="py-24 bg-white">
+    <div class="container-mid">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div data-reveal>
+          <h2 class="text-2xl font-bold text-custom-black mb-5">¿Qué incluye?</h2>
+          <ul class="flex flex-col gap-3">
+            {service.bullets.map(b => (
+              <li class="flex items-start gap-3 text-custom-dark-gray">
+                <span class="text-custom-purple font-bold text-lg leading-tight mt-0.5">✓</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div data-reveal data-reveal-delay="150">
+          <h2 class="text-2xl font-bold text-custom-black mb-5">Cómo trabajo</h2>
+          <p class="text-custom-dark-gray leading-relaxed">{service.description}</p>
+          <div class="mt-8 p-6 bg-[#f7f0ff] rounded-2xl border border-[#ede9f5]">
+            <p class="text-custom-black font-semibold mb-2">¿Tenés dudas antes de contratar?</p>
+            <p class="text-custom-dark-gray text-sm mb-4">Agendamos una llamada de 20 minutos sin compromiso para ver si puedo ayudarte.</p>
+            <a
+              href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+              target="_blank"
+              class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block text-sm"
+            >Agenda la llamada</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Otros servicios -->
+  <section class="py-16 bg-custom-light-grey border-t border-custom-dark-gray/10">
+    <div class="container-mid text-center">
+      <p class="text-custom-dark-gray mb-4">¿Buscás otro servicio?</p>
+      <a href="/servicios" class="text-custom-purple border-custom-purple border border-solid bg-white py-1 px-6 font-bold rounded-[7px] inline-block transition-all">
+        Ver todos los servicios
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../../scripts/reveal';
+  initReveal();
+</script>

@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const principales = [
+  {
+    slug: 'desarrollo-web',
+    icon: '🌐',
+    title: 'Desarrollo web',
+    short: 'Sitios y aplicaciones a medida, desde el diseño hasta el deploy. HTML, CSS, JS, WordPress y frameworks modernos.',
+  },
+  {
+    slug: 'diseno-grafico',
+    icon: '🎨',
+    title: 'Diseño gráfico',
+    short: 'Identidad visual, logotipos y piezas gráficas con síntesis y coherencia de marca. Del brief al arte final.',
+  },
+  {
+    slug: 'estrategia-ux',
+    icon: '🎯',
+    title: 'Estrategia UX',
+    short: 'Research, arquitectura de información, prototipos y pruebas de usabilidad para tomar decisiones basadas en evidencia.',
+  },
+  {
+    slug: 'clases-particulares',
+    icon: '📚',
+    title: 'Clases particulares',
+    short: 'Aprende diseño web, UX o programación front-end a tu ritmo. Clases personalizadas con proyectos reales y feedback directo.',
+  },
+];
+
+const secundarios = [
+  { icon: '📈', title: 'Auditoría CRO y SEO', short: 'Análisis técnico y de contenidos para mejorar la visibilidad orgánica y la tasa de conversión de tu sitio.' },
+  { icon: '🧭', title: 'Asesorías personales', short: 'Orientación personalizada para profesionales y emprendedores que quieren adentrarse en el mundo tecnológico.' },
+  { icon: '🎥', title: 'UGC', short: 'Creación de contenido generado por usuario (User Generated Content) para marcas digitales y campañas en redes.' },
+  { icon: '🎤', title: 'Mentorías para charlas', short: 'Te ayudo a estructurar y ensayar tu presentación para que llegues segura/seguro al escenario o al evento.' },
+  { icon: '🤝', title: 'Apoyo freelance', short: 'Colaboración técnica o de diseño puntual para agencias y equipos que necesitan refuerzo en proyectos específicos.' },
+  { icon: '✍️', title: 'Generación de contenido', short: 'Copywriting UX, artículos, newsletters y contenido para redes con enfoque en comunicación clara y accionable.' },
+];
+---
+
+<BaseLayout
+  title="Servicios | Francisca Beatriz Medina Concha"
+  description="Servicios de desarrollo web, diseño gráfico, estrategia UX y clases particulares ofrecidos por Francisca Beatriz Medina Concha."
+  ogUrl="https://frani.be/servicios"
+>
+  <section class="pt-48 pb-24 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple">
+    <div class="container-mid">
+      <div class="section-title-wrapper" data-reveal>
+        <span class="section-title-ghost" aria-hidden="true" role="presentation">Servicios</span>
+        <h1 class="section-title-front">Mis servicios</h1>
+      </div>
+      <p class="text-center text-custom-dark-gray text-lg max-w-2xl mx-auto mt-4" data-reveal data-reveal-delay="200">
+        Diseño, desarrollo y estrategia al servicio de proyectos con propósito. Trabajemos juntos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Principales -->
+  <section class="py-24 bg-white">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-custom-black mb-12 text-center" data-reveal>Servicios principales</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {principales.map((s, i) => (
+          <a href={`/servicios/${s.slug}`} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
+            <div class="service-card-icon">{s.icon}</div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-xl font-bold text-custom-purple mb-3">{s.title}</h3>
+              <p class="text-custom-dark-gray text-sm flex-1">{s.short}</p>
+              <span class="service-card-cta mt-5">Ver detalles</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Secundarios -->
+  <section class="py-24 bg-custom-light-grey">
+    <div class="container-wide">
+      <h2 class="text-2xl font-bold text-custom-black mb-12 text-center" data-reveal>También puedo ayudarte con…</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {secundarios.map((s, i) => (
+          <article class="bg-white rounded-2xl border border-[#ede9f5] p-6 flex gap-5 items-start hover:shadow-md hover:border-[#d4b0f7] transition-all duration-300" data-reveal data-reveal-delay={String(i * 80)}>
+            <span class="text-4xl flex-shrink-0 mt-1">{s.icon}</span>
+            <div>
+              <h3 class="text-lg font-bold text-custom-black mb-2">{s.title}</h3>
+              <p class="text-custom-dark-gray text-sm">{s.short}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-custom-purple text-white text-center">
+    <div class="container-narrow">
+      <h2 class="text-3xl font-bold mb-4" data-reveal>¿Listo/a para empezar?</h2>
+      <p class="text-white/80 text-lg mb-8" data-reveal data-reveal-delay="150">Agendemos una videollamada sin compromiso para hablar de tu proyecto.</p>
+      <a
+        href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+        target="_blank"
+        class="bg-white text-custom-purple py-2 px-10 font-bold rounded-[7px] inline-block hover:opacity-90 transition-all"
+        data-reveal data-reveal-delay="300"
+      >Agenda una videollamada</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../../scripts/reveal';
+  initReveal();
+</script>
