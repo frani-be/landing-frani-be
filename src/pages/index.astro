@@ -16,46 +16,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       id="header-container"
     >
       <div class="w-full lg:w-3/4">
-        <h1 class="text-[3em] leading-none text-custom-black" data-reveal data-reveal-delay="100">
+        <h1 class="text-[4em] lg:text-[5em] leading-[0.9] text-custom-black" data-reveal data-reveal-delay="100">
           Francisca Beatriz<br />
           <span class="text-custom-purple">Medina Concha</span>
         </h1>
-        <h2 class="text-[1.5em] mt-4 font-bold" data-reveal data-reveal-delay="450">Strategic UX Designer & Front-End Engineer</h2>
-        <p class="text-[1.25em] mt-4" data-reveal data-reveal-delay="700">Impulso talento en STEAM y creo tecnología con propósito.</p>
-        <h3 class="mt-8 text-[1.5em]" data-reveal data-reveal-delay="950">Hablemos de tu próximo proyecto</h3>
-        <p class="text-[1.25em] mt-4" data-reveal data-reveal-delay="1150">
+        <h2 class="text-[1.4em] mt-5 font-bold" data-reveal data-reveal-delay="450">Strategic UX Designer & Front-End Engineer</h2>
+        <p class="text-[1.15em] mt-3 text-custom-dark-gray" data-reveal data-reveal-delay="650">Impulso talento en STEAM y creo tecnología con propósito.</p>
+        <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="900">
           <a
             href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-            class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block"
+            class="bg-custom-purple text-white py-2 px-7 font-bold rounded-[7px] inline-block text-base"
             target="_blank"
           >Agenda una videollamada</a>
-        </p>
-        <ul
-          id="social-links-header"
-          class="flex flex-col lg:flex-row gap-4 flex-wrap text-base items-center mt-8 justify-center lg:justify-start"
-          data-reveal data-reveal-delay="1350"
-        >
-          <li>
-            <a href="mailto:hola@frani.be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
-              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#mail"></use></svg> Mail
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/frani-be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
-              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#linkedin"></use></svg> LinkedIn
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/frani-be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
-              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#github"></use></svg> GitHub
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/frani.be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
-              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#instagram"></use></svg> Instagram
-            </a>
-          </li>
-        </ul>
+          <a
+            href="#contacto"
+            class="text-custom-purple border-custom-purple border border-solid bg-white py-2 px-7 font-bold rounded-[7px] inline-block text-base"
+          >Contáctame</a>
+        </div>
       </div>
 
       <div class="flex flex-col gap-6 items-center w-full lg:w-1/2" data-reveal data-reveal-delay="550">
@@ -108,9 +85,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Timeline Section -->
   <section class="bg-custom-light-grey py-40 border-t border-custom-dark-gray/25" id="timeline">
     <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
-      <div class="text-wrapper relative text-center text-[2.75rem] mb-12" data-reveal>
-        <h3 class="text-back absolute left-1/2 -top-[0.25em] -translate-x-1/2 text-[#e3e3e3] whitespace-nowrap pointer-events-none text-[2em] z-0" aria-hidden="true" role="presentation">Mi trayectoria</h3>
-        <h3 class="text-front mx-auto text-custom-black z-[2] leading-none relative">Mi trayectoria</h3>
+      <div class="section-title-wrapper" data-reveal>
+        <span class="section-title-ghost" aria-hidden="true" role="presentation">Mi trayectoria</span>
+        <h3 class="section-title-front">Mi trayectoria</h3>
       </div>
 
       <div class="flex justify-center gap-2 mb-6 text-center" id="global-controls">
@@ -140,12 +117,66 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Proyectos Destacados -->
-  <section class="py-40 bg-white" id="proyectos">
+  <!-- Servicios -->
+  <section class="py-40 bg-white" id="servicios">
     <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
-      <div class="text-wrapper relative text-center text-[2.75rem]" data-reveal>
-        <h3 class="text-back absolute left-1/2 -top-[0.25em] -translate-x-1/2 text-[#e3e3e3] whitespace-nowrap pointer-events-none text-[2em] z-0" aria-hidden="true" role="presentation">Proyectos destacados</h3>
-        <h3 class="text-front mx-auto text-custom-black z-[2] leading-none relative">Proyectos destacados</h3>
+      <div class="section-title-wrapper mb-16" data-reveal>
+        <span class="section-title-ghost" aria-hidden="true" role="presentation">Mis servicios</span>
+        <h3 class="section-title-front">Mis servicios</h3>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <article class="service-card" data-reveal data-reveal-delay="0">
+          <div class="service-card-icon">🌐</div>
+          <div class="p-6 flex flex-col flex-1">
+            <h4 class="text-xl font-bold text-custom-purple mb-3">Desarrollo web</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Sitios y aplicaciones a medida, desde el diseño hasta el deploy. HTML, CSS, JS, WordPress y frameworks modernos.</p>
+            <a href="/servicios/desarrollo-web" class="service-card-cta">Saber más</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-reveal data-reveal-delay="100">
+          <div class="service-card-icon">�</div>
+          <div class="p-6 flex flex-col flex-1">
+            <h4 class="text-xl font-bold text-custom-purple mb-3">Diseño gráfico</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Identidad visual, logotipos y piezas gráficas con síntesis y coherencia de marca. Del brief al arte final.</p>
+            <a href="/servicios/diseno-grafico" class="service-card-cta">Saber más</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-reveal data-reveal-delay="200">
+          <div class="service-card-icon">🎯</div>
+          <div class="p-6 flex flex-col flex-1">
+            <h4 class="text-xl font-bold text-custom-purple mb-3">Estrategia UX</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Research, arquitectura de información, prototipos y pruebas de usabilidad para tomar decisiones basadas en evidencia.</p>
+            <a href="/servicios/estrategia-ux" class="service-card-cta">Saber más</a>
+          </div>
+        </article>
+
+        <article class="service-card" data-reveal data-reveal-delay="300">
+          <div class="service-card-icon">📚</div>
+          <div class="p-6 flex flex-col flex-1">
+            <h4 class="text-xl font-bold text-custom-purple mb-3">Clases particulares</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Aprende diseño web, UX o programación front-end a tu ritmo. Clases personalizadas con proyectos reales y feedback directo.</p>
+            <a href="/servicios/clases-particulares" class="service-card-cta">Saber más</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="text-center mt-12" data-reveal data-reveal-delay="400">
+        <a href="/servicios" class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block transition-all">Ver todos los servicios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section class="py-40 bg-custom-light-grey" id="proyectos">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <div class="section-title-wrapper" data-reveal>
+        <span class="section-title-ghost" aria-hidden="true" role="presentation">Proyectos destacados</span>
+        <h3 class="section-title-front">Proyectos destacados</h3>
       </div>
 
       <div id="featured-projects-container" class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -154,6 +185,86 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="/proyectos" class="inline-block bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] transition-all">
           Ver todos los proyectos
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="py-40 bg-custom-purple text-white relative overflow-hidden glitter-container" id="contacto">
+    <div class="w-full px-8 mx-auto relative z-[1] max-w-[1380px]">
+      <div class="section-title-wrapper mb-16" data-reveal>
+        <span class="section-title-ghost !text-white/20" aria-hidden="true" role="presentation">Contacto</span>
+        <h3 class="section-title-front !text-white">Hablemos</h3>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-[900px] mx-auto">
+
+        <!-- RRSS + info -->
+        <div data-reveal data-reveal-delay="100">
+          <p class="text-white/80 text-lg mb-8">¿Tenés un proyecto en mente, querés contratar un servicio o simplemente saludar? Escribime por cualquiera de estos canales.</p>
+          <ul class="flex flex-col gap-4">
+            <li>
+              <a href="mailto:hola@frani.be" class="flex items-center gap-3 text-white font-semibold hover:text-custom-light-purple transition-colors" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon-pill"><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#mail"></use></svg></span>
+                hola@frani.be
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/frani-be/" class="flex items-center gap-3 text-white font-semibold hover:text-custom-light-purple transition-colors" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon-pill"><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#linkedin"></use></svg></span>
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/frani-be" class="flex items-center gap-3 text-white font-semibold hover:text-custom-light-purple transition-colors" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon-pill"><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#github"></use></svg></span>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/frani.be/" class="flex items-center gap-3 text-white font-semibold hover:text-custom-light-purple transition-colors" target="_blank" rel="noopener noreferrer">
+                <span class="contact-icon-pill"><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#instagram"></use></svg></span>
+                Instagram
+              </a>
+            </li>
+          </ul>
+          <div class="mt-10">
+            <a
+              href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+              target="_blank"
+              class="bg-white text-custom-purple py-2 px-8 font-bold rounded-[7px] inline-block transition-all hover:opacity-90"
+            >Agenda una videollamada</a>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <form id="contact-form" class="flex flex-col gap-5" novalidate data-reveal data-reveal-delay="250">
+          <div>
+            <label for="contact-name" class="block text-sm font-semibold mb-1 text-white/80">Nombre</label>
+            <input type="text" id="contact-name" name="name" required autocomplete="name"
+              class="contact-input" placeholder="Tu nombre" />
+          </div>
+          <div>
+            <label for="contact-email" class="block text-sm font-semibold mb-1 text-white/80">Correo electrónico</label>
+            <input type="email" id="contact-email" name="email" required autocomplete="email"
+              class="contact-input" placeholder="tu@email.com" />
+          </div>
+          <div>
+            <label for="contact-subject" class="block text-sm font-semibold mb-1 text-white/80">Asunto</label>
+            <input type="text" id="contact-subject" name="subject"
+              class="contact-input" placeholder="¿En qué te puedo ayudar?" />
+          </div>
+          <div>
+            <label for="contact-message" class="block text-sm font-semibold mb-1 text-white/80">Mensaje</label>
+            <textarea id="contact-message" name="message" required rows="5"
+              class="contact-input resize-none" placeholder="Contame tu proyecto..."></textarea>
+          </div>
+          <button type="submit" class="bg-white text-custom-purple py-2 px-8 font-bold rounded-[7px] inline-block transition-all hover:opacity-90 cursor-pointer text-base">
+            Enviar mensaje
+          </button>
+          <p id="form-status" class="text-sm text-center hidden"></p>
+        </form>
+
       </div>
     </div>
   </section>
@@ -218,7 +329,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const width = window.innerWidth;
     const mouseX = e.clientX;
     const offset = mouseX / width * 100 - 50;
-    document.querySelectorAll('.text-back').forEach(function (textBack) {
+    document.querySelectorAll('.text-back, .section-title-ghost').forEach(function (textBack) {
       (textBack as HTMLElement).style.transform = 'translateX(' + (-50 - offset) + '%)';
     });
   });
@@ -475,12 +586,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>`;
     }).join('');
 
-    document.querySelectorAll<HTMLElement>('.project-card').forEach((card, i) => {
-      card.animate(
-        [{ opacity: '0', transform: 'translateY(52px)' }, { opacity: '1', transform: 'translateY(0)' }],
-        { duration: 1100, delay: i * 220, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' }
-      );
-    });
+    const cards = document.querySelectorAll<HTMLElement>('.project-card');
+    cards.forEach(card => { card.style.opacity = '0'; card.style.transform = 'translateY(52px)'; });
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const card = entry.target as HTMLElement;
+        const i = Array.from(cards).indexOf(card);
+        card.animate(
+          [{ opacity: '0', transform: 'translateY(52px)' }, { opacity: '1', transform: 'translateY(0)' }],
+          { duration: 1100, delay: i * 180, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' }
+        );
+        cardObserver.unobserve(card);
+      });
+    }, { threshold: 0.08 });
+    cards.forEach(card => cardObserver.observe(card));
 
     const allProjects: Project[] = data.projects || [];
     document.querySelectorAll('.links-btn').forEach(btn => {
@@ -492,4 +612,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     });
   }
   initProjects();
+</script>
+
+<script>
+  // Contact form — sends via Formspree (free tier, no backend needed)
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!status) return;
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+    status.className = 'text-sm text-center';
+    status.textContent = '';
+
+    const data = new FormData(form);
+    // Uses Formspree endpoint — replace YOUR_FORM_ID with actual ID after creating account at formspree.io
+    try {
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        status.textContent = '¡Mensaje enviado! Te respondo a la brevedad.';
+        status.classList.add('text-green-200');
+        form.reset();
+      } else {
+        throw new Error('error');
+      }
+    } catch {
+      status.textContent = 'Hubo un error al enviar. Escribime directamente a hola@frani.be';
+      status.classList.add('text-red-200');
+    }
+    status.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = 'Enviar mensaje';
+  });
 </script>

@@ -382,3 +382,136 @@ footer::before {
     align-self: flex-start !important;
   }
 }
+
+/* ── Container widths ──────────────────────────────────────── */
+.container-wide {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1380px;
+}
+.container-mid {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+}
+.container-narrow {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+/* ── Section titles (ghost effect) ───────────────────────── */
+.section-title-wrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 1.5rem;
+}
+.section-title-ghost {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: clamp(3rem, 10vw, 7rem);
+  line-height: 1;
+  color: #e3e3e3;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
+  transition: transform 0.1s linear;
+}
+.section-title-front {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.1;
+  color: #2f2f2f;
+  letter-spacing: -0.02em;
+}
+
+/* ── Service cards ───────────────────────────────────────── */
+.service-card {
+  background: #fff;
+  border-radius: 1rem;
+  border: 1.5px solid #ede9f5;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.service-card:hover {
+  box-shadow: 0 12px 32px -8px rgba(181, 90, 255, 0.18);
+  border-color: #d4b0f7;
+  transform: translateY(-3px);
+}
+.service-card-icon {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f0ff;
+  font-size: 3.5rem;
+}
+.service-card-cta {
+  display: inline-block;
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #b55aff;
+  border: 1px solid #b55aff;
+  background: #fff;
+  padding: 0.25rem 1rem;
+  border-radius: 7px;
+  transition: background 0.2s, color 0.2s;
+}
+.service-card-cta:hover {
+  background: #b55aff;
+  color: #fff;
+}
+
+/* ── Contact section ─────────────────────────────────────── */
+.contact-input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  font-family: var(--font-family-primary);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-input::placeholder { color: rgba(255,255,255,0.45); }
+.contact-input:focus {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.2);
+}
+.contact-icon-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  flex-shrink: 0;
+  font-size: 1rem;
+}
