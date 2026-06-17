@@ -8,27 +8,41 @@ interface Props {
   subtitle?: string;
   crumbs?: Crumb[];
   ghost?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
-const { title, subtitle, crumbs, ghost = title } = Astro.props;
+const { title, subtitle, crumbs, ghost = title, ctaLabel, ctaHref } = Astro.props;
 ---
 
-<header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-32 pb-20 text-center">
-  <div class="container-wide">
-    {crumbs && crumbs.length > 0 && <Breadcrumb crumbs={crumbs} />}
+<header class="page-hero glitter-container relative overflow-hidden bg-custom-purple text-white pt-40 pb-24 text-center">
+  <div class="container-mid relative z-[1]">
 
-    <div class="relative text-center mb-8" data-reveal>
+    {crumbs && crumbs.length > 0 && (
+      <div class="page-hero-breadcrumb">
+        <Breadcrumb crumbs={crumbs} />
+      </div>
+    )}
+
+    <div class="relative" data-reveal>
       <span
-        class="absolute inset-0 flex items-center justify-center text-6xl md:text-9xl font-bold text-custom-purple opacity-20 select-none uppercase tracking-widest pointer-events-none font-titles"
+        class="page-hero-ghost"
         aria-hidden="true"
+        role="presentation"
       >{ghost}</span>
-      <h1 class="relative z-10 text-4xl md:text-5xl font-bold text-custom-black font-titles">{title}</h1>
+      <h1 class="page-hero-title">{title}</h1>
     </div>
 
     {subtitle && (
-      <p class="text-xl text-custom-dark-gray max-w-3xl mx-auto" data-reveal data-reveal-delay="120">
+      <p class="page-hero-subtitle" data-reveal data-reveal-delay="150">
         {subtitle}
       </p>
+    )}
+
+    {ctaLabel && ctaHref && (
+      <div class="mt-8" data-reveal data-reveal-delay="300">
+        <a href={ctaHref} class="page-hero-cta">{ctaLabel}</a>
+      </div>
     )}
 
     <slot />

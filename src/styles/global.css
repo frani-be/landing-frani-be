@@ -383,6 +383,61 @@ footer::before {
   }
 }
 
+/* ── Page Hero (inner pages) ─────────────────────────────── */
+.page-hero-ghost {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: clamp(4rem, 18vw, 11rem);
+  line-height: 1;
+  color: rgba(255,255,255,0.1);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.02em;
+}
+.page-hero-title {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: #fff;
+  letter-spacing: -0.02em;
+  padding: 2rem 0 1rem;
+}
+.page-hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 40rem;
+  margin: 0.75rem auto 0;
+  line-height: 1.6;
+}
+.page-hero-cta {
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,0.8);
+  color: #fff;
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 2.5rem;
+  border-radius: 99px;
+  transition: background 0.2s, color 0.2s;
+}
+.page-hero-cta:hover {
+  background: rgba(255,255,255,0.15);
+}
+.page-hero-breadcrumb a { color: rgba(255,255,255,0.7) !important; }
+.page-hero-breadcrumb span { color: rgba(255,255,255,0.45) !important; }
+.page-hero-breadcrumb .text-gray-400 { color: rgba(255,255,255,0.3) !important; }
+
 /* ── Container widths ──────────────────────────────────────── */
 .container-wide {
   width: 100%;

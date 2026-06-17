@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import SectionTitle from '../../components/SectionTitle.astro';
+import PageHero from '../../components/PageHero.astro';
 import CtaSection from '../../components/CtaSection.astro';
 
 const principales = [
@@ -45,17 +45,17 @@ const secundarios = [
   description="Servicios de desarrollo web, diseño gráfico, estrategia UX y clases particulares ofrecidos por Francisca Beatriz Medina Concha."
   ogUrl="https://frani.be/servicios"
 >
-  <section class="pt-48 pb-24 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple">
-    <div class="container-mid">
-      <SectionTitle title="Mis servicios" ghost="Servicios" />
-      <p class="text-center text-custom-dark-gray text-lg max-w-2xl mx-auto mt-4" data-reveal data-reveal-delay="200">
-        Diseño, desarrollo y estrategia al servicio de proyectos con propósito. Trabajemos juntos.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    title="Conoce más acerca de mis Servicios y cómo puedo ayudarte"
+    ghost="Servicios"
+    subtitle="Diseño, desarrollo y estrategia al servicio de proyectos con propósito."
+    crumbs={[{ label: 'Inicio', href: '/' }, { label: 'Servicios' }]}
+    ctaLabel="¡Vamos!"
+    ctaHref="#principales"
+  />
 
   <!-- Principales -->
-  <section class="py-24 bg-white">
+  <section class="py-24 bg-white" id="principales">
     <div class="container-wide">
       <h2 class="text-2xl font-bold text-custom-black mb-12 text-center" data-reveal>Servicios principales</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
