@@ -82,7 +82,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
   />
 
   <!-- Project Image -->
-  <section class="py-12 bg-white">
+  <section class="section-block-sm bg-white">
     <div class="container-wide">
       <img
         src={project.image.replace('assets/', '/')}
@@ -93,7 +93,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
   </section>
 
   <!-- Project Details -->
-  <section class="py-12 bg-custom-light-grey">
+  <section class="section-block-sm bg-custom-light-grey">
     <div class="container-wide">
       <div class="lg:flex lg:gap-12 lg:items-start" id="project-content">
         <!-- Main Content -->
@@ -173,7 +173,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
   </section>
 
   <!-- Prev / Next Navigation -->
-  <section class="py-12 bg-custom-light-grey border-t border-gray-200">
+  <section class="section-block-sm bg-custom-light-grey border-t border-gray-200">
     <div class="container-wide">
       <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 sm:gap-8">
         <a href={`/proyectos/${prevProject.id}`} class="group flex items-center gap-3 text-left flex-1 hover:text-custom-purple transition-colors min-w-0">

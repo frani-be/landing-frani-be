@@ -416,38 +416,87 @@ footer::before {
 .page-hero-breadcrumb span { color: rgba(255,255,255,0.45) !important; }
 .page-hero-breadcrumb .text-gray-400 { color: rgba(255,255,255,0.3) !important; }
 
-/* ── Container widths ──────────────────────────────────────── */
-.container-wide {
-  width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1380px;
+/* ══════════════════════════════════════════════════════════
+   SPACING SCALE
+   --space-1  : 0.5rem   — tight (badge gaps, icon margins)
+   --space-2  : 1rem     — inner (card internal padding rows)
+   --space-3  : 1.5rem   — base  (element stacks)
+   --space-4  : 2rem     — loose (card padding, grid gaps sm)
+   --space-6  : 3rem     — section inner (title→content)
+   --space-8  : 4rem     — content gap between groups
+   --space-12 : 6rem     — section vertical (sm screens)
+   --space-20 : 10rem    — section vertical (lg screens)
+   ══════════════════════════════════════════════════════════ */
+:root {
+  --space-1:  0.5rem;
+  --space-2:  1rem;
+  --space-3:  1.5rem;
+  --space-4:  2rem;
+  --space-6:  3rem;
+  --space-8:  4rem;
+  --space-12: 6rem;
+  --space-20: 10rem;
 }
-.container-mid {
-  width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
+
+/* ── Section blocks ────────────────────────────────────────
+   .section-block     — main sections  (py: 6rem→10rem)
+   .section-block-sm  — inner/secondary (py: 3rem→6rem)
+   ────────────────────────────────────────────────────────── */
+.section-block {
+  padding-top:    var(--space-12);
+  padding-bottom: var(--space-12);
 }
+@media (min-width: 1024px) {
+  .section-block {
+    padding-top:    var(--space-20);
+    padding-bottom: var(--space-20);
+  }
+}
+.section-block-sm {
+  padding-top:    var(--space-6);
+  padding-bottom: var(--space-6);
+}
+@media (min-width: 1024px) {
+  .section-block-sm {
+    padding-top:    var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+}
+
+/* ── Container widths ──────────────────────────────────────
+   .container-wide    — full layout  (max 1380px)
+   .container-mid     — content      (max 1000px)
+   .container-narrow  — focus text   (max  700px)
+   ────────────────────────────────────────────────────────── */
+.container-wide,
+.container-mid,
 .container-narrow {
   width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 700px;
+  padding-left:  var(--space-4);
+  padding-right: var(--space-4);
+}
+.container-wide    { max-width: 1380px; }
+.container-mid     { max-width: 1000px; }
+.container-narrow  { max-width:  700px; }
+
+/* Responsive container padding */
+@media (min-width: 640px) {
+  .container-wide,
+  .container-mid,
+  .container-narrow {
+    padding-left:  var(--space-6);
+    padding-right: var(--space-6);
+  }
 }
 
 /* ── Section titles (ghost effect) ───────────────────────── */
 .section-title-wrapper {
   position: relative;
   text-align: center;
-  margin-bottom: 3rem;
-  padding-top: 1.5rem;
+  margin-bottom: var(--space-8);
+  padding-top: var(--space-3);
 }
 .section-title-ghost {
   display: block;
