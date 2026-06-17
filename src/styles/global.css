@@ -522,14 +522,17 @@ footer::before {
   display: inline-block;
   margin-top: 1.25rem;
   text-align: center;
-  font-size: 0.875rem;
+  font-family: var(--font-family-titles);
+  font-size: 0.9rem;
   font-weight: 700;
   color: #b55aff;
-  border: 1px solid #b55aff;
+  border: 2px solid #b55aff;
   background: #fff;
-  padding: 0.25rem 1rem;
-  border-radius: 7px;
+  padding: 0.65rem 1.75rem;
+  border-radius: 8px;
   transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
 }
 .service-card-cta:hover {
   background: #b55aff;
@@ -545,13 +548,15 @@ footer::before {
   font-size: 0.9rem;
   line-height: 1;
   padding: 0.65rem 1.75rem;
-  border-radius: 8px;
+  border-radius: 8px !important;
   border: 2px solid transparent;
   cursor: pointer;
   transition: opacity 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
   text-align: center;
   white-space: nowrap;
   text-decoration: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .btn:hover { opacity: 0.88; }
 /* Solid primary */

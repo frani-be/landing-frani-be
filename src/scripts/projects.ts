@@ -41,8 +41,8 @@ export function buildProjectCardHTML(p: Project): string {
         <p class="text-custom-dark-gray mb-4 flex-1 text-sm">${p.description}</p>
         <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">${tagsHTML}</div>
         <div class="mt-6 flex gap-3">
-          <a href="/proyectos/${p.id}" class="flex-1 text-center bg-custom-purple border border-custom-purple text-white py-1 px-6 rounded-[7px] font-bold text-sm transition-all">Ver proyecto</a>
-          ${hasLinks ? `<button class="links-btn bg-white text-custom-purple border border-custom-purple py-1 px-6 rounded-[7px] font-bold text-sm transition-all" data-id="${p.id}">Links</button>` : ''}
+          <a href="/proyectos/${p.id}" class="btn btn-primary flex-1 text-center">Ver proyecto</a>
+          ${hasLinks ? `<button class="btn btn-secondary links-btn" data-id="${p.id}">Links</button>` : ''}
         </div>
       </div>
     </div>`;
