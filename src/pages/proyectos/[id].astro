@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import projectsData from '../../../public/data/projects.json';
+import { marked } from 'marked';
+
+export function getStaticPaths() {
+  return projectsData.projects.map((p) => ({
+    params: { id: p.id },
+    props: { project: p },
+  }));
+}
+
+interface ProjectLinks { demo?: string; repo?: string; caseStudy?: string; }
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  fullDescription: string;
+  image: string;
+  tags: string[];
+  links: ProjectLinks;
+  client?: string;
+  date?: string;
+  role?: string;
+  stack?: string;
+}
+
+const { project } = Astro.props as { project: Project };
+
+// Rewrite image paths from `assets/images/…` to `/images/…`
+function rewritePaths(markdown: string) {
+  return markdown.replace(/assets\/images\//g, '/images/');
+}
+
+// Process ::: showcase blocks before parsing
+function processShowcaseBlocks(markdown: string) {
+  return markdown.replace(/:::\s*showcase\s*\n([\s\S]*?)\n:::/g, (_match, content) => {
+    const imgMatch = content.match(/!\[([^\]]*)\]\(([^)]+)\)/);
+    const descMatch = content.match(/\*([^*]+)\*/);
+    if (imgMatch && descMatch) {
+      return `<div class="logo-showcase"><img src="${imgMatch[2]}" alt="${imgMatch[1]}"><div class="logo-description"><em>${descMatch[1]}</em></div></div>`;
+    }
+    return content;
+  });
+}
+
+const rawMarkdown = rewritePaths(project.fullDescription || '');
+const processedMarkdown = processShowcaseBlocks(rawMarkdown);
+const fullDescriptionHTML = marked.parse(processedMarkdown);
+
+// Prev / Next navigation
+const sortedProjects = [...projectsData.projects].sort((a, b) => {
+  const getYear = (d: string) => { const m = d?.match(/\d{4}/g); return m ? Math.max(...m.map(Number)) : 0; };
+  return getYear(b.date) - getYear(a.date);
+});
+const currentIndex = sortedProjects.findIndex(p => p.id === project.id);
+const prevProject = currentIndex === 0 ? sortedProjects[sortedProjects.length - 1] : sortedProjects[currentIndex - 1];
+const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[0] : sortedProjects[currentIndex + 1];
+---
+
+<BaseLayout
+  title={`${project.title} | Francisca Beatriz Medina Concha`}
+  description={project.description}
+  ogImage={`https://frani.be/${project.image.replace('assets/', '')}`}
+  ogUrl={`https://frani.be/proyectos/${project.id}`}
+>
+  <!-- Hero -->
+  <header class="relative pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple"></div>
+    <div class="relative z-10 w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <nav class="mb-6" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-custom-purple hover:underline font-medium">Inicio</a></li>
+          <li class="text-gray-400">/</li>
+          <li><a href="/proyectos" class="text-custom-purple hover:underline font-medium">Portafolio</a></li>
+          <li class="text-gray-400">/</li>
+          <li><span class="text-gray-500">{project.title}</span></li>
+        </ol>
+      </nav>
+      <div class="mb-4">
+        <span class="inline-block text-xs font-bold uppercase tracking-wide text-custom-purple bg-white px-3 py-1 rounded-full">{project.category}</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-custom-black mb-6 font-titles">{project.title}</h1>
+      <p class="text-xl text-custom-dark-gray max-w-3xl">{project.description}</p>
+    </div>
+  </header>
+
+  <!-- Project Image -->
+  <section class="py-12 bg-white">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <img
+        src={project.image.replace('assets/', '/')}
+        alt={project.title}
+        class="w-full aspect-video object-cover rounded-xl shadow-lg"
+      />
+    </div>
+  </section>
+
+  <!-- Project Details -->
+  <section class="py-12 bg-custom-light-grey">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <div class="lg:flex lg:gap-12 lg:items-start">
+        <!-- Main Content -->
+        <div class="lg:flex-[2]">
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <div id="project-full-description" class="prose prose-lg max-w-none text-gray-700" set:html={fullDescriptionHTML} />
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="bg-white rounded-xl p-6 shadow-sm mt-8 lg:mt-0 lg:flex-1 project-sidebar-sticky">
+          <h3 class="text-xl font-bold text-custom-black mb-4 font-titles">Detalles del Proyecto</h3>
+          <div class="space-y-4">
+            <div>
+              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Cliente</h4>
+              <p class="text-custom-black">{project.client || 'N/A'}</p>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Fecha</h4>
+              <p class="text-custom-black">{project.date || 'N/A'}</p>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Rol</h4>
+              <p class="text-custom-black">{project.role || 'N/A'}</p>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Stack Tecnológico</h4>
+              <p class="text-custom-black">{project.stack || 'N/A'}</p>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="mt-6">
+            <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-3">Tecnologías</h4>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="px-3 py-1 bg-custom-light-purple text-custom-purple text-sm rounded-full font-medium">{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="mt-6 space-y-3">
+            {project.links.demo && (
+              <a href={project.links.demo} target="_blank" rel="noopener noreferrer"
+                class="block w-full text-center bg-custom-purple text-white py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                🔗 Preview
+              </a>
+            )}
+            {project.links.repo && (
+              <a href={project.links.repo} target="_blank" rel="noopener noreferrer"
+                class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                💻 Repositorio
+              </a>
+            )}
+            {project.links.caseStudy && (
+              <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer"
+                class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                📄 Caso de estudio
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prev / Next Navigation -->
+  <section class="py-12 bg-custom-light-grey border-t border-gray-200">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 sm:gap-8">
+        <a href={`/proyectos/${prevProject.id}`} class="group flex items-center gap-3 text-left flex-1 hover:text-custom-purple transition-colors min-w-0">
+          <svg class="w-5 h-5 flex-shrink-0 text-custom-purple" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="15,18 9,12 15,6" stroke-linecap="round" fill="none" stroke-linejoin="round"></polyline>
+          </svg>
+          <div class="min-w-0 flex-1">
+            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Anterior</p>
+            <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{prevProject.title}</p>
+          </div>
+        </a>
+        <a href={`/proyectos/${nextProject.id}`} class="group flex items-center gap-3 text-right flex-1 justify-end hover:text-custom-purple transition-colors min-w-0">
+          <div class="min-w-0 flex-1">
+            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Siguiente</p>
+            <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{nextProject.title}</p>
+          </div>
+          <svg class="w-5 h-5 flex-shrink-0 text-custom-purple" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="9,18 15,12 9,6" stroke-linecap="round" fill="none" stroke-linejoin="round"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-custom-black mb-6 font-titles">¿Interesado en trabajar juntos?</h2>
+      <p class="text-xl text-custom-dark-gray mb-8 max-w-2xl mx-auto">
+        Estoy disponible para proyectos de diseño UX y desarrollo front-end. Conversemos sobre tu próxima idea.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <p class="text-[1.25em] mt-4">
+          <a href="https://calendar.app.google/NjSZEbvWrLfj56wy6" class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block" target="_blank">
+            Agenda una videollamada
+          </a>
+        </p>
+        <p class="text-[1.25em] mt-4">
+          <a href="/proyectos" class="inline-block bg-white text-custom-purple border border-custom-purple py-1 px-6 font-bold rounded-[7px] transition-all">
+            Ver más proyectos
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

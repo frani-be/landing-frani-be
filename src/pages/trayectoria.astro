@@ -1,0 +1,315 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mi Trayectoria | Francisca Beatriz Medina Concha"
+  description="Trayectoria profesional completa de Francisca Beatriz Medina Concha: experiencia laboral, formación académica, docencia y voluntariados."
+  ogUrl="https://frani.be/trayectoria"
+>
+  <!-- Hero Section -->
+  <header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-32 pb-20 text-center">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <nav class="mb-6 text-left" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-custom-purple hover:underline font-medium">Inicio</a></li>
+          <li class="text-gray-400">/</li>
+          <li><span class="text-gray-500">Trayectoria</span></li>
+        </ol>
+      </nav>
+
+      <div class="relative text-center mb-8">
+        <h1 class="absolute inset-0 flex items-center justify-center text-6xl md:text-9xl font-bold text-custom-purple opacity-20 select-none uppercase tracking-widest z-0 font-titles" aria-hidden="true">Trayectoria</h1>
+        <h1 class="relative z-10 text-4xl md:text-5xl font-bold text-custom-black font-titles">Trayectoria Profesional</h1>
+      </div>
+      <p class="text-xl text-custom-dark-gray max-w-3xl mx-auto">
+        Conoce mi recorrido en UX, desarrollo front-end, docencia y comunidades en tecnología.
+      </p>
+      <div class="text-center mt-12">
+        <a
+          href="/documents/cv-francisca-medina-concha.pdf"
+          download
+          class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block transition-all"
+          aria-label="Descargar CV en formato PDF"
+        >
+          <svg class="inline mr-2 mb-1" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15V3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Descargar CV (PDF)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="pt-12 pb-20 bg-custom-light-grey">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+
+      <!-- 3 Pillars -->
+      <div class="flex flex-wrap justify-center gap-8 mb-12">
+        <div class="text-center flex-1 min-w-[280px]" data-animate>
+          <div class="text-[2em] mb-4" aria-hidden="true">💻</div>
+          <h2 class="text-[1.25em] font-bold mb-4">Estrategia + código</h2>
+          <p class="text-custom-dark-gray">Líder en UX y front-end. Traduzco necesidades corporativas complejas en interfaces escalables.</p>
+        </div>
+        <div class="text-center flex-1 min-w-[280px]" data-animate>
+          <div class="text-[2em] mb-4" aria-hidden="true">🎓</div>
+          <h2 class="text-[1.25em] font-bold mb-4">Formación sólida</h2>
+          <p class="text-custom-dark-gray">Diplomada en ing. de software y diseño. Docente en universidades y bootcamps.</p>
+        </div>
+        <div class="text-center flex-1 min-w-[280px]" data-animate>
+          <div class="text-[2em] mb-4" aria-hidden="true">🌟</div>
+          <h2 class="text-[1.25em] font-bold mb-4">Charlista y voluntaria</h2>
+          <p class="text-custom-dark-gray">Speaker internacional y activista STEAM. Promuevo inclusión real en tecnología.</p>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-6 text-center">
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-laboral border-laboral border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="laboral">Experiencia laboral</button>
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-academica border-academica border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="academica">Formación académica</button>
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-voluntariados border-voluntariados border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="voluntariados">Voluntariados</button>
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-docencia border-docencia border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="docencia">Experiencia en docencia</button>
+      </div>
+
+      <!-- Global Controls -->
+      <div class="flex justify-center gap-2 mb-6 text-center" id="global-controls">
+        <button id="expand-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="mr-1 inline">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Expandir todo
+        </button>
+        <button id="collapse-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="mr-1 inline rotate-180">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Colapsar todo
+        </button>
+      </div>
+
+      <!-- Timeline Container -->
+      <div class="relative max-w-[800px] mx-auto" id="timeline-container"></div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  initReveal();
+
+  // Stagger the pillar cards
+  document.querySelectorAll<HTMLElement>('[data-animate]').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.animate(
+      [{ opacity: '0', transform: 'translateY(52px)' }, { opacity: '1', transform: 'translateY(0)' }],
+      { duration: 1100, delay: 200 + i * 300, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' }
+    );
+  });
+</script>
+
+<script>
+  interface TimelineItem {
+    id: number;
+    title: string;
+    company: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    category: string;
+    description: string;
+  }
+
+  const CATEGORIES: Record<string, { label: string; color: string; cssText: string; cssBg: string; cssBorder: string }> = {
+    laboral:       { label: 'Experiencia laboral',     color: '#2555a3', cssText: 'text-laboral',       cssBg: 'bg-laboral',       cssBorder: 'border-laboral' },
+    academica:     { label: 'Formación académica',      color: '#9f2eba', cssText: 'text-academica',     cssBg: 'bg-academica',     cssBorder: 'border-academica' },
+    docencia:      { label: 'Experiencia en docencia',  color: '#7d1fc7', cssText: 'text-docencia',      cssBg: 'bg-docencia',      cssBorder: 'border-docencia' },
+    voluntariados: { label: 'Voluntariados',            color: '#bd2c97', cssText: 'text-voluntariados', cssBg: 'bg-voluntariados', cssBorder: 'border-voluntariados' },
+  };
+  const MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+  function formatDate(d: string) {
+    if (d === 'actualidad') return 'Actualidad';
+    const [year, month] = d.split('-');
+    return `${MONTHS[parseInt(month) - 1]} ${year}`;
+  }
+
+  function processBoldText(text: string) {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/__(.*?)__/g, '<strong>$1</strong>');
+  }
+
+  function parseMarkdown(text: string) {
+    if (!text) return '';
+    const lines = text.split('\n');
+    let inList = false;
+    const result: string[] = [];
+    const hasListItems = lines.some(l => l.trim().startsWith('- '));
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.startsWith('- ')) {
+        if (!inList) { result.push('<ul class="timeline-list">'); inList = true; }
+        result.push(`<li>${processBoldText(line.substring(2))}</li>`);
+      } else {
+        if (inList) { result.push('</ul>'); inList = false; }
+        if (line) {
+          if (hasListItems) {
+            result.push(`<p>${processBoldText(line)}</p>`);
+          } else {
+            if (result.length === 0) result.push('<p>');
+            result.push(processBoldText(line));
+            if (i < lines.length - 1 && lines[i + 1].trim()) result.push(' ');
+          }
+        }
+      }
+    }
+    if (inList) result.push('</ul>');
+    if (!hasListItems && result.length > 0) result.push('</p>');
+    return result.join('');
+  }
+
+  function createTimelineItem(item: TimelineItem) {
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656' };
+    const mdHTML = parseMarkdown(item.description);
+    return `
+      <div class="relative mb-8 opacity-0 transition-all duration-500 timeline-item ml-16"
+           data-category="${item.category}"
+           style="--category-color:${cat.color};transform:translateY(20px);">
+        <div class="timeline-marker absolute rounded-full z-[2] w-4 h-4" style="left:-4rem;top:0.75rem;margin-left:1.5rem;"></div>
+        <div class="timeline-content bg-white rounded-[10px] shadow-sm transition-transform font-primary p-6">
+          <div class="flex justify-between items-center flex-wrap timeline-header-content mb-2 gap-2">
+            <div class="text-[0.75em] text-custom-dark-gray font-medium">${formatDate(item.startDate)} - ${formatDate(item.endDate)}</div>
+            <button class="timeline-category text-white text-sm font-medium border border-solid py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="${item.category}" style="border-color:${cat.color};">${cat.label}</button>
+          </div>
+          <h3 class="text-[1.25em] font-bold text-custom-black m-0 font-titles mb-2 leading-tight">${item.title}</h3>
+          <div class="text-base text-custom-dark-gray font-medium mb-4">${item.company} • ${item.location}</div>
+          <div class="relative">
+            <div class="timeline-description collapsed text-custom-black overflow-hidden leading-relaxed" id="description-${item.id}">${mdHTML}</div>
+            <button class="timeline-toggle font-semibold text-[0.75em] cursor-pointer flex items-center gap-1 mt-2 bg-transparent border-none" data-item-id="${item.id}">
+              <span class="toggle-text">Ver más</span>
+              <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  let allItems: TimelineItem[] = [];
+  let currentFilter = 'all';
+
+  function renderTimeline(filter: string) {
+    currentFilter = filter;
+    const filtered = filter === 'all' ? [...allItems] : allItems.filter(i => i.category === filter);
+    filtered.sort((a, b) => new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime());
+
+    const container = document.getElementById('timeline-container');
+    if (!container) return;
+    container.innerHTML = `<div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5"></div>${filtered.map(createTimelineItem).join('')}`;
+
+    setTimeout(() => {
+      document.querySelectorAll('.timeline-item').forEach((el, i) => {
+        setTimeout(() => el.classList.add('animate-in'), i * 100);
+      });
+    }, 50);
+
+    setupToggleListeners();
+    setupCategoryClickListeners();
+    setupGlobalControls();
+  }
+
+  function setupToggleListeners() {
+    document.querySelectorAll('.timeline-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = (btn as HTMLElement).getAttribute('data-item-id');
+        const desc = document.getElementById(`description-${id}`);
+        if (!desc) return;
+        const toggleBtn = desc.nextElementSibling as HTMLElement;
+        const txt = toggleBtn.querySelector('.toggle-text') as HTMLElement;
+        const ico = toggleBtn.querySelector('.toggle-icon') as HTMLElement;
+        if (desc.classList.contains('collapsed')) {
+          desc.classList.replace('collapsed', 'expanded');
+          txt.textContent = 'Ver menos';
+          ico.style.transform = 'rotate(180deg)';
+        } else {
+          desc.classList.replace('expanded', 'collapsed');
+          txt.textContent = 'Ver más';
+          ico.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+  }
+
+  function setupCategoryClickListeners() {
+    document.querySelectorAll('.timeline-category').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const filter = (btn as HTMLElement).getAttribute('data-filter') || 'all';
+        renderTimeline(filter);
+        updateActiveFilter(filter);
+      });
+    });
+  }
+
+  function setupGlobalControls() {
+    document.getElementById('expand-all-btn')?.addEventListener('click', () => {
+      document.querySelectorAll('.timeline-description.collapsed').forEach(desc => {
+        desc.classList.replace('collapsed', 'expanded');
+        const btn = desc.nextElementSibling as HTMLElement;
+        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver menos';
+        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(180deg)';
+      });
+    });
+    document.getElementById('collapse-all-btn')?.addEventListener('click', () => {
+      document.querySelectorAll('.timeline-description.expanded').forEach(desc => {
+        desc.classList.replace('expanded', 'collapsed');
+        const btn = desc.nextElementSibling as HTMLElement;
+        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver más';
+        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(0deg)';
+      });
+    });
+  }
+
+  function updateActiveFilter(filter: string) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      const f = (btn as HTMLElement).dataset.filter!;
+      const cat = CATEGORIES[f];
+      if (!cat) return;
+      btn.classList.remove('active', cat.cssBg, 'text-white');
+      btn.classList.add('bg-white', cat.cssText, cat.cssBorder);
+    });
+    if (filter !== 'all') {
+      const activeBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+      if (activeBtn && CATEGORIES[filter]) {
+        const cat = CATEGORIES[filter];
+        activeBtn.classList.add('active', cat.cssBg, 'text-white');
+        activeBtn.classList.remove('bg-white', cat.cssText);
+      }
+    }
+  }
+
+  // Setup filter button listeners
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = (btn as HTMLElement).dataset.filter!;
+      if (btn.classList.contains('active')) {
+        renderTimeline('all');
+        updateActiveFilter('all');
+      } else {
+        renderTimeline(filter);
+        updateActiveFilter(filter);
+      }
+    });
+  });
+
+  // Init
+  fetch('/data/timeline.json')
+    .then(r => r.json())
+    .then(data => {
+      allItems = data.timeline || [];
+      renderTimeline('all');
+    });
+</script>

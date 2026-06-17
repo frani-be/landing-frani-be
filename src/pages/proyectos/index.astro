@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Portafolio Completo | Francisca Beatriz Medina Concha"
+  description="Explora mi portafolio completo de proyectos en UX Design y Front-End Development."
+  ogUrl="https://frani.be/proyectos"
+>
+  <!-- Hero -->
+  <header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-32 pb-20 text-center">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <nav class="mb-6 text-left" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2 text-sm">
+          <li><a href="/" class="text-custom-purple hover:underline font-medium">Inicio</a></li>
+          <li class="text-gray-400">/</li>
+          <li><span class="text-gray-500">Portafolio</span></li>
+        </ol>
+      </nav>
+      <div class="relative text-center mb-8" data-reveal>
+        <h1 class="absolute inset-0 flex items-center justify-center text-6xl md:text-9xl font-bold text-custom-purple opacity-20 select-none uppercase tracking-widest z-0 font-titles" aria-hidden="true">Portafolio</h1>
+        <h1 class="relative z-10 text-4xl md:text-5xl font-bold text-custom-black font-titles">Portafolio Completo</h1>
+      </div>
+      <p class="text-xl text-custom-dark-gray max-w-3xl mx-auto" data-reveal data-reveal-delay="120">
+        Explora mi trabajo en diseño UX, desarrollo front-end y proyectos de impacto social.
+      </p>
+    </div>
+  </header>
+
+  <!-- Projects Grid -->
+  <section class="py-20 bg-custom-light-grey">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <div id="all-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <!-- Links Modal -->
+  <div id="links-modal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="relative bg-white rounded-2xl p-8 max-w-lg w-[90%] shadow-2xl animate-[modalSlideIn_0.3s_ease-out]">
+      <button class="absolute top-4 right-4 text-4xl text-gray-400 hover:text-gray-600 transition-colors leading-none w-8 h-8 flex items-center justify-center" aria-label="Cerrar">&times;</button>
+      <h3 class="font-titles text-2xl font-bold text-custom-black mb-6 pr-8">Enlaces del proyecto</h3>
+      <div id="links-modal-body" class="flex flex-col gap-3"></div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../../scripts/reveal';
+  initReveal();
+</script>
+
+<script>
+  interface ProjectLinks { demo?: string; repo?: string; caseStudy?: string; }
+  interface Project { id: string; title: string; category: string; description: string; image: string; tags: string[]; links: ProjectLinks; date: string; }
+
+  function extractYear(d: string) {
+    const m = d?.match(/\d{4}/g);
+    return m ? Math.max(...m.map(Number)) : 0;
+  }
+
+  function showLinksModal(links: ProjectLinks) {
+    const modal = document.getElementById('links-modal')!;
+    const body = document.getElementById('links-modal-body')!;
+    const closeBtn = modal.querySelector('button[aria-label="Cerrar"]') as HTMLElement;
+    const overlay = modal.querySelector('.absolute.inset-0') as HTMLElement;
+    const items: string[] = [];
+    if (links.demo) items.push(`<a href="${links.demo}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">🔗 Preview</a>`);
+    if (links.repo) items.push(`<a href="${links.repo}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">💻 Repositorio</a>`);
+    if (links.caseStudy) items.push(`<a href="${links.caseStudy}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">📄 Caso de estudio</a>`);
+    body.innerHTML = items.join('');
+    modal.classList.remove('hidden');
+    const close = () => modal.classList.add('hidden');
+    closeBtn.onclick = close;
+    overlay.onclick = close;
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
+    document.addEventListener('keydown', esc);
+  }
+
+  async function initProjects() {
+    const res = await fetch('/data/projects.json');
+    const data = await res.json();
+    let projects: Project[] = data.projects || [];
+    projects.sort((a, b) => extractYear(b.date) - extractYear(a.date));
+
+    const container = document.getElementById('all-projects-container');
+    if (!container) return;
+
+    container.innerHTML = projects.map(p => {
+      const tagsHTML = p.tags.slice(0, 4).map(t => `<span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">${t}</span>`).join('');
+      const hasLinks = p.links.demo || p.links.repo || p.links.caseStudy;
+      return `
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group project-card">
+          <div class="aspect-video w-full overflow-hidden">
+            <img src="${p.image.replace('assets/', '/')}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <span class="text-xs font-bold uppercase tracking-wide text-custom-purple mb-2">${p.category}</span>
+            <h3 class="text-xl font-bold text-custom-black mb-3 font-titles leading-tight">${p.title}</h3>
+            <p class="text-custom-dark-gray mb-4 flex-1">${p.description}</p>
+            <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">${tagsHTML}</div>
+            <div class="mt-6 flex gap-3">
+              <a href="/proyectos/${p.id}" class="flex-1 text-center bg-custom-purple border border-custom-purple text-white py-1 px-6 rounded-[7px] font-bold text-sm transition-all">Ver proyecto</a>
+              ${hasLinks ? `<button class="links-btn bg-white text-custom-purple border border-custom-purple py-1 px-6 rounded-[7px] font-bold text-sm transition-all" data-id="${p.id}">Links</button>` : ''}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+
+    document.querySelectorAll<HTMLElement>('.project-card').forEach((card, i) => {
+      card.animate(
+        [{ opacity: '0', transform: 'translateY(52px)' }, { opacity: '1', transform: 'translateY(0)' }],
+        { duration: 1100, delay: i * 200, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' }
+      );
+    });
+
+    document.querySelectorAll('.links-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = (btn as HTMLElement).dataset.id!;
+        const proj = projects.find(p => p.id === id);
+        if (proj) showLinksModal(proj.links);
+      });
+    });
+  }
+
+  initProjects();
+</script>

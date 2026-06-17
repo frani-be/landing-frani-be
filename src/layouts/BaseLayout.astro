@@ -1,0 +1,145 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  ogUrl?: string;
+}
+
+const {
+  title,
+  description = 'Portafolio de Francisca Beatriz Medina Concha. Impulso talento en STEAM y creo tecnología con propósito.',
+  ogImage = 'https://frani.be/images/logo.jpg',
+  ogUrl = 'https://frani.be/',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="author" content="Francisca Beatriz Medina Concha" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={ogUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicons -->
+    <link href="/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="/favicons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="/favicons/icon-hires.png" rel="icon" sizes="192x192" />
+    <link href="/favicons/icon-normal.png" rel="icon" sizes="128x128" />
+    <link href="/favicons/icon.svg" rel="mask-icon" sizes="any" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <slot name="head" />
+  </head>
+
+  <body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation">
+      <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+        <div class="logo-container">
+          <a href="/" aria-label="Ir al inicio">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70.3">
+              <use href="/images/icons.svg#logo"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <!-- Footer -->
+    <footer class="pt-20 pb-8 bg-gradient-to-br from-custom-purple to-custom-purple-dark text-white relative overflow-hidden">
+      <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col gap-8 text-center justify-center items-center">
+        <div class="text-center scroll-btn relative">
+          <a
+            href="#"
+            onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
+            class="py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
+            aria-label="Ir a la sección principal"
+            title="Vuelve al inicio"
+          >
+            <span class="mr-2 text-[1.2em] align-middle" aria-hidden="true">↑</span>
+            Volver a arriba
+          </a>
+        </div>
+        <div>
+          <h3 class="text-[1.5em]">Hablemos de tu próximo proyecto</h3>
+          <p class="text-[1.25em] mt-4">
+            <a
+              href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+              class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block"
+              target="_blank"
+            >Agenda una videollamada</a>
+          </p>
+        </div>
+        <ul class="flex flex-col lg:flex-row gap-4 flex-wrap text-base items-center justify-center lg:justify-start">
+          <li>
+            <a href="mailto:hola@frani.be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                <use href="/images/icons.svg#mail"></use>
+              </svg> Mail
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/frani-be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                <use href="/images/icons.svg#linkedin"></use>
+              </svg> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/frani-be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                <use href="/images/icons.svg#github"></use>
+              </svg> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/frani.be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+                <use href="/images/icons.svg#instagram"></use>
+              </svg> Instagram
+            </a>
+          </li>
+        </ul>
+        <p class="text-[0.75em] opacity-90 text-center mt-12">
+          © <span id="current-year"></span> frani.be • Desarrollando y diseñado con propósito <span aria-hidden="true">✨</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('current-year')!.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>

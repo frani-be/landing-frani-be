@@ -1,17 +1,495 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="Francisca Beatriz Medina Concha | Strategic UX Designer & Front-End Engineer"
+  ogUrl="https://frani.be/"
+>
+  <!-- Header / Hero -->
+  <header
+    class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-40 pb-40 glitter-container text-center lg:text-left min-h-screen w-screen relative overflow-hidden isolate"
+    id="header"
+  >
+    <div
+      class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col lg:flex-row gap-8 items-center relative z-[1]"
+      id="header-container"
+    >
+      <div class="w-full lg:w-3/4">
+        <h1 class="text-[3em] leading-none text-custom-black" data-reveal data-reveal-delay="100">
+          Francisca Beatriz<br />
+          <span class="text-custom-purple">Medina Concha</span>
+        </h1>
+        <h2 class="text-[1.5em] mt-4 font-bold" data-reveal data-reveal-delay="450">Strategic UX Designer & Front-End Engineer</h2>
+        <p class="text-[1.25em] mt-4" data-reveal data-reveal-delay="700">Impulso talento en STEAM y creo tecnología con propósito.</p>
+        <h3 class="mt-8 text-[1.5em]" data-reveal data-reveal-delay="950">Hablemos de tu próximo proyecto</h3>
+        <p class="text-[1.25em] mt-4" data-reveal data-reveal-delay="1150">
+          <a
+            href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+            class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block"
+            target="_blank"
+          >Agenda una videollamada</a>
+        </p>
+        <ul
+          id="social-links-header"
+          class="flex flex-col lg:flex-row gap-4 flex-wrap text-base items-center mt-8 justify-center lg:justify-start"
+          data-reveal data-reveal-delay="1350"
+        >
+          <li>
+            <a href="mailto:hola@frani.be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#mail"></use></svg> Mail
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/frani-be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#linkedin"></use></svg> LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/frani-be" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#github"></use></svg> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/frani.be/" class="text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block" target="_blank" rel="noopener noreferrer">
+              <svg class="mr-[0.2rem] mb-[0.2rem] inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#instagram"></use></svg> Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-6 items-center w-full lg:w-1/2" data-reveal data-reveal-delay="550">
+        <figure>
+          <img
+            src="/images/image_frani-1.png"
+            alt="Francisca Beatriz Medina Concha"
+            id="main-image"
+            class="fade-effect transition-opacity duration-500 opacity-100"
+          />
+        </figure>
+        <noscript>
+          <img src="/images/image_frani-1.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-2.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-3.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-4.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-5.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-6.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-7.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-8.png" alt="Francisca Beatriz Medina Concha" />
+          <img src="/images/image_frani-9.png" alt="Francisca Beatriz Medina Concha" />
+        </noscript>
+        <p id="message">
+          <span class="static-message">Soy Francisca Beatriz,</span>
+          <span class="iterate-message text-custom-purple">
+            <span>Strategic UX Designer</span>
+            <span>Front-End Engineer</span>
+            <span>Tech Speaker</span>
+            <span>STEAM Advocate</span>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Scroll button -->
+    <div class="text-center mt-16 scroll-btn relative">
+      <a
+        href="#timeline"
+        id="scroll-to-timeline"
+        class="text-custom-purple py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
+        aria-label="Ir a la sección de trayectoria profesional"
+        title="Conoce mi trayectoria profesional"
+      >
+        <span class="mr-2 text-[1.2em] align-middle" aria-hidden="true">↓</span>
+        Ver mi trayectoria
+      </a>
+    </div>
+  </header>
+
+  <!-- Timeline Section -->
+  <section class="bg-custom-light-grey py-40 border-t border-custom-dark-gray/25" id="timeline">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <div class="text-wrapper relative text-center text-[2.75rem] mb-12" data-reveal>
+        <h3 class="text-back absolute left-1/2 -top-[0.25em] -translate-x-1/2 text-[#e3e3e3] whitespace-nowrap pointer-events-none text-[2em] z-0" aria-hidden="true" role="presentation">Mi trayectoria</h3>
+        <h3 class="text-front mx-auto text-custom-black z-[2] leading-none relative">Mi trayectoria</h3>
+      </div>
+
+      <div class="flex justify-center gap-2 mb-6 text-center" id="global-controls">
+        <button id="expand-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 inline">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Expandir todo
+        </button>
+        <button id="collapse-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 inline rotate-180">
+            <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Colapsar todo
+        </button>
+      </div>
+
+      <div class="relative max-w-[800px] mx-auto">
+        <div id="timeline-container" class="relative"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-custom-light-grey via-custom-light-grey/80 to-transparent pointer-events-none z-10"></div>
+        <div class="relative text-center -mt-12 z-20">
+          <a href="/trayectoria" class="inline-block bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] transition-all">
+            Ver trayectoria completa
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section class="py-40 bg-white" id="proyectos">
+    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <div class="text-wrapper relative text-center text-[2.75rem]" data-reveal>
+        <h3 class="text-back absolute left-1/2 -top-[0.25em] -translate-x-1/2 text-[#e3e3e3] whitespace-nowrap pointer-events-none text-[2em] z-0" aria-hidden="true" role="presentation">Proyectos destacados</h3>
+        <h3 class="text-front mx-auto text-custom-black z-[2] leading-none relative">Proyectos destacados</h3>
+      </div>
+
+      <div id="featured-projects-container" class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+      <div class="text-center mt-12">
+        <a href="/proyectos" class="inline-block bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] transition-all">
+          Ver todos los proyectos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Links Modal -->
+  <div id="links-modal" class="hidden fixed inset-0 z-[9999] flex items-center justify-center">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+    <div class="relative bg-white rounded-2xl p-8 max-w-lg w-[90%] shadow-2xl animate-[modalSlideIn_0.3s_ease-out]">
+      <button class="absolute top-4 right-4 text-4xl text-gray-400 hover:text-gray-600 transition-colors leading-none w-8 h-8 flex items-center justify-center" aria-label="Cerrar">&times;</button>
+      <h3 class="font-titles text-2xl font-bold text-custom-black mb-6 pr-8">Enlaces del proyecto</h3>
+      <div id="links-modal-body" class="flex flex-col gap-3"></div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  initReveal();
+</script>
+
+<script>
+  // Image transition
+  let counter = 1;
+  const cantImages = 9;
+  const duration = 13000;
+  const initialDelay = 2000;
+  const fadeDuration = 500;
+  const mainImage = document.getElementById('main-image') as HTMLImageElement | null;
+
+  if (mainImage) {
+    mainImage.style.opacity = '1';
+    function changeImage() {
+      counter = counter % cantImages + 1;
+      mainImage!.style.opacity = '0';
+      setTimeout(() => {
+        mainImage!.src = `/images/image_frani-${counter}.png`;
+        mainImage!.style.opacity = '1';
+      }, fadeDuration);
+    }
+    setTimeout(() => {
+      changeImage();
+      setInterval(changeImage, duration);
+    }, duration - initialDelay);
+  }
+
+  // Iterate message animation
+  const iterateMessage = document.querySelector('.iterate-message');
+  if (iterateMessage) {
+    const messages = iterateMessage.querySelectorAll('span');
+    const messageCount = messages.length;
+    const durationPerMessage = 4;
+    const totalDuration = messageCount * durationPerMessage;
+    messages.forEach((message, index) => {
+      const delay = -(messageCount - 1 - index) * durationPerMessage;
+      (message as HTMLElement).style.setProperty('--animation-duration', `${totalDuration}s`);
+      (message as HTMLElement).style.setProperty('--animation-delay', `${delay}s`);
+    });
+  }
+
+  // Mousemove ghost text
+  document.addEventListener('mousemove', function (e) {
+    const width = window.innerWidth;
+    const mouseX = e.clientX;
+    const offset = mouseX / width * 100 - 50;
+    document.querySelectorAll('.text-back').forEach(function (textBack) {
+      (textBack as HTMLElement).style.transform = 'translateX(' + (-50 - offset) + '%)';
+    });
+  });
+
+  // Glitter
+  function getRandomInt(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function setAttributes(el: Element, attributes: Record<string, string>) {
+    for (const [key, value] of Object.entries(attributes)) el.setAttribute(key, value);
+  }
+  function generateStar() {
+    const shapes = [
+      { type: 'path', attributes: { d: 'M208.3 0h-25.9C144.6 78.6 80.2 143.1 0 182.8v25C80.2 247.6 144.6 312 182.3 390.6h25.9c37.8-78.6 102.3-143 182.4-182.8v-25C310.5 143.1 246 78.6 208.3 0z' } },
+      { type: 'circle', attributes: { cx: '195.3', cy: '195.3', r: '195.3' } },
+      { type: 'path', attributes: { d: 'M372.9 172.9H227.1V27.1C227.1 12.1 215 0 200 0c-15 0-27.1 12.1-27.1 27.1v145.8H27.1C12.1 172.9 0 185 0 200c0 15 12.1 27.1 27.1 27.1h145.8v145.8c0 15 12.1 27.1 27.1 27.1 15 0 27.1-12.1 27.1-27.1V227.1h145.8c15 0 27.1-12.1 27.1-27.1 0-15-12.1-27.1-27.1-27.1z' } },
+    ];
+    const randomShape = shapes[getRandomInt(0, shapes.length - 1)];
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    setAttributes(svg, { viewBox: '0 0 390.6 390.6', 'xml:space': 'preserve', 'aria-hidden': 'true', role: 'presentation' });
+    const el = document.createElementNS('http://www.w3.org/2000/svg', randomShape.type);
+    setAttributes(el, randomShape.attributes);
+    svg.appendChild(el);
+    const sizes = ['small', 'medium', 'big'];
+    const sizeClasses: Record<string, string> = { small: 'w-1 h-1', medium: 'w-1.5 h-1.5', big: 'w-2 h-2' };
+    const randomSize = sizes[getRandomInt(0, sizes.length - 1)];
+    const randomOpacity = (getRandomInt(4, 9) / 10).toFixed(1);
+    svg.classList.add('glitter', randomSize, 'absolute', 'z-0', 'pointer-events-none', ...sizeClasses[randomSize].split(' '));
+    svg.style.fill = '#e8d4f9';
+    svg.style.opacity = randomOpacity;
+    svg.style.top = `${getRandomInt(2, 98)}%`;
+    svg.style.left = `${getRandomInt(2, 98)}%`;
+    return svg;
+  }
+  function generateStars(container: Element, starCount: number) {
+    container.querySelectorAll('.glitter').forEach(s => s.remove());
+    for (let i = 0; i < starCount; i++) container.prepend(generateStar());
+  }
+  function calculateStarCount(w: number) {
+    if (w < 782) return 50;
+    if (w < 1280) return 75;
+    return 100;
+  }
+  function updateStars() {
+    const container = document.querySelector('.glitter-container');
+    if (container) generateStars(container, calculateStarCount(window.innerWidth));
+  }
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', () => { clearTimeout(resizeTimeout); resizeTimeout = setTimeout(updateStars, 200); });
+  window.addEventListener('load', updateStars);
+</script>
+
+<script>
+  // Timeline (home preview - 4 items)
+  interface TimelineItem {
+    id: number;
+    title: string;
+    company: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    category: string;
+    description: string;
+  }
+
+  const CATEGORIES: Record<string, { label: string; color: string }> = {
+    laboral:       { label: 'Experiencia laboral',       color: '#2555a3' },
+    academica:     { label: 'Formación académica',        color: '#9f2eba' },
+    docencia:      { label: 'Experiencia en docencia',    color: '#7d1fc7' },
+    voluntariados: { label: 'Voluntariados',              color: '#bd2c97' },
+  };
+  const MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+  function formatDate(d: string) {
+    if (d === 'actualidad') return 'Actualidad';
+    const [year, month] = d.split('-');
+    return `${MONTHS[parseInt(month) - 1]} ${year}`;
+  }
+
+  function processBoldText(text: string) {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/__(.*?)__/g, '<strong>$1</strong>');
+  }
+
+  function parseMarkdown(text: string) {
+    if (!text) return '';
+    const lines = text.split('\n');
+    let inList = false;
+    let result: string[] = [];
+    const hasListItems = lines.some(l => l.trim().startsWith('- '));
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.startsWith('- ')) {
+        if (!inList) { result.push('<ul class="timeline-list">'); inList = true; }
+        result.push(`<li>${processBoldText(line.substring(2))}</li>`);
+      } else {
+        if (inList) { result.push('</ul>'); inList = false; }
+        if (line) {
+          if (hasListItems) {
+            result.push(`<p>${processBoldText(line)}</p>`);
+          } else {
+            if (result.length === 0) result.push('<p>');
+            result.push(processBoldText(line));
+            if (i < lines.length - 1 && lines[i + 1].trim()) result.push(' ');
+          }
+        }
+      }
+    }
+    if (inList) result.push('</ul>');
+    if (!hasListItems && result.length > 0) result.push('</p>');
+    return result.join('');
+  }
+
+  function createTimelineItem(item: TimelineItem) {
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656' };
+    const mdHTML = parseMarkdown(item.description);
+    return `
+      <div class="relative mb-8 opacity-0 transition-all duration-500 timeline-item ml-16"
+           data-category="${item.category}"
+           style="--category-color: ${cat.color}; transform: translateY(20px);">
+        <div class="timeline-marker absolute rounded-full z-[2] w-4 h-4" style="left:-4rem;top:0.75rem;margin-left:1.5rem;"></div>
+        <div class="timeline-content bg-white rounded-[10px] shadow-sm transition-transform font-primary p-6">
+          <div class="flex justify-between items-center flex-wrap timeline-header-content mb-2 gap-2">
+            <div class="text-[0.75em] text-custom-dark-gray font-medium font-primary">${formatDate(item.startDate)} - ${formatDate(item.endDate)}</div>
+            <button class="timeline-category text-white text-sm transition-all font-primary font-medium border border-solid py-0.5 px-5 rounded-[7px]"
+                    style="border-color:${cat.color};">${cat.label}</button>
+          </div>
+          <h3 class="text-[1.25em] font-bold text-custom-black m-0 font-titles mb-2 leading-tight">${item.title}</h3>
+          <div class="text-base text-custom-dark-gray font-medium font-primary mb-4">${item.company} • ${item.location}</div>
+          <div class="relative">
+            <div class="timeline-description collapsed text-custom-black overflow-hidden font-primary leading-relaxed" id="description-${item.id}">${mdHTML}</div>
+            <button class="timeline-toggle font-semibold text-[0.75em] cursor-pointer flex items-center transition-all font-primary gap-1 mt-2 bg-transparent border-none" data-item-id="${item.id}">
+              <span class="toggle-text">Ver más</span>
+              <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  async function initTimeline() {
+    const res = await fetch('/data/timeline.json');
+    const data = await res.json();
+    let items: TimelineItem[] = data.timeline || [];
+    items.sort((a, b) => new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime());
+    items = items.slice(0, 4);
+
+    const container = document.getElementById('timeline-container');
+    if (!container) return;
+    container.innerHTML = `<div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5 md:left-8"></div>${items.map(createTimelineItem).join('')}`;
+
+    setTimeout(() => {
+      document.querySelectorAll('.timeline-item').forEach((el, i) => {
+        setTimeout(() => el.classList.add('animate-in'), i * 100);
+      });
+    }, 50);
+
+    document.querySelectorAll('.timeline-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = (e.currentTarget as HTMLElement).getAttribute('data-item-id');
+        const desc = document.getElementById(`description-${id}`);
+        if (!desc) return;
+        const btn = desc.nextElementSibling as HTMLElement;
+        const txt = btn.querySelector('.toggle-text') as HTMLElement;
+        const ico = btn.querySelector('.toggle-icon') as HTMLElement;
+        if (desc.classList.contains('collapsed')) {
+          desc.classList.replace('collapsed', 'expanded');
+          txt.textContent = 'Ver menos';
+          ico.style.transform = 'rotate(180deg)';
+        } else {
+          desc.classList.replace('expanded', 'collapsed');
+          txt.textContent = 'Ver más';
+          ico.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    document.getElementById('expand-all-btn')?.addEventListener('click', () => {
+      document.querySelectorAll('.timeline-description.collapsed').forEach(desc => {
+        desc.classList.replace('collapsed', 'expanded');
+        const btn = desc.nextElementSibling as HTMLElement;
+        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver menos';
+        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(180deg)';
+      });
+    });
+    document.getElementById('collapse-all-btn')?.addEventListener('click', () => {
+      document.querySelectorAll('.timeline-description.expanded').forEach(desc => {
+        desc.classList.replace('expanded', 'collapsed');
+        const btn = desc.nextElementSibling as HTMLElement;
+        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver más';
+        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(0deg)';
+      });
+    });
+  }
+  initTimeline();
+</script>
+
+<script>
+  // Featured Projects
+  interface ProjectLinks { demo?: string; repo?: string; caseStudy?: string; }
+  interface Project { id: string; title: string; category: string; description: string; image: string; tags: string[]; links: ProjectLinks; featured: boolean; }
+
+  function extractYear(d: string) {
+    const m = d?.match(/\d{4}/g);
+    return m ? Math.max(...m.map(Number)) : 0;
+  }
+
+  function showLinksModal(links: ProjectLinks) {
+    const modal = document.getElementById('links-modal')!;
+    const body = document.getElementById('links-modal-body')!;
+    const closeBtn = modal.querySelector('button[aria-label="Cerrar"]') as HTMLElement;
+    const overlay = modal.querySelector('.absolute.inset-0') as HTMLElement;
+    const items: string[] = [];
+    if (links.demo) items.push(`<a href="${links.demo}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">🔗 Preview</a>`);
+    if (links.repo) items.push(`<a href="${links.repo}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">💻 Repositorio</a>`);
+    if (links.caseStudy) items.push(`<a href="${links.caseStudy}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">📄 Caso de estudio</a>`);
+    body.innerHTML = items.join('');
+    modal.classList.remove('hidden');
+    const close = () => modal.classList.add('hidden');
+    closeBtn.onclick = close;
+    overlay.onclick = close;
+    const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
+    document.addEventListener('keydown', esc);
+  }
+
+  async function initProjects() {
+    const res = await fetch('/data/projects.json');
+    const data = await res.json();
+    let projects: Project[] = (data.projects || []).filter((p: Project) => p.featured);
+    projects.sort((a, b) => extractYear(b.image) - extractYear(a.image));
+
+    const container = document.getElementById('featured-projects-container');
+    if (!container) return;
+
+    container.innerHTML = projects.map(p => {
+      const tagsHTML = p.tags.slice(0, 4).map(t => `<span class="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">${t}</span>`).join('');
+      const hasLinks = p.links.demo || p.links.repo || p.links.caseStudy;
+      return `
+        <div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group project-card" data-id="${p.id}">
+          <div class="aspect-video w-full overflow-hidden">
+            <img src="${p.image.replace('assets/', '/')}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <span class="text-xs font-bold uppercase tracking-wide text-custom-purple mb-2">${p.category}</span>
+            <h3 class="text-xl font-bold text-custom-black mb-3 font-titles leading-tight">${p.title}</h3>
+            <p class="text-custom-dark-gray mb-4 flex-1">${p.description}</p>
+            <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">${tagsHTML}</div>
+            <div class="mt-6 flex gap-3">
+              <a href="/proyectos/${p.id}" class="flex-1 text-center bg-custom-purple border border-custom-purple text-white py-1 px-6 rounded-[7px] font-bold text-sm transition-all">Ver proyecto</a>
+              ${hasLinks ? `<button class="links-btn bg-white text-custom-purple border border-custom-purple py-1 px-6 rounded-[7px] font-bold text-sm transition-all" data-id="${p.id}">Links</button>` : ''}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+
+    document.querySelectorAll<HTMLElement>('.project-card').forEach((card, i) => {
+      card.animate(
+        [{ opacity: '0', transform: 'translateY(52px)' }, { opacity: '1', transform: 'translateY(0)' }],
+        { duration: 1100, delay: i * 220, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' }
+      );
+    });
+
+    const allProjects: Project[] = data.projects || [];
+    document.querySelectorAll('.links-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = (btn as HTMLElement).dataset.id!;
+        const proj = allProjects.find(p => p.id === id);
+        if (proj) showLinksModal(proj.links);
+      });
+    });
+  }
+  initProjects();
+</script>
