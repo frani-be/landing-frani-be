@@ -552,6 +552,17 @@ footer::before {
   border-color: #fff;
 }
 .btn-white:hover { opacity: 0.88; }
+/* Text link — no bg, no border */
+.btn-tertiary {
+  background: transparent;
+  color: #b55aff;
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.btn-tertiary:hover { opacity: 0.7; }
 
 /* ── Contact section ─────────────────────────────────────── */
 .contact-input {
