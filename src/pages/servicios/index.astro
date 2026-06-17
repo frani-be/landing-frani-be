@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionTitle from '../../components/SectionTitle.astro';
+import CtaSection from '../../components/CtaSection.astro';
 
 const principales = [
   {
@@ -45,10 +47,7 @@ const secundarios = [
 >
   <section class="pt-48 pb-24 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple">
     <div class="container-mid">
-      <div class="section-title-wrapper" data-reveal>
-        <span class="section-title-ghost" aria-hidden="true" role="presentation">Servicios</span>
-        <h1 class="section-title-front">Mis servicios</h1>
-      </div>
+      <SectionTitle title="Mis servicios" ghost="Servicios" />
       <p class="text-center text-custom-dark-gray text-lg max-w-2xl mx-auto mt-4" data-reveal data-reveal-delay="200">
         Diseño, desarrollo y estrategia al servicio de proyectos con propósito. Trabajemos juntos.
       </p>
@@ -92,19 +91,11 @@ const secundarios = [
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-24 bg-custom-purple text-white text-center">
-    <div class="container-narrow">
-      <h2 class="text-3xl font-bold mb-4" data-reveal>¿Listo/a para empezar?</h2>
-      <p class="text-white/80 text-lg mb-8" data-reveal data-reveal-delay="150">Agendemos una videollamada sin compromiso para hablar de tu proyecto.</p>
-      <a
-        href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-        target="_blank"
-        class="bg-white text-custom-purple py-2 px-10 font-bold rounded-[7px] inline-block hover:opacity-90 transition-all"
-        data-reveal data-reveal-delay="300"
-      >Agenda una videollamada</a>
-    </div>
-  </section>
+  <CtaSection
+    title="¿Listo/a para empezar?"
+    subtitle="Agendemos una videollamada sin compromiso para hablar de tu proyecto."
+    bg="bg-white"
+  />
 </BaseLayout>
 
 <script>

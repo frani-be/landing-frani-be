@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -7,45 +8,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Trayectoria profesional completa de Francisca Beatriz Medina Concha: experiencia laboral, formación académica, docencia y voluntariados."
   ogUrl="https://frani.be/trayectoria"
 >
-  <!-- Hero Section -->
-  <header class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-32 pb-20 text-center">
-    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
-      <nav class="mb-6 text-left" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-2 text-sm">
-          <li><a href="/" class="text-custom-purple hover:underline font-medium">Inicio</a></li>
-          <li class="text-gray-400">/</li>
-          <li><span class="text-gray-500">Trayectoria</span></li>
-        </ol>
-      </nav>
-
-      <div class="relative text-center mb-8">
-        <h1 class="absolute inset-0 flex items-center justify-center text-6xl md:text-9xl font-bold text-custom-purple opacity-20 select-none uppercase tracking-widest z-0 font-titles" aria-hidden="true">Trayectoria</h1>
-        <h1 class="relative z-10 text-4xl md:text-5xl font-bold text-custom-black font-titles">Trayectoria Profesional</h1>
-      </div>
-      <p class="text-xl text-custom-dark-gray max-w-3xl mx-auto">
-        Conoce mi recorrido en UX, desarrollo front-end, docencia y comunidades en tecnología.
-      </p>
-      <div class="text-center mt-12">
-        <a
-          href="/documents/cv-francisca-medina-concha.pdf"
-          download
-          class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block transition-all"
-          aria-label="Descargar CV en formato PDF"
-        >
-          <svg class="inline mr-2 mb-1" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 15V3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Descargar CV (PDF)
-        </a>
-      </div>
+  <PageHero
+    title="Trayectoria Profesional"
+    ghost="Trayectoria"
+    subtitle="Conoce mi recorrido en UX, desarrollo front-end, docencia y comunidades en tecnología."
+    crumbs={[{ label: 'Inicio', href: '/' }, { label: 'Trayectoria' }]}
+  >
+    <div class="text-center mt-8">
+      <a
+        href="/documents/cv-francisca-medina-concha.pdf"
+        download
+        class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block transition-all"
+        aria-label="Descargar CV en formato PDF"
+      >
+        <svg class="inline mr-2 mb-1" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 15V3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Descargar CV (PDF)
+      </a>
     </div>
-  </header>
+  </PageHero>
 
-  <!-- Main Content -->
   <section class="pt-12 pb-20 bg-custom-light-grey">
-    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+    <div class="container-wide">
 
       <!-- 3 Pillars -->
       <div class="flex flex-wrap justify-center gap-8 mb-12">

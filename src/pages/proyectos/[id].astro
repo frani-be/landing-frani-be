@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CtaSection from '../../components/CtaSection.astro';
 import projectsData from '../../../public/data/projects.json';
 import { marked } from 'marked';
 
@@ -69,15 +71,11 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
   <header class="relative pt-32 pb-20 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple"></div>
     <div class="relative z-10 w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
-      <nav class="mb-6" aria-label="Breadcrumb">
-        <ol class="flex items-center space-x-2 text-sm">
-          <li><a href="/" class="text-custom-purple hover:underline font-medium">Inicio</a></li>
-          <li class="text-gray-400">/</li>
-          <li><a href="/proyectos" class="text-custom-purple hover:underline font-medium">Portafolio</a></li>
-          <li class="text-gray-400">/</li>
-          <li><span class="text-gray-500">{project.title}</span></li>
-        </ol>
-      </nav>
+      <Breadcrumb crumbs={[
+        { label: 'Inicio', href: '/' },
+        { label: 'Portafolio', href: '/proyectos' },
+        { label: project.title },
+      ]} />
       <div class="mb-4">
         <span class="inline-block text-xs font-bold uppercase tracking-wide text-custom-purple bg-white px-3 py-1 rounded-full">{project.category}</span>
       </div>
@@ -192,25 +190,12 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-20 bg-white">
-    <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-custom-black mb-6 font-titles">¿Interesado en trabajar juntos?</h2>
-      <p class="text-xl text-custom-dark-gray mb-8 max-w-2xl mx-auto">
-        Estoy disponible para proyectos de diseño UX y desarrollo front-end. Conversemos sobre tu próxima idea.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <p class="text-[1.25em] mt-4">
-          <a href="https://calendar.app.google/NjSZEbvWrLfj56wy6" class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block" target="_blank">
-            Agenda una videollamada
-          </a>
-        </p>
-        <p class="text-[1.25em] mt-4">
-          <a href="/proyectos" class="inline-block bg-white text-custom-purple border border-custom-purple py-1 px-6 font-bold rounded-[7px] transition-all">
-            Ver más proyectos
-          </a>
-        </p>
-      </div>
-    </div>
-  </section>
+  <CtaSection
+    title="¿Interesado en trabajar juntos?"
+    subtitle="Estoy disponible para proyectos de diseño UX y desarrollo front-end. Conversemos sobre tu próxima idea."
+    primaryLabel="Agenda una videollamada"
+    primaryHref="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+    secondaryLabel="Ver más proyectos"
+    secondaryHref="/proyectos"
+  />
 </BaseLayout>

@@ -1,0 +1,44 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+  bg?: string;
+}
+
+const {
+  title = 'Hablemos de tu próximo proyecto',
+  subtitle,
+  primaryLabel = 'Agenda una videollamada',
+  primaryHref = 'https://calendar.app.google/NjSZEbvWrLfj56wy6',
+  secondaryLabel,
+  secondaryHref,
+  bg = 'bg-white',
+} = Astro.props;
+---
+
+<section class:list={['py-20', bg]}>
+  <div class="container-narrow text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-custom-black mb-4 font-titles" data-reveal>{title}</h2>
+    {subtitle && (
+      <p class="text-xl text-custom-dark-gray mb-8 max-w-2xl mx-auto" data-reveal data-reveal-delay="100">{subtitle}</p>
+    )}
+    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-reveal data-reveal-delay="200">
+      <a
+        href={primaryHref}
+        target={primaryHref.startsWith('http') ? '_blank' : undefined}
+        rel={primaryHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+        class="bg-custom-purple text-white py-2 px-7 font-bold rounded-[7px] inline-block transition-all"
+      >{primaryLabel}</a>
+      {secondaryLabel && secondaryHref && (
+        <a
+          href={secondaryHref}
+          class="text-custom-purple border-custom-purple border border-solid bg-white py-2 px-7 font-bold rounded-[7px] inline-block transition-all"
+        >{secondaryLabel}</a>
+      )}
+    </div>
+  </div>
+</section>

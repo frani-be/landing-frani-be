@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CtaSection from '../../components/CtaSection.astro';
 
 export function getStaticPaths() {
   return [
@@ -100,6 +102,11 @@ if (!service) return Astro.redirect('/servicios');
       <p class="text-xl text-custom-dark-gray mt-4 max-w-xl mx-auto" data-reveal data-reveal-delay="250">
         {service.tagline}
       </p>
+      <Breadcrumb crumbs={[
+        { label: 'Inicio', href: '/' },
+        { label: 'Servicios', href: '/servicios' },
+        { label: service.title },
+      ]} />
       <div class="flex flex-wrap gap-4 justify-center mt-8" data-reveal data-reveal-delay="400">
         <a
           href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
@@ -145,15 +152,14 @@ if (!service) return Astro.redirect('/servicios');
     </div>
   </section>
 
-  <!-- Otros servicios -->
-  <section class="py-16 bg-custom-light-grey border-t border-custom-dark-gray/10">
-    <div class="container-mid text-center">
-      <p class="text-custom-dark-gray mb-4">¿Buscás otro servicio?</p>
-      <a href="/servicios" class="text-custom-purple border-custom-purple border border-solid bg-white py-1 px-6 font-bold rounded-[7px] inline-block transition-all">
-        Ver todos los servicios
-      </a>
-    </div>
-  </section>
+  <CtaSection
+    title="¿Buscás otro servicio?"
+    primaryLabel="Ver todos los servicios"
+    primaryHref="/servicios"
+    secondaryLabel="Agendar videollamada"
+    secondaryHref="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+    bg="bg-custom-light-grey"
+  />
 </BaseLayout>
 
 <script>
