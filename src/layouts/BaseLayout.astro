@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SocialLinks from '../components/SocialLinks.astro';
+import ContactSection from '../components/ContactSection.astro';
 
 interface Props {
   title: string;
@@ -78,9 +79,11 @@ const {
 
     <slot />
 
+    <ContactSection />
+
     <!-- Footer -->
     <footer class="pt-20 pb-8 bg-gradient-to-br from-custom-purple to-custom-purple-dark text-white relative overflow-hidden">
-      <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex flex-col gap-8 text-center justify-center items-center">
+      <div class="container-wide flex flex-col gap-8 text-center justify-center items-center">
         <div class="text-center scroll-btn relative">
           <a
             href="#"
@@ -98,7 +101,7 @@ const {
           <p class="text-[1.25em] mt-4">
             <a
               href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-              class="bg-custom-purple text-white py-1 px-6 font-bold rounded-[7px] inline-block"
+              class="btn btn-primary"
               target="_blank"
             >Agenda una videollamada</a>
           </p>

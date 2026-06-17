@@ -92,16 +92,16 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
   <!-- Project Details -->
   <section class="py-12 bg-custom-light-grey">
     <div class="container-wide">
-      <div class="lg:flex lg:gap-12 lg:items-start">
+      <div class="lg:flex lg:gap-12 lg:items-start" id="project-content">
         <!-- Main Content -->
-        <div class="lg:flex-[2]">
+        <div class="lg:flex-[2] min-w-0">
           <div class="bg-white rounded-xl p-8 shadow-sm">
             <div id="project-full-description" class="prose prose-lg max-w-none text-gray-700" set:html={fullDescriptionHTML} />
           </div>
         </div>
 
         <!-- Sidebar -->
-        <div class="bg-white rounded-xl p-6 shadow-sm mt-8 lg:mt-0 lg:flex-1 project-sidebar-sticky">
+        <div class="bg-white rounded-xl p-8 shadow-sm mt-8 lg:mt-0 lg:w-[320px] lg:flex-shrink-0 lg:sticky lg:top-28 lg:self-start">
           <h3 class="text-xl font-bold text-custom-black mb-4 font-titles">Detalles del Proyecto</h3>
           <div class="space-y-4">
             <div>
@@ -136,19 +136,19 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
           <div class="mt-6 space-y-3">
             {project.links.demo && (
               <a href={project.links.demo} target="_blank" rel="noopener noreferrer"
-                class="block w-full text-center bg-custom-purple text-white py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                class="btn btn-primary block w-full">
                 🔗 Preview
               </a>
             )}
             {project.links.repo && (
               <a href={project.links.repo} target="_blank" rel="noopener noreferrer"
-                class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                class="btn btn-secondary block w-full">
                 💻 Repositorio
               </a>
             )}
             {project.links.caseStudy && (
               <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer"
-                class="block w-full text-center bg-white text-custom-purple border border-custom-purple py-2 px-4 rounded-[7px] font-bold text-sm transition-all">
+                class="btn btn-secondary block w-full">
                 📄 Caso de estudio
               </a>
             )}

@@ -374,14 +374,6 @@ footer::before {
   .logo-showcase .logo-description em { text-align: center; }
 }
 
-@media (min-width: 1024px) {
-  #project-content .project-sidebar-sticky {
-    position: -webkit-sticky !important;
-    position: sticky !important;
-    top: 8rem !important;
-    align-self: flex-start !important;
-  }
-}
 
 /* ── Page Hero (inner pages) ─────────────────────────────── */
 .page-hero-ghost {
@@ -399,6 +391,8 @@ footer::before {
   pointer-events: none;
   user-select: none;
   letter-spacing: -0.02em;
+  text-transform: uppercase;
+  /* Static — no mousemove movement */
 }
 .page-hero-title {
   position: relative;
@@ -425,11 +419,11 @@ footer::before {
   font-family: var(--font-family-titles);
   font-weight: 700;
   font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.6rem 2.5rem;
-  border-radius: 99px;
+  padding: 0.65rem 1.75rem;
+  border-radius: 8px;
   transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
 }
 .page-hero-cta:hover {
   background: rgba(255,255,255,0.15);
@@ -486,7 +480,8 @@ footer::before {
   pointer-events: none;
   user-select: none;
   letter-spacing: -0.02em;
-  transition: transform 0.1s linear;
+  text-transform: uppercase;
+  /* Static — no mousemove movement */
 }
 .section-title-front {
   position: relative;
@@ -540,6 +535,53 @@ footer::before {
   background: #b55aff;
   color: #fff;
 }
+
+/* ── Button design system ───────────────────────────────── */
+/* Shared base */
+.btn {
+  display: inline-block;
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0.65rem 1.75rem;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s, color 0.2s, border-color 0.2s;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn:hover { opacity: 0.88; }
+/* Solid primary */
+.btn-primary {
+  background: #b55aff;
+  color: #fff;
+  border-color: #b55aff;
+}
+.btn-primary:hover { opacity: 1; background: #a044ee; border-color: #a044ee; }
+/* Outline on light bg */
+.btn-secondary {
+  background: #fff;
+  color: #b55aff;
+  border-color: #b55aff;
+}
+.btn-secondary:hover { background: #b55aff; color: #fff; opacity: 1; }
+/* Outline on dark/purple bg */
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.75);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.15); opacity: 1; }
+/* White solid (on dark bg) */
+.btn-white {
+  background: #fff;
+  color: #b55aff;
+  border-color: #fff;
+}
+.btn-white:hover { opacity: 0.88; }
 
 /* ── Contact section ─────────────────────────────────────── */
 .contact-input {

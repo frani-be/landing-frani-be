@@ -31,12 +31,12 @@ const {
         href={primaryHref}
         target={primaryHref.startsWith('http') ? '_blank' : undefined}
         rel={primaryHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-        class="bg-custom-purple text-white py-2 px-7 font-bold rounded-[7px] inline-block transition-all"
+        class="btn btn-primary"
       >{primaryLabel}</a>
       {secondaryLabel && secondaryHref && (
         <a
           href={secondaryHref}
-          class="text-custom-purple border-custom-purple border border-solid bg-white py-2 px-7 font-bold rounded-[7px] inline-block transition-all"
+          class="btn btn-secondary"
         >{secondaryLabel}</a>
       )}
     </div>
