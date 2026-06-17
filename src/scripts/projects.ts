@@ -8,6 +8,9 @@ export interface Project {
   id: string;
   title: string;
   category: string;
+  type?: string;
+  service?: string;
+  serviceLabel?: string;
   description: string;
   fullDescription?: string;
   image: string;
@@ -36,7 +39,10 @@ export function buildProjectCardHTML(p: Project): string {
         <img src="${p.image.replace('assets/', '/')}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
       </div>
       <div class="p-6 flex-1 flex flex-col">
-        <span class="text-xs font-bold uppercase tracking-wide text-custom-purple mb-2">${p.category}</span>
+        <div class="flex flex-wrap gap-2 mb-3">
+          ${p.type ? `<span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-gray-100 px-2 py-0.5 rounded-full">${p.type}</span>` : ''}
+          ${p.service && p.serviceLabel ? `<a href="/servicios/${p.service}" class="text-xs font-bold uppercase tracking-wide text-custom-purple bg-custom-light-purple px-2 py-0.5 rounded-full hover:bg-custom-purple hover:text-white transition-colors">${p.serviceLabel}</a>` : ''}
+        </div>
         <h3 class="text-xl font-bold text-custom-black mb-3 font-titles leading-tight">${p.title}</h3>
         <p class="text-custom-dark-gray mb-4 flex-1 text-sm">${p.description}</p>
         <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">${tagsHTML}</div>

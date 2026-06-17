@@ -17,6 +17,9 @@ interface Project {
   id: string;
   title: string;
   category: string;
+  type?: string;
+  service?: string;
+  serviceLabel?: string;
   description: string;
   fullDescription: string;
   image: string;
@@ -69,7 +72,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
 >
   <PageHero
     title={project.title}
-    ghost={project.category}
+    ghost={project.type ?? project.category}
     subtitle={project.description}
     crumbs={[
       { label: 'Inicio', href: '/' },
@@ -103,6 +106,17 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
         <!-- Sidebar -->
         <div class="bg-white rounded-xl p-8 shadow-sm mt-8 lg:mt-0 lg:w-[320px] lg:flex-shrink-0 lg:sticky lg:top-28 lg:self-start">
           <h3 class="text-xl font-bold text-custom-black mb-4 font-titles">Detalles del Proyecto</h3>
+
+          <!-- Categorías -->
+          <div class="flex flex-wrap gap-2 mb-5">
+            {project.type && (
+              <span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-gray-100 px-2 py-0.5 rounded-full">{project.type}</span>
+            )}
+            {project.service && project.serviceLabel && (
+              <a href={`/servicios/${project.service}`} class="text-xs font-bold uppercase tracking-wide text-custom-purple bg-custom-light-purple px-2 py-0.5 rounded-full hover:bg-custom-purple hover:text-white transition-colors">{project.serviceLabel}</a>
+            )}
+          </div>
+
           <div class="space-y-4">
             <div>
               <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Cliente</h4>
