@@ -133,22 +133,22 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
           </div>
 
           <!-- Links -->
-          <div class="mt-6 space-y-3">
+          <div class="mt-6 flex flex-col gap-3">
             {project.links.demo && (
               <a href={project.links.demo} target="_blank" rel="noopener noreferrer"
-                class="btn btn-primary block w-full">
+                class="btn btn-primary" style="width:100%; text-align:center">
                 🔗 Preview
               </a>
             )}
             {project.links.repo && (
               <a href={project.links.repo} target="_blank" rel="noopener noreferrer"
-                class="btn btn-secondary block w-full">
+                class="btn btn-secondary" style="width:100%; text-align:center">
                 💻 Repositorio
               </a>
             )}
             {project.links.caseStudy && (
               <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer"
-                class="btn btn-secondary block w-full">
+                class="btn btn-secondary" style="width:100%; text-align:center">
                 📄 Caso de estudio
               </a>
             )}

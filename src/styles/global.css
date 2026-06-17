@@ -520,6 +520,7 @@ footer::before {
 }
 .service-card-cta {
   display: inline-block;
+  align-self: flex-start;
   margin-top: 1.25rem;
   text-align: center;
   font-family: var(--font-family-titles);
@@ -542,7 +543,7 @@ footer::before {
 /* ── Button design system ───────────────────────────────── */
 /* Shared base */
 .btn {
-  display: inline-block;
+  display: inline-block !important;
   font-family: var(--font-family-titles);
   font-weight: 700;
   font-size: 0.9rem;
