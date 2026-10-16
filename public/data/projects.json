@@ -18,7 +18,7 @@
       ],
       "image": "assets/images/projects/pomodoro-cover.png",
       "links": {
-        "demo": "https://frani-be.github.io/neuralclocks-pomodoro/",
+        "demo": "",
         "repo": "https://github.com/frani-be/neuralclocks-pomodoro/"
       },
       "featured": false,
