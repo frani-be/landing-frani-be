@@ -1,35 +1,34 @@
 ---
-import Breadcrumb from './Breadcrumb.astro';
-
-interface Crumb { label: string; href?: string; }
+interface PathSegment { label: string; href?: string; }
 
 interface Props {
   title: string;
   subtitle?: string;
-  crumbs?: Crumb[];
-  ghost?: string;
+  path?: PathSegment[];
   ctaLabel?: string;
   ctaHref?: string;
 }
 
-const { title, subtitle, crumbs, ghost = title, ctaLabel, ctaHref } = Astro.props;
+const { title, subtitle, path, ctaLabel, ctaHref } = Astro.props;
 ---
 
 <header class="page-hero relative overflow-hidden text-white pt-40 pb-24 text-center">
   <div class="container-mid relative z-[1]">
 
-    {crumbs && crumbs.length > 0 && (
-      <div class="page-hero-breadcrumb">
-        <Breadcrumb crumbs={crumbs} />
-      </div>
-    )}
-
-    <div class="relative" data-reveal>
-      <span
-        class="page-hero-ghost"
-        aria-hidden="true"
-        role="presentation"
-      >{ghost}</span>
+    <div data-reveal>
+      {path && path.length > 0 && (
+        <nav class="page-hero-path" aria-label="Ruta">
+          <a href="/">~</a>
+          {path.map(seg => (
+            <>
+              <span class="sep">/</span>
+              {seg.href
+                ? <a href={seg.href}>{seg.label}</a>
+                : <span class="current">{seg.label}</span>}
+            </>
+          ))}
+        </nav>
+      )}
       <h1 class="page-hero-title">{title}</h1>
     </div>
 

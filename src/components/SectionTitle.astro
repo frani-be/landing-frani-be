@@ -1,7 +1,8 @@
 ---
 interface Props {
   title: string;
-  ghost?: string;
+  subtitle?: string;
+  tag?: string;
   class?: string;
   reveal?: boolean;
   dark?: boolean;
@@ -9,7 +10,8 @@ interface Props {
 
 const {
   title,
-  ghost = title,
+  subtitle,
+  tag,
   class: extraClass = '',
   reveal = true,
   dark = false,
@@ -20,10 +22,9 @@ const {
   class:list={['section-title-wrapper', extraClass]}
   data-reveal={reveal || undefined}
 >
-  <span
-    class:list={['section-title-ghost', dark && 'section-title-ghost--dark']}
-    aria-hidden="true"
-    role="presentation"
-  >{ghost}</span>
+  {tag && <span class:list={['section-tag', dark && 'section-tag--dark']}>{tag}</span>}
   <h3 class:list={['section-title-front', dark && 'section-title-front--dark']}>{title}</h3>
+  {subtitle && (
+    <p class:list={['section-title-subtitle', dark && 'section-title-subtitle--dark']}>{subtitle}</p>
+  )}
 </div>

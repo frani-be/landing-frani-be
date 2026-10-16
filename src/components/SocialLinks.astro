@@ -8,12 +8,12 @@ const { variant = 'light', class: extraClass = '' } = Astro.props;
 
 const linkClass = variant === 'dark'
   ? 'flex items-center gap-3 text-white font-semibold hover:text-custom-light-purple transition-colors'
-  : 'text-sm text-custom-purple border-custom-purple/40 border border-solid bg-white py-0.5 px-4 font-bold rounded-full inline-block';
+  : 'text-sm text-custom-dark-gray border-border-soft border border-solid bg-white py-0.5 px-4 font-bold rounded-full inline-block hover:text-custom-purple hover:border-custom-purple/40';
 
 const iconClass = variant === 'dark' ? 'contact-icon-pill' : '';
 ---
 
-<ul class:list={['flex flex-wrap gap-4 items-center', extraClass]}>
+<ul class:list={['flex flex-wrap gap-4 items-start', extraClass]}>
   <li>
     <a href="mailto:hola@frani.be" class={linkClass} target="_blank" rel="noopener noreferrer">
       {variant === 'dark' && <span class={iconClass}><svg class="inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><use href="/images/icons.svg#mail"></use></svg></span>}

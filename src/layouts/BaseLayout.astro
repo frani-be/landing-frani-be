@@ -1,13 +1,14 @@
 ---
 import '../styles/global.css';
-import SocialLinks from '../components/SocialLinks.astro';
 import ContactSection from '../components/ContactSection.astro';
+import EmbroideryPattern from '../components/EmbroideryPattern.astro';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
   ogUrl?: string;
+  contactTag?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Portafolio de Francisca Beatriz Medina Concha. Impulso talento en STEAM y creo tecnología con propósito.',
   ogImage = 'https://frani.be/images/logo.jpg',
   ogUrl = 'https://frani.be/',
+  contactTag,
 } = Astro.props;
 ---
 
@@ -56,7 +58,7 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -85,37 +87,16 @@ const {
 
     <slot />
 
-    <ContactSection />
+    <ContactSection tag={contactTag} />
 
     <!-- Footer -->
-    <footer class="pt-20 pb-8 bg-gradient-footer text-white relative overflow-hidden">
-      <div class="container-wide flex flex-col gap-8 text-center justify-center items-center">
-        <div class="text-center scroll-btn relative">
-          <a
-            href="#"
-            onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
-            class="py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
-            aria-label="Ir a la sección principal"
-            title="Vuelve al inicio"
-          >
-            <span class="mr-2 text-[1.2em] align-middle" aria-hidden="true">↑</span>
-            Volver a arriba
-          </a>
-        </div>
-        <div>
-          <h3 class="text-[1.5em]">Hablemos de tu próximo proyecto</h3>
-          <p class="text-[1.25em] mt-4">
-            <a
-              href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-              class="btn btn-primary"
-              target="_blank"
-            >Agenda una videollamada</a>
-          </p>
-        </div>
-        <SocialLinks class="justify-center" />
-        <p class="text-[0.75em] opacity-90 text-center mt-12">
-          © <span id="current-year"></span> frani.be • Desarrollando y diseñado con propósito <span aria-hidden="true">✨</span>
+    <footer class="py-8 bg-gradient-footer text-white relative overflow-hidden">
+      <div class="container-wide text-center relative z-[1]">
+        <EmbroideryPattern class="embroidery--light mx-auto mb-5" cells={4} />
+        <p class="text-[0.75em] opacity-90">
+          © <span id="current-year"></span> frani.be
         </p>
+        <p class="site-signature">// hecho con código, curiosidad y té</p>
       </div>
     </footer>
 
