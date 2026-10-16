@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<BaseLayout
+  title="Charlas | Francisca Beatriz Medina Concha"
+  description="Charlas y presentaciones de Francisca Beatriz Medina Concha sobre UX, front-end, docencia y comunidades STEAM."
+  ogUrl="https://frani.be/charlas"
+>
+  <PageHero
+    title="Charlas y presentaciones"
+    path={[{ label: 'charlas' }]}
+    subtitle="Videos de mis charlas sobre UX, front-end, docencia y comunidades en tecnología."
+  />
+
+  <section class="section-block-sm bg-custom-light-grey">
+    <div class="container-narrow text-center" data-reveal>
+      <div class="tray-illus mx-auto mb-8" style="width:min(100%,20rem)">
+        <div class="tray-blob" aria-hidden="true"></div>
+        <img
+          src="/images/charla.png"
+          alt="Ilustración de Frani dando una charla tech desde un atril, con micrófono y credencial"
+          class="tray-illus-img"
+          loading="lazy"
+        />
+      </div>
+      <p class="font-mono text-[0.9rem] text-custom-purple-dark mb-4">// próximamente</p>
+      <p class="text-custom-dark-gray leading-relaxed mb-8">Estoy preparando esta sección con los videos de mis charlas. Mientras tanto, puedes escribirme si te interesa algún tema.</p>
+      <a href="/#contacto" class="btn btn-primary">Contáctame</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  initReveal();
+</script>
