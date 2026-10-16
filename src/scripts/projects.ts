@@ -30,24 +30,24 @@ export function extractYear(d: string) {
 
 export function buildProjectCardHTML(p: Project): string {
   const tagsHTML = p.tags.slice(0, 4)
-    .map(t => `<span class="px-2 py-1 bg-custom-light-purple/70 text-custom-purple-dark text-xs rounded-full">${t}</span>`)
+    .map(t => `<span class="px-2 py-1 bg-surface-muted text-custom-dark-gray text-xs rounded-full">${t}</span>`)
     .join('');
   const hasLinks = p.links.demo || p.links.repo || p.links.caseStudy;
   return `
-    <div class="bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-[#d4b0f7] hover:shadow-[0_12px_32px_-8px_rgba(181,90,255,0.18)] transition-all duration-300 flex flex-col group project-card" data-id="${p.id}">
-      <div class="aspect-video w-full overflow-hidden">
+    <div class="bg-white rounded-[var(--radius-card)] overflow-hidden border border-border-soft hover:border-[#d4b0f7] hover:shadow-[0_12px_32px_-8px_rgba(181,90,255,0.18)] transition-all duration-300 flex flex-col group project-card" data-id="${p.id}">
+      <div class="aspect-video w-full overflow-hidden project-thumb">
         <img src="${p.image.replace('assets/', '/')}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
       </div>
       <div class="p-6 flex-1 flex flex-col">
         <div class="flex flex-wrap gap-2 mb-3">
-          ${p.type ? `<span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-[#f1eef7] px-2 py-0.5 rounded-full">${p.type}</span>` : ''}
+          ${p.type ? `<span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-surface-muted px-2 py-0.5 rounded-full">${p.type}</span>` : ''}
           ${p.service && p.serviceLabel ? `<a href="/servicios/${p.service}" class="text-xs font-bold uppercase tracking-wide text-custom-purple bg-custom-light-purple px-2 py-0.5 rounded-full hover:bg-custom-purple hover:text-white transition-colors">${p.serviceLabel}</a>` : ''}
         </div>
-        <h3 class="text-xl font-bold text-custom-black mb-3 font-titles leading-tight">${p.title}</h3>
+        <h3 class="text-xl text-custom-black mb-3 leading-tight">${p.title}</h3>
         <p class="text-custom-dark-gray mb-4 flex-1 text-sm">${p.description}</p>
-        <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-100">${tagsHTML}</div>
+        <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border-soft">${tagsHTML}</div>
         <div class="mt-6 flex gap-3">
-          <a href="/proyectos/${p.id}" class="btn btn-secondary flex-1 text-center">Ver proyecto</a>
+          <a href="/proyectos/${p.id}" class="btn btn-secondary flex-1 text-center">Ver proyecto<span class="btn-arrow" aria-hidden="true">↗</span></a>
           ${hasLinks ? `<button class="btn btn-tertiary links-btn" data-id="${p.id}">Links</button>` : ''}
         </div>
       </div>
@@ -66,9 +66,10 @@ export function initLinksModal(projects: Project[]) {
     const iconLink = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
     const iconCode = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>';
     const iconDoc = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>';
-    if (links.demo) items.push(`<a href="${links.demo}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">${iconLink} Preview</a>`);
-    if (links.repo) items.push(`<a href="${links.repo}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">${iconCode} Repositorio</a>`);
-    if (links.caseStudy) items.push(`<a href="${links.caseStudy}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-1 bg-gray-50 border border-gray-200 rounded-lg text-custom-black font-semibold hover:translate-x-1 transition-all">${iconDoc} Caso de estudio</a>`);
+    const itemClass = 'flex items-center gap-3 px-6 py-1 bg-surface-muted border border-border-soft rounded-[0.75rem] text-custom-black font-semibold hover:translate-x-1 transition-all';
+    if (links.demo) items.push(`<a href="${links.demo}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconLink} Preview</a>`);
+    if (links.repo) items.push(`<a href="${links.repo}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconCode} Repositorio</a>`);
+    if (links.caseStudy) items.push(`<a href="${links.caseStudy}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconDoc} Caso de estudio</a>`);
     body.innerHTML = items.join('');
     modal!.classList.remove('hidden');
     const close = () => modal!.classList.add('hidden');
