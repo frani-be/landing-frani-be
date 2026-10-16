@@ -755,6 +755,14 @@ a.regular-link {
   color: var(--color-custom-purple-dark);
   margin-bottom: 1rem;
 }
+.tray-tag a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.tray-tag a:hover {
+  color: var(--color-custom-purple);
+}
 .tray-title {
   font-size: clamp(2.3rem, 5vw, 3.4rem);
   line-height: 1.08;
