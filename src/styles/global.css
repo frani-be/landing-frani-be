@@ -98,7 +98,7 @@ a {
 
 a.regular-link {
   text-decoration: none;
-  color: #b55aff;
+  color: var(--color-custom-purple-dark);
   border-bottom: 0.075em dashed;
 }
 
@@ -154,7 +154,7 @@ a.regular-link {
   transition: color 0.2s, background 0.2s;
 }
 .nav-link:hover {
-  color: var(--color-custom-purple);
+  color: var(--color-custom-purple-dark);
   background: rgba(181, 90, 255, 0.09);
 }
 
@@ -470,13 +470,13 @@ a.regular-link {
   margin-bottom: 0.35rem;
 }
 .page-hero-path a {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.85);
 }
 .page-hero-path a:hover {
   color: #fff;
 }
 .page-hero-path .sep {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.55);
 }
 .page-hero-path .current {
   color: rgba(255, 255, 255, 0.95);
@@ -494,7 +494,7 @@ a.regular-link {
 }
 .page-hero-subtitle {
   font-size: 1.15rem;
-  color: rgba(255,255,255,0.78);
+  color: rgba(255,255,255,0.92);
   max-width: 40rem;
   margin: 0.75rem auto 0;
   line-height: 1.6;
@@ -599,7 +599,7 @@ a.regular-link {
   margin-bottom: 0.9rem;
 }
 .section-tag--dark {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.88);
 }
 .section-title-front {
   position: relative;
@@ -624,7 +624,7 @@ a.regular-link {
   line-height: 1.6;
 }
 .section-title-subtitle--dark {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 /* ── Service cards ───────────────────────────────────────── */
@@ -676,7 +676,7 @@ a.regular-link {
   font-family: var(--font-family-titles);
   font-weight: 600;
   font-size: 0.9rem;
-  color: var(--color-custom-purple);
+  color: var(--color-custom-purple-dark);
 }
 
 /* Small icon tile (secondary services, pillars, lists) */
@@ -928,7 +928,7 @@ a.regular-link {
   font-family: var(--font-family-mono);
   font-size: 0.62rem;
   letter-spacing: 0.08em;
-  color: color-mix(in srgb, var(--color-custom-dark-gray) 70%, transparent);
+  color: var(--color-custom-dark-gray);
   background: var(--color-custom-light-grey, #f7f5fa);
   padding-right: 0.5rem;
 }
@@ -1259,7 +1259,7 @@ a.tag-mono--accent:hover {
 .btn:active { transform: translateY(0); }
 /* Solid primary */
 .btn-primary {
-  background: linear-gradient(135deg, #b55aff 0%, #9a3de0 100%);
+  background: linear-gradient(135deg, #9a3de0 0%, #8b2db3 100%);
   color: #fff;
   border-color: transparent;
   box-shadow: 0 6px 14px -8px rgba(154, 61, 224, 0.3);
@@ -1268,8 +1268,8 @@ a.tag-mono--accent:hover {
 /* Outline on light bg */
 .btn-secondary {
   background: #fff;
-  color: #b55aff;
-  border-color: #d9bcf5;
+  color: var(--color-custom-purple-dark);
+  border-color: var(--color-border-hover);
 }
 .btn-secondary:hover { background: #b55aff; border-color: #b55aff; color: #fff; opacity: 1; }
 /* Outline on dark/purple bg */
@@ -1291,7 +1291,7 @@ a.tag-mono--accent:hover {
 /* Quiet pill: acción secundaria al lado de botones */
 .btn-tertiary {
   background: transparent;
-  color: #b55aff;
+  color: var(--color-custom-purple-dark);
   border-color: transparent;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
