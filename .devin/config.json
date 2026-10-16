@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Exec(npm run)",
+      "Exec(npm ci)",
+      "Exec(npm install)",
+      "Exec(git status)",
+      "Exec(git diff)",
+      "Exec(git log)",
+      "Exec(curl)"
+    ],
+    "deny": [
+      "Exec(sudo)",
+      "Exec(rm -rf)"
+    ]
+  }
+}
