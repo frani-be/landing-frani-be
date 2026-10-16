@@ -58,7 +58,7 @@ export function initLinksModal(projects: Project[]) {
   const modal = document.getElementById('links-modal');
   if (!modal) return;
 
-  function showLinksModal(links: ProjectLinks) {
+  function showLinksModal(links: ProjectLinks, trigger: HTMLElement) {
     const body = document.getElementById('links-modal-body')!;
     const closeBtn = modal!.querySelector('button[aria-label="Cerrar"]') as HTMLElement;
     const overlay = modal!.querySelector('.absolute.inset-0') as HTMLElement;
@@ -72,7 +72,11 @@ export function initLinksModal(projects: Project[]) {
     if (links.caseStudy) items.push(`<a href="${links.caseStudy}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconDoc} Caso de estudio</a>`);
     body.innerHTML = items.join('');
     modal!.classList.remove('hidden');
-    const close = () => modal!.classList.add('hidden');
+    closeBtn.focus();
+    const close = () => {
+      modal!.classList.add('hidden');
+      trigger.focus();
+    };
     closeBtn.onclick = close;
     overlay.onclick = close;
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); } };
@@ -83,7 +87,7 @@ export function initLinksModal(projects: Project[]) {
     btn.addEventListener('click', () => {
       const id = btn.dataset.id!;
       const proj = projects.find(p => p.id === id);
-      if (proj) showLinksModal(proj.links);
+      if (proj) showLinksModal(proj.links, btn);
     });
   });
 }

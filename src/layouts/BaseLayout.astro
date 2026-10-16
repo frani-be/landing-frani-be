@@ -138,6 +138,12 @@ const {
       navMobile?.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => setNavOpen(false));
       });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMobile && !navMobile.classList.contains('hidden')) {
+          setNavOpen(false);
+          navToggle?.focus();
+        }
+      });
     </script>
   </body>
 </html>
