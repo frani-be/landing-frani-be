@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
 ---
 
 <BaseLayout
@@ -8,69 +7,86 @@ import PageHero from '../components/PageHero.astro';
   description="Trayectoria profesional completa de Francisca Beatriz Medina Concha: experiencia laboral, formación académica, docencia y voluntariados."
   ogUrl="https://frani.be/trayectoria"
 >
-  <PageHero
-    title="Conoce más acerca de mi Trayectoria Profesional"
-    ghost="Trayectoria"
-    subtitle="UX, desarrollo front-end, docencia y comunidades en tecnología. Un recorrido construido con propósito."
-    crumbs={[{ label: 'Inicio', href: '/' }, { label: 'Trayectoria' }]}
-    ctaLabel="¡Vamos!"
-    ctaHref="#timeline-container"
-  >
-    <div class="mt-6" data-reveal data-reveal-delay="400">
-      <a
-        href="/documents/cv-francisca-medina-concha.pdf"
-        download
-        class="text-white/70 text-sm underline underline-offset-4 hover:text-white transition-colors"
-        aria-label="Descargar CV en formato PDF"
-      >Descargar CV (PDF)</a>
+  <!-- Editorial hero -->
+  <header class="tray-hero pt-36 pb-16 lg:pt-44 lg:pb-24">
+    <div class="container-wide flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
+      <div class="w-full lg:w-[55%] text-center lg:text-left">
+        <span class="tray-tag" data-reveal>~/trayectoria</span>
+        <h1 class="tray-title" data-reveal data-reveal-delay="120">
+          Mi trayectoria
+        </h1>
+        <p class="tray-lead" data-reveal data-reveal-delay="260">
+          Diseño, desarrollo, docencia y comunidad: un mismo recorrido entre productos digitales, aulas y espacios STEAM.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="380">
+          <a href="#timeline-container" class="btn btn-primary">Explorar experiencias ↓</a>
+          <a
+            href="/documents/cv-francisca-medina-concha.pdf"
+            download
+            class="btn btn-secondary"
+            aria-label="Descargar CV en formato PDF"
+          >Descargar CV<span class="btn-arrow" aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="w-full lg:w-[45%] flex justify-center" data-reveal data-reveal-delay="300">
+        <div class="tray-illus">
+          <div class="tray-blob" aria-hidden="true"></div>
+          <img
+            src="/images/trabajando.png"
+            alt="Ilustración de Frani frente a un tablero de trabajo, ordenando tarjetas que conectan diseño y código"
+            class="tray-illus-img"
+          />
+        </div>
+      </div>
     </div>
-  </PageHero>
+  </header>
 
-  <section class="pt-12 pb-20 bg-custom-light-grey">
+  <section class="pt-10 pb-20 bg-custom-light-grey">
     <div class="container-wide">
 
-      <!-- 3 Pillars -->
-      <div class="flex flex-wrap justify-center gap-8 mb-12">
-        <div class="text-center flex-1 min-w-[280px]" data-animate>
-          <div class="icon-tile icon-tile-lg mx-auto mb-4" aria-hidden="true">
-            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      <!-- 3 Pillars (compactos) -->
+      <div class="flex flex-wrap justify-center gap-6 mb-10">
+        <div class="text-center flex-1 min-w-[240px] max-w-[320px]" data-animate>
+          <div class="icon-tile icon-tile-lg mx-auto mb-3" aria-hidden="true">
+            <img src="/images/icons/pilar-codigo.png" alt="" loading="lazy" />
           </div>
-          <h2 class="text-[1.25em] font-bold mb-4">Estrategia + código</h2>
-          <p class="text-custom-dark-gray">Líder en UX y front-end. Traduzco necesidades corporativas complejas en interfaces escalables.</p>
+          <h2 class="text-[1.1em] mb-2">Estrategia + código</h2>
+          <p class="text-custom-dark-gray text-sm">Líder en UX y front-end. Traduzco necesidades corporativas complejas en interfaces escalables.</p>
         </div>
-        <div class="text-center flex-1 min-w-[280px]" data-animate>
-          <div class="icon-tile icon-tile-lg mx-auto mb-4" aria-hidden="true">
-            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <div class="text-center flex-1 min-w-[240px] max-w-[320px]" data-animate>
+          <div class="icon-tile icon-tile-lg mx-auto mb-3" aria-hidden="true">
+            <img src="/images/icons/pilar-docencia.png" alt="" loading="lazy" />
           </div>
-          <h2 class="text-[1.25em] font-bold mb-4">Formación sólida</h2>
-          <p class="text-custom-dark-gray">Diplomada en ing. de software y diseño. Docente en universidades y bootcamps.</p>
+          <h2 class="text-[1.1em] mb-2">Formación sólida</h2>
+          <p class="text-custom-dark-gray text-sm">Diplomada en ing. de software y diseño. Docente en universidades y bootcamps.</p>
         </div>
-        <div class="text-center flex-1 min-w-[280px]" data-animate>
-          <div class="icon-tile icon-tile-lg mx-auto mb-4" aria-hidden="true">
-            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+        <div class="text-center flex-1 min-w-[240px] max-w-[320px]" data-animate>
+          <div class="icon-tile icon-tile-lg mx-auto mb-3" aria-hidden="true">
+            <img src="/images/icons/pilar-comunidad.png" alt="" loading="lazy" />
           </div>
-          <h2 class="text-[1.25em] font-bold mb-4">Speaker y voluntaria</h2>
-          <p class="text-custom-dark-gray">Speaker internacional y activista STEAM. Promuevo inclusión real en tecnología.</p>
+          <h2 class="text-[1.1em] mb-2">Speaker y voluntaria</h2>
+          <p class="text-custom-dark-gray text-sm">Speaker internacional y activista STEAM. Promuevo inclusión real en tecnología.</p>
         </div>
       </div>
 
       <!-- Filter Buttons -->
-      <div class="flex flex-wrap justify-center gap-3 mb-6 text-center">
-        <button class="filter-btn text-sm transition-all font-primary font-medium text-laboral border-laboral border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="laboral">Experiencia laboral</button>
-        <button class="filter-btn text-sm transition-all font-primary font-medium text-academica border-academica border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="academica">Formación académica</button>
-        <button class="filter-btn text-sm transition-all font-primary font-medium text-voluntariados border-voluntariados border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="voluntariados">Voluntariados</button>
-        <button class="filter-btn text-sm transition-all font-primary font-medium text-docencia border-docencia border border-solid bg-white py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="docencia">Experiencia en docencia</button>
+      <div class="flex flex-wrap justify-center gap-3 mb-8 text-center">
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-custom-dark-gray border-custom-purple/40 border border-solid bg-white py-0.5 px-5 rounded-full cursor-pointer" data-filter="all">Todo</button>
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-laboral border-laboral border border-solid bg-white py-0.5 px-5 rounded-full cursor-pointer" data-filter="laboral">Profesional</button>
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-docencia border-docencia border border-solid bg-white py-0.5 px-5 rounded-full cursor-pointer" data-filter="docencia">Docencia</button>
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-voluntariados border-voluntariados border border-solid bg-white py-0.5 px-5 rounded-full cursor-pointer" data-filter="voluntariados">Comunidad</button>
+        <button class="filter-btn text-sm transition-all font-primary font-medium text-academica border-academica border border-solid bg-white py-0.5 px-5 rounded-full cursor-pointer" data-filter="academica">Formación</button>
       </div>
 
       <!-- Global Controls -->
-      <div class="flex justify-center gap-2 mb-6 text-center" id="global-controls">
-        <button id="expand-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+      <div class="flex justify-center gap-2 mb-8 text-center" id="global-controls">
+        <button id="expand-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-full cursor-pointer">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="mr-1 inline">
             <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           Expandir todo
         </button>
-        <button id="collapse-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+        <button id="collapse-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-full cursor-pointer">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" class="mr-1 inline rotate-180">
             <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -78,8 +94,8 @@ import PageHero from '../components/PageHero.astro';
         </button>
       </div>
 
-      <!-- Timeline Container -->
-      <div class="relative max-w-[800px] mx-auto" id="timeline-container"></div>
+      <!-- Timeline: lista continua -->
+      <div class="max-w-[820px] mx-auto" id="timeline-container"></div>
     </div>
   </section>
 </BaseLayout>
@@ -111,18 +127,19 @@ import PageHero from '../components/PageHero.astro';
     description: string;
   }
 
-  const CATEGORIES: Record<string, { label: string; color: string; cssText: string; cssBg: string; cssBorder: string }> = {
-    laboral:       { label: 'Experiencia laboral',     color: '#2555a3', cssText: 'text-laboral',       cssBg: 'bg-laboral',       cssBorder: 'border-laboral' },
-    academica:     { label: 'Formación académica',      color: '#9f2eba', cssText: 'text-academica',     cssBg: 'bg-academica',     cssBorder: 'border-academica' },
-    docencia:      { label: 'Experiencia en docencia',  color: '#7d1fc7', cssText: 'text-docencia',      cssBg: 'bg-docencia',      cssBorder: 'border-docencia' },
-    voluntariados: { label: 'Voluntariados',            color: '#bd2c97', cssText: 'text-voluntariados', cssBg: 'bg-voluntariados', cssBorder: 'border-voluntariados' },
+  const strokeIcon = (inner: string) =>
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-icon" aria-hidden="true">${inner}</svg>`;
+
+  const CATEGORIES: Record<string, { label: string; color: string; cssText: string; cssBg: string; cssBorder: string; icon: string }> = {
+    laboral:       { label: 'Profesional', color: '#2555a3', cssText: 'text-laboral',       cssBg: 'bg-laboral',       cssBorder: 'border-laboral',       icon: strokeIcon('<rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>') },
+    docencia:      { label: 'Docencia',    color: '#7d1fc7', cssText: 'text-docencia',      cssBg: 'bg-docencia',      cssBorder: 'border-docencia',      icon: strokeIcon('<path d="M4 4.5h5a4 4 0 0 1 3 1.7A4 4 0 0 1 15 4.5h5V19h-5a3 3 0 0 0-3 1.5A3 3 0 0 0 9 19H4z"/>') },
+    voluntariados: { label: 'Comunidad',   color: '#bd2c97', cssText: 'text-voluntariados', cssBg: 'bg-voluntariados', cssBorder: 'border-voluntariados', icon: strokeIcon('<path d="M12 20s-7-4.6-9-9c-1.4-3.2.5-7 4-7 2.4 0 4 1.4 5 2.8C13 5.4 14.6 4 17 4c3.5 0 5.4 3.8 4 7-2 4.4-9 9-9 9z"/>') },
+    academica:     { label: 'Formación',   color: '#9f2eba', cssText: 'text-academica',     cssBg: 'bg-academica',     cssBorder: 'border-academica',     icon: strokeIcon('<path d="M2 9.5L12 5l10 4.5-10 4.5z"/><path d="M6 12v4c3 2 9 2 12 0v-4"/>') },
   };
-  const MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 
   function formatDate(d: string) {
     if (d === 'actualidad') return 'Actualidad';
-    const [year, month] = d.split('-');
-    return `${MONTHS[parseInt(month) - 1]} ${year}`;
+    return d.slice(0, 4);
   }
 
   function processBoldText(text: string) {
@@ -159,137 +176,116 @@ import PageHero from '../components/PageHero.astro';
   }
 
   function createTimelineItem(item: TimelineItem) {
-    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656' };
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656', icon: '' };
     const mdHTML = parseMarkdown(item.description);
     return `
-      <div class="relative mb-8 opacity-0 transition-all duration-500 timeline-item ml-16"
+      <div class="tl-item opacity-0 transition-all duration-500"
            data-category="${item.category}"
            style="--category-color:${cat.color};transform:translateY(20px);">
-        <div class="timeline-marker absolute rounded-full z-[2] w-4 h-4" style="left:-4rem;top:0.75rem;margin-left:1.5rem;"></div>
-        <div class="timeline-content bg-white rounded-[10px] shadow-sm transition-transform font-primary p-6">
-          <div class="flex justify-between items-center flex-wrap timeline-header-content mb-2 gap-2">
-            <div class="text-[0.75em] text-custom-dark-gray font-medium">${formatDate(item.startDate)} - ${formatDate(item.endDate)}</div>
-            <button class="timeline-category text-white text-sm font-medium border border-solid py-0.5 px-5 rounded-full cursor-pointer" data-filter="${item.category}" style="border-color:${cat.color};">${cat.label}</button>
-          </div>
-          <h3 class="text-[1.25em] font-bold text-custom-black m-0 font-titles mb-2 leading-tight">${item.title}</h3>
-          <div class="text-base text-custom-dark-gray font-medium mb-4">${item.company} • ${item.location}</div>
-          <div class="relative">
-            <div class="timeline-description collapsed text-custom-black overflow-hidden leading-relaxed" id="description-${item.id}">${mdHTML}</div>
-            <button class="timeline-toggle font-semibold text-[0.75em] cursor-pointer flex items-center gap-1 mt-2 bg-transparent border-none" data-item-id="${item.id}">
-              <span class="toggle-text">Ver más</span>
-              <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
+        <div class="tl-dates">${formatDate(item.startDate)}<span class="tl-sep">–</span>${formatDate(item.endDate)}</div>
+        <div class="timeline-content bg-white shadow-sm transition-transform font-primary p-5">
+          <button class="timeline-head" data-item-id="${item.id}" aria-expanded="false" aria-controls="description-${item.id}">
+            <span class="head-top">
+              <span class="timeline-category">${cat.icon}${cat.label}</span>
+            </span>
+            <span class="head-title">${item.title}</span>
+            <span class="head-meta">${item.company} • ${item.location}</span>
+            <svg class="head-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="timeline-description collapsed text-custom-black overflow-hidden leading-relaxed" id="description-${item.id}">${mdHTML}</div>
         </div>
       </div>`;
   }
 
   let allItems: TimelineItem[] = [];
-  let currentFilter = 'all';
 
   function renderTimeline(filter: string) {
-    currentFilter = filter;
     const filtered = filter === 'all' ? [...allItems] : allItems.filter(i => i.category === filter);
-    filtered.sort((a, b) => new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime());
+
+    const isCurrent = (i: TimelineItem) => i.endDate === 'actualidad';
+    const byEndDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.endDate + '-01').getTime() - new Date(a.endDate + '-01').getTime();
+    const byStartDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime();
+
+    const ordered = [
+      ...filtered.filter(isCurrent).sort(byStartDesc),
+      ...filtered.filter(i => !isCurrent(i)).sort(byEndDesc),
+    ];
 
     const container = document.getElementById('timeline-container');
     if (!container) return;
-    container.innerHTML = `<div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5"></div>${filtered.map(createTimelineItem).join('')}`;
+    container.innerHTML = ordered.map(createTimelineItem).join('');
 
     setTimeout(() => {
-      document.querySelectorAll('.timeline-item').forEach((el, i) => {
-        setTimeout(() => el.classList.add('animate-in'), i * 100);
+      document.querySelectorAll('.tl-item').forEach((el, i) => {
+        setTimeout(() => el.classList.add('animate-in'), i * 60);
       });
     }, 50);
 
     setupToggleListeners();
-    setupCategoryClickListeners();
     setupGlobalControls();
   }
 
-  function setupToggleListeners() {
-    document.querySelectorAll('.timeline-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = (btn as HTMLElement).getAttribute('data-item-id');
-        const desc = document.getElementById(`description-${id}`);
-        if (!desc) return;
-        const toggleBtn = desc.nextElementSibling as HTMLElement;
-        const txt = toggleBtn.querySelector('.toggle-text') as HTMLElement;
-        const ico = toggleBtn.querySelector('.toggle-icon') as HTMLElement;
-        if (desc.classList.contains('collapsed')) {
-          desc.classList.replace('collapsed', 'expanded');
-          txt.textContent = 'Ver menos';
-          ico.style.transform = 'rotate(180deg)';
-        } else {
-          desc.classList.replace('expanded', 'collapsed');
-          txt.textContent = 'Ver más';
-          ico.style.transform = 'rotate(0deg)';
-        }
-      });
-    });
+  function setExpanded(head: HTMLElement, expanded: boolean) {
+    const desc = document.getElementById(head.getAttribute('aria-controls') || '');
+    if (!desc) return;
+    head.setAttribute('aria-expanded', String(expanded));
+    desc.classList.toggle('collapsed', !expanded);
+    desc.classList.toggle('expanded', expanded);
   }
 
-  function setupCategoryClickListeners() {
-    document.querySelectorAll('.timeline-category').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const filter = (btn as HTMLElement).getAttribute('data-filter') || 'all';
-        renderTimeline(filter);
-        updateActiveFilter(filter);
+  function setupToggleListeners() {
+    document.querySelectorAll('.timeline-head').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setExpanded(btn as HTMLElement, btn.getAttribute('aria-expanded') !== 'true');
       });
     });
   }
 
   function setupGlobalControls() {
     document.getElementById('expand-all-btn')?.addEventListener('click', () => {
-      document.querySelectorAll('.timeline-description.collapsed').forEach(desc => {
-        desc.classList.replace('collapsed', 'expanded');
-        const btn = desc.nextElementSibling as HTMLElement;
-        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver menos';
-        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(180deg)';
-      });
+      document.querySelectorAll<HTMLElement>('.timeline-head').forEach(h => setExpanded(h, true));
     });
     document.getElementById('collapse-all-btn')?.addEventListener('click', () => {
-      document.querySelectorAll('.timeline-description.expanded').forEach(desc => {
-        desc.classList.replace('expanded', 'collapsed');
-        const btn = desc.nextElementSibling as HTMLElement;
-        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver más';
-        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(0deg)';
-      });
+      document.querySelectorAll<HTMLElement>('.timeline-head').forEach(h => setExpanded(h, false));
     });
   }
 
   function updateActiveFilter(filter: string) {
     document.querySelectorAll('.filter-btn').forEach(btn => {
       const f = (btn as HTMLElement).dataset.filter!;
+      const isActive = f === filter;
       const cat = CATEGORIES[f];
-      if (!cat) return;
-      btn.classList.remove('active', cat.cssBg, 'text-white');
-      btn.classList.add('bg-white', cat.cssText, cat.cssBorder);
-    });
-    if (filter !== 'all') {
-      const activeBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
-      if (activeBtn && CATEGORIES[filter]) {
-        const cat = CATEGORIES[filter];
-        activeBtn.classList.add('active', cat.cssBg, 'text-white');
-        activeBtn.classList.remove('bg-white', cat.cssText);
+      btn.classList.toggle('active', isActive);
+      if (cat) {
+        if (isActive) {
+          btn.classList.add(cat.cssBg, 'text-white');
+          btn.classList.remove('bg-white', cat.cssText);
+        } else {
+          btn.classList.remove(cat.cssBg, 'text-white');
+          btn.classList.add('bg-white', cat.cssText, cat.cssBorder);
+        }
+      } else {
+        if (isActive) {
+          btn.classList.add('bg-custom-purple', 'text-white', 'border-custom-purple');
+          btn.classList.remove('bg-white', 'text-custom-dark-gray');
+        } else {
+          btn.classList.remove('bg-custom-purple', 'text-white', 'border-custom-purple');
+          btn.classList.add('bg-white', 'text-custom-dark-gray');
+        }
       }
-    }
+    });
   }
 
   // Setup filter button listeners
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const filter = (btn as HTMLElement).dataset.filter!;
-      if (btn.classList.contains('active')) {
-        renderTimeline('all');
-        updateActiveFilter('all');
-      } else {
-        renderTimeline(filter);
-        updateActiveFilter(filter);
-      }
+      renderTimeline(filter);
+      updateActiveFilter(filter);
     });
   });
 
@@ -299,5 +295,6 @@ import PageHero from '../components/PageHero.astro';
     .then(data => {
       allItems = data.timeline || [];
       renderTimeline('all');
+      updateActiveFilter('all');
     });
 </script>
