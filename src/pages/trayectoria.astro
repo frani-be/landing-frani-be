@@ -212,7 +212,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   const backdrop = document.getElementById('gantt-backdrop') as HTMLElement;
 
   function openPanel(item: TimelineItem) {
-    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656', icon: '' };
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
     panelContent.innerHTML = `
       <span class="timeline-category mb-3" style="--category-color:${cat.color}">${cat.icon}${cat.label}</span>
       <h3 class="g-panel-title">${item.title}</h3>
@@ -258,7 +258,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="current-block mb-10">
         <p class="current-block-title">// actualmente</p>
         ${items.map(item => {
-          const cat = CATEGORIES[item.category] || { color: '#565656' };
+          const cat = CATEGORIES[item.category] || { color: '#5c5766' };
           return `
             <button class="current-item" data-id="${item.id}" style="--category-color:${cat.color}">
               <span class="dot"></span>
@@ -309,7 +309,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     let bandsHTML = '';
     bands.forEach(b => {
-      const cat = CATEGORIES[b.item.category] || { label: b.item.category, color: '#565656' };
+      const cat = CATEGORIES[b.item.category] || { label: b.item.category, color: '#5c5766' };
       const top = posTop(b.e);
       const h = (b.e - b.s + 1) * monthH;
       const cls = h >= 96 ? 'lg' : h >= 44 ? 'md' : 'sm';
@@ -354,7 +354,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     ];
 
     container.innerHTML = ordered.map(item => {
-      const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656', icon: '' };
+      const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
       return `
         <button class="l-item" data-id="${item.id}" style="--category-color:${cat.color}">
           <span class="l-dates">${formatRange(item.startDate, item.endDate)}</span>

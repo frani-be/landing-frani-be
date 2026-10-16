@@ -97,7 +97,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
         <!-- Main Content -->
         <div class="lg:flex-[2] min-w-0">
           <div class="bg-white rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm">
-            <div id="project-full-description" class="prose prose-lg max-w-none text-gray-700" set:html={fullDescriptionHTML} />
+            <div id="project-full-description" class="max-w-none text-custom-dark-gray" set:html={fullDescriptionHTML} />
           </div>
         </div>
 
@@ -108,10 +108,10 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
           <!-- Categorías -->
           <div class="flex flex-wrap gap-2 mb-5">
             {project.type && (
-              <span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-surface-muted px-2 py-0.5 rounded-full">{project.type}</span>
+              <span class="tag-mono">{project.type}</span>
             )}
             {project.service && project.serviceLabel && (
-              <a href={`/servicios/${project.service}`} class="text-xs font-bold uppercase tracking-wide text-custom-purple bg-custom-light-purple px-2 py-0.5 rounded-full hover:bg-custom-purple hover:text-white transition-colors">{project.serviceLabel}</a>
+              <a href={`/servicios/${project.service}`} class="tag-mono tag-mono--accent">{project.serviceLabel}</a>
             )}
           </div>
 
@@ -139,7 +139,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
             <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-3">Tecnologías</h4>
             <div class="flex flex-wrap gap-2">
               {project.tags.map(tag => (
-                <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">{tag}</span>
+                <span class="tag-mono">{tag}</span>
               ))}
             </div>
           </div>
@@ -179,13 +179,13 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
             <polyline points="15,18 9,12 15,6" stroke-linecap="round" fill="none" stroke-linejoin="round"></polyline>
           </svg>
           <div class="min-w-0 flex-1">
-            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Anterior</p>
+            <p class="text-xs text-custom-dark-gray uppercase tracking-wide mb-1">Anterior</p>
             <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{prevProject.title}</p>
           </div>
         </a>
         <a href={`/proyectos/${nextProject.id}`} class="group flex items-center gap-3 text-right flex-1 justify-end hover:text-custom-purple transition-colors min-w-0">
           <div class="min-w-0 flex-1">
-            <p class="text-xs text-gray-500 uppercase tracking-wide mb-1">Siguiente</p>
+            <p class="text-xs text-custom-dark-gray uppercase tracking-wide mb-1">Siguiente</p>
             <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{nextProject.title}</p>
           </div>
           <svg class="w-5 h-5 flex-shrink-0 text-custom-purple" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">

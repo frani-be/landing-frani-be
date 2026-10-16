@@ -30,18 +30,18 @@ export function extractYear(d: string) {
 
 export function buildProjectCardHTML(p: Project): string {
   const tagsHTML = p.tags.slice(0, 4)
-    .map(t => `<span class="px-2 py-1 bg-surface-muted text-custom-dark-gray text-xs rounded-full">${t}</span>`)
+    .map(t => `<span class="tag-mono">${t}</span>`)
     .join('');
   const hasLinks = p.links.demo || p.links.repo || p.links.caseStudy;
   return `
-    <div class="bg-white rounded-[var(--radius-card)] overflow-hidden border border-border-soft hover:border-[#d4b0f7] hover:shadow-[0_12px_32px_-8px_rgba(181,90,255,0.18)] transition-all duration-300 flex flex-col group project-card" data-id="${p.id}">
+    <div class="bg-white rounded-[var(--radius-card)] overflow-hidden border border-border-soft hover:border-border-hover hover:shadow-[0_12px_32px_-8px_rgba(181,90,255,0.18)] transition-all duration-300 flex flex-col group project-card" data-id="${p.id}">
       <div class="aspect-video w-full overflow-hidden project-thumb">
         <img src="${p.image.replace('assets/', '/')}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
       </div>
       <div class="p-6 flex-1 flex flex-col">
         <div class="flex flex-wrap gap-2 mb-3">
-          ${p.type ? `<span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-surface-muted px-2 py-0.5 rounded-full">${p.type}</span>` : ''}
-          ${p.service && p.serviceLabel ? `<a href="/servicios/${p.service}" class="text-xs font-bold uppercase tracking-wide text-custom-purple bg-custom-light-purple px-2 py-0.5 rounded-full hover:bg-custom-purple hover:text-white transition-colors">${p.serviceLabel}</a>` : ''}
+          ${p.type ? `<span class="tag-mono">${p.type}</span>` : ''}
+          ${p.service && p.serviceLabel ? `<a href="/servicios/${p.service}" class="tag-mono tag-mono--accent">${p.serviceLabel}</a>` : ''}
         </div>
         <h3 class="text-xl text-custom-black mb-3 leading-tight">${p.title}</h3>
         <p class="text-custom-dark-gray mb-4 flex-1 text-sm">${p.description}</p>

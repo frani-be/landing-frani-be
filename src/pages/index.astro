@@ -183,9 +183,9 @@ import { serviceIcons } from '../scripts/serviceIcons';
         <h3 class="text-2xl lg:text-3xl mb-4">Docencia y comunidad</h3>
         <p class="text-custom-dark-gray leading-relaxed">Llevo años en escenarios, bootcamps y comunidades STEAM enseñando diseño y código. El conocimiento también se comparte: por eso doy charlas, mentorías y clases.</p>
         <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
-          <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">Charlas</span>
-          <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">Mentorías</span>
-          <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">Comunidad STEAM</span>
+          <span class="tag-mono">Charlas</span>
+          <span class="tag-mono">Mentorías</span>
+          <span class="tag-mono">Comunidad STEAM</span>
         </div>
         <a href="/charlas" class="btn btn-secondary mt-6">Ver videos de charlas<span class="btn-arrow" aria-hidden="true">↗</span></a>
       </div>
@@ -246,7 +246,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
   }
 
   function createListItem(item: TimelineItem) {
-    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656', icon: '' };
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
     return `
       <a class="l-item opacity-0 transition-all duration-500"
          href="/trayectoria#exp-${item.id}"
