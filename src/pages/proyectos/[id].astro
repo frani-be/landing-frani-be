@@ -110,7 +110,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
           <!-- Categorías -->
           <div class="flex flex-wrap gap-2 mb-5">
             {project.type && (
-              <span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-gray-100 px-2 py-0.5 rounded-full">{project.type}</span>
+              <span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-[#f1eef7] px-2 py-0.5 rounded-full">{project.type}</span>
             )}
             {project.service && project.serviceLabel && (
               <a href={`/servicios/${project.service}`} class="text-xs font-bold uppercase tracking-wide text-custom-purple bg-custom-light-purple px-2 py-0.5 rounded-full hover:bg-custom-purple hover:text-white transition-colors">{project.serviceLabel}</a>
@@ -151,19 +151,19 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
             {project.links.demo && (
               <a href={project.links.demo} target="_blank" rel="noopener noreferrer"
                 class="btn btn-primary" style="width:100%; text-align:center">
-                🔗 Preview
+                <svg class="inline mr-2 -mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Preview
               </a>
             )}
             {project.links.repo && (
               <a href={project.links.repo} target="_blank" rel="noopener noreferrer"
                 class="btn btn-secondary" style="width:100%; text-align:center">
-                💻 Repositorio
+                <svg class="inline mr-2 -mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Repositorio
               </a>
             )}
             {project.links.caseStudy && (
               <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer"
                 class="btn btn-secondary" style="width:100%; text-align:center">
-                📄 Caso de estudio
+                <svg class="inline mr-2 -mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Caso de estudio
               </a>
             )}
           </div>

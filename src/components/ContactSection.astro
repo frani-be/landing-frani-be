@@ -3,7 +3,7 @@ import SectionTitle from './SectionTitle.astro';
 import SocialLinks from './SocialLinks.astro';
 ---
 
-<section class="section-block bg-custom-purple text-white relative overflow-hidden glitter-container" id="contacto">
+<section class="section-block contact-section text-white relative overflow-hidden" id="contacto">
   <div class="container-wide relative z-[1]">
     <SectionTitle title="Hablemos" ghost="Contacto" dark={true} class="mb-16" />
 
@@ -11,7 +11,7 @@ import SocialLinks from './SocialLinks.astro';
 
       <!-- RRSS + info -->
       <div data-reveal data-reveal-delay="100">
-        <p class="text-white/80 text-lg mb-8">¿Tenés un proyecto en mente, querés contratar un servicio o simplemente saludar? Escribime por cualquiera de estos canales.</p>
+        <p class="text-white/80 text-lg mb-8">¿Tienes un proyecto en mente, quieres contratar un servicio o simplemente saludar? Escríbeme por cualquiera de estos canales.</p>
         <SocialLinks variant="dark" class="flex-col" />
         <div class="mt-10">
           <a
@@ -42,7 +42,7 @@ import SocialLinks from './SocialLinks.astro';
         <div>
           <label for="contact-message" class="block text-sm font-semibold mb-1 text-white/80">Mensaje</label>
           <textarea id="contact-message" name="message" required rows="5"
-            class="contact-input resize-none" placeholder="Contame tu proyecto..."></textarea>
+            class="contact-input resize-none" placeholder="Cuéntame tu proyecto..."></textarea>
         </div>
         <button type="submit" class="btn btn-white cursor-pointer">
           Enviar mensaje
@@ -76,7 +76,7 @@ import SocialLinks from './SocialLinks.astro';
         form.reset();
       } else { throw new Error('error'); }
     } catch {
-      status.textContent = 'Hubo un error al enviar. Escribime directamente a hola@frani.be';
+      status.textContent = 'Hubo un error al enviar. Escríbeme directamente a hola@frani.be';
       status.classList.add('text-red-200');
     }
     status.classList.remove('hidden');

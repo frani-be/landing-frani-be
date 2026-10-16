@@ -32,18 +32,24 @@ import PageHero from '../components/PageHero.astro';
       <!-- 3 Pillars -->
       <div class="flex flex-wrap justify-center gap-8 mb-12">
         <div class="text-center flex-1 min-w-[280px]" data-animate>
-          <div class="text-[2em] mb-4" aria-hidden="true">💻</div>
+          <div class="icon-tile icon-tile-lg mx-auto mb-4" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
           <h2 class="text-[1.25em] font-bold mb-4">Estrategia + código</h2>
           <p class="text-custom-dark-gray">Líder en UX y front-end. Traduzco necesidades corporativas complejas en interfaces escalables.</p>
         </div>
         <div class="text-center flex-1 min-w-[280px]" data-animate>
-          <div class="text-[2em] mb-4" aria-hidden="true">🎓</div>
+          <div class="icon-tile icon-tile-lg mx-auto mb-4" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
           <h2 class="text-[1.25em] font-bold mb-4">Formación sólida</h2>
           <p class="text-custom-dark-gray">Diplomada en ing. de software y diseño. Docente en universidades y bootcamps.</p>
         </div>
         <div class="text-center flex-1 min-w-[280px]" data-animate>
-          <div class="text-[2em] mb-4" aria-hidden="true">🌟</div>
-          <h2 class="text-[1.25em] font-bold mb-4">Charlista y voluntaria</h2>
+          <div class="icon-tile icon-tile-lg mx-auto mb-4" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+          </div>
+          <h2 class="text-[1.25em] font-bold mb-4">Speaker y voluntaria</h2>
           <p class="text-custom-dark-gray">Speaker internacional y activista STEAM. Promuevo inclusión real en tecnología.</p>
         </div>
       </div>
@@ -163,7 +169,7 @@ import PageHero from '../components/PageHero.astro';
         <div class="timeline-content bg-white rounded-[10px] shadow-sm transition-transform font-primary p-6">
           <div class="flex justify-between items-center flex-wrap timeline-header-content mb-2 gap-2">
             <div class="text-[0.75em] text-custom-dark-gray font-medium">${formatDate(item.startDate)} - ${formatDate(item.endDate)}</div>
-            <button class="timeline-category text-white text-sm font-medium border border-solid py-0.5 px-5 rounded-[7px] cursor-pointer" data-filter="${item.category}" style="border-color:${cat.color};">${cat.label}</button>
+            <button class="timeline-category text-white text-sm font-medium border border-solid py-0.5 px-5 rounded-full cursor-pointer" data-filter="${item.category}" style="border-color:${cat.color};">${cat.label}</button>
           </div>
           <h3 class="text-[1.25em] font-bold text-custom-black m-0 font-titles mb-2 leading-tight">${item.title}</h3>
           <div class="text-base text-custom-dark-gray font-medium mb-4">${item.company} • ${item.location}</div>

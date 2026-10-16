@@ -13,7 +13,6 @@ export function getStaticPaths() {
 }
 
 const services: Record<string, {
-  icon: string;
   title: string;
   tagline: string;
   description: string;
@@ -21,7 +20,6 @@ const services: Record<string, {
   cta: string;
 }> = {
   'desarrollo-web': {
-    icon: '🌐',
     title: 'Desarrollo web',
     tagline: 'Sitios rápidos, accesibles y a medida — sin plantillas genéricas.',
     description: 'Desde un sitio institucional hasta una aplicación web compleja, desarrollo soluciones que equilibran estética, rendimiento y mantenibilidad. Trabajo con HTML, CSS y JavaScript vainilla para proyectos que priorizan velocidad, o con frameworks modernos (React, Astro, Next.js) cuando la escala lo justifica. Para clientes que gestionan su propio contenido, WordPress sigue siendo la herramienta más potente del mercado.',
@@ -36,7 +34,6 @@ const services: Record<string, {
     cta: 'Hablemos de tu proyecto',
   },
   'diseno-grafico': {
-    icon: '🎨',
     title: 'Diseño gráfico',
     tagline: 'Identidades visuales que comunican antes de que el usuario lea una palabra.',
     description: 'El diseño gráfico es síntesis: tomar la esencia de una marca y traducirla a formas, colores y tipografías que funcionen en cualquier contexto. He desarrollado identidades para startups tecnológicas, instituciones educativas, artistas y ONG. Cada proyecto parte de un brief en profundidad y termina con un sistema de marca que el cliente puede usar de forma autónoma.',
@@ -51,7 +48,6 @@ const services: Record<string, {
     cta: 'Solicitar cotización',
   },
   'estrategia-ux': {
-    icon: '🎯',
     title: 'Estrategia UX',
     tagline: 'Diseño centrado en la persona, respaldado por evidencia.',
     description: 'Las malas experiencias de usuario cuestan dinero. La estrategia UX consiste en investigar, mapear y validar antes de construir. Trabajo en la fase de discovery (entrevistas, benchmarks, análisis heurístico), en la arquitectura de información, en el prototipado iterativo y en las pruebas de usabilidad. El resultado es un producto que la gente entiende y quiere volver a usar.',
@@ -66,10 +62,9 @@ const services: Record<string, {
     cta: 'Agendar una consultoría',
   },
   'clases-particulares': {
-    icon: '📚',
     title: 'Clases particulares',
     tagline: 'Aprende a tu ritmo con proyectos reales y feedback directo.',
-    description: 'Las clases son personalizadas: empezamos con tus objetivos, tu nivel actual y el tiempo que podés dedicar. Trabajo contigo en proyectos concretos (nada de ejercicios abstractos) y te doy retroalimentación honesta en cada sesión. He acompañado a estudiantes de diseño, desarrolladores que quieren aprender UX y profesionales que buscan reconvertirse.',
+    description: 'Las clases son personalizadas: empezamos con tus objetivos, tu nivel actual y el tiempo que puedes dedicar. Trabajo contigo en proyectos concretos (nada de ejercicios abstractos) y te doy retroalimentación honesta en cada sesión. He acompañado a estudiantes de diseño, desarrolladores que quieren aprender UX y profesionales que buscan reconvertirse.',
     bullets: [
       'HTML, CSS y JavaScript desde cero',
       'Diseño web y UI con Figma',
@@ -124,7 +119,7 @@ if (!service) return Astro.redirect('/servicios');
           <h2 class="text-2xl font-bold text-custom-black mb-5">Cómo trabajo</h2>
           <p class="text-custom-dark-gray leading-relaxed">{service.description}</p>
           <div class="mt-8 p-6 bg-[#f7f0ff] rounded-2xl border border-[#ede9f5]">
-            <p class="text-custom-black font-semibold mb-2">¿Tenés dudas antes de contratar?</p>
+            <p class="text-custom-black font-semibold mb-2">¿Tienes dudas antes de contratar?</p>
             <p class="text-custom-dark-gray text-sm mb-4">Agendamos una llamada de 20 minutos sin compromiso para ver si puedo ayudarte.</p>
             <a
               href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
@@ -138,7 +133,7 @@ if (!service) return Astro.redirect('/servicios');
   </section>
 
   <CtaSection
-    title="¿Buscás otro servicio?"
+    title="¿Buscas otro servicio?"
     primaryLabel="Ver todos los servicios"
     primaryHref="/servicios"
     secondaryLabel="Agendar videollamada"

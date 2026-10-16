@@ -3,40 +3,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import CtaSection from '../../components/CtaSection.astro';
 
+const svgIcon = (paths: string) =>
+  `<svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+
 const principales = [
   {
     slug: 'desarrollo-web',
-    icon: '🌐',
+    icon: svgIcon('<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>'),
     title: 'Desarrollo web',
     short: 'Sitios y aplicaciones a medida, desde el diseño hasta el deploy. HTML, CSS, JS, WordPress y frameworks modernos.',
   },
   {
     slug: 'diseno-grafico',
-    icon: '🎨',
+    icon: svgIcon('<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/>'),
     title: 'Diseño gráfico',
     short: 'Identidad visual, logotipos y piezas gráficas con síntesis y coherencia de marca. Del brief al arte final.',
   },
   {
     slug: 'estrategia-ux',
-    icon: '🎯',
+    icon: svgIcon('<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>'),
     title: 'Estrategia UX',
     short: 'Research, arquitectura de información, prototipos y pruebas de usabilidad para tomar decisiones basadas en evidencia.',
   },
   {
     slug: 'clases-particulares',
-    icon: '📚',
+    icon: svgIcon('<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>'),
     title: 'Clases particulares',
     short: 'Aprende diseño web, UX o programación front-end a tu ritmo. Clases personalizadas con proyectos reales y feedback directo.',
   },
 ];
 
 const secundarios = [
-  { icon: '📈', title: 'Auditoría CRO y SEO', short: 'Análisis técnico y de contenidos para mejorar la visibilidad orgánica y la tasa de conversión de tu sitio.' },
-  { icon: '🧭', title: 'Asesorías personales', short: 'Orientación personalizada para profesionales y emprendedores que quieren adentrarse en el mundo tecnológico.' },
-  { icon: '🎥', title: 'UGC', short: 'Creación de contenido generado por usuario (User Generated Content) para marcas digitales y campañas en redes.' },
-  { icon: '🎤', title: 'Mentorías para charlas', short: 'Te ayudo a estructurar y ensayar tu presentación para que llegues segura/seguro al escenario o al evento.' },
-  { icon: '🤝', title: 'Apoyo freelance', short: 'Colaboración técnica o de diseño puntual para agencias y equipos que necesitan refuerzo en proyectos específicos.' },
-  { icon: '✍️', title: 'Generación de contenido', short: 'Copywriting UX, artículos, newsletters y contenido para redes con enfoque en comunicación clara y accionable.' },
+  { icon: svgIcon('<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>'), title: 'Auditoría CRO y SEO', short: 'Análisis técnico y de contenidos para mejorar la visibilidad orgánica y la tasa de conversión de tu sitio.' },
+  { icon: svgIcon('<circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>'), title: 'Asesorías personales', short: 'Orientación personalizada para profesionales y emprendedores que quieren adentrarse en el mundo tecnológico.' },
+  { icon: svgIcon('<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>'), title: 'UGC', short: 'Creación de contenido generado por usuario (User Generated Content) para marcas digitales y campañas en redes.' },
+  { icon: svgIcon('<path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/>'), title: 'Mentorías para charlas', short: 'Te ayudo a estructurar y ensayar tu presentación para que llegues segura/seguro al escenario o al evento.' },
+  { icon: svgIcon('<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'), title: 'Apoyo freelance', short: 'Colaboración técnica o de diseño puntual para agencias y equipos que necesitan refuerzo en proyectos específicos.' },
+  { icon: svgIcon('<path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/>'), title: 'Generación de contenido', short: 'Copywriting UX, artículos, newsletters y contenido para redes con enfoque en comunicación clara y accionable.' },
 ];
 ---
 
@@ -61,7 +64,7 @@ const secundarios = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {principales.map((s, i) => (
           <a href={`/servicios/${s.slug}`} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
-            <div class="service-card-icon">{s.icon}</div>
+            <div class="service-card-icon" set:html={s.icon}></div>
             <div class="p-6 flex flex-col flex-1">
               <h3 class="text-xl font-bold text-custom-purple mb-3">{s.title}</h3>
               <p class="text-custom-dark-gray text-sm flex-1">{s.short}</p>
@@ -80,7 +83,7 @@ const secundarios = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {secundarios.map((s, i) => (
           <article class="bg-white rounded-2xl border border-[#ede9f5] p-6 flex gap-5 items-start hover:shadow-md hover:border-[#d4b0f7] transition-all duration-300" data-reveal data-reveal-delay={String(i * 80)}>
-            <span class="text-4xl flex-shrink-0 mt-1">{s.icon}</span>
+            <span class="icon-tile mt-1" set:html={s.icon}></span>
             <div>
               <h3 class="text-lg font-bold text-custom-black mb-2">{s.title}</h3>
               <p class="text-custom-dark-gray text-sm">{s.short}</p>

@@ -12,19 +12,20 @@ import ContactSection from '../components/ContactSection.astro';
 >
   <!-- Header / Hero -->
   <header
-    class="bg-gradient-to-br from-custom-light-grey via-custom-light-grey to-custom-purple pt-40 pb-40 glitter-container text-center lg:text-left min-h-screen w-screen relative overflow-hidden isolate"
+    class="hero-home pt-40 pb-32 text-center lg:text-left min-h-screen w-screen relative overflow-hidden isolate"
     id="header"
   >
     <div
-      class="container-wide flex flex-col lg:flex-row gap-8 items-center relative z-[1]"
+      class="container-wide flex flex-col lg:flex-row gap-12 items-center relative z-[1]"
       id="header-container"
     >
-      <div class="w-full lg:w-3/4">
-        <h1 class="text-[4em] lg:text-[5em] leading-[0.9] text-custom-black" data-reveal data-reveal-delay="100">
+      <div class="w-full lg:w-3/5">
+        <span class="hero-eyebrow" data-reveal data-reveal-delay="50">Disponible para nuevos proyectos</span>
+        <h1 class="text-[3.4em] lg:text-[4.6em] leading-[0.95] mt-6 text-custom-black" data-reveal data-reveal-delay="150">
           Francisca Beatriz<br />
-          <span class="text-custom-purple">Medina Concha</span>
+          <span class="text-gradient">Medina Concha</span>
         </h1>
-        <h2 class="text-[1.4em] mt-5 font-bold" data-reveal data-reveal-delay="450">Strategic UX Designer & Front-End Engineer</h2>
+        <h2 class="text-[1.4em] mt-5 font-semibold" data-reveal data-reveal-delay="450">Strategic UX Designer & Front-End Engineer</h2>
         <p class="text-[1.15em] mt-3 text-custom-dark-gray" data-reveal data-reveal-delay="650">Impulso talento en STEAM y creo tecnología con propósito.</p>
         <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="900">
           <a
@@ -39,8 +40,8 @@ import ContactSection from '../components/ContactSection.astro';
         </div>
       </div>
 
-      <div class="flex flex-col gap-6 items-center w-full lg:w-1/2" data-reveal data-reveal-delay="550">
-        <figure>
+      <div class="flex flex-col gap-6 items-center w-full lg:w-2/5" data-reveal data-reveal-delay="550">
+        <figure class="hero-photo-wrap">
           <img
             src="/images/image_frani-1.png"
             alt="Francisca Beatriz Medina Concha"
@@ -121,12 +122,14 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- Servicios -->
   <section class="section-block bg-white" id="servicios">
     <div class="container-wide">
-      <SectionTitle title="Todo lo que puedo hacer por vos" ghost="Servicios" class="mb-16" />
+      <SectionTitle title="Todo lo que puedo hacer por ti" ghost="Servicios" class="mb-16" />
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <article class="service-card" data-reveal data-reveal-delay="0">
-          <div class="service-card-icon">🌐</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
           <div class="p-6 flex flex-col flex-1">
             <h4 class="text-xl font-bold text-custom-purple mb-3">Desarrollo web</h4>
             <p class="text-custom-dark-gray text-sm flex-1">Sitios y aplicaciones a medida, desde el diseño hasta el deploy. HTML, CSS, JS, WordPress y frameworks modernos.</p>
@@ -135,7 +138,9 @@ import ContactSection from '../components/ContactSection.astro';
         </article>
 
         <article class="service-card" data-reveal data-reveal-delay="100">
-          <div class="service-card-icon">�</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
           <div class="p-6 flex flex-col flex-1">
             <h4 class="text-xl font-bold text-custom-purple mb-3">Diseño gráfico</h4>
             <p class="text-custom-dark-gray text-sm flex-1">Identidad visual, logotipos y piezas gráficas con síntesis y coherencia de marca. Del brief al arte final.</p>
@@ -144,7 +149,9 @@ import ContactSection from '../components/ContactSection.astro';
         </article>
 
         <article class="service-card" data-reveal data-reveal-delay="200">
-          <div class="service-card-icon">🎯</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
           <div class="p-6 flex flex-col flex-1">
             <h4 class="text-xl font-bold text-custom-purple mb-3">Estrategia UX</h4>
             <p class="text-custom-dark-gray text-sm flex-1">Research, arquitectura de información, prototipos y pruebas de usabilidad para tomar decisiones basadas en evidencia.</p>
@@ -153,7 +160,9 @@ import ContactSection from '../components/ContactSection.astro';
         </article>
 
         <article class="service-card" data-reveal data-reveal-delay="300">
-          <div class="service-card-icon">📚</div>
+          <div class="service-card-icon">
+            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
           <div class="p-6 flex flex-col flex-1">
             <h4 class="text-xl font-bold text-custom-purple mb-3">Clases particulares</h4>
             <p class="text-custom-dark-gray text-sm flex-1">Aprende diseño web, UX o programación front-end a tu ritmo. Clases personalizadas con proyectos reales y feedback directo.</p>
@@ -230,54 +239,6 @@ import ContactSection from '../components/ContactSection.astro';
       (message as HTMLElement).style.setProperty('--animation-delay', `${delay}s`);
     });
   }
-
-
-  // Glitter
-  function getRandomInt(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  function setAttributes(el: Element, attributes: Record<string, string>) {
-    for (const [key, value] of Object.entries(attributes)) el.setAttribute(key, value);
-  }
-  function generateStar() {
-    const shapes = [
-      { type: 'path', attributes: { d: 'M208.3 0h-25.9C144.6 78.6 80.2 143.1 0 182.8v25C80.2 247.6 144.6 312 182.3 390.6h25.9c37.8-78.6 102.3-143 182.4-182.8v-25C310.5 143.1 246 78.6 208.3 0z' } },
-      { type: 'circle', attributes: { cx: '195.3', cy: '195.3', r: '195.3' } },
-      { type: 'path', attributes: { d: 'M372.9 172.9H227.1V27.1C227.1 12.1 215 0 200 0c-15 0-27.1 12.1-27.1 27.1v145.8H27.1C12.1 172.9 0 185 0 200c0 15 12.1 27.1 27.1 27.1h145.8v145.8c0 15 12.1 27.1 27.1 27.1 15 0 27.1-12.1 27.1-27.1V227.1h145.8c15 0 27.1-12.1 27.1-27.1 0-15-12.1-27.1-27.1-27.1z' } },
-    ];
-    const randomShape = shapes[getRandomInt(0, shapes.length - 1)];
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    setAttributes(svg, { viewBox: '0 0 390.6 390.6', 'xml:space': 'preserve', 'aria-hidden': 'true', role: 'presentation' });
-    const el = document.createElementNS('http://www.w3.org/2000/svg', randomShape.type);
-    setAttributes(el, randomShape.attributes);
-    svg.appendChild(el);
-    const sizes = ['small', 'medium', 'big'];
-    const sizeClasses: Record<string, string> = { small: 'w-1 h-1', medium: 'w-1.5 h-1.5', big: 'w-2 h-2' };
-    const randomSize = sizes[getRandomInt(0, sizes.length - 1)];
-    const randomOpacity = (getRandomInt(4, 9) / 10).toFixed(1);
-    svg.classList.add('glitter', randomSize, 'absolute', 'z-0', 'pointer-events-none', ...sizeClasses[randomSize].split(' '));
-    svg.style.fill = '#e8d4f9';
-    svg.style.opacity = randomOpacity;
-    svg.style.top = `${getRandomInt(2, 98)}%`;
-    svg.style.left = `${getRandomInt(2, 98)}%`;
-    return svg;
-  }
-  function generateStars(container: Element, starCount: number) {
-    container.querySelectorAll('.glitter').forEach(s => s.remove());
-    for (let i = 0; i < starCount; i++) container.prepend(generateStar());
-  }
-  function calculateStarCount(w: number) {
-    if (w < 782) return 50;
-    if (w < 1280) return 75;
-    return 100;
-  }
-  function updateStars() {
-    const container = document.querySelector('.glitter-container');
-    if (container) generateStars(container, calculateStarCount(window.innerWidth));
-  }
-  let resizeTimeout: ReturnType<typeof setTimeout>;
-  window.addEventListener('resize', () => { clearTimeout(resizeTimeout); resizeTimeout = setTimeout(updateStars, 200); });
-  window.addEventListener('load', updateStars);
 </script>
 
 <script>
@@ -351,7 +312,7 @@ import ContactSection from '../components/ContactSection.astro';
         <div class="timeline-content bg-white rounded-[10px] shadow-sm transition-transform font-primary p-6">
           <div class="flex justify-between items-center flex-wrap timeline-header-content mb-2 gap-2">
             <div class="text-[0.75em] text-custom-dark-gray font-medium font-primary">${formatDate(item.startDate)} - ${formatDate(item.endDate)}</div>
-            <button class="timeline-category text-white text-sm transition-all font-primary font-medium border border-solid py-0.5 px-5 rounded-[7px]"
+            <button class="timeline-category text-white text-sm transition-all font-primary font-medium border border-solid py-0.5 px-5 rounded-full"
                     style="border-color:${cat.color};">${cat.label}</button>
           </div>
           <h3 class="text-[1.25em] font-bold text-custom-black m-0 font-titles mb-2 leading-tight">${item.title}</h3>

@@ -8,7 +8,7 @@ const { variant = 'light', class: extraClass = '' } = Astro.props;
 
 const linkClass = variant === 'dark'
   ? 'flex items-center gap-3 text-white font-semibold hover:text-custom-light-purple transition-colors'
-  : 'text-sm text-custom-purple border-custom-purple border border-solid bg-white py-0.5 px-4 font-bold rounded-[7px] inline-block';
+  : 'text-sm text-custom-purple border-custom-purple/40 border border-solid bg-white py-0.5 px-4 font-bold rounded-full inline-block';
 
 const iconClass = variant === 'dark' ? 'contact-icon-pill' : '';
 ---

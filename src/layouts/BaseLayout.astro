@@ -56,7 +56,7 @@ const {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,700;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -66,13 +66,19 @@ const {
   <body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
     <!-- Navigation -->
     <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation">
-      <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px]">
+      <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex items-center justify-between gap-6">
         <div class="logo-container">
           <a href="/" aria-label="Ir al inicio">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70.3">
               <use href="/images/icons.svg#logo"></use>
             </svg>
           </a>
+        </div>
+        <div class="hidden md:flex items-center gap-1">
+          <a href="/trayectoria" class="nav-link">Trayectoria</a>
+          <a href="/servicios" class="nav-link">Servicios</a>
+          <a href="/proyectos" class="nav-link">Proyectos</a>
+          <a href="#contacto" class="btn btn-primary ml-2" style="padding:0.55rem 1.4rem">Contacto</a>
         </div>
       </div>
     </nav>
@@ -82,7 +88,7 @@ const {
     <ContactSection />
 
     <!-- Footer -->
-    <footer class="pt-20 pb-8 bg-gradient-to-br from-custom-purple to-custom-purple-dark text-white relative overflow-hidden">
+    <footer class="pt-20 pb-8 bg-gradient-footer text-white relative overflow-hidden">
       <div class="container-wide flex flex-col gap-8 text-center justify-center items-center">
         <div class="text-center scroll-btn relative">
           <a
