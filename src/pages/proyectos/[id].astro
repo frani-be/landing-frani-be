@@ -72,13 +72,11 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
 >
   <PageHero
     title={project.title}
-    ghost={project.type ?? project.category}
-    subtitle={project.description}
-    crumbs={[
-      { label: 'Inicio', href: '/' },
-      { label: 'Portafolio', href: '/proyectos' },
-      { label: project.title },
+    path={[
+      { label: 'proyectos', href: '/proyectos' },
+      { label: project.id },
     ]}
+    subtitle={project.description}
   />
 
   <!-- Project Image -->
@@ -87,7 +85,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
       <img
         src={project.image.replace('assets/', '/')}
         alt={project.title}
-        class="w-full aspect-video object-cover rounded-xl shadow-lg"
+        class="w-full aspect-video object-cover rounded-[var(--radius-card)] shadow-lg"
       />
     </div>
   </section>
@@ -98,19 +96,19 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
       <div class="lg:flex lg:gap-12 lg:items-start" id="project-content">
         <!-- Main Content -->
         <div class="lg:flex-[2] min-w-0">
-          <div class="bg-white rounded-xl p-8 shadow-sm">
+          <div class="bg-white rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm">
             <div id="project-full-description" class="prose prose-lg max-w-none text-gray-700" set:html={fullDescriptionHTML} />
           </div>
         </div>
 
         <!-- Sidebar -->
-        <div class="bg-white rounded-xl p-8 shadow-sm mt-8 lg:mt-0 lg:w-[320px] lg:flex-shrink-0 lg:sticky lg:top-28 lg:self-start">
-          <h3 class="text-xl font-bold text-custom-black mb-4 font-titles">Detalles del Proyecto</h3>
+        <div class="bg-white rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm mt-8 lg:mt-0 lg:w-[320px] lg:flex-shrink-0 lg:sticky lg:top-28 lg:self-start">
+          <h3 class="text-xl text-custom-black mb-4">Detalles del Proyecto</h3>
 
           <!-- Categorías -->
           <div class="flex flex-wrap gap-2 mb-5">
             {project.type && (
-              <span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-[#f1eef7] px-2 py-0.5 rounded-full">{project.type}</span>
+              <span class="text-xs font-semibold uppercase tracking-wide text-custom-dark-gray bg-surface-muted px-2 py-0.5 rounded-full">{project.type}</span>
             )}
             {project.service && project.serviceLabel && (
               <a href={`/servicios/${project.service}`} class="text-xs font-bold uppercase tracking-wide text-custom-purple bg-custom-light-purple px-2 py-0.5 rounded-full hover:bg-custom-purple hover:text-white transition-colors">{project.serviceLabel}</a>
@@ -119,29 +117,29 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
 
           <div class="space-y-4">
             <div>
-              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Cliente</h4>
+              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Cliente</h4>
               <p class="text-custom-black">{project.client || 'N/A'}</p>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Fecha</h4>
+              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Fecha</h4>
               <p class="text-custom-black">{project.date || 'N/A'}</p>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Rol</h4>
+              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Rol</h4>
               <p class="text-custom-black">{project.role || 'N/A'}</p>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-1">Stack Tecnológico</h4>
+              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Stack Tecnológico</h4>
               <p class="text-custom-black">{project.stack || 'N/A'}</p>
             </div>
           </div>
 
           <!-- Tags -->
           <div class="mt-6">
-            <h4 class="text-sm font-bold text-custom-dark-gray uppercase tracking-wide mb-3">Tecnologías</h4>
+            <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-3">Tecnologías</h4>
             <div class="flex flex-wrap gap-2">
               {project.tags.map(tag => (
-                <span class="px-3 py-1 bg-custom-light-purple text-custom-purple text-sm rounded-full font-medium">{tag}</span>
+                <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">{tag}</span>
               ))}
             </div>
           </div>
@@ -173,7 +171,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
   </section>
 
   <!-- Prev / Next Navigation -->
-  <section class="section-block-sm bg-custom-light-grey border-t border-gray-200">
+  <section class="section-block-sm bg-custom-light-grey border-t border-border-soft">
     <div class="container-wide">
       <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 sm:gap-8">
         <a href={`/proyectos/${prevProject.id}`} class="group flex items-center gap-3 text-left flex-1 hover:text-custom-purple transition-colors min-w-0">

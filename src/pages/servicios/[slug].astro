@@ -21,7 +21,7 @@ const services: Record<string, {
 }> = {
   'desarrollo-web': {
     title: 'Desarrollo web',
-    tagline: 'Sitios rápidos, accesibles y a medida — sin plantillas genéricas.',
+    tagline: 'Sitios rápidos, accesibles y a medida, sin plantillas genéricas.',
     description: 'Desde un sitio institucional hasta una aplicación web compleja, desarrollo soluciones que equilibran estética, rendimiento y mantenibilidad. Trabajo con HTML, CSS y JavaScript vainilla para proyectos que priorizan velocidad, o con frameworks modernos (React, Astro, Next.js) cuando la escala lo justifica. Para clientes que gestionan su propio contenido, WordPress sigue siendo la herramienta más potente del mercado.',
     bullets: [
       'Desarrollo pixel-perfect desde Figma o boceto',
@@ -89,13 +89,11 @@ if (!service) return Astro.redirect('/servicios');
 >
   <PageHero
     title={`Conoce más acerca de ${service.title}`}
-    ghost={service.title}
-    subtitle={service.tagline}
-    crumbs={[
-      { label: 'Inicio', href: '/' },
-      { label: 'Servicios', href: '/servicios' },
-      { label: service.title },
+    path={[
+      { label: 'servicios', href: '/servicios' },
+      { label: slug as string },
     ]}
+    subtitle={service.tagline}
     ctaLabel={service.cta}
     ctaHref="https://calendar.app.google/NjSZEbvWrLfj56wy6"
   />
@@ -105,20 +103,20 @@ if (!service) return Astro.redirect('/servicios');
     <div class="container-mid">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         <div data-reveal>
-          <h2 class="text-2xl font-bold text-custom-black mb-5">¿Qué incluye?</h2>
+          <h2 class="text-2xl text-custom-black mb-5">¿Qué incluye?</h2>
           <ul class="flex flex-col gap-3">
             {service.bullets.map(b => (
               <li class="flex items-start gap-3 text-custom-dark-gray">
-                <span class="text-custom-purple font-bold text-lg leading-tight mt-0.5">✓</span>
+                <span class="text-custom-purple-dark font-bold text-lg leading-tight mt-0.5">✓</span>
                 <span>{b}</span>
               </li>
             ))}
           </ul>
         </div>
         <div data-reveal data-reveal-delay="150">
-          <h2 class="text-2xl font-bold text-custom-black mb-5">Cómo trabajo</h2>
+          <h2 class="text-2xl text-custom-black mb-5">Cómo trabajo</h2>
           <p class="text-custom-dark-gray leading-relaxed">{service.description}</p>
-          <div class="mt-8 p-6 bg-[#f7f0ff] rounded-2xl border border-[#ede9f5]">
+          <div class="mt-8 p-6 bg-surface-muted rounded-[var(--radius-card)] border border-border-soft">
             <p class="text-custom-black font-semibold mb-2">¿Tienes dudas antes de contratar?</p>
             <p class="text-custom-dark-gray text-sm mb-4">Agendamos una llamada de 20 minutos sin compromiso para ver si puedo ayudarte.</p>
             <a
