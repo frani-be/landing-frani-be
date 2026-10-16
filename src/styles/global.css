@@ -202,7 +202,7 @@ a.regular-link {
   height: 46px;
 }
 .illus-frame {
-  border-radius: 2rem;
+  border-radius: var(--radius-card);
   padding: 6px;
   background: linear-gradient(180deg, #f0e7fb 0%, #fdfbfe 100%);
   box-shadow: 0 24px 50px -20px rgba(139, 45, 179, 0.3);
@@ -641,6 +641,16 @@ a.regular-link {
 .service-card:hover .service-card-icon svg,
 .service-card:hover .service-card-icon img {
   transform: scale(1.08);
+}
+
+/* Link de acción dentro de cards (la card entera ya es el <a>) */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-family-titles);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-custom-purple);
 }
 
 /* Small icon tile (secondary services, pillars, lists) */
@@ -1249,17 +1259,15 @@ a.tag-mono--accent:hover {
   box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.14);
 }
 .btn-white:hover { opacity: 0.92; }
-/* Text link: no bg, no border */
+/* Quiet pill: acción secundaria al lado de botones */
 .btn-tertiary {
   background: transparent;
   color: #b55aff;
   border-color: transparent;
-  padding-left: 0;
-  padding-right: 0;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
-.btn-tertiary:hover { opacity: 0.7; transform: none; }
+.btn-tertiary:hover { background: rgba(181, 90, 255, 0.09); opacity: 1; transform: none; }
 
 /* Stroke icons inside buttons and modal links */
 .btn svg,
