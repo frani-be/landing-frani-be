@@ -1,14 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/SectionTitle.astro';
-import SocialLinks from '../components/SocialLinks.astro';
 import LinksModal from '../components/LinksModal.astro';
-import ContactSection from '../components/ContactSection.astro';
+import EmbroideryPattern from '../components/EmbroideryPattern.astro';
+import { serviceIcons } from '../scripts/serviceIcons';
 ---
 
 <BaseLayout
   title="Francisca Beatriz Medina Concha | Strategic UX Designer & Front-End Engineer"
   ogUrl="https://frani.be/"
+  contactTag="05 / contacto"
 >
   <!-- Header / Hero -->
   <header
@@ -20,12 +21,12 @@ import ContactSection from '../components/ContactSection.astro';
       id="header-container"
     >
       <div class="w-full lg:w-3/5">
-        <span class="hero-eyebrow" data-reveal data-reveal-delay="50">Disponible para nuevos proyectos</span>
-        <h1 class="text-[3.4em] lg:text-[4.6em] leading-[0.95] mt-6 text-custom-black" data-reveal data-reveal-delay="150">
-          Francisca Beatriz<br />
-          <span class="text-gradient">Medina Concha</span>
+        <span class="hero-eyebrow" data-reveal data-reveal-delay="50">1 cupo disponible para nuevos proyectos</span>
+        <h1 class="mt-6 text-custom-black leading-[0.95]" data-reveal data-reveal-delay="150">
+          <span class="block text-[1.05em] lg:text-[1.2em] font-medium">¡Hola! Soy</span>
+          <span class="text-gradient block text-[2.4em] lg:text-[3em]">Frani</span>
         </h1>
-        <h2 class="text-[1.4em] mt-5 font-semibold" data-reveal data-reveal-delay="450">Strategic UX Designer & Front-End Engineer</h2>
+        <h2 class="text-[1.4em] mt-5" data-reveal data-reveal-delay="450">Strategic UX Designer & Front-End Engineer</h2>
         <p class="text-[1.15em] mt-3 text-custom-dark-gray" data-reveal data-reveal-delay="650">Impulso talento en STEAM y creo tecnología con propósito.</p>
         <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="900">
           <a
@@ -40,28 +41,21 @@ import ContactSection from '../components/ContactSection.astro';
         </div>
       </div>
 
-      <div class="flex flex-col gap-6 items-center w-full lg:w-2/5" data-reveal data-reveal-delay="550">
+      <div class="relative flex flex-col gap-6 items-center w-full lg:w-2/5" data-reveal data-reveal-delay="550">
+        <EmbroideryPattern class="absolute -top-8 right-0 lg:-right-8 rotate-6" cells={5} />
         <figure class="hero-photo-wrap">
           <img
-            src="/images/image_frani-1.png"
-            alt="Francisca Beatriz Medina Concha"
+            src="/images/frani.png"
+            alt="Ilustración de Frani programando en su laptop junto a una taza de té"
             id="main-image"
-            class="fade-effect transition-opacity duration-500 opacity-100"
+            class="illus-frame"
           />
+          <svg class="hero-sparkle" viewBox="0 0 46 46" aria-hidden="true">
+            <path d="M11 1l2.8 8.2L22 12l-8.2 2.8L11 23l-2.8-8.2L0 12l8.2-2.8z" fill="#f6a8d8"/>
+            <path d="M37 26l1.5 4.4 4.4 1.5-4.4 1.5L37 37.8l-1.5-4.4-4.4-1.5 4.4-1.5z" fill="#8b2db3"/>
+          </svg>
         </figure>
-        <noscript>
-          <img src="/images/image_frani-1.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-2.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-3.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-4.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-5.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-6.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-7.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-8.png" alt="Francisca Beatriz Medina Concha" />
-          <img src="/images/image_frani-9.png" alt="Francisca Beatriz Medina Concha" />
-        </noscript>
         <p id="message">
-          <span class="static-message">Soy Francisca Beatriz,</span>
           <span class="iterate-message text-custom-purple">
             <span>Strategic UX Designer</span>
             <span>Front-End Engineer</span>
@@ -90,16 +84,16 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- Timeline Section -->
   <section class="bg-custom-light-grey section-block border-t border-custom-dark-gray/25" id="timeline">
     <div class="container-wide">
-      <SectionTitle title="Últimas 3 experiencias de mi Trayectoria" ghost="Trayectoria" />
+      <SectionTitle title="Últimas 3 experiencias de mi Trayectoria" tag="01 / trayectoria" />
 
       <div class="flex justify-center gap-2 mb-6 text-center" id="global-controls">
-        <button id="expand-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+        <button id="expand-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-full cursor-pointer">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 inline">
             <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           Expandir todo
         </button>
-        <button id="collapse-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-[7px] cursor-pointer">
+        <button id="collapse-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-full cursor-pointer">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 inline rotate-180">
             <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -122,50 +116,47 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- Servicios -->
   <section class="section-block bg-white" id="servicios">
     <div class="container-wide">
-      <SectionTitle title="Todo lo que puedo hacer por ti" ghost="Servicios" class="mb-16" />
+      <SectionTitle
+        title="Todo lo que puedo hacer por ti"
+        subtitle="Diseño, código y estrategia en una sola persona: sin fricción entre etapas ni tres proveedores distintos."
+        tag="02 / servicios"
+        class="mb-16"
+      />
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <article class="service-card" data-reveal data-reveal-delay="0">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
+          <div class="service-card-icon"><img src={serviceIcons['desarrollo-web']} alt="" /></div>
           <div class="p-6 flex flex-col flex-1">
-            <h4 class="text-xl font-bold text-custom-purple mb-3">Desarrollo web</h4>
-            <p class="text-custom-dark-gray text-sm flex-1">Sitios y aplicaciones a medida, desde el diseño hasta el deploy. HTML, CSS, JS, WordPress y frameworks modernos.</p>
+            <h4 class="text-xl mb-3">Lanza tu sitio web</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Diseño y desarrollo tu sitio completo: rápido, autogestionable y a tu medida. De la idea al aire.</p>
             <a href="/servicios/desarrollo-web" class="btn btn-secondary">Saber más</a>
           </div>
         </article>
 
         <article class="service-card" data-reveal data-reveal-delay="100">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-          </div>
+          <div class="service-card-icon"><img src={serviceIcons['diseno-grafico']} alt="" /></div>
           <div class="p-6 flex flex-col flex-1">
-            <h4 class="text-xl font-bold text-custom-purple mb-3">Diseño gráfico</h4>
-            <p class="text-custom-dark-gray text-sm flex-1">Identidad visual, logotipos y piezas gráficas con síntesis y coherencia de marca. Del brief al arte final.</p>
+            <h4 class="text-xl mb-3">Haz única tu marca</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Identidad visual completa: logo, paleta y piezas coherentes que comunican lo mismo en todo canal.</p>
             <a href="/servicios/diseno-grafico" class="btn btn-secondary">Saber más</a>
           </div>
         </article>
 
         <article class="service-card" data-reveal data-reveal-delay="200">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-          </div>
+          <div class="service-card-icon"><img src={serviceIcons['estrategia-ux']} alt="" /></div>
           <div class="p-6 flex flex-col flex-1">
-            <h4 class="text-xl font-bold text-custom-purple mb-3">Estrategia UX</h4>
-            <p class="text-custom-dark-gray text-sm flex-1">Research, arquitectura de información, prototipos y pruebas de usabilidad para tomar decisiones basadas en evidencia.</p>
+            <h4 class="text-xl mb-3">Ordena tu producto</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Auditoría UX basada en evidencia: research, arquitectura, prototipos y tests que hacen fluir a usuarios.</p>
             <a href="/servicios/estrategia-ux" class="btn btn-secondary">Saber más</a>
           </div>
         </article>
 
         <article class="service-card" data-reveal data-reveal-delay="300">
-          <div class="service-card-icon">
-            <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          </div>
+          <div class="service-card-icon"><img src={serviceIcons['clases-particulares']} alt="" /></div>
           <div class="p-6 flex flex-col flex-1">
-            <h4 class="text-xl font-bold text-custom-purple mb-3">Clases particulares</h4>
-            <p class="text-custom-dark-gray text-sm flex-1">Aprende diseño web, UX o programación front-end a tu ritmo. Clases personalizadas con proyectos reales y feedback directo.</p>
+            <h4 class="text-xl mb-3">Aprende a tu ritmo</h4>
+            <p class="text-custom-dark-gray text-sm flex-1">Clases 1 a 1 de diseño, UX o front-end con proyectos reales y feedback directo en cada sesión.</p>
             <a href="/servicios/clases-particulares" class="btn btn-secondary">Saber más</a>
           </div>
         </article>
@@ -173,7 +164,7 @@ import ContactSection from '../components/ContactSection.astro';
       </div>
 
       <div class="text-center mt-12" data-reveal data-reveal-delay="400">
-        <a href="/servicios" class="btn btn-primary">Ver todos los servicios</a>
+        <a href="/servicios" class="btn btn-primary">Ver todos los servicios<span class="btn-arrow" aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
@@ -181,14 +172,39 @@ import ContactSection from '../components/ContactSection.astro';
   <!-- Proyectos Destacados -->
   <section class="section-block bg-custom-light-grey" id="proyectos">
     <div class="container-wide">
-      <SectionTitle title="Proyectos que me enorgullecen" ghost="Proyectos" />
+      <SectionTitle title="Proyectos que me enorgullecen" tag="03 / proyectos" />
 
       <div id="featured-projects-container" class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
       <div class="text-center mt-12">
         <a href="/proyectos" class="btn btn-primary">
-          Ver todos los proyectos
+          Ver todos los proyectos<span class="btn-arrow" aria-hidden="true">↗</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Docencia y Comunidad -->
+  <section class="section-block-sm bg-white" id="comunidad">
+    <div class="container-mid flex flex-col lg:flex-row items-center gap-12 lg:gap-16 text-center lg:text-left">
+      <figure class="shrink-0" data-reveal>
+        <img
+          src="/images/charla.png"
+          alt="Ilustración de Frani dando una charla tech desde un atril, con micrófono y credencial"
+          class="illus-frame max-w-[300px]"
+          loading="lazy"
+        />
+      </figure>
+      <div class="flex-1" data-reveal data-reveal-delay="150">
+        <span class="section-tag">04 / comunidad</span>
+        <h3 class="text-2xl lg:text-3xl mb-4">Docencia y comunidad</h3>
+        <p class="text-custom-dark-gray leading-relaxed">Llevo años en escenarios, bootcamps y comunidades STEAM enseñando diseño y código. El conocimiento también se comparte: por eso doy charlas, mentorías y clases.</p>
+        <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
+          <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">Charlas</span>
+          <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">Mentorías</span>
+          <span class="px-3 py-1 bg-surface-muted text-custom-dark-gray text-sm rounded-full font-medium">Comunidad STEAM</span>
+        </div>
+        <a href="/charlas" class="btn btn-secondary mt-6">Ver videos de charlas<span class="btn-arrow" aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
@@ -202,30 +218,6 @@ import ContactSection from '../components/ContactSection.astro';
 </script>
 
 <script>
-  // Image transition
-  let counter = 1;
-  const cantImages = 9;
-  const duration = 13000;
-  const initialDelay = 2000;
-  const fadeDuration = 500;
-  const mainImage = document.getElementById('main-image') as HTMLImageElement | null;
-
-  if (mainImage) {
-    mainImage.style.opacity = '1';
-    function changeImage() {
-      counter = counter % cantImages + 1;
-      mainImage!.style.opacity = '0';
-      setTimeout(() => {
-        mainImage!.src = `/images/image_frani-${counter}.png`;
-        mainImage!.style.opacity = '1';
-      }, fadeDuration);
-    }
-    setTimeout(() => {
-      changeImage();
-      setInterval(changeImage, duration);
-    }, duration - initialDelay);
-  }
-
   // Iterate message animation
   const iterateMessage = document.querySelector('.iterate-message');
   if (iterateMessage) {
@@ -254,18 +246,19 @@ import ContactSection from '../components/ContactSection.astro';
     description: string;
   }
 
-  const CATEGORIES: Record<string, { label: string; color: string }> = {
-    laboral:       { label: 'Experiencia laboral',       color: '#2555a3' },
-    academica:     { label: 'Formación académica',        color: '#9f2eba' },
-    docencia:      { label: 'Experiencia en docencia',    color: '#7d1fc7' },
-    voluntariados: { label: 'Voluntariados',              color: '#bd2c97' },
+  const strokeIcon = (inner: string) =>
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-icon" aria-hidden="true">${inner}</svg>`;
+
+  const CATEGORIES: Record<string, { label: string; color: string; icon: string }> = {
+    laboral:       { label: 'Profesional', color: '#2555a3', icon: strokeIcon('<rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>') },
+    academica:     { label: 'Formación',   color: '#9f2eba', icon: strokeIcon('<path d="M2 9.5L12 5l10 4.5-10 4.5z"/><path d="M6 12v4c3 2 9 2 12 0v-4"/>') },
+    docencia:      { label: 'Docencia',    color: '#7d1fc7', icon: strokeIcon('<path d="M4 4.5h5a4 4 0 0 1 3 1.7A4 4 0 0 1 15 4.5h5V19h-5a3 3 0 0 0-3 1.5A3 3 0 0 0 9 19H4z"/>') },
+    voluntariados: { label: 'Comunidad',   color: '#bd2c97', icon: strokeIcon('<path d="M12 20s-7-4.6-9-9c-1.4-3.2.5-7 4-7 2.4 0 4 1.4 5 2.8C13 5.4 14.6 4 17 4c3.5 0 5.4 3.8 4 7-2 4.4-9 9-9 9z"/>') },
   };
-  const MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 
   function formatDate(d: string) {
     if (d === 'actualidad') return 'Actualidad';
-    const [year, month] = d.split('-');
-    return `${MONTHS[parseInt(month) - 1]} ${year}`;
+    return d.slice(0, 4);
   }
 
   function processBoldText(text: string) {
@@ -302,86 +295,73 @@ import ContactSection from '../components/ContactSection.astro';
   }
 
   function createTimelineItem(item: TimelineItem) {
-    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656' };
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656', icon: '' };
     const mdHTML = parseMarkdown(item.description);
     return `
-      <div class="relative mb-8 opacity-0 transition-all duration-500 timeline-item ml-16"
+      <div class="tl-item opacity-0 transition-all duration-500"
            data-category="${item.category}"
            style="--category-color: ${cat.color}; transform: translateY(20px);">
-        <div class="timeline-marker absolute rounded-full z-[2] w-4 h-4" style="left:-4rem;top:0.75rem;margin-left:1.5rem;"></div>
-        <div class="timeline-content bg-white rounded-[10px] shadow-sm transition-transform font-primary p-6">
-          <div class="flex justify-between items-center flex-wrap timeline-header-content mb-2 gap-2">
-            <div class="text-[0.75em] text-custom-dark-gray font-medium font-primary">${formatDate(item.startDate)} - ${formatDate(item.endDate)}</div>
-            <button class="timeline-category text-white text-sm transition-all font-primary font-medium border border-solid py-0.5 px-5 rounded-full"
-                    style="border-color:${cat.color};">${cat.label}</button>
-          </div>
-          <h3 class="text-[1.25em] font-bold text-custom-black m-0 font-titles mb-2 leading-tight">${item.title}</h3>
-          <div class="text-base text-custom-dark-gray font-medium font-primary mb-4">${item.company} • ${item.location}</div>
-          <div class="relative">
-            <div class="timeline-description collapsed text-custom-black overflow-hidden font-primary leading-relaxed" id="description-${item.id}">${mdHTML}</div>
-            <button class="timeline-toggle font-semibold text-[0.75em] cursor-pointer flex items-center transition-all font-primary gap-1 mt-2 bg-transparent border-none" data-item-id="${item.id}">
-              <span class="toggle-text">Ver más</span>
-              <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
+        <div class="tl-dates">${formatDate(item.startDate)}<span class="tl-sep">–</span>${formatDate(item.endDate)}</div>
+        <div class="timeline-content bg-white shadow-sm transition-transform font-primary p-5">
+          <button class="timeline-head" aria-expanded="false" aria-controls="description-${item.id}">
+            <span class="head-top">
+              <span class="timeline-category">${cat.icon}${cat.label}</span>
+            </span>
+            <span class="head-title">${item.title}</span>
+            <span class="head-meta">${item.company} • ${item.location}</span>
+            <svg class="head-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="timeline-description collapsed text-custom-black overflow-hidden font-primary leading-relaxed" id="description-${item.id}">${mdHTML}</div>
         </div>
       </div>`;
+  }
+
+  function setExpanded(head: HTMLElement, expanded: boolean) {
+    const desc = document.getElementById(head.getAttribute('aria-controls') || '');
+    if (!desc) return;
+    head.setAttribute('aria-expanded', String(expanded));
+    desc.classList.toggle('collapsed', !expanded);
+    desc.classList.toggle('expanded', expanded);
   }
 
   async function initTimeline() {
     const res = await fetch('/data/timeline.json');
     const data = await res.json();
     let items: TimelineItem[] = data.timeline || [];
-    items.sort((a, b) => new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime());
-    items = items.slice(0, 4);
+
+    const isCurrent = (i: TimelineItem) => i.endDate === 'actualidad';
+    const byEndDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.endDate + '-01').getTime() - new Date(a.endDate + '-01').getTime();
+    const byStartDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime();
+    items = [
+      ...items.filter(isCurrent).sort(byStartDesc),
+      ...items.filter(i => !isCurrent(i)).sort(byEndDesc),
+    ].slice(0, 4);
 
     const container = document.getElementById('timeline-container');
     if (!container) return;
-    container.innerHTML = `<div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5 md:left-8"></div>${items.map(createTimelineItem).join('')}`;
+    container.innerHTML = items.map(createTimelineItem).join('');
 
     setTimeout(() => {
-      document.querySelectorAll('.timeline-item').forEach((el, i) => {
+      document.querySelectorAll('.tl-item').forEach((el, i) => {
         setTimeout(() => el.classList.add('animate-in'), i * 100);
       });
     }, 50);
 
-    document.querySelectorAll('.timeline-toggle').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        const id = (e.currentTarget as HTMLElement).getAttribute('data-item-id');
-        const desc = document.getElementById(`description-${id}`);
-        if (!desc) return;
-        const btn = desc.nextElementSibling as HTMLElement;
-        const txt = btn.querySelector('.toggle-text') as HTMLElement;
-        const ico = btn.querySelector('.toggle-icon') as HTMLElement;
-        if (desc.classList.contains('collapsed')) {
-          desc.classList.replace('collapsed', 'expanded');
-          txt.textContent = 'Ver menos';
-          ico.style.transform = 'rotate(180deg)';
-        } else {
-          desc.classList.replace('expanded', 'collapsed');
-          txt.textContent = 'Ver más';
-          ico.style.transform = 'rotate(0deg)';
-        }
+    document.querySelectorAll('.timeline-head').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setExpanded(btn as HTMLElement, btn.getAttribute('aria-expanded') !== 'true');
       });
     });
 
     document.getElementById('expand-all-btn')?.addEventListener('click', () => {
-      document.querySelectorAll('.timeline-description.collapsed').forEach(desc => {
-        desc.classList.replace('collapsed', 'expanded');
-        const btn = desc.nextElementSibling as HTMLElement;
-        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver menos';
-        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(180deg)';
-      });
+      document.querySelectorAll<HTMLElement>('.timeline-head').forEach(h => setExpanded(h, true));
     });
     document.getElementById('collapse-all-btn')?.addEventListener('click', () => {
-      document.querySelectorAll('.timeline-description.expanded').forEach(desc => {
-        desc.classList.replace('expanded', 'collapsed');
-        const btn = desc.nextElementSibling as HTMLElement;
-        (btn.querySelector('.toggle-text') as HTMLElement).textContent = 'Ver más';
-        (btn.querySelector('.toggle-icon') as HTMLElement).style.transform = 'rotate(0deg)';
-      });
+      document.querySelectorAll<HTMLElement>('.timeline-head').forEach(h => setExpanded(h, false));
     });
   }
   initTimeline();
