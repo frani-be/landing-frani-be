@@ -9,7 +9,6 @@ import { serviceIcons } from '../scripts/serviceIcons';
 <BaseLayout
   title="Francisca Beatriz Medina Concha | Strategic UX Designer & Front-End Engineer"
   ogUrl="https://frani.be/"
-  contactTag="05 / contacto"
 >
   <!-- Header / Hero -->
   <header
@@ -84,29 +83,13 @@ import { serviceIcons } from '../scripts/serviceIcons';
   <!-- Timeline Section -->
   <section class="bg-custom-light-grey section-block border-t border-custom-dark-gray/25" id="timeline">
     <div class="container-wide">
-      <SectionTitle title="Últimas 3 experiencias de mi Trayectoria" tag="01 / trayectoria" />
+      <SectionTitle title="Últimas 3 experiencias de mi Trayectoria" tag="01_trayectoria" />
 
-      <div class="flex justify-center gap-2 mb-6 text-center" id="global-controls">
-        <button id="expand-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-full cursor-pointer">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 inline">
-            <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Expandir todo
-        </button>
-        <button id="collapse-all-btn" class="global-control-btn text-xs transition-all font-primary font-medium text-custom-dark-gray border-custom-dark-gray border border-solid bg-white py-0.5 px-3 rounded-full cursor-pointer">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-1 inline rotate-180">
-            <path d="M6 9L12 15L18 9" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Colapsar todo
-        </button>
-      </div>
-
-      <div class="relative max-w-[800px] mx-auto">
-        <div id="timeline-container" class="relative"></div>
-        <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-custom-light-grey via-custom-light-grey/80 to-transparent pointer-events-none z-10"></div>
-        <div class="relative text-center -mt-12 z-20">
+      <div class="max-w-[820px] mx-auto">
+        <div id="timeline-container" class="list-view"></div>
+        <div class="text-center mt-8">
           <a href="/trayectoria" class="btn btn-primary">
-            Ver trayectoria completa
+            Ver trayectoria completa<span class="btn-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -119,7 +102,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
       <SectionTitle
         title="Todo lo que puedo hacer por ti"
         subtitle="Diseño, código y estrategia en una sola persona: sin fricción entre etapas ni tres proveedores distintos."
-        tag="02 / servicios"
+        tag="02_servicios"
         class="mb-16"
       />
 
@@ -172,7 +155,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
   <!-- Proyectos Destacados -->
   <section class="section-block bg-custom-light-grey" id="proyectos">
     <div class="container-wide">
-      <SectionTitle title="Proyectos que me enorgullecen" tag="03 / proyectos" />
+      <SectionTitle title="Proyectos que me enorgullecen" tag="03_proyectos" />
 
       <div id="featured-projects-container" class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
@@ -196,7 +179,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
         />
       </figure>
       <div class="flex-1" data-reveal data-reveal-delay="150">
-        <span class="section-tag">04 / comunidad</span>
+        <span class="section-tag">04_comunidad</span>
         <h3 class="text-2xl lg:text-3xl mb-4">Docencia y comunidad</h3>
         <p class="text-custom-dark-gray leading-relaxed">Llevo años en escenarios, bootcamps y comunidades STEAM enseñando diseño y código. El conocimiento también se comparte: por eso doy charlas, mentorías y clases.</p>
         <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
@@ -256,74 +239,28 @@ import { serviceIcons } from '../scripts/serviceIcons';
     voluntariados: { label: 'Comunidad',   color: '#bd2c97', icon: strokeIcon('<path d="M12 20s-7-4.6-9-9c-1.4-3.2.5-7 4-7 2.4 0 4 1.4 5 2.8C13 5.4 14.6 4 17 4c3.5 0 5.4 3.8 4 7-2 4.4-9 9-9 9z"/>') },
   };
 
-  function formatDate(d: string) {
-    if (d === 'actualidad') return 'Actualidad';
-    return d.slice(0, 4);
+  function formatRange(start: string, end: string) {
+    const s = start.slice(0, 4);
+    const e = end === 'actualidad' ? 'Actualidad' : end.slice(0, 4);
+    return s === e ? s : `${s}–${e}`;
   }
 
-  function processBoldText(text: string) {
-    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/__(.*?)__/g, '<strong>$1</strong>');
-  }
-
-  function parseMarkdown(text: string) {
-    if (!text) return '';
-    const lines = text.split('\n');
-    let inList = false;
-    let result: string[] = [];
-    const hasListItems = lines.some(l => l.trim().startsWith('- '));
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (line.startsWith('- ')) {
-        if (!inList) { result.push('<ul class="timeline-list">'); inList = true; }
-        result.push(`<li>${processBoldText(line.substring(2))}</li>`);
-      } else {
-        if (inList) { result.push('</ul>'); inList = false; }
-        if (line) {
-          if (hasListItems) {
-            result.push(`<p>${processBoldText(line)}</p>`);
-          } else {
-            if (result.length === 0) result.push('<p>');
-            result.push(processBoldText(line));
-            if (i < lines.length - 1 && lines[i + 1].trim()) result.push(' ');
-          }
-        }
-      }
-    }
-    if (inList) result.push('</ul>');
-    if (!hasListItems && result.length > 0) result.push('</p>');
-    return result.join('');
-  }
-
-  function createTimelineItem(item: TimelineItem) {
+  function createListItem(item: TimelineItem) {
     const cat = CATEGORIES[item.category] || { label: item.category, color: '#565656', icon: '' };
-    const mdHTML = parseMarkdown(item.description);
     return `
-      <div class="tl-item opacity-0 transition-all duration-500"
-           data-category="${item.category}"
-           style="--category-color: ${cat.color}; transform: translateY(20px);">
-        <div class="tl-dates">${formatDate(item.startDate)}<span class="tl-sep">–</span>${formatDate(item.endDate)}</div>
-        <div class="timeline-content bg-white shadow-sm transition-transform font-primary p-5">
-          <button class="timeline-head" aria-expanded="false" aria-controls="description-${item.id}">
-            <span class="head-top">
-              <span class="timeline-category">${cat.icon}${cat.label}</span>
-            </span>
-            <span class="head-title">${item.title}</span>
-            <span class="head-meta">${item.company} • ${item.location}</span>
-            <svg class="head-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <div class="timeline-description collapsed text-custom-black overflow-hidden font-primary leading-relaxed" id="description-${item.id}">${mdHTML}</div>
-        </div>
-      </div>`;
-  }
-
-  function setExpanded(head: HTMLElement, expanded: boolean) {
-    const desc = document.getElementById(head.getAttribute('aria-controls') || '');
-    if (!desc) return;
-    head.setAttribute('aria-expanded', String(expanded));
-    desc.classList.toggle('collapsed', !expanded);
-    desc.classList.toggle('expanded', expanded);
+      <a class="l-item opacity-0 transition-all duration-500"
+         href="/trayectoria#exp-${item.id}"
+         style="--category-color: ${cat.color}; transform: translateY(20px);">
+        <span class="l-dates">${formatRange(item.startDate, item.endDate)}</span>
+        <span class="l-body">
+          <span class="l-title">${item.title}</span>
+          <span class="l-org">${item.company} • ${item.location}</span>
+        </span>
+        <span class="timeline-category l-cat">${cat.icon}${cat.label}</span>
+        <svg class="l-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>`;
   }
 
   async function initTimeline() {
@@ -339,30 +276,17 @@ import { serviceIcons } from '../scripts/serviceIcons';
     items = [
       ...items.filter(isCurrent).sort(byStartDesc),
       ...items.filter(i => !isCurrent(i)).sort(byEndDesc),
-    ].slice(0, 4);
+    ].slice(0, 3);
 
     const container = document.getElementById('timeline-container');
     if (!container) return;
-    container.innerHTML = items.map(createTimelineItem).join('');
+    container.innerHTML = items.map(createListItem).join('');
 
     setTimeout(() => {
-      document.querySelectorAll('.tl-item').forEach((el, i) => {
+      document.querySelectorAll('.l-item').forEach((el, i) => {
         setTimeout(() => el.classList.add('animate-in'), i * 100);
       });
     }, 50);
-
-    document.querySelectorAll('.timeline-head').forEach(btn => {
-      btn.addEventListener('click', () => {
-        setExpanded(btn as HTMLElement, btn.getAttribute('aria-expanded') !== 'true');
-      });
-    });
-
-    document.getElementById('expand-all-btn')?.addEventListener('click', () => {
-      document.querySelectorAll<HTMLElement>('.timeline-head').forEach(h => setExpanded(h, true));
-    });
-    document.getElementById('collapse-all-btn')?.addEventListener('click', () => {
-      document.querySelectorAll<HTMLElement>('.timeline-head').forEach(h => setExpanded(h, false));
-    });
   }
   initTimeline();
 </script>
