@@ -34,7 +34,7 @@ export function buildProjectCardHTML(p: Project): string {
     .join('');
   const hasLinks = p.links.demo || p.links.repo || p.links.caseStudy;
   return `
-    <div class="bg-white rounded-[var(--radius-card)] overflow-hidden border border-border-soft hover:border-border-hover hover:shadow-[0_12px_32px_-8px_rgba(181,90,255,0.18)] transition-all duration-300 flex flex-col group project-card" data-id="${p.id}">
+    <div class="bg-surface rounded-[var(--radius-card)] overflow-hidden border border-border-soft hover:border-border-hover hover:shadow-[0_12px_32px_-8px_rgba(181,90,255,0.18)] transition-all duration-300 flex flex-col group project-card" data-id="${p.id}">
       <div class="aspect-video w-full overflow-hidden project-thumb">
         <img src="${p.image.replace('assets/', '/')}" alt="${p.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
       </div>

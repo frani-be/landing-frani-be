@@ -80,7 +80,7 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
   />
 
   <!-- Project Image -->
-  <section class="section-block-sm bg-white">
+  <section class="section-block-sm bg-surface">
     <div class="container-wide">
       <img
         src={project.image.replace('assets/', '/')}
@@ -96,13 +96,13 @@ const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[
       <div class="lg:flex lg:gap-12 lg:items-start" id="project-content">
         <!-- Main Content -->
         <div class="lg:flex-[2] min-w-0">
-          <div class="bg-white rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm">
+          <div class="bg-surface rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm">
             <div id="project-full-description" class="max-w-none text-custom-dark-gray" set:html={fullDescriptionHTML} />
           </div>
         </div>
 
         <!-- Sidebar -->
-        <div class="bg-white rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm mt-8 lg:mt-0 lg:w-[320px] lg:flex-shrink-0 lg:sticky lg:top-28 lg:self-start">
+        <div class="bg-surface rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm mt-8 lg:mt-0 lg:w-[320px] lg:flex-shrink-0 lg:sticky lg:top-28 lg:self-start">
           <h3 class="text-xl text-custom-black mb-4">Detalles del Proyecto</h3>
 
           <!-- Categorías -->
