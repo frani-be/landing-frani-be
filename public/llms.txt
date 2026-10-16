@@ -1,0 +1,21 @@
+# frani.be
+
+> Portafolio de Francisca Beatriz Medina Concha (Frani Medina), diseñadora UX
+> estratégica y front-end engineer radicada en Chile. Diseña y programa productos
+> digitales: diseño UX, desarrollo front-end y estrategia en una sola persona.
+> También da charlas tech, clases particulares y participa en comunidades STEAM.
+
+## Secciones
+
+- [Inicio](https://frani.be/): presentación, servicios y experiencia reciente
+- [Trayectoria](https://frani.be/trayectoria): línea de tiempo de experiencia profesional, formación, docencia y voluntariados
+- [Servicios](https://frani.be/servicios): desarrollo web, diseño gráfico, estrategia UX y clases particulares
+- [Proyectos](https://frani.be/proyectos): casos de diseño UX y desarrollo front-end
+- [Charlas](https://frani.be/charlas): videos de presentaciones sobre tecnología y diseño
+
+## Contacto
+
+- Email: hola@frani.be
+- LinkedIn: https://www.linkedin.com/in/frani-be/
+- GitHub: https://github.com/frani-be
+- Instagram: https://www.instagram.com/frani.be/
