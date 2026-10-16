@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
 ---
 
 <BaseLayout
@@ -19,13 +20,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Diseño, desarrollo, docencia y comunidad: un mismo recorrido entre productos digitales, aulas y espacios STEAM.
         </p>
         <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="380">
-          <a href="#recorrido" class="btn btn-primary">Explorar experiencias ↓</a>
+          <a href="#recorrido" class="btn btn-primary">Explorar experiencias<ArrowIcon name="down" class="btn-arrow" /></a>
           <a
             href="/documents/cv-francisca-medina-concha.pdf"
             download
             class="btn btn-secondary"
             aria-label="Descargar CV en formato PDF"
-          >Descargar CV<span class="btn-arrow" aria-hidden="true">↗</span></a>
+          >Descargar CV<ArrowIcon name="upRight" class="btn-arrow" /></a>
         </div>
       </div>
       <div class="w-full lg:w-[45%] flex justify-center" data-reveal data-reveal-delay="300">
@@ -125,6 +126,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </script>
 
 <script>
+  import { svgIcon } from '../scripts/icons';
+
   interface TimelineItem {
     id: number;
     title: string;
@@ -358,9 +361,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <span class="l-org">${item.company} • ${item.location}</span>
           </span>
           <span class="timeline-category l-cat">${cat.icon}${cat.label}</span>
-          <svg class="l-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+          ${svgIcon('chevronRight', 'l-arrow')}
         </button>`;
     }).join('');
 

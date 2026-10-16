@@ -1,4 +1,7 @@
 ---
+import ArrowIcon from './ArrowIcon.astro';
+import type { IconName } from '../scripts/icons';
+
 interface PathSegment { label: string; href?: string; }
 
 interface Props {
@@ -7,9 +10,10 @@ interface Props {
   path?: PathSegment[];
   ctaLabel?: string;
   ctaHref?: string;
+  ctaIcon?: IconName;
 }
 
-const { title, subtitle, path, ctaLabel, ctaHref } = Astro.props;
+const { title, subtitle, path, ctaLabel, ctaHref, ctaIcon } = Astro.props;
 ---
 
 <header class="page-hero relative overflow-hidden text-white pt-40 pb-24 text-center">
@@ -40,7 +44,7 @@ const { title, subtitle, path, ctaLabel, ctaHref } = Astro.props;
 
     {ctaLabel && ctaHref && (
       <div class="mt-8" data-reveal data-reveal-delay="300">
-        <a href={ctaHref} class="btn btn-outline-white">{ctaLabel}</a>
+        <a href={ctaHref} class="btn btn-outline-white">{ctaLabel}{ctaIcon && <ArrowIcon name={ctaIcon} class="btn-arrow" />}</a>
       </div>
     )}
 

@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/SectionTitle.astro';
 import LinksModal from '../components/LinksModal.astro';
 import EmbroideryPattern from '../components/EmbroideryPattern.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
 import { serviceIcons } from '../scripts/serviceIcons';
 ---
 
@@ -75,7 +76,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
         aria-label="Ir a la sección de trayectoria profesional"
         title="Conoce mi trayectoria profesional"
       >
-        <span class="mr-2 text-[1.2em] align-middle" aria-hidden="true">↓</span>
+        <ArrowIcon name="down" class="mr-1" />
         Ver mi trayectoria
       </a>
     </div>
@@ -90,7 +91,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
         <div id="timeline-container" class="list-view"></div>
         <div class="text-center mt-8">
           <a href="/trayectoria" class="btn btn-primary">
-            Ver trayectoria completa<span class="btn-arrow" aria-hidden="true">↗</span>
+            Ver trayectoria completa<ArrowIcon name="upRight" class="btn-arrow" />
           </a>
         </div>
       </div>
@@ -148,7 +149,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
       </div>
 
       <div class="text-center mt-12" data-reveal data-reveal-delay="400">
-        <a href="/servicios" class="btn btn-primary">Ver todos los servicios<span class="btn-arrow" aria-hidden="true">↗</span></a>
+        <a href="/servicios" class="btn btn-primary">Ver todos los servicios<ArrowIcon name="upRight" class="btn-arrow" /></a>
       </div>
     </div>
   </section>
@@ -162,7 +163,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
 
       <div class="text-center mt-12">
         <a href="/proyectos" class="btn btn-primary">
-          Ver todos los proyectos<span class="btn-arrow" aria-hidden="true">↗</span>
+          Ver todos los proyectos<ArrowIcon name="upRight" class="btn-arrow" />
         </a>
       </div>
     </div>
@@ -188,7 +189,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
           <span class="tag-mono">Mentorías</span>
           <span class="tag-mono">Comunidad STEAM</span>
         </div>
-        <a href="/charlas" class="btn btn-secondary mt-6">Ver videos de charlas<span class="btn-arrow" aria-hidden="true">↗</span></a>
+        <a href="/charlas" class="btn btn-secondary mt-6">Ver videos de charlas<ArrowIcon name="upRight" class="btn-arrow" /></a>
       </div>
     </div>
   </section>
@@ -218,6 +219,8 @@ import { serviceIcons } from '../scripts/serviceIcons';
 </script>
 
 <script>
+  import { svgIcon } from '../scripts/icons';
+
   // Timeline (home preview - 4 items)
   interface TimelineItem {
     id: number;
@@ -258,9 +261,7 @@ import { serviceIcons } from '../scripts/serviceIcons';
           <span class="l-org">${item.company} • ${item.location}</span>
         </span>
         <span class="timeline-category l-cat">${cat.icon}${cat.label}</span>
-        <svg class="l-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        ${svgIcon('chevronRight', 'l-arrow')}
       </a>`;
   }
 
