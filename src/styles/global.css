@@ -1323,9 +1323,17 @@ a.tag-mono--accent:hover {
 }
 .btn-tertiary:hover { background: rgba(181, 90, 255, 0.09); opacity: 1; transform: none; }
 
-/* Stroke icons inside buttons and modal links */
+/* Stroke icons: la regla global `svg { fill: currentColor }` pisa el
+   fill="none" de los SVG estilo Lucide; estos contenedores lo revierten */
 .btn svg,
-#links-modal-body svg {
+#links-modal-body svg,
+.icon-stroke,
+.pillar-check svg,
+.cat-icon,
+.l-arrow,
+#nav-toggle svg,
+#theme-toggle svg,
+.gantt-close svg {
   fill: none;
   stroke: currentColor;
 }
