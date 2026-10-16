@@ -227,7 +227,7 @@ a.regular-link {
 }
 
 #message .iterate-message {
-  width: 220px;
+  width: 270px;
   height: calc(1.25rem + 8px);
   line-height: calc(1.25rem + 8px);
   overflow: hidden;
@@ -263,7 +263,7 @@ a.regular-link {
   #message .static-message { font-size: 0.95rem; }
   #message .iterate-message {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
     height: calc(0.9rem + 8px);
     line-height: calc(0.9rem + 8px);
   }
