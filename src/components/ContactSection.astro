@@ -1,17 +1,11 @@
 ---
 import SectionTitle from './SectionTitle.astro';
 import SocialLinks from './SocialLinks.astro';
-
-interface Props {
-  tag?: string;
-}
-
-const { tag = '// conversemos' } = Astro.props;
 ---
 
 <section class="section-block contact-section text-white relative overflow-hidden" id="contacto">
   <div class="container-wide relative z-[1]">
-    <SectionTitle title="Hablemos" tag={tag} dark={true} class="mb-16" />
+    <SectionTitle title="Hablemos" dark={true} class="mb-16" />
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-[900px] mx-auto">
 

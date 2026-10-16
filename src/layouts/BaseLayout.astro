@@ -8,7 +8,6 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogUrl?: string;
-  contactTag?: string;
 }
 
 const {
@@ -16,7 +15,6 @@ const {
   description = 'Portafolio de Francisca Beatriz Medina Concha. Impulso talento en STEAM y creo tecnología con propósito.',
   ogImage = 'https://frani.be/images/logo.jpg',
   ogUrl = 'https://frani.be/',
-  contactTag,
 } = Astro.props;
 ---
 
@@ -87,7 +85,7 @@ const {
 
     <slot />
 
-    <ContactSection tag={contactTag} />
+    <ContactSection />
 
     <!-- Footer -->
     <footer class="py-8 bg-gradient-footer text-white relative overflow-hidden">
