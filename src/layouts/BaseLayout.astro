@@ -64,6 +64,7 @@ const {
   </head>
 
   <body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
+    <a href="#contenido" class="skip-link">Saltar al contenido</a>
     <!-- Navigation -->
     <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation">
       <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex items-center justify-between gap-6">
@@ -103,9 +104,10 @@ const {
       </div>
     </nav>
 
-    <slot />
-
-    <ContactSection />
+    <main id="contenido">
+      <slot />
+      <ContactSection />
+    </main>
 
     <!-- Footer -->
     <footer class="py-8 bg-gradient-footer text-white relative overflow-hidden">

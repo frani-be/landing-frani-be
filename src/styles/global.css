@@ -113,6 +113,22 @@ a.regular-link {
   }
 }
 
+/* Skip link: visible solo con foco de teclado */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  background: var(--color-custom-black);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: top 0.2s ease;
+}
+.skip-link:focus-visible { top: 1rem; }
+
 /* Navigation backdrop */
 #navigation {
   background: rgba(255, 255, 255, 0.55);
