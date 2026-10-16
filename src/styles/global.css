@@ -1464,3 +1464,78 @@ button:hover .btn-arrow {
   background: #6d3a94;
   color: #f2ecfa;
 }
+
+/* ── Spotlight: glow que sigue al cursor (vars --mx/--my vía spotlight.ts) ── */
+.service-card,
+.project-card,
+.pillar-card,
+.l-item {
+  position: relative;
+}
+.service-card::before,
+.project-card::before,
+.pillar-card::before,
+.l-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    13rem circle at var(--mx, 50%) var(--my, 50%),
+    rgba(181, 90, 255, 0.13),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.service-card > *,
+.project-card > *,
+.pillar-card > *,
+.l-item > * {
+  position: relative;
+  z-index: 1;
+}
+.service-card:hover::before,
+.project-card:hover::before,
+.pillar-card:hover::before,
+.l-item:hover::before {
+  opacity: 1;
+}
+
+/* ── Microinteracciones ─────────────────────────────────────────── */
+/* Chevron de filas de lista: nudge al hover */
+.l-arrow {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.l-item:hover .l-arrow {
+  transform: translateX(3px);
+}
+
+/* Presión en botones y elementos clickeables */
+.btn:active,
+.l-item:active,
+.pillar-card:active,
+.g-band:active {
+  transform: scale(0.98);
+}
+.btn:active {
+  box-shadow: none;
+}
+
+/* Sparkle del hero: flotación suave */
+.hero-sparkle {
+  animation: float-slow 7s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Respeta reduced-motion: desactiva animaciones y transiciones decorativas */
+@media (prefers-reduced-motion: reduce) {
+  html, body { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

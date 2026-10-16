@@ -194,6 +194,9 @@ const jsonLd = {
     </footer>
 
     <script>
+      import { initSpotlight } from '../scripts/spotlight';
+      initSpotlight();
+
       document.getElementById('current-year')!.textContent = String(new Date().getFullYear());
 
       const navToggle = document.getElementById('nav-toggle');

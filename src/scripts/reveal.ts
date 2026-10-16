@@ -8,6 +8,7 @@ export function initReveal(root: Document | ParentNode = document) {
     (root as Document).querySelectorAll<HTMLElement>('[data-reveal]')
   );
   if (!els.length) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   els.forEach(el => {
     el.style.opacity = '0';
