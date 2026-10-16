@@ -8,7 +8,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ogUrl="https://frani.be/trayectoria"
 >
   <!-- Editorial hero -->
-  <header class="tray-hero pt-36 pb-16 lg:pt-44 lg:pb-24">
+  <header class="tray-hero pt-40 pb-16 lg:pb-24">
     <div class="container-wide flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
       <div class="w-full lg:w-[55%] text-center lg:text-left">
         <span class="tray-tag" data-reveal>~/trayectoria</span>
@@ -46,7 +46,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- 4 Pillars: categorías + filtros -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-[1100px] mx-auto" id="pillar-filters">
-        <button class="pillar-card" data-filter="laboral" style="--category-color:#2555a3" data-animate aria-pressed="false">
+        <button class="pillar-card" data-filter="laboral" style="--category-color:#2555a3" data-reveal aria-pressed="false">
           <span class="pillar-check" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
           </span>
@@ -55,7 +55,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2 class="pillar-title">Diseño + código</h2>
           <p class="pillar-desc">Diseño y desarrollo productos digitales, conectando necesidades de las personas con objetivos de negocio.</p>
         </button>
-        <button class="pillar-card" data-filter="docencia" style="--category-color:#7d1fc7" data-animate aria-pressed="false">
+        <button class="pillar-card" data-filter="docencia" style="--category-color:#7d1fc7" data-reveal data-reveal-delay="100" aria-pressed="false">
           <span class="pillar-check" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
           </span>
@@ -64,7 +64,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2 class="pillar-title">Aprender compartiendo</h2>
           <p class="pillar-desc">Enseño diseño, UX y programación en universidades, bootcamps y clases personalizadas.</p>
         </button>
-        <button class="pillar-card" data-filter="voluntariados" style="--category-color:#bd2c97" data-animate aria-pressed="false">
+        <button class="pillar-card" data-filter="voluntariados" style="--category-color:#bd2c97" data-reveal data-reveal-delay="200" aria-pressed="false">
           <span class="pillar-check" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
           </span>
@@ -73,7 +73,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2 class="pillar-title">Crecer en comunidad</h2>
           <p class="pillar-desc">Participo en voluntariados y mentorías para abrir más espacios en tecnología.</p>
         </button>
-        <button class="pillar-card" data-filter="academica" style="--category-color:#9f2eba" data-animate aria-pressed="false">
+        <button class="pillar-card" data-filter="academica" style="--category-color:#9f2eba" data-reveal data-reveal-delay="300" aria-pressed="false">
           <span class="pillar-check" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
           </span>
@@ -122,16 +122,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <script>
   import { initReveal } from '../scripts/reveal';
   initReveal();
-
-  // Stagger the pillar cards
-  document.querySelectorAll<HTMLElement>('[data-animate]').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.animate(
-      [{ opacity: '0', transform: 'translateY(52px)' }, { opacity: '1', transform: 'translateY(0)' }],
-      { duration: 1100, delay: 200 + i * 300, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' }
-    );
-  });
 </script>
 
 <script>
