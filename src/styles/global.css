@@ -121,6 +121,12 @@ a.regular-link {
   mask-image: linear-gradient(black 70%, transparent);
   -webkit-mask-image: linear-gradient(black 70%, transparent);
 }
+/* Con el menú móvil abierto la máscara no debe comerse el dropdown */
+#navigation.nav-open {
+  mask-image: none;
+  -webkit-mask-image: none;
+  background: rgba(255, 255, 255, 0.82);
+}
 
 .nav-link {
   font-family: var(--font-family-primary);
@@ -182,7 +188,9 @@ a.regular-link {
 /* Photo: gradient ring + soft glow blob behind */
 .hero-photo-wrap {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: min(100%, 26rem);
+  margin: 0 auto;
 }
 .hero-photo-wrap::before {
   content: '';
@@ -208,6 +216,8 @@ a.regular-link {
   box-shadow: 0 24px 50px -20px rgba(139, 45, 179, 0.3);
 }
 #main-image {
+  width: 100%;
+  height: auto;
   max-width: 400px;
 }
 
@@ -912,6 +922,9 @@ a.regular-link {
   right: 0;
   top: 0;
   bottom: 0;
+}
+@media (max-width: 768px) {
+  .g-lanes { left: 2.75rem; }
 }
 .g-band {
   position: absolute;

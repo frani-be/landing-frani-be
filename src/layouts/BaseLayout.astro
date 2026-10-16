@@ -123,20 +123,18 @@ const {
 
       const navToggle = document.getElementById('nav-toggle');
       const navMobile = document.getElementById('nav-mobile');
-      navToggle?.addEventListener('click', () => {
-        const open = navMobile?.classList.toggle('hidden') === false;
-        navToggle.setAttribute('aria-expanded', String(open));
-        navToggle.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
-        navToggle.querySelector('.nav-icon-open')?.classList.toggle('hidden', open);
-        navToggle.querySelector('.nav-icon-close')?.classList.toggle('hidden', !open);
-      });
+      const nav = document.getElementById('navigation');
+      const setNavOpen = (open: boolean) => {
+        navMobile?.classList.toggle('hidden', !open);
+        nav?.classList.toggle('nav-open', open);
+        navToggle?.setAttribute('aria-expanded', String(open));
+        navToggle?.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+        navToggle?.querySelector('.nav-icon-open')?.classList.toggle('hidden', open);
+        navToggle?.querySelector('.nav-icon-close')?.classList.toggle('hidden', !open);
+      };
+      navToggle?.addEventListener('click', () => setNavOpen(navMobile?.classList.contains('hidden') ?? false));
       navMobile?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMobile.classList.add('hidden');
-          navToggle?.setAttribute('aria-expanded', 'false');
-          navToggle?.querySelector('.nav-icon-open')?.classList.remove('hidden');
-          navToggle?.querySelector('.nav-icon-close')?.classList.add('hidden');
-        });
+        link.addEventListener('click', () => setNavOpen(false));
       });
     </script>
   </body>
