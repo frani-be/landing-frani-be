@@ -203,7 +203,7 @@ const fullDescriptionHTML = marked.parse(processedMarkdown);
     <div class="container-wide">
       <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 sm:gap-8">
         <a href={localePath(`/proyectos/${prevProject.id}`, lang)} class="group flex items-center gap-3 text-left flex-1 hover:text-custom-purple transition-colors min-w-0">
-          <ArrowIcon name="left" class="w-5 h-5 flex-shrink-0 text-custom-purple" />
+          <ArrowIcon name="left" class="w-5 h-5 flex-shrink-0 text-accent-text" />
           <div class="min-w-0 flex-1">
             <p class="text-xs text-custom-dark-gray uppercase tracking-wide mb-1">{copy.prev}</p>
             <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{prevProject.title}</p>
@@ -214,7 +214,7 @@ const fullDescriptionHTML = marked.parse(processedMarkdown);
             <p class="text-xs text-custom-dark-gray uppercase tracking-wide mb-1">{copy.next}</p>
             <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{nextProject.title}</p>
           </div>
-          <ArrowIcon name="right" class="w-5 h-5 flex-shrink-0 text-custom-purple" />
+          <ArrowIcon name="right" class="w-5 h-5 flex-shrink-0 text-accent-text" />
         </a>
       </div>
     </div>

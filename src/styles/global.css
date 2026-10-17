@@ -800,6 +800,7 @@ a.regular-link {
    detalles internos en blanco; en dark usa el accent claro del sistema */
 .icon-tile--fill {
   color: var(--color-custom-purple);
+  --icon-cut: #ffffff;
 }
 .icon-tile--fill svg {
   fill: currentColor;
@@ -1638,6 +1639,9 @@ button:hover .btn-arrow {
     linear-gradient(140deg, #332447 0%, #251b34 100%);
   color: var(--color-accent-text);
 }
+.dark .icon-tile--fill {
+  --icon-cut: #251b34;
+}
 .dark .illus-frame {
   background: linear-gradient(180deg, #2c2140 0%, #221834 100%);
   box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.55);
@@ -1863,6 +1867,8 @@ button:hover .btn-arrow {
   );
 }
 .dark .hero-sparkle { fill: rgba(215, 178, 255, 0.85); }
+/* Sparkles del home con fill fijo: el morado oscuro se pierde sobre fondo dark */
+.dark .hero-sparkle path[fill="#8b2db3"] { fill: #c77de8; }
 .dark .hero-sparkle--b { fill: rgba(240, 190, 232, 0.8); }
 .dark .hero-stitch { stroke: rgba(205, 160, 252, 0.7); }
 .dark .hero-dots i { background: rgba(218, 186, 255, 0.7); }
