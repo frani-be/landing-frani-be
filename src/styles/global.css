@@ -1473,7 +1473,6 @@ a.tag-mono--accent:hover {
 /* Shared base */
 .btn {
   display: inline-block !important;
-  align-self: flex-start;
   font-family: var(--font-family-titles);
   font-weight: 600;
   font-size: 0.9rem;
