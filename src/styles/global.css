@@ -156,8 +156,12 @@ a.regular-link {
 }
 .skip-link:focus-visible { top: 1rem; }
 
-/* Navigation backdrop */
+/* Navigation: transparente en el top, fondo con blur al hacer scroll */
 #navigation {
+  background: transparent;
+  transition: background 0.3s ease;
+}
+#navigation.nav-scrolled {
   background: color-mix(in srgb, var(--color-page) 55%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -169,6 +173,32 @@ a.regular-link {
   mask-image: none;
   -webkit-mask-image: none;
   background: color-mix(in srgb, var(--color-page) 82%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+/* Nav transparente sobre el banner púrpura (.page-hero): texto blanco */
+#navigation.nav-over-hero .nav-link { color: rgba(255, 255, 255, 0.85); }
+#navigation.nav-over-hero .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+#navigation.nav-over-hero .nav-link.nav-link-active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+#navigation.nav-over-hero .logo-container { color: #fff; }
+#navigation.nav-over-hero #theme-toggle,
+#navigation.nav-over-hero #nav-toggle { color: rgba(255, 255, 255, 0.85); }
+#navigation.nav-over-hero #theme-toggle:hover,
+#navigation.nav-over-hero #nav-toggle:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+#navigation.nav-over-hero .btn-primary {
+  background: #fff;
+  color: var(--color-custom-purple-dark);
+  border-color: #fff;
+  box-shadow: none;
 }
 
 .nav-link {

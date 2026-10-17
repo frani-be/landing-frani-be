@@ -276,6 +276,17 @@ const jsonLd = {
       const nav = document.getElementById('navigation');
       const ariaOpen = navToggle?.dataset.ariaOpen || 'Open navigation menu';
       const ariaClose = navToggle?.dataset.ariaClose || 'Close navigation menu';
+      // Nav transparente en el top; fondo con blur al hacer scroll.
+      // Sobre .page-hero (banner púrpura) el texto pasa a blanco para legibilidad.
+      const navHasHero = !!document.querySelector('.page-hero');
+      const updateNavBg = () => {
+        const scrolled = window.scrollY > 24;
+        nav?.classList.toggle('nav-scrolled', scrolled);
+        nav?.classList.toggle('nav-over-hero', navHasHero && !scrolled);
+      };
+      updateNavBg();
+      window.addEventListener('scroll', updateNavBg, { passive: true });
+
       const setNavOpen = (open: boolean) => {
         navMobile?.classList.toggle('hidden', !open);
         nav?.classList.toggle('nav-open', open);
