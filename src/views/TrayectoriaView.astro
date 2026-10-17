@@ -172,14 +172,14 @@ const copy = {
   const lang = clientLang();
   const S = clientStrings[lang];
 
-  const strokeIcon = (inner: string) =>
-    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-icon" aria-hidden="true">${inner}</svg>`;
+  const fillIcon = (inner: string) =>
+    `<svg viewBox="0 0 24 24" fill="currentColor" class="cat-icon" aria-hidden="true">${inner}</svg>`;
 
   const CATEGORIES: Record<string, { label: string; color: string; icon: string }> = {
-    laboral:       { label: S['cat.laboral'],       color: '#2555a3', icon: strokeIcon('<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9.5 8.5 8 10.5l1.5 2"/><path d="M14.5 8.5 16 10.5l-1.5 2"/>') },
-    docencia:      { label: S['cat.docencia'],      color: '#7d1fc7', icon: strokeIcon('<path d="M4 4.5h5a4 4 0 0 1 3 1.7A4 4 0 0 1 15 4.5h5V19h-5a3 3 0 0 0-3 1.5A3 3 0 0 0 9 19H4z"/>') },
-    voluntariados: { label: S['cat.voluntariados'], color: '#bd2c97', icon: strokeIcon('<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>') },
-    academica:     { label: S['cat.academica'],     color: '#9f2eba', icon: strokeIcon('<path d="M2 9.5L12 5l10 4.5-10 4.5z"/><path d="M6 12v4c3 2 9 2 12 0v-4"/>') },
+    laboral:       { label: S['cat.laboral'],       color: '#2555a3', icon: fillIcon('<path fill-rule="evenodd" d="M3 4.5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2Zm1.5 3v7h15v-7h-15Z"/><path d="M10.5 18.5h3l.7 2H9.8l.7-2Z"/><path d="M8 21.5h8v1H8Z"/><path d="m9.3 8.6-2.1 2.1 2.1 2.1 1.2-1.2-1.5-1.5 1.5-1.5-1.2-1.3Z"/><path d="m14.7 8.6 2.1 2.1-2.1 2.1-1.2-1.2 1.5-1.5-1.5-1.5 1.2-1.3Z"/>') },
+    docencia:      { label: S['cat.docencia'],      color: '#7d1fc7', icon: fillIcon('<path d="M4 4.5h5a4 4 0 0 1 3 1.7A4 4 0 0 1 15 4.5h5V19h-5a3 3 0 0 0-3 1.5A3 3 0 0 0 9 19H4z"/>') },
+    voluntariados: { label: S['cat.voluntariados'], color: '#bd2c97', icon: fillIcon('<path d="M21 4.2v15.6L4.6 14.3H3.5a1.5 1.5 0 0 1-1.5-1.5v-1.6a1.5 1.5 0 0 1 1.5-1.5h1.1L21 4.2Z"/><path d="M8.8 15.3a3 3 0 1 1-5.9-1.2l5.9 1.2Z"/><path d="M17.8 10.2a2.9 2.9 0 0 1 0 3.6l-1.2-.7v-2.2l1.2-.7Z"/>') },
+    academica:     { label: S['cat.academica'],     color: '#9f2eba', icon: fillIcon('<path d="M12 4.6 1.6 9.5 12 14.4l8.4-3.7v4.8h1.8V9.7L12 4.6Z"/><path d="M5.8 12.2v3.6c0 1.5 2.8 2.7 6.2 2.7s6.2-1.2 6.2-2.7v-3.6L12 15.9l-6.2-3.7Z"/>') },
   };
 
   const MONTHS = S.months;
