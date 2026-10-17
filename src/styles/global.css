@@ -75,6 +75,7 @@ html, body {
   --color-accent-text: #d3a6ff;
   --mix-base: #2a2138;
   --cat-boost: 45%;
+  --background-image-gradient-footer: linear-gradient(135deg, #5d2b96 0%, #481f7c 55%, #35145e 100%);
 }
 
 html { background: var(--color-page); }
@@ -1462,6 +1463,31 @@ button:hover .btn-arrow {
 .dark ::selection {
   background: #6d3a94;
   color: #f2ecfa;
+}
+/* Las superficies púrpuras fijas usan la paleta clara (muy saturada sobre fondo
+   oscuro); en dark se profundizan manteniendo texto blanco legible */
+.dark .page-hero {
+  background:
+    radial-gradient(46rem 30rem at 85% 0%, rgba(181, 90, 255, 0.16), transparent 60%),
+    radial-gradient(38rem 26rem at 10% 110%, rgba(18, 7, 32, 0.55), transparent 65%),
+    linear-gradient(135deg, #5d2b96 0%, #481f7c 55%, #35145e 100%);
+}
+.dark .contact-section {
+  background:
+    radial-gradient(40rem 26rem at 12% 0%, rgba(181, 90, 255, 0.14), transparent 55%),
+    radial-gradient(36rem 26rem at 95% 100%, rgba(18, 7, 32, 0.5), transparent 60%),
+    linear-gradient(150deg, #5a2a94 0%, #452075 60%, #331258 100%);
+}
+.dark .btn-primary {
+  background: linear-gradient(135deg, #7d2fc4 0%, #6b24a8 100%);
+  box-shadow: 0 6px 14px -8px rgba(125, 47, 196, 0.45);
+}
+.dark .btn-primary:hover {
+  box-shadow: 0 9px 18px -8px rgba(125, 47, 196, 0.55);
+}
+.dark .view-btn.active {
+  background: #6b24a8;
+  color: #fff;
 }
 /* El skip link usa fondo tinta fijo: en dark necesita borde para no fundirse con la página */
 .dark .skip-link {
