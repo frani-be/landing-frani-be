@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaSection from '../components/CtaSection.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
+import { serviceIcons, secondaryIcons } from '../scripts/serviceIcons';
+import { localePath, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const copy = {
+  es: {
+    title: 'Servicios de Diseño UX y Desarrollo Web | Frani Medina',
+    description: 'Desarrollo web, diseño gráfico, estrategia UX y clases particulares ofrecidos por Francisca Medina: diseño y código en una sola persona.',
+    heroTitle: 'Conoce más acerca de mis Servicios y cómo puedo ayudarte',
+    heroSub: 'Diseño, desarrollo y estrategia al servicio de proyectos con propósito.',
+    heroCta: 'Explorar servicios',
+    pathLabel: 'servicios',
+    mainTitle: 'Servicios principales',
+    secondaryTitle: 'También puedo ayudarte con…',
+    details: 'Ver detalles',
+    ctaTitle: '¿Listo/a para empezar?',
+    ctaSub: 'Agendemos una videollamada sin compromiso para hablar de tu proyecto.',
+    principales: [
+      { slug: 'desarrollo-web', title: 'Lanza tu sitio web', short: 'Diseño y desarrollo tu sitio completo: rápido, autogestionable y a tu medida. De la idea al aire.' },
+      { slug: 'diseno-grafico', title: 'Haz única tu marca', short: 'Identidad visual completa: logo, paleta y piezas coherentes que comunican lo mismo en todo canal.' },
+      { slug: 'estrategia-ux', title: 'Ordena tu producto', short: 'Auditoría UX basada en evidencia: research, arquitectura, prototipos y tests que hacen fluir a usuarios.' },
+      { slug: 'clases-particulares', title: 'Aprende a tu ritmo', short: 'Clases 1 a 1 de diseño, UX o front-end con proyectos reales y feedback directo en cada sesión.' },
+    ],
+    secundarios: [
+      { icon: 'auditoria-cro-seo', title: 'Auditoría CRO, SEO y GEO', short: 'Análisis técnico y de contenidos para mejorar tu conversión y tu visibilidad en buscadores y motores de IA.' },
+      { icon: 'asesorias-personales', title: 'Asesorías personales', short: 'Orientación personalizada para profesionales y emprendedores que quieren adentrarse en el mundo tecnológico.' },
+      { icon: 'ugc', title: 'UGC', short: 'Creación de contenido generado por usuario (User Generated Content) para marcas digitales y campañas en redes.' },
+      { icon: 'mentorias-charlas', title: 'Mentorías para charlas', short: 'Te ayudo a estructurar y ensayar tu presentación para que llegues segura/seguro al escenario o al evento.' },
+      { icon: 'apoyo-freelance', title: 'Apoyo freelance', short: 'Colaboración técnica o de diseño puntual para agencias y equipos que necesitan refuerzo en proyectos específicos.' },
+      { icon: 'generacion-contenido', title: 'Generación de contenido', short: 'Copywriting UX, artículos, newsletters y contenido para redes con enfoque en comunicación clara y accionable.' },
+    ],
+  },
+  en: {
+    title: 'UX Design & Web Development Services | Frani Medina',
+    description: 'Web development, graphic design, UX strategy and private classes by Francisca Medina: design and code in one person.',
+    heroTitle: 'Learn more about my services and how I can help you',
+    heroSub: 'Design, development and strategy at the service of projects with purpose.',
+    heroCta: 'Explore services',
+    pathLabel: 'services',
+    mainTitle: 'Main services',
+    secondaryTitle: 'I can also help you with…',
+    details: 'View details',
+    ctaTitle: 'Ready to start?',
+    ctaSub: "Let's book a no-commitment video call to talk about your project.",
+    principales: [
+      { slug: 'desarrollo-web', title: 'Launch your website', short: 'I design and build your full site: fast, self-manageable and tailored. From idea to launch.' },
+      { slug: 'diseno-grafico', title: 'Make your brand unique', short: 'Complete visual identity: logo, palette and consistent assets that speak the same language everywhere.' },
+      { slug: 'estrategia-ux', title: 'Streamline your product', short: 'Evidence-based UX audit: research, architecture, prototypes and tests that make users flow.' },
+      { slug: 'clases-particulares', title: 'Learn at your own pace', short: '1-on-1 classes in design, UX or front-end with real projects and direct feedback every session.' },
+    ],
+    secundarios: [
+      { icon: 'auditoria-cro-seo', title: 'CRO, SEO & GEO audit', short: 'Technical and content analysis to improve your conversion and visibility in search engines and AI engines.' },
+      { icon: 'asesorias-personales', title: 'Personal consulting', short: 'Personalized guidance for professionals and entrepreneurs who want to enter the tech world.' },
+      { icon: 'ugc', title: 'UGC', short: 'User Generated Content creation for digital brands and social media campaigns.' },
+      { icon: 'mentorias-charlas', title: 'Talk mentoring', short: 'I help you structure and rehearse your presentation so you reach the stage or event with confidence.' },
+      { icon: 'apoyo-freelance', title: 'Freelance support', short: 'Targeted technical or design collaboration for agencies and teams needing reinforcement on specific projects.' },
+      { icon: 'generacion-contenido', title: 'Content generation', short: 'UX copywriting, articles, newsletters and social content with a clear, actionable communication focus.' },
+    ],
+  },
+}[lang];
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+  lang={lang}
+>
+  <PageHero
+    lang={lang}
+    title={copy.heroTitle}
+    path={[{ label: copy.pathLabel }]}
+    subtitle={copy.heroSub}
+    ctaLabel={copy.heroCta}
+    ctaHref="#principales"
+    ctaIcon="down"
+  />
+
+  <!-- Principales -->
+  <section class="section-block-sm bg-surface" id="principales">
+    <div class="container-wide">
+      <h2 class="text-2xl text-custom-black mb-12 text-center" data-reveal>{copy.mainTitle}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {copy.principales.map((s, i) => (
+          <a href={localePath(`/servicios/${s.slug}`, lang)} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
+            <div class="service-card-icon"><img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" loading="lazy" /></div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-xl mb-3">{s.title}</h3>
+              <p class="text-custom-dark-gray text-sm flex-1">{s.short}</p>
+              <span class="service-link mt-5">{copy.details}<ArrowIcon name="upRight" class="btn-arrow" /></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Secundarios -->
+  <section class="section-block-sm bg-custom-light-grey">
+    <div class="container-wide">
+      <h2 class="text-2xl text-custom-black mb-12 text-center" data-reveal>{copy.secondaryTitle}</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {copy.secundarios.map((s, i) => (
+          <article class="bg-surface rounded-[var(--radius-card)] border border-border-soft p-6 flex gap-5 items-start hover:shadow-md hover:border-border-hover transition-all duration-300" data-reveal data-reveal-delay={String(i * 80)}>
+            <span class="icon-tile mt-1"><img src={secondaryIcons[s.icon as keyof typeof secondaryIcons]} alt="" loading="lazy" /></span>
+            <div>
+              <h3 class="text-lg text-custom-black mb-2">{s.title}</h3>
+              <p class="text-custom-dark-gray text-sm">{s.short}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaSection
+    title={copy.ctaTitle}
+    subtitle={copy.ctaSub}
+    bg="bg-surface"
+    lang={lang}
+  />
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  initReveal();
+</script>

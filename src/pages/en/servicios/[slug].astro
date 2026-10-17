@@ -1,0 +1,12 @@
+---
+import ServicioDetailView from '../../../views/ServicioDetailView.astro';
+
+export function getStaticPaths() {
+  const slugs = ['desarrollo-web', 'diseno-grafico', 'estrategia-ux', 'clases-particulares'];
+  return slugs.map(slug => ({ params: { slug }, props: { slug } }));
+}
+
+const { slug } = Astro.props;
+---
+
+<ServicioDetailView lang="en" slug={slug} />

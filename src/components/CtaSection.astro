@@ -1,4 +1,6 @@
 ---
+import { t, type Lang } from '../i18n/ui';
+
 interface Props {
   title?: string;
   subtitle?: string;
@@ -7,12 +9,14 @@ interface Props {
   secondaryLabel?: string;
   secondaryHref?: string;
   bg?: string;
+  lang?: Lang;
 }
 
 const {
-  title = 'Hablemos de tu próximo proyecto',
+  lang = 'es',
+  title = lang === 'en' ? "Let's talk about your next project" : 'Hablemos de tu próximo proyecto',
   subtitle,
-  primaryLabel = 'Agenda una videollamada',
+  primaryLabel = t(lang, 'contact.call'),
   primaryHref = 'https://calendar.app.google/NjSZEbvWrLfj56wy6',
   secondaryLabel,
   secondaryHref,

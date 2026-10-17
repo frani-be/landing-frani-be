@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { localePath, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang; slug: string; }
+const { lang, slug } = Astro.props;
+
+interface Service {
+  title: string;
+  tagline: string;
+  description: string;
+  bullets: string[];
+  cta: string;
+}
+
+const servicesEs: Record<string, Service> = {
+  'desarrollo-web': {
+    title: 'Desarrollo web',
+    tagline: 'Sitios rápidos, accesibles y a medida, sin plantillas genéricas.',
+    description: 'Desde un sitio institucional hasta una aplicación web compleja, desarrollo soluciones que equilibran estética, rendimiento y mantenibilidad. Trabajo con HTML, CSS y JavaScript vainilla para proyectos que priorizan velocidad, o con frameworks modernos (React, Astro, Next.js) cuando la escala lo justifica. Para clientes que gestionan su propio contenido, WordPress sigue siendo la herramienta más potente del mercado.',
+    bullets: [
+      'Desarrollo pixel-perfect desde Figma o boceto',
+      'WordPress a medida (sin page builders pesados)',
+      'React, Astro y Next.js para proyectos escalables',
+      'Core Web Vitals y rendimiento real en producción',
+      'Accesibilidad (WCAG) y SEO técnico incluidos',
+      'Entrega con documentación y handoff al equipo',
+    ],
+    cta: 'Hablemos de tu proyecto',
+  },
+  'diseno-grafico': {
+    title: 'Diseño gráfico',
+    tagline: 'Identidades visuales que comunican antes de que el usuario lea una palabra.',
+    description: 'El diseño gráfico es síntesis: tomar la esencia de una marca y traducirla a formas, colores y tipografías que funcionen en cualquier contexto. He desarrollado identidades para startups tecnológicas, instituciones educativas, artistas y ONG. Cada proyecto parte de un brief en profundidad y termina con un sistema de marca que el cliente puede usar de forma autónoma.',
+    bullets: [
+      'Logotipos y sistemas de identidad visual',
+      'Branding para startups y marcas personales',
+      'Piezas gráficas para redes sociales y prensa',
+      'Diseño editorial (presentaciones, informes, libros)',
+      'Guías de marca y manual de uso',
+      'Vectorial listo para imprenta y medios digitales',
+    ],
+    cta: 'Solicitar cotización',
+  },
+  'estrategia-ux': {
+    title: 'Estrategia UX',
+    tagline: 'Diseño centrado en la persona, respaldado por evidencia.',
+    description: 'Las malas experiencias de usuario cuestan dinero. La estrategia UX consiste en investigar, mapear y validar antes de construir. Trabajo en la fase de discovery (entrevistas, benchmarks, análisis heurístico), en la arquitectura de información, en el prototipado iterativo y en las pruebas de usabilidad. El resultado es un producto que la gente entiende y quiere volver a usar.',
+    bullets: [
+      'Research cualitativo y cuantitativo',
+      'Arquetipos de usuario y user journeys',
+      'Arquitectura de información y card sorting',
+      'Wireframes y prototipos en Figma',
+      'Pruebas de usabilidad moderadas y no moderadas',
+      'Análisis heurístico y recomendaciones accionables',
+    ],
+    cta: 'Agendar una consultoría',
+  },
+  'clases-particulares': {
+    title: 'Clases particulares',
+    tagline: 'Aprende a tu ritmo con proyectos reales y feedback directo.',
+    description: 'Las clases son personalizadas: empezamos con tus objetivos, tu nivel actual y el tiempo que puedes dedicar. Trabajo contigo en proyectos concretos (nada de ejercicios abstractos) y te doy retroalimentación honesta en cada sesión. He acompañado a estudiantes de diseño, desarrolladores que quieren aprender UX y profesionales que buscan reconvertirse.',
+    bullets: [
+      'HTML, CSS y JavaScript desde cero',
+      'Diseño web y UI con Figma',
+      'Fundamentos de UX y pensamiento de diseño',
+      'React y ecosistema moderno de front-end',
+      'WordPress para diseñadores',
+      'Sesiones individuales o grupales (hasta 4 personas)',
+    ],
+    cta: 'Consultar disponibilidad',
+  },
+};
+
+const servicesEn: Record<string, Service> = {
+  'desarrollo-web': {
+    title: 'Web development',
+    tagline: 'Fast, accessible, custom-built sites, no generic templates.',
+    description: 'From an institutional site to a complex web application, I build solutions that balance aesthetics, performance and maintainability. I work with HTML, CSS and vanilla JavaScript for speed-first projects, or modern frameworks (React, Astro, Next.js) when scale justifies it. For clients managing their own content, WordPress remains the most powerful tool on the market.',
+    bullets: [
+      'Pixel-perfect development from Figma or sketch',
+      'Custom WordPress (no heavy page builders)',
+      'React, Astro and Next.js for scalable projects',
+      'Core Web Vitals and real production performance',
+      'Accessibility (WCAG) and technical SEO included',
+      'Delivery with documentation and team handoff',
+    ],
+    cta: "Let's talk about your project",
+  },
+  'diseno-grafico': {
+    title: 'Graphic design',
+    tagline: 'Visual identities that communicate before the user reads a word.',
+    description: 'Graphic design is synthesis: taking the essence of a brand and translating it into shapes, colors and typography that work in any context. I have developed identities for tech startups, educational institutions, artists and NGOs. Every project starts with an in-depth brief and ends with a brand system the client can use autonomously.',
+    bullets: [
+      'Logos and visual identity systems',
+      'Branding for startups and personal brands',
+      'Graphic assets for social media and press',
+      'Editorial design (presentations, reports, books)',
+      'Brand guidelines and usage manual',
+      'Vector files ready for print and digital media',
+    ],
+    cta: 'Request a quote',
+  },
+  'estrategia-ux': {
+    title: 'UX strategy',
+    tagline: 'People-centered design backed by evidence.',
+    description: 'Bad user experiences cost money. UX strategy means researching, mapping and validating before building. I work in the discovery phase (interviews, benchmarks, heuristic analysis), information architecture, iterative prototyping and usability testing. The result is a product people understand and want to use again.',
+    bullets: [
+      'Qualitative and quantitative research',
+      'User archetypes and user journeys',
+      'Information architecture and card sorting',
+      'Wireframes and Figma prototypes',
+      'Moderated and unmoderated usability testing',
+      'Heuristic analysis and actionable recommendations',
+    ],
+    cta: 'Book a consultation',
+  },
+  'clases-particulares': {
+    title: 'Private classes',
+    tagline: 'Learn at your own pace with real projects and direct feedback.',
+    description: 'Classes are personalized: we start with your goals, your current level and the time you can dedicate. We work on concrete projects (no abstract exercises) and I give you honest feedback every session. I have guided design students, developers learning UX, and professionals going through career change.',
+    bullets: [
+      'HTML, CSS and JavaScript from scratch',
+      'Web and UI design with Figma',
+      'UX fundamentals and design thinking',
+      'React and the modern front-end ecosystem',
+      'WordPress for designers',
+      'Individual or group sessions (up to 4 people)',
+    ],
+    cta: 'Check availability',
+  },
+};
+
+const services = lang === 'en' ? servicesEn : servicesEs;
+const service = services[slug];
+
+const copy = {
+  es: {
+    includes: '¿Qué incluye?',
+    howWork: 'Cómo trabajo',
+    doubtsTitle: '¿Tienes dudas antes de contratar?',
+    doubtsText: 'Agendamos una llamada de 20 minutos sin compromiso para ver si puedo ayudarte.',
+    doubtsCta: 'Agenda la llamada',
+    otherService: '¿Buscas otro servicio?',
+    allServices: 'Ver todos los servicios',
+    bookCall: 'Agendar videollamada',
+    servicesPath: 'servicios',
+    about: 'Conoce más acerca de',
+  },
+  en: {
+    includes: "What's included?",
+    howWork: 'How I work',
+    doubtsTitle: 'Questions before hiring?',
+    doubtsText: "We'll book a free 20-minute call to see if I can help you.",
+    doubtsCta: 'Book the call',
+    otherService: 'Looking for another service?',
+    allServices: 'View all services',
+    bookCall: 'Book a video call',
+    servicesPath: 'services',
+    about: 'Learn more about',
+  },
+}[lang];
+---
+
+<BaseLayout
+  title={lang === 'en' ? `${service.title} | Frani Medina` : `${service.title} en Chile | Frani Medina`}
+  description={`${service.tagline} ${lang === 'en' ? 'Service by Francisca Medina, strategic UX designer and front-end engineer.' : 'Servicio a cargo de Francisca Medina, diseñadora UX estratégica y front-end engineer.'}`}
+  lang={lang}
+>
+  <PageHero
+    lang={lang}
+    title={`${copy.about} ${service.title}`}
+    path={[
+      { label: copy.servicesPath, href: localePath('/servicios', lang) },
+      { label: slug },
+    ]}
+    subtitle={service.tagline}
+    ctaLabel={service.cta}
+    ctaHref="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+  />
+
+  <!-- Cuerpo -->
+  <section class="section-block-sm bg-surface">
+    <div class="container-mid">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div data-reveal>
+          <h2 class="text-2xl text-custom-black mb-5">{copy.includes}</h2>
+          <ul class="flex flex-col gap-3">
+            {service.bullets.map(b => (
+              <li class="flex items-start gap-3 text-custom-dark-gray">
+                <svg class="icon-stroke w-5 h-5 mt-0.5 flex-shrink-0 text-custom-purple-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>
+                </svg>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div data-reveal data-reveal-delay="150">
+          <h2 class="text-2xl text-custom-black mb-5">{copy.howWork}</h2>
+          <p class="text-custom-dark-gray leading-relaxed">{service.description}</p>
+          <div class="mt-8 p-6 bg-surface-muted rounded-[var(--radius-card)] border border-border-soft">
+            <p class="text-custom-black font-semibold mb-2">{copy.doubtsTitle}</p>
+            <p class="text-custom-dark-gray text-sm mb-4">{copy.doubtsText}</p>
+            <a
+              href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+              target="_blank"
+              class="btn btn-primary"
+            >{copy.doubtsCta}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaSection
+    title={copy.otherService}
+    primaryLabel={copy.allServices}
+    primaryHref={localePath('/servicios', lang)}
+    secondaryLabel={copy.bookCall}
+    secondaryHref="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+    bg="bg-custom-light-grey"
+    lang={lang}
+  />
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  initReveal();
+</script>
