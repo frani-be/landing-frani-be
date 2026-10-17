@@ -1556,6 +1556,57 @@ button:hover .btn-arrow {
   box-shadow: none;
 }
 
+/* ── Hero de servicios: editorial + índice visual 2×2 ── */
+.svc-hero {
+  background: var(--color-page);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+.svc-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  width: min(100%, 25rem);
+}
+.svc-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.5rem 1rem 1.2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-card);
+  text-align: center;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+.svc-tile img {
+  width: 3.4rem;
+  height: 3.4rem;
+  object-fit: contain;
+  animation: float-slow 7s ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+.svc-tile-label {
+  font-family: var(--font-family-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-custom-dark-gray);
+  line-height: 1.4;
+}
+.svc-tile:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 12px 28px -10px rgba(181, 90, 255, 0.22);
+  transform: translateY(-3px);
+}
+.svc-tile:hover .svc-tile-label { color: var(--color-accent-text); }
+.svc-tile:focus-visible {
+  outline: 2px solid var(--color-custom-purple);
+  outline-offset: 3px;
+}
+
 /* ── Diagrama de proceso (servicios): número mono + línea punteada conectora ── */
 .process-steps { list-style: none; }
 .process-step { min-width: 0; }

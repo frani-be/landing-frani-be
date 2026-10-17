@@ -1,10 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
 import CtaSection from '../components/CtaSection.astro';
 import ArrowIcon from '../components/ArrowIcon.astro';
 import { serviceIcons, secondaryIcons } from '../scripts/serviceIcons';
-import { localePath, type Lang } from '../i18n/ui';
+import { localePath, t, type Lang } from '../i18n/ui';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -13,9 +12,10 @@ const copy = {
   es: {
     title: 'Servicios de Diseño UX y Desarrollo Web | Frani Medina',
     description: 'Desarrollo web, diseño gráfico, estrategia UX y clases particulares ofrecidos por Francisca Medina: diseño y código en una sola persona.',
-    heroTitle: 'Conoce más acerca de mis Servicios y cómo puedo ayudarte',
-    heroSub: 'Diseño, desarrollo y estrategia al servicio de proyectos con propósito.',
+    heroTitle: 'Diseño, código y estrategia en una sola persona',
+    heroSub: 'Cuatro formas de trabajar conmigo: lanza tu sitio, haz única tu marca, ordena tu producto o aprende a tu ritmo.',
     heroCta: 'Explorar servicios',
+    heroCta2: 'Ver el proceso',
     pathLabel: 'servicios',
     mainTitle: 'Servicios principales',
     secondaryTitle: 'También puedo ayudarte con…',
@@ -49,9 +49,10 @@ const copy = {
   en: {
     title: 'UX Design & Web Development Services | Frani Medina',
     description: 'Web development, graphic design, UX strategy and private classes by Francisca Medina: design and code in one person.',
-    heroTitle: 'Learn more about my services and how I can help you',
-    heroSub: 'Design, development and strategy at the service of projects with purpose.',
+    heroTitle: 'Design, code and strategy in one person',
+    heroSub: 'Four ways to work with me: launch your site, make your brand unique, streamline your product or learn at your own pace.',
     heroCta: 'Explore services',
+    heroCta2: 'See the process',
     pathLabel: 'services',
     mainTitle: 'Main services',
     secondaryTitle: 'I can also help you with…',
@@ -101,15 +102,30 @@ const stepIcons = [
   description={copy.description}
   lang={lang}
 >
-  <PageHero
-    lang={lang}
-    title={copy.heroTitle}
-    path={[{ label: copy.pathLabel }]}
-    subtitle={copy.heroSub}
-    ctaLabel={copy.heroCta}
-    ctaHref="#principales"
-    ctaIcon="down"
-  />
+  <!-- Hero editorial con índice visual de servicios -->
+  <header class="svc-hero pt-40 pb-16 lg:pb-24">
+    <div class="container-wide flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
+      <div class="w-full lg:w-[55%] text-center lg:text-left">
+        <span class="tray-tag" data-reveal><a href={localePath('/', lang)} aria-label={t(lang, 'breadcrumb.home')}>~</a>/servicios</span>
+        <h1 class="tray-title" data-reveal data-reveal-delay="120">{copy.heroTitle}</h1>
+        <p class="tray-lead" data-reveal data-reveal-delay="260">{copy.heroSub}</p>
+        <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="380">
+          <a href="#principales" class="btn btn-primary">{copy.heroCta}<ArrowIcon name="down" class="btn-arrow" /></a>
+          <a href="#proceso" class="btn btn-secondary">{copy.heroCta2}<ArrowIcon name="down" class="btn-arrow" /></a>
+        </div>
+      </div>
+      <div class="w-full lg:w-[45%] flex justify-center" data-reveal data-reveal-delay="300">
+        <div class="svc-tiles">
+          {copy.principales.map((s, i) => (
+            <a href={localePath(`/servicios/${s.slug}`, lang)} class="svc-tile" style={`--float-delay:${(i % 2) * 1.4 + Math.floor(i / 2) * 0.7}s`}>
+              <img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" loading="lazy" />
+              <span class="svc-tile-label">{s.title}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- Principales -->
   <section class="section-block-sm bg-surface scroll-mt-24" id="principales">
@@ -149,7 +165,7 @@ const stepIcons = [
   </section>
 
   <!-- Proceso -->
-  <section class="section-block-sm bg-surface">
+  <section class="section-block-sm bg-surface scroll-mt-24" id="proceso">
     <div class="container-wide">
       <div class="text-center mb-12" data-reveal>
         <p class="section-tag mb-4">// proceso</p>
