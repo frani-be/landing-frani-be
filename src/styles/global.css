@@ -1259,9 +1259,9 @@ a.regular-link {
 .gantt-panel.open { transform: translateX(0); }
 .gantt-close {
   position: sticky;
-  top: 0;
+  top: -1.5rem;
+  right: -1.25rem;
   margin-left: auto;
-  margin-right: -1.75rem;
   margin-top: -2rem;
   margin-bottom: -1rem;
   z-index: 1;
