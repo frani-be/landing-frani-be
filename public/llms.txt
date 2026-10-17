@@ -11,6 +11,10 @@
 - [Inicio](https://frani.be/): presentación, servicios y experiencia reciente
 - [Trayectoria](https://frani.be/trayectoria): línea de tiempo de experiencia profesional, formación, docencia y voluntariados
 - [Servicios](https://frani.be/servicios): desarrollo web, diseño gráfico, estrategia UX y clases particulares
+  - [Desarrollo web](https://frani.be/servicios/desarrollo-web): sitios completos, rápidos y autogestionables
+  - [Diseño gráfico](https://frani.be/servicios/diseno-grafico): logo, paleta y piezas de marca coherentes
+  - [Estrategia UX](https://frani.be/servicios/estrategia-ux): research, prototipos y tests de usabilidad
+  - [Clases particulares](https://frani.be/servicios/clases-particulares): clases 1 a 1 de diseño, UX y front-end
 - [Proyectos](https://frani.be/proyectos): casos de diseño UX y desarrollo front-end
 - [Charlas](https://frani.be/charlas): videos de presentaciones sobre tecnología y diseño
 
