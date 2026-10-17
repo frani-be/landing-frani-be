@@ -796,6 +796,15 @@ a.regular-link {
   height: 2.4rem;
   object-fit: contain;
 }
+/* Variante de íconos sólidos (pasos del proceso): relleno lavanda,
+   detalles internos en blanco; en dark usa el accent claro del sistema */
+.icon-tile--fill {
+  color: var(--color-custom-purple);
+}
+.icon-tile--fill svg {
+  fill: currentColor;
+  stroke: none;
+}
 .icon-tile-lg {
   width: 3.75rem;
   height: 3.75rem;
