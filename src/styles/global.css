@@ -1799,14 +1799,14 @@ button:hover .btn-arrow {
   z-index: 0;
 }
 .hero-sparkle {
-  fill: rgba(178, 108, 233, 0.85);
+  fill: rgba(122, 43, 168, 0.75);
 }
 .hero-sparkle--a { width: 0.875rem; height: 0.875rem; left: 69.5%; top: 8%; }
-.hero-sparkle--b { width: 1rem; height: 1rem; left: 96.5%; top: 46.5%; fill: rgba(219, 122, 204, 0.8); }
+.hero-sparkle--b { width: 1rem; height: 1rem; left: 96.5%; top: 46.5%; fill: rgba(186, 62, 158, 0.7); }
 .hero-sparkle--c { width: 0.75rem; height: 0.75rem; left: 74.5%; top: 90.5%; }
 .hero-stitch {
   fill: none;
-  stroke: rgba(158, 88, 216, 0.65);
+  stroke: rgba(122, 43, 168, 0.6);
   stroke-width: 1.6;
 }
 .hero-stitch--a { width: 0.75rem; height: 0.45rem; left: 81%; top: 7.5%; }
@@ -1821,12 +1821,12 @@ button:hover .btn-arrow {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(165, 94, 224, 0.7);
+  background: rgba(122, 43, 168, 0.6);
 }
 .hero-dots i:nth-child(2) {
   width: 3px;
   height: 3px;
-  background: rgba(214, 116, 200, 0.65);
+  background: rgba(186, 62, 158, 0.55);
   transform: translateY(-3px);
 }
 .hero-dots i:nth-child(3) {
@@ -1850,15 +1850,16 @@ button:hover .btn-arrow {
     #e3c9f7 100%
   );
 }
-/* Versión dark ad hoc: morado profundo a la izquierda, lavanda oscuro a la derecha */
+/* Versión dark ad hoc: profundiza hacia la derecha en vez de aclarar,
+   así el hero se sigue leyendo como modo oscuro */
 .dark .page-hero:has(.hero-sticker) {
   background: linear-gradient(
     105deg,
-    #3a1a5e 0%,
-    #452070 30%,
-    #572b8c 52%,
-    #7442ac 74%,
-    #9668cf 100%
+    #47217a 0%,
+    #3f1b6d 30%,
+    #35175e 52%,
+    #291246 76%,
+    #1e0c36 100%
   );
 }
 .dark .hero-sparkle { fill: rgba(215, 178, 255, 0.85); }
