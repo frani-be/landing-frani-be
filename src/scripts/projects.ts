@@ -16,6 +16,7 @@ export interface Project {
   service?: string;
   serviceLabel?: string;
   description: string;
+  contribution?: string;
   fullDescription?: string;
   image: string;
   tags: string[];
@@ -58,6 +59,29 @@ export function buildProjectCardHTML(p: Project, lang: Lang = clientLang()): str
         </div>
       </div>
     </div>`;
+}
+
+/* Card editorial grande para proyectos destacados: media alternada + desafío/aporte */
+export function buildFeaturedCardHTML(p: Project, index: number, lang: Lang = clientLang()): string {
+  const S = clientStrings[lang];
+  const prefix = lang === 'en' ? '/en' : '';
+  const num = String(index + 1).padStart(2, '0');
+  return `
+    <article class="proj-feature project-card group" data-id="${p.id}">
+      <a href="${prefix}/proyectos/${p.id}" class="proj-feature-media" aria-label="${p.title}">
+        <img src="${p.image.replace('assets/', '/')}" alt="${p.title}" loading="lazy" class="group-hover:scale-105 transition-transform duration-300" />
+      </a>
+      <div class="proj-feature-body">
+        <span class="proj-index">${num} / ${p.category.toUpperCase()}</span>
+        <h3 class="proj-feature-title">${p.title}</h3>
+        <div class="proj-feature-desc">
+          <p><strong>${S['projects.challenge']}</strong></p>
+          <p>${p.description}</p>
+          ${p.contribution ? `<p><strong>${S['projects.contribution']}</strong></p><p>${p.contribution}</p>` : ''}
+        </div>
+        <a href="${prefix}/proyectos/${p.id}" class="btn btn-primary proj-feature-cta">${S['projects.view']}${svgIcon('upRight', 'btn-arrow')}</a>
+      </div>
+    </article>`;
 }
 
 export function initLinksModal(projects: Project[]) {

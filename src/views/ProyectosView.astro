@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
+import CtaSection from '../components/CtaSection.astro';
 import LinksModal from '../components/LinksModal.astro';
 import type { Lang } from '../i18n/ui';
 
@@ -15,6 +16,11 @@ const copy = {
     heroSub: 'Diseño UX, desarrollo front-end y proyectos de impacto social. Cada uno con una historia detrás.',
     heroCta: 'Explorar proyectos',
     pathLabel: 'proyectos',
+    moreTitle: 'Más exploraciones',
+    ctaTitle: '¿Tienes una idea en mente?',
+    ctaSub: 'Me encanta conocer y trabajar en nuevas ideas, podemos hacerlo realidad juntas.',
+    ctaPrimary: 'Conversemos',
+    ctaSecondary: 'hola@frani.be',
   },
   en: {
     title: 'UX & Front-End Projects | Frani Medina Portfolio',
@@ -23,6 +29,11 @@ const copy = {
     heroSub: 'UX design, front-end development and social impact projects. Each with a story behind it.',
     heroCta: 'Explore projects',
     pathLabel: 'projects',
+    moreTitle: 'More explorations',
+    ctaTitle: 'Have an idea in mind?',
+    ctaSub: 'I love discovering and working on new ideas, we can make them real together.',
+    ctaPrimary: "Let's talk",
+    ctaSecondary: 'hola@frani.be',
   },
 }[lang];
 ---
@@ -38,22 +49,41 @@ const copy = {
     path={[{ label: copy.pathLabel }]}
     subtitle={copy.heroSub}
     ctaLabel={copy.heroCta}
-    ctaHref="#all-projects-container"
+    ctaHref="#destacados"
     ctaIcon="down"
   />
 
-  <section class="section-block-sm bg-custom-light-grey">
+  <!-- Proyectos destacados: cards editoriales alternadas -->
+  <section class="section-block-sm bg-surface scroll-mt-24" id="destacados">
     <div class="container-wide">
-      <div id="all-projects-container" class="scroll-mt-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+      <div id="featured-projects" class="flex flex-col gap-14"></div>
     </div>
   </section>
+
+  <!-- Resto del portafolio -->
+  <section class="section-block-sm bg-custom-light-grey">
+    <div class="container-wide">
+      <h2 class="text-2xl text-custom-black mb-12" data-reveal>{copy.moreTitle}</h2>
+      <div id="all-projects-container" class="scroll-mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <CtaSection
+    title={copy.ctaTitle}
+    subtitle={copy.ctaSub}
+    primaryLabel={copy.ctaPrimary}
+    primaryHref="#contacto"
+    secondaryLabel={copy.ctaSecondary}
+    secondaryHref="mailto:hola@frani.be"
+    lang={lang}
+  />
 
   <LinksModal lang={lang} />
 </BaseLayout>
 
 <script>
   import { initReveal } from '../scripts/reveal';
-  import { buildProjectCardHTML, extractYear, initLinksModal, revealProjectCards, type Project } from '../scripts/projects';
+  import { buildProjectCardHTML, buildFeaturedCardHTML, extractYear, initLinksModal, revealProjectCards, type Project } from '../scripts/projects';
   import { clientLang } from '../i18n/client';
   initReveal();
 
@@ -64,9 +94,17 @@ const copy = {
     let projects: Project[] = data.projects || [];
     projects.sort((a, b) => extractYear(b.date ?? '') - extractYear(a.date ?? ''));
 
+    const featured = projects.filter(p => p.featured);
+    const rest = projects.filter(p => !p.featured);
+
+    const featuredContainer = document.getElementById('featured-projects');
+    if (featuredContainer) {
+      featuredContainer.innerHTML = featured.map((p, i) => buildFeaturedCardHTML(p, i, lang)).join('');
+    }
+
     const container = document.getElementById('all-projects-container');
     if (!container) return;
-    container.innerHTML = projects.map(p => buildProjectCardHTML(p, lang)).join('');
+    container.innerHTML = rest.map(p => buildProjectCardHTML(p, lang)).join('');
 
     revealProjectCards();
     initLinksModal(projects);
