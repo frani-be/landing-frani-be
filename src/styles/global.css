@@ -1171,9 +1171,12 @@ a.regular-link {
 }
 .gantt-panel.open { transform: translateX(0); }
 .gantt-close {
-  position: absolute;
+  position: sticky;
   top: 1rem;
-  right: 1rem;
+  margin-left: auto;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  z-index: 1;
   width: 2rem;
   height: 2rem;
   display: flex;
