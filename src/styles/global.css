@@ -170,12 +170,14 @@ a.regular-link {
   mask-image: linear-gradient(black 70%, transparent);
   -webkit-mask-image: linear-gradient(black 70%, transparent);
 }
-/* Al hacer scroll el logo se compacta junto con el padding del nav */
-#navigation .logo-container {
-  transition: font-size 0.3s ease;
+/* Al hacer scroll el logo se achica con transform (no altera el layout,
+   así los links y toggles no se mueven) */
+#navigation .logo-container svg {
+  transition: transform 0.3s ease;
+  transform-origin: left center;
 }
-#navigation.nav-scrolled .logo-container {
-  font-size: 1.9rem;
+#navigation.nav-scrolled .logo-container svg {
+  transform: scale(0.78);
 }
 /* Con el menú móvil abierto la máscara no debe comerse el dropdown */
 #navigation.nav-open {
