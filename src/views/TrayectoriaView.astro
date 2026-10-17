@@ -25,7 +25,7 @@ const copy = {
     viewToggle: 'Cambiar vista del recorrido',
     viewGantt: 'Línea de tiempo',
     viewList: 'Lista',
-    seeAll: 'Ver todo',
+
     panelLabel: 'Detalle de experiencia',
     closeLabel: 'Cerrar detalle',
   },
@@ -47,7 +47,7 @@ const copy = {
     viewToggle: 'Change journey view',
     viewGantt: 'Timeline',
     viewList: 'List',
-    seeAll: 'Show all',
+
     panelLabel: 'Experience detail',
     closeLabel: 'Close detail',
   },
@@ -114,12 +114,9 @@ const copy = {
       <!-- Encabezado del recorrido: vista + reset -->
       <div id="recorrido" class="flex flex-wrap items-center justify-between gap-3 max-w-[820px] mx-auto mb-6 scroll-mt-24">
         <span class="recorrido-label">// recorrido</span>
-        <div class="flex items-center gap-2">
-          <div class="view-toggle" role="group" aria-label={copy.viewToggle}>
-            <button class="view-btn" data-view="gantt" aria-pressed="false">{copy.viewGantt}</button>
-            <button class="view-btn active" data-view="list" aria-pressed="true">{copy.viewList}</button>
-          </div>
-          <button id="ver-todo-btn" class="filter-btn" style="--category-color:#b55aff">{copy.seeAll}</button>
+        <div class="view-toggle" role="group" aria-label={copy.viewToggle}>
+          <button class="view-btn" data-view="gantt" aria-pressed="false">{copy.viewGantt}</button>
+          <button class="view-btn active" data-view="list" aria-pressed="true">{copy.viewList}</button>
         </div>
       </div>
 
@@ -358,6 +355,7 @@ const copy = {
 
     const container = document.getElementById('gantt-container');
     if (!container) return;
+    if (!bands.length) bandsHTML = `<p class="list-empty g-empty">${S['timeline.empty']}</p>`;
     container.style.height = `${totalH}px`;
     container.innerHTML = `
       <div class="g-grid">${yearsHTML}</div>
@@ -381,6 +379,11 @@ const copy = {
       ...items.filter(isCurrent).sort(byStartDesc),
       ...items.filter(i => !isCurrent(i)).sort(byEndDesc),
     ];
+
+    if (!ordered.length) {
+      container.innerHTML = `<p class="list-empty">${S['timeline.empty']}</p>`;
+      return;
+    }
 
     container.innerHTML = ordered.map(item => {
       const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
@@ -458,13 +461,6 @@ const copy = {
       renderTimeline();
       updateActiveFilter();
     });
-  });
-
-  // "Ver todo" restablece
-  document.getElementById('ver-todo-btn')?.addEventListener('click', () => {
-    Object.keys(CATEGORIES).forEach(k => activeFilters.add(k));
-    renderTimeline();
-    updateActiveFilter();
   });
 
   // Init
