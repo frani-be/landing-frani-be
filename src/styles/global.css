@@ -163,7 +163,7 @@ a.regular-link {
 }
 #navigation.nav-scrolled {
   padding-top: 0.5rem;
-  padding-bottom: 0.75rem;
+  padding-bottom: 1.25rem;
   background: color-mix(in srgb, var(--color-page) 55%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
