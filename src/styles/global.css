@@ -1529,55 +1529,39 @@ button:hover .btn-arrow {
   box-shadow: none;
 }
 
-/* ── Hero de servicios: editorial + índice visual 2×2 ── */
-.svc-hero {
-  background: var(--color-page);
-  border-bottom: 1px solid var(--color-border-soft);
+/* ── Decoraciones del hero de servicios: bordado + stickers flotantes ── */
+.hero-deco {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
 }
-.svc-tiles {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.1rem;
-  width: min(100%, 25rem);
-}
-.svc-tile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  padding: 1.5rem 1rem 1.2rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-soft);
-  border-radius: var(--radius-card);
-  text-align: center;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
-}
-.svc-tile img {
-  width: 3.4rem;
-  height: 3.4rem;
+.hero-deco-tl { top: -1.5rem; left: -9%; transform: rotate(-8deg); }
+.hero-deco-br { bottom: -2.5rem; right: -9%; transform: rotate(7deg); }
+.hero-sticker {
+  position: absolute;
+  width: 3.6rem;
+  height: 3.6rem;
   object-fit: contain;
-  animation: float-slow 7s ease-in-out infinite;
+  opacity: 0.92;
+  filter: drop-shadow(0 8px 14px rgba(60, 15, 90, 0.28));
+  animation: float-rot 7s ease-in-out infinite;
   animation-delay: var(--float-delay, 0s);
+  pointer-events: none;
+  z-index: 0;
 }
-.svc-tile-label {
-  font-family: var(--font-family-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-custom-dark-gray);
-  line-height: 1.4;
+@keyframes float-rot {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--rot, 0deg)); }
 }
-.svc-tile:hover {
-  border-color: var(--color-border-hover);
-  box-shadow: 0 12px 28px -10px rgba(181, 90, 255, 0.22);
-  transform: translateY(-3px);
-}
-.svc-tile:hover .svc-tile-label { color: var(--color-accent-text); }
-.svc-tile:focus-visible {
-  outline: 2px solid var(--color-custom-purple);
-  outline-offset: 3px;
+.hero-sticker-0 { top: -1rem; left: -4%; --rot: -6deg; }
+.hero-sticker-1 { top: -2rem; right: -5%; --rot: 8deg; }
+.hero-sticker-2 { bottom: -1.5rem; left: -1%; --rot: 5deg; }
+.hero-sticker-3 { bottom: -2.5rem; right: -3%; --rot: -7deg; }
+@media (max-width: 768px) {
+  .hero-sticker { width: 2.6rem; height: 2.6rem; }
+  .hero-sticker-1, .hero-sticker-3 { display: none; }
+  .hero-deco-br { display: none; }
 }
 
 /* ── Diagrama de proceso (servicios): número mono + línea punteada conectora ── */
