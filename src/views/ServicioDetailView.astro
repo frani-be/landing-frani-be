@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
 import CtaSection from '../components/CtaSection.astro';
+import { serviceIcons } from '../scripts/serviceIcons';
 import { localePath, type Lang } from '../i18n/ui';
 
 interface Props { lang: Lang; slug: string; }
@@ -147,7 +147,6 @@ const copy = {
     allServices: 'Ver todos los servicios',
     bookCall: 'Agendar videollamada',
     servicesPath: 'servicios',
-    about: 'Conoce más acerca de',
   },
   en: {
     includes: "What's included?",
@@ -159,7 +158,6 @@ const copy = {
     allServices: 'View all services',
     bookCall: 'Book a video call',
     servicesPath: 'servicios',
-    about: 'Learn more about',
   },
 }[lang];
 ---
@@ -169,17 +167,28 @@ const copy = {
   description={`${service.tagline} ${lang === 'en' ? 'Service by Francisca Medina, strategic UX designer and front-end engineer.' : 'Servicio a cargo de Francisca Medina, diseñadora UX estratégica y front-end engineer.'}`}
   lang={lang}
 >
-  <PageHero
-    lang={lang}
-    title={`${copy.about} ${service.title}`}
-    path={[
-      { label: copy.servicesPath, href: localePath('/servicios', lang) },
-      { label: slug },
-    ]}
-    subtitle={service.tagline}
-    ctaLabel={service.cta}
-    ctaHref="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-  />
+  <!-- Encabezado editorial compacto: path mono + ícono + título + CTA -->
+  <header class="svc-detail-hero bg-surface">
+    <div class="container-mid">
+      <nav class="mono-path mb-10" aria-label={lang === 'en' ? 'Path' : 'Ruta'}>
+        <a href={localePath('/servicios', lang)}>~/{copy.servicesPath}</a>
+        <span class="mono-path-sep" aria-hidden="true">/</span>
+        <span>{slug}</span>
+      </nav>
+      <div class="svc-detail-head" data-reveal>
+        <img src={serviceIcons[slug]} alt="" aria-hidden="true" class="svc-detail-icon" />
+        <div class="min-w-0">
+          <h1 class="svc-detail-title">{service.title}</h1>
+          <p class="svc-detail-tagline">{service.tagline}</p>
+        </div>
+        <a
+          href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+          target="_blank"
+          class="btn btn-primary svc-detail-cta"
+        >{service.cta}</a>
+      </div>
+    </div>
+  </header>
 
   <!-- Cuerpo -->
   <section class="section-block-sm bg-surface">
