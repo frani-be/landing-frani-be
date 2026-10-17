@@ -1111,7 +1111,7 @@ a.regular-link {
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: color-mix(in srgb, var(--category-color) calc(100% - var(--cat-boost)), #fff);
+  color: var(--color-custom-dark-gray);
   white-space: nowrap;
 }
 .l-body { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
@@ -1134,7 +1134,7 @@ a.regular-link {
   width: 8.75rem;
   justify-content: center;
 }
-.l-arrow { color: color-mix(in srgb, var(--category-color) calc(100% - var(--cat-boost)), #fff); flex-shrink: 0; }
+.l-arrow { color: var(--color-accent-text); flex-shrink: 0; }
 
 @media (max-width: 640px) {
   .l-item {
@@ -1203,7 +1203,7 @@ a.regular-link {
 .g-panel-dates {
   font-family: var(--font-family-mono);
   font-size: 0.8rem;
-  color: var(--color-custom-purple-dark);
+  color: color-mix(in srgb, var(--category-color, var(--color-accent-text)) calc(100% - var(--cat-boost)), #fff);
   margin-bottom: 1.25rem;
 }
 .g-panel-desc p { margin: 0 0 0.75rem; line-height: 1.6; }
