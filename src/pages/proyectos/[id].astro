@@ -1,203 +1,23 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageHero from '../../components/PageHero.astro';
-import CtaSection from '../../components/CtaSection.astro';
-import ArrowIcon from '../../components/ArrowIcon.astro';
+import ProyectoDetailView from '../../views/ProyectoDetailView.astro';
 import projectsData from '../../../public/data/projects.json';
-import { marked } from 'marked';
 
 export function getStaticPaths() {
-  return projectsData.projects.map((p) => ({
+  const sorted = [...projectsData.projects].sort((a, b) => {
+    const getYear = (d: string) => { const m = d?.match(/\d{4}/g); return m ? Math.max(...m.map(Number)) : 0; };
+    return getYear(b.date) - getYear(a.date);
+  });
+  return sorted.map((p, i) => ({
     params: { id: p.id },
-    props: { project: p },
+    props: {
+      project: p,
+      prevProject: i === 0 ? sorted[sorted.length - 1] : sorted[i - 1],
+      nextProject: i === sorted.length - 1 ? sorted[0] : sorted[i + 1],
+    },
   }));
 }
 
-interface ProjectLinks { demo?: string; repo?: string; caseStudy?: string; }
-interface Project {
-  id: string;
-  title: string;
-  category: string;
-  type?: string;
-  service?: string;
-  serviceLabel?: string;
-  description: string;
-  fullDescription: string;
-  image: string;
-  tags: string[];
-  links: ProjectLinks;
-  client?: string;
-  date?: string;
-  role?: string;
-  stack?: string;
-}
-
-const { project } = Astro.props as { project: Project };
-
-// Rewrite image paths from `assets/images/…` to `/images/…`
-function rewritePaths(markdown: string) {
-  return markdown.replace(/assets\/images\//g, '/images/');
-}
-
-// Process ::: showcase blocks before parsing
-function processShowcaseBlocks(markdown: string) {
-  return markdown.replace(/:::\s*showcase\s*\n([\s\S]*?)\n:::/g, (_match, content) => {
-    const imgMatch = content.match(/!\[([^\]]*)\]\(([^)]+)\)/);
-    const descMatch = content.match(/\*([^*]+)\*/);
-    if (imgMatch && descMatch) {
-      return `<div class="logo-showcase"><img src="${imgMatch[2]}" alt="${imgMatch[1]}"><div class="logo-description"><em>${descMatch[1]}</em></div></div>`;
-    }
-    return content;
-  });
-}
-
-const rawMarkdown = rewritePaths(project.fullDescription || '');
-const processedMarkdown = processShowcaseBlocks(rawMarkdown);
-const fullDescriptionHTML = marked.parse(processedMarkdown);
-
-// Prev / Next navigation
-const sortedProjects = [...projectsData.projects].sort((a, b) => {
-  const getYear = (d: string) => { const m = d?.match(/\d{4}/g); return m ? Math.max(...m.map(Number)) : 0; };
-  return getYear(b.date) - getYear(a.date);
-});
-const currentIndex = sortedProjects.findIndex(p => p.id === project.id);
-const prevProject = currentIndex === 0 ? sortedProjects[sortedProjects.length - 1] : sortedProjects[currentIndex - 1];
-const nextProject = currentIndex === sortedProjects.length - 1 ? sortedProjects[0] : sortedProjects[currentIndex + 1];
+const { project, prevProject, nextProject } = Astro.props;
 ---
 
-<BaseLayout
-  title={`${project.title} | Proyecto de Frani Medina`}
-  description={`${project.description} Proyecto de Francisca Medina, diseñadora UX y desarrolladora front-end.`}
-  ogImage={`https://frani.be/${project.image.replace('assets/', '')}`}
->
-  <PageHero
-    title={project.title}
-    path={[
-      { label: 'proyectos', href: '/proyectos' },
-      { label: project.id },
-    ]}
-    subtitle={project.description}
-  />
-
-  <!-- Project Image -->
-  <section class="section-block-sm bg-surface">
-    <div class="container-wide">
-      <img
-        src={project.image.replace('assets/', '/')}
-        alt={project.title}
-        class="w-full aspect-video object-cover rounded-[var(--radius-card)] shadow-lg"
-      />
-    </div>
-  </section>
-
-  <!-- Project Details -->
-  <section class="section-block-sm bg-custom-light-grey">
-    <div class="container-wide">
-      <div class="lg:flex lg:gap-12 lg:items-start" id="project-content">
-        <!-- Main Content -->
-        <div class="lg:flex-[2] min-w-0">
-          <div class="bg-surface rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm">
-            <div id="project-full-description" class="max-w-none text-custom-dark-gray" set:html={fullDescriptionHTML} />
-          </div>
-        </div>
-
-        <!-- Sidebar -->
-        <div class="bg-surface rounded-[var(--radius-card)] border border-border-soft p-8 shadow-sm mt-8 lg:mt-0 lg:w-[320px] lg:flex-shrink-0 lg:sticky lg:top-28 lg:self-start">
-          <h3 class="text-xl text-custom-black mb-4">Detalles del Proyecto</h3>
-
-          <!-- Categorías -->
-          <div class="flex flex-wrap gap-2 mb-5">
-            {project.type && (
-              <span class="tag-mono">{project.type}</span>
-            )}
-            {project.service && project.serviceLabel && (
-              <a href={`/servicios/${project.service}`} class="tag-mono tag-mono--accent">{project.serviceLabel}</a>
-            )}
-          </div>
-
-          <div class="space-y-4">
-            <div>
-              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Cliente</h4>
-              <p class="text-custom-black">{project.client || 'N/A'}</p>
-            </div>
-            <div>
-              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Fecha</h4>
-              <p class="text-custom-black">{project.date || 'N/A'}</p>
-            </div>
-            <div>
-              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Rol</h4>
-              <p class="text-custom-black">{project.role || 'N/A'}</p>
-            </div>
-            <div>
-              <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-1">Stack Tecnológico</h4>
-              <p class="text-custom-black">{project.stack || 'N/A'}</p>
-            </div>
-          </div>
-
-          <!-- Tags -->
-          <div class="mt-6">
-            <h4 class="text-sm text-custom-dark-gray uppercase tracking-wide mb-3">Tecnologías</h4>
-            <div class="flex flex-wrap gap-2">
-              {project.tags.map(tag => (
-                <span class="tag-mono">{tag}</span>
-              ))}
-            </div>
-          </div>
-
-          <!-- Links -->
-          <div class="mt-6 flex flex-col gap-3">
-            {project.links.demo && (
-              <a href={project.links.demo} target="_blank" rel="noopener noreferrer"
-                class="btn btn-primary" style="width:100%; text-align:center">
-                <svg class="inline mr-2 -mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Preview
-              </a>
-            )}
-            {project.links.repo && (
-              <a href={project.links.repo} target="_blank" rel="noopener noreferrer"
-                class="btn btn-secondary" style="width:100%; text-align:center">
-                <svg class="inline mr-2 -mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Repositorio
-              </a>
-            )}
-            {project.links.caseStudy && (
-              <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer"
-                class="btn btn-secondary" style="width:100%; text-align:center">
-                <svg class="inline mr-2 -mt-0.5" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Caso de estudio
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Prev / Next Navigation -->
-  <section class="section-block-sm bg-custom-light-grey border-t border-border-soft">
-    <div class="container-wide">
-      <div class="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 sm:gap-8">
-        <a href={`/proyectos/${prevProject.id}`} class="group flex items-center gap-3 text-left flex-1 hover:text-custom-purple transition-colors min-w-0">
-          <ArrowIcon name="left" class="w-5 h-5 flex-shrink-0 text-custom-purple" />
-          <div class="min-w-0 flex-1">
-            <p class="text-xs text-custom-dark-gray uppercase tracking-wide mb-1">Anterior</p>
-            <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{prevProject.title}</p>
-          </div>
-        </a>
-        <a href={`/proyectos/${nextProject.id}`} class="group flex items-center gap-3 text-right flex-1 justify-end hover:text-custom-purple transition-colors min-w-0">
-          <div class="min-w-0 flex-1">
-            <p class="text-xs text-custom-dark-gray uppercase tracking-wide mb-1">Siguiente</p>
-            <p class="font-bold text-sm sm:text-base text-custom-black group-hover:text-custom-purple transition-colors truncate">{nextProject.title}</p>
-          </div>
-          <ArrowIcon name="right" class="w-5 h-5 flex-shrink-0 text-custom-purple" />
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <CtaSection
-    title="¿Interesado en trabajar juntos?"
-    subtitle="Estoy disponible para proyectos de diseño UX y desarrollo front-end. Conversemos sobre tu próxima idea."
-    primaryLabel="Agenda una videollamada"
-    primaryHref="https://calendar.app.google/NjSZEbvWrLfj56wy6"
-    secondaryLabel="Ver más proyectos"
-    secondaryHref="/proyectos"
-  />
-</BaseLayout>
+<ProyectoDetailView lang="es" project={project} prevProject={prevProject} nextProject={nextProject} />

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import LinksModal from '../components/LinksModal.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const copy = {
+  es: {
+    title: 'Proyectos de UX y Front-End | Portafolio de Frani Medina',
+    description: 'Proyectos de diseño UX y desarrollo front-end: sitios web, productos digitales e identidades de marca creados por Francisca Medina.',
+    heroTitle: 'Conoce más acerca de mis Proyectos y Portafolio',
+    heroSub: 'Diseño UX, desarrollo front-end y proyectos de impacto social. Cada uno con una historia detrás.',
+    heroCta: 'Explorar proyectos',
+    pathLabel: 'proyectos',
+  },
+  en: {
+    title: 'UX & Front-End Projects | Frani Medina Portfolio',
+    description: 'UX design and front-end development projects: websites, digital products and brand identities created by Francisca Medina.',
+    heroTitle: 'Learn more about my Projects and Portfolio',
+    heroSub: 'UX design, front-end development and social impact projects. Each with a story behind it.',
+    heroCta: 'Explore projects',
+    pathLabel: 'projects',
+  },
+}[lang];
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+  lang={lang}
+>
+  <PageHero
+    lang={lang}
+    title={copy.heroTitle}
+    path={[{ label: copy.pathLabel }]}
+    subtitle={copy.heroSub}
+    ctaLabel={copy.heroCta}
+    ctaHref="#all-projects-container"
+    ctaIcon="down"
+  />
+
+  <section class="section-block-sm bg-custom-light-grey">
+    <div class="container-wide">
+      <div id="all-projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+  </section>
+
+  <LinksModal lang={lang} />
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  import { buildProjectCardHTML, extractYear, initLinksModal, revealProjectCards, type Project } from '../scripts/projects';
+  import { clientLang } from '../i18n/client';
+  initReveal();
+
+  async function initProjects() {
+    const lang = clientLang();
+    const res = await fetch(lang === 'en' ? '/data/projects.en.json' : '/data/projects.json');
+    const data = await res.json();
+    let projects: Project[] = data.projects || [];
+    projects.sort((a, b) => extractYear(b.date ?? '') - extractYear(a.date ?? ''));
+
+    const container = document.getElementById('all-projects-container');
+    if (!container) return;
+    container.innerHTML = projects.map(p => buildProjectCardHTML(p, lang)).join('');
+
+    revealProjectCards();
+    initLinksModal(projects);
+  }
+
+  initProjects();
+</script>
