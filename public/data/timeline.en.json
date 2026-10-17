@@ -136,7 +136,7 @@
       "category": "docencia",
       "startDate": "2023-08",
       "endDate": "2024-08",
-      "description": "Worked as adjunct professor of **Graphic Nonfiction Narrative** at Pontificia Universidad Católica de Chile, designing and facilitating a program integrating visual storytelling, data journalism and programming.\n- Redesigned the syllabus incorporating data visualization and critical source analysis.\n- Taught Python, Pandas and Altair to process datasets and create interactive visualizations.\n- Guided student projects published in internal media and presented at academic events.\n- Implemented iterative feedback that raised narrative clarity and visual quality of deliverables.",
+      "description": "Worked as adjunct professor of **Graphic Nonfiction Narrative** at the Faculty of Communications, Pontificia Universidad Católica de Chile, designing and facilitating a program integrating visual storytelling, data journalism and programming.\n- Redesigned the syllabus incorporating data visualization and critical source analysis.\n- Taught Python, Pandas and Altair to process datasets and create interactive visualizations.\n- Guided student projects published in internal media and presented at academic events.\n- Implemented iterative feedback that raised narrative clarity and visual quality of deliverables.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
@@ -249,6 +249,56 @@
       "description": "I am a **Women Techmakers (WTM) Ambassador**, Google's global program providing visibility, community and resources for women in technology.\n- I organize and support technical and community events (IWD, talks, workshops) alongside GDG/WTM communities.\n- I create content and learning opportunities, connecting people with resources and certifications from the Google ecosystem.\n- I champion diversity, equity and inclusion in technology, building networks across communities and organizations.",
       "company": "Women Techmakers (Google)",
       "location": "Santiago, Chile / Remote"
+    },
+    {
+      "id": 26,
+      "title": "Digital Content & Landing Development",
+      "category": "laboral",
+      "startDate": "2026-01",
+      "endDate": "actualidad",
+      "description": "I collaborate on demand creating blog content, incorporating **SEO** criteria and optimization for generative engines (**GEO**).\n- I design and develop landing pages for products and events, connecting content, brand identity and communication goals.",
+      "company": "Idea-Tec",
+      "location": "Remote"
+    },
+    {
+      "id": 27,
+      "title": "Institutional Dashboard Design & Development",
+      "category": "laboral",
+      "startDate": "2026-01",
+      "endDate": "actualidad",
+      "description": "I design and develop an **interactive dashboard** for large touchscreens and tablets, visualizing Chilean transport data at national and regional scale.\n- It integrates real-time speed, congestion and travel-time metrics.\n- It lets each user customize the information and visualizations to their needs.",
+      "company": "UOCT",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 28,
+      "title": "Adjunct Professor – School of Design",
+      "category": "docencia",
+      "startDate": "2026-03",
+      "endDate": "actualidad",
+      "description": "I teach the courses **Computational Thinking** and **Generative AI as an Engine for Design** at the School of Design, Pontificia Universidad Católica de Chile, connecting design, programming and creative exploration.\n- In **Computational Thinking**, I teach programming fundamentals applied to design and the creative disciplines, through exercises and projects that explore code as a creation tool.\n- In **Generative AI as an Engine for Design**, I guide AI-assisted image generation, branding and interface projects, integrating experimentation, results validation and critical reflection on their ethical implications.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 29,
+      "title": "Graphic Design Professional Internship",
+      "category": "laboral",
+      "startDate": "2018-01",
+      "endDate": "2018-03",
+      "description": "Completed my professional internship in the Communications department at **TECHO-Chile**, supporting the visual communication of its initiatives.\n- Designed digital and print graphic pieces and presentations for campaigns and programs.",
+      "company": "TECHO-Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 30,
+      "title": "UX Design Professional Internship",
+      "category": "laboral",
+      "startDate": "2017-01",
+      "endDate": "2017-03",
+      "description": "Completed my professional internship at Cencosud's **Digital Business Management, Department Stores division**, combining interface design and internal communication.\n- Participated in the initial designs of the Paris app.\n- Supported usability testing within the management.\n- Developed visual identity pieces for the department.",
+      "company": "Cencosud S.A.",
+      "location": "Santiago, Chile"
     }
   ]
 }

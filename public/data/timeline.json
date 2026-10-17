@@ -136,7 +136,7 @@
       "category": "docencia",
       "startDate": "2023-08",
       "endDate": "2024-08",
-      "description": "Me desempeñé como profesora adjunta de **Narración Gráfica de No Ficción** en la Pontificia Universidad Católica de Chile, diseñando y facilitando un programa que integraba storytelling visual, periodismo de datos y programación.\n- Rediseñé el syllabus incorporando visualización de datos y análisis crítico de fuentes.\n- Enseñé Python, Pandas y Altair para procesar datasets y crear visualizaciones interactivas.\n- Guié proyectos estudiantiles publicados en medios internos y presentados en encuentros académicos.\n- Implementé feedback iterativo que elevó la claridad narrativa y la calidad visual de los entregables.",
+      "description": "Me desempeñé como profesora adjunta de **Narración Gráfica de No Ficción** en la Facultad de Comunicaciones de la Pontificia Universidad Católica de Chile, diseñando y facilitando un programa que integraba storytelling visual, periodismo de datos y programación.\n- Rediseñé el syllabus incorporando visualización de datos y análisis crítico de fuentes.\n- Enseñé Python, Pandas y Altair para procesar datasets y crear visualizaciones interactivas.\n- Guié proyectos estudiantiles publicados en medios internos y presentados en encuentros académicos.\n- Implementé feedback iterativo que elevó la claridad narrativa y la calidad visual de los entregables.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
@@ -249,6 +249,56 @@
       "description": "Soy **Embajadora de Women Techmakers (WTM)**, programa global de Google que brinda visibilidad, comunidad y recursos para mujeres en tecnología.\n- Organizo y apoyo eventos técnicos y de comunidad (IWD, charlas, workshops) junto a comunidades GDG/WTM.\n- Creo contenido y oportunidades de aprendizaje, conectando a personas con recursos y certificaciones del ecosistema Google.\n- Impulso diversidad, equidad e inclusión en tecnología, articulando redes con comunidades y organizaciones.",
       "company": "Women Techmakers (Google)",
       "location": "Santiago, Chile / Remoto"
+    },
+    {
+      "id": 26,
+      "title": "Contenidos Digitales y Desarrollo de Landings",
+      "category": "laboral",
+      "startDate": "2026-01",
+      "endDate": "actualidad",
+      "description": "Colaboro bajo demanda en la creación de contenidos para el blog, incorporando criterios de **SEO** y optimización para motores generativos (**GEO**).\n- Diseño y desarrollo páginas de aterrizaje para productos y eventos, conectando contenido, identidad de marca y objetivos de comunicación.",
+      "company": "Idea-Tec",
+      "location": "Remoto"
+    },
+    {
+      "id": 27,
+      "title": "Diseño y Desarrollo de Dashboard Institucional",
+      "category": "laboral",
+      "startDate": "2026-01",
+      "endDate": "actualidad",
+      "description": "Diseño y desarrollo un **dashboard interactivo** para grandes pantallas táctiles y tablets, con visualizaciones de datos de transporte en Chile a escala nacional y regional.\n- Integra métricas de velocidad, congestión y tiempos de viaje actualizadas en tiempo real.\n- Permite que cada usuario personalice la información y las visualizaciones según sus necesidades.",
+      "company": "UOCT",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 28,
+      "title": "Profesora Adjunta – Escuela de Diseño",
+      "category": "docencia",
+      "startDate": "2026-03",
+      "endDate": "actualidad",
+      "description": "Imparto los cursos **Pensamiento Computacional** e **Inteligencia Artificial Generativa como Motor para Diseñar** en la Escuela de Diseño de la Pontificia Universidad Católica de Chile, vinculando diseño, programación y exploración creativa.\n- En **Pensamiento Computacional**, enseño fundamentos de programación aplicados al diseño y a las disciplinas creativas, mediante ejercicios y proyectos que exploran el código como herramienta de creación.\n- En **Inteligencia Artificial Generativa como Motor para Diseñar**, guío proyectos de generación de imágenes, branding e interfaces asistidas por IA, integrando experimentación, validación de resultados y reflexión crítica sobre sus implicancias éticas.",
+      "company": "Pontificia Universidad Católica de Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 29,
+      "title": "Práctica Profesional en Diseño Gráfico",
+      "category": "laboral",
+      "startDate": "2018-01",
+      "endDate": "2018-03",
+      "description": "Realicé mi práctica profesional en el área de Comunicaciones de **TECHO-Chile**, apoyando la comunicación visual de sus iniciativas.\n- Diseñé piezas gráficas digitales e impresas y presentaciones para campañas y programas.",
+      "company": "TECHO-Chile",
+      "location": "Santiago, Chile"
+    },
+    {
+      "id": 30,
+      "title": "Práctica Profesional en Diseño UX",
+      "category": "laboral",
+      "startDate": "2017-01",
+      "endDate": "2017-03",
+      "description": "Realicé mi práctica profesional en la **Gerencia de Negocios Digitales de Tiendas por Departamento** de Cencosud, combinando diseño de interfaces y comunicación interna.\n- Participé en los diseños iniciales de la aplicación de Paris.\n- Apoyé pruebas de usabilidad dentro de la gerencia.\n- Desarrollé piezas de identidad visual para la gerencia.",
+      "company": "Cencosud S.A.",
+      "location": "Santiago, Chile"
     }
   ]
 }
