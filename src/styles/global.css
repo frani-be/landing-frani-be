@@ -373,33 +373,6 @@ a.regular-link {
   font-size: 1.1em;
 }
 
-/* Filter buttons: mismas pills que las etiquetas de categoría */
-.filter-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-family: var(--font-family-primary);
-  font-size: 0.8em;
-  font-weight: 500;
-  line-height: 1.4;
-  padding: 0.25rem 0.9rem;
-  border: 1px solid color-mix(in srgb, var(--category-color) 32%, var(--mix-base));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--category-color) 9%, var(--mix-base));
-  color: color-mix(in srgb, var(--category-color) calc(100% - var(--cat-boost)), #fff);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.filter-btn:hover:not(.active) {
-  background: color-mix(in srgb, var(--category-color) 16%, var(--mix-base));
-  transform: translateY(-1px);
-}
-.filter-btn.active {
-  background: var(--category-color);
-  border-color: var(--category-color);
-  color: #fff;
-}
-
 /* Animations */
 @keyframes slideRight {
   0% { opacity: 0; transform: translateY(10px); }
@@ -558,7 +531,7 @@ a.regular-link {
   --radius-input: 0.75rem;
 
   /* Unified soft border */
-  --border-soft:  1.5px solid #ece4f5;
+  --border-soft:  1.5px solid var(--color-border-soft);
 }
 
 /* ── Section blocks ────────────────────────────────────────
@@ -773,7 +746,7 @@ a.regular-link {
   font-size: clamp(2.3rem, 5vw, 3.4rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: #2d2038;
+  color: var(--color-custom-black);
   margin-bottom: 1.1rem;
 }
 .tray-lead {
@@ -1072,7 +1045,7 @@ a.regular-link {
 }
 .view-btn:hover:not(.active) { color: var(--color-custom-purple-dark); }
 .view-btn.active {
-  background: var(--color-custom-purple);
+  background: var(--color-custom-purple-dark);
   color: #fff;
 }
 .view-btn:focus-visible {
