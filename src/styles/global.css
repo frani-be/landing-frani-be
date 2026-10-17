@@ -1873,6 +1873,10 @@ button:hover .btn-arrow {
     #1e0c36 100%
   );
 }
+/* Glow lavanda suave: los stickers claros ganan contraste sobre el degradé oscuro */
+.dark .hero-sticker {
+  filter: drop-shadow(0 0 9px rgba(196, 140, 255, 0.5)) drop-shadow(0 2px 8px rgba(10, 4, 20, 0.35));
+}
 .dark .hero-sparkle { fill: rgba(215, 178, 255, 0.85); }
 /* Sparkles del home con fill fijo: el morado oscuro se pierde sobre fondo dark */
 .dark .hero-sparkle path[fill="#8b2db3"] { fill: #c77de8; }
