@@ -800,7 +800,6 @@ a.regular-link {
    detalles internos en blanco; en dark usa el accent claro del sistema */
 .icon-tile--fill {
   color: var(--color-custom-purple);
-  --icon-cut: #ffffff;
 }
 .icon-tile--fill svg {
   fill: currentColor;
@@ -1645,9 +1644,6 @@ button:hover .btn-arrow {
     radial-gradient(18rem 10rem at 50% 0%, rgba(255, 255, 255, 0.06), transparent 70%),
     linear-gradient(140deg, #332447 0%, #251b34 100%);
   color: var(--color-accent-text);
-}
-.dark .icon-tile--fill {
-  --icon-cut: #251b34;
 }
 .dark .illus-frame {
   background: linear-gradient(180deg, #2c2140 0%, #221834 100%);
