@@ -1407,6 +1407,13 @@ a.regular-link {
     box-shadow: 0 -12px 32px rgba(36, 29, 46, 0.15);
   }
   .gantt-panel.open { transform: translateY(0); }
+  /* En lámina inferior la X va dentro de la esquina: si sobresale,
+     el overflow del panel la corta sobre el backdrop */
+  .gantt-close {
+    top: 0;
+    right: 0;
+    margin: -1.25rem -1rem -0.5rem auto;
+  }
 }
 
 /* Icono dentro de pills de categoría */
@@ -1873,8 +1880,9 @@ button:hover .btn-arrow {
 .dark .hero-stitch { stroke: rgba(205, 160, 252, 0.7); }
 .dark .hero-dots i { background: rgba(218, 186, 255, 0.7); }
 .dark .hero-dots i:nth-child(2) { background: rgba(245, 190, 232, 0.65); }
-@media (max-width: 768px) {
-  /* Espacio extra bajo el texto para el arco horizontal de stickers */
+@media (max-width: 1023px) {
+  /* Bajo 1024 el texto del hero va centrado: el arco lateral chocaría con él,
+     así que los stickers pasan al arco horizontal bajo el texto */
   .page-hero:has(.hero-sticker) { padding-bottom: 15rem; }
   .hero-sticker--p { width: 3.2rem; height: 3.2rem; }
   .hero-sticker--m { width: 2.5rem; height: 2.5rem; }
