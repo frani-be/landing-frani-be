@@ -1803,7 +1803,7 @@ button:hover .btn-arrow {
 .hero-sticker:nth-of-type(9) { left: 69%; top: 89%; --rot: -5deg; }
 .hero-sticker:nth-of-type(10) { left: 58%; top: 75%; --rot: 4deg; }
 /* Rastro decorativo discontinuo siguiendo la misma curva:
-   puntos 3–5px, destellos 10–16px, puntadas 8–12px */
+   puntos 3–5px, destellos 10–16px, cruces + 8–12px */
 .hero-orn {
   position: absolute;
   pointer-events: none;
@@ -1815,14 +1815,14 @@ button:hover .btn-arrow {
 .hero-sparkle--a { width: 0.875rem; height: 0.875rem; left: 69.5%; top: 8%; }
 .hero-sparkle--b { width: 1rem; height: 1rem; left: 96.5%; top: 46.5%; fill: rgba(186, 62, 158, 0.7); }
 .hero-sparkle--c { width: 0.75rem; height: 0.75rem; left: 74.5%; top: 90.5%; }
-.hero-stitch {
+.hero-plus {
   fill: none;
   stroke: rgba(122, 43, 168, 0.6);
   stroke-width: 1.6;
 }
-.hero-stitch--a { width: 0.75rem; height: 0.45rem; left: 81%; top: 7.5%; }
-.hero-stitch--b { width: 0.625rem; height: 0.4rem; left: 94%; top: 68.5%; transform: rotate(35deg); }
-.hero-stitch--c { width: 0.5rem; height: 0.35rem; left: 61%; top: 82%; transform: rotate(-40deg); }
+.hero-plus--a { width: 0.75rem; height: 0.75rem; left: 81%; top: 7.5%; }
+.hero-plus--b { width: 0.625rem; height: 0.625rem; left: 94%; top: 68.5%; }
+.hero-plus--c { width: 0.5rem; height: 0.5rem; left: 61%; top: 82%; }
 .hero-dots {
   display: inline-flex;
   align-items: center;
@@ -1877,7 +1877,7 @@ button:hover .btn-arrow {
 /* Sparkles del home con fill fijo: el morado oscuro se pierde sobre fondo dark */
 .dark .hero-sparkle path[fill="#8b2db3"] { fill: #c77de8; }
 .dark .hero-sparkle--b { fill: rgba(240, 190, 232, 0.8); }
-.dark .hero-stitch { stroke: rgba(205, 160, 252, 0.7); }
+.dark .hero-plus { stroke: rgba(205, 160, 252, 0.7); }
 .dark .hero-dots i { background: rgba(218, 186, 255, 0.7); }
 .dark .hero-dots i:nth-child(2) { background: rgba(245, 190, 232, 0.65); }
 @media (max-width: 1023px) {
@@ -1900,11 +1900,11 @@ button:hover .btn-arrow {
   /* El rastro se adapta al arco horizontal; el tercer grupo se omite */
   .hero-dots--a { left: 8.5%; top: auto; bottom: 3.2rem; transform: rotate(-20deg); }
   .hero-sparkle--a { left: 19%; top: auto; bottom: 3.4rem; width: 0.7rem; height: 0.7rem; }
-  .hero-stitch--a { left: 41%; top: auto; bottom: 3rem; }
+  .hero-plus--a { left: 41%; top: auto; bottom: 3rem; }
   .hero-dots--b { left: 81%; top: auto; bottom: 3.4rem; transform: rotate(15deg); }
   .hero-sparkle--b { left: 60.5%; top: auto; bottom: 3.2rem; width: 0.8rem; height: 0.8rem; }
-  .hero-stitch--b { left: 90.5%; top: auto; bottom: 3.3rem; transform: rotate(-15deg); }
-  .hero-dots--c, .hero-sparkle--c, .hero-stitch--c { display: none; }
+  .hero-plus--b { left: 90.5%; top: auto; bottom: 3.3rem; }
+  .hero-dots--c, .hero-sparkle--c, .hero-plus--c { display: none; }
   .hero-deco-br { display: none; }
 }
 
