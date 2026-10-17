@@ -62,7 +62,7 @@ const jsonLd = {
       '@id': 'https://frani.be/#sitio',
       url: 'https://frani.be/',
       name: 'frani.be',
-      inLanguage: 'es-CL',
+      inLanguage: ['es-CL', 'en'],
       publisher: { '@id': 'https://frani.be/#persona' },
     },
     {
@@ -70,7 +70,7 @@ const jsonLd = {
       url: canonicalUrl,
       name: title,
       description: metaDescription,
-      inLanguage: 'es-CL',
+      inLanguage: lang === 'en' ? 'en' : 'es-CL',
       isPartOf: { '@id': 'https://frani.be/#sitio' },
     },
   ],
@@ -90,7 +90,8 @@ const jsonLd = {
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_CL" />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_CL'} />
+    <meta property="og:locale:alternate" content={lang === 'en' ? 'es_CL' : 'en_US'} />
     <meta property="og:site_name" content="frani.be" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />

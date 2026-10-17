@@ -4,8 +4,9 @@
 > estratégica y front-end engineer radicada en Chile. Diseña y programa productos
 > digitales: diseño UX, desarrollo front-end y estrategia en una sola persona.
 > También da charlas tech, clases particulares y participa en comunidades STEAM.
+> Sitio bilingüe: español (default) e inglés bajo /en/.
 
-## Secciones
+## Secciones (English versions under https://frani.be/en/)
 
 - [Inicio](https://frani.be/): presentación, servicios y experiencia reciente
 - [Trayectoria](https://frani.be/trayectoria): línea de tiempo de experiencia profesional, formación, docencia y voluntariados

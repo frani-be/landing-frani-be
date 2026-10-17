@@ -1,6 +1,7 @@
 ---
 import ArrowIcon from './ArrowIcon.astro';
 import type { IconName } from '../scripts/icons';
+import { localePath, type Lang } from '../i18n/ui';
 
 interface PathSegment { label: string; href?: string; }
 
@@ -11,9 +12,10 @@ interface Props {
   ctaLabel?: string;
   ctaHref?: string;
   ctaIcon?: IconName;
+  lang?: Lang;
 }
 
-const { title, subtitle, path, ctaLabel, ctaHref, ctaIcon } = Astro.props;
+const { title, subtitle, path, ctaLabel, ctaHref, ctaIcon, lang = 'es' } = Astro.props;
 ---
 
 <header class="page-hero relative overflow-hidden text-white pt-40 pb-24 text-center">
@@ -22,7 +24,7 @@ const { title, subtitle, path, ctaLabel, ctaHref, ctaIcon } = Astro.props;
     <div data-reveal>
       {path && path.length > 0 && (
         <nav class="page-hero-path" aria-label="Ruta">
-          <a href="/">~</a>
+          <a href={localePath('/', lang)}>~</a>
           {path.map(seg => (
             <>
               <span class="sep">/</span>
