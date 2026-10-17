@@ -159,14 +159,23 @@ a.regular-link {
 /* Navigation: transparente en el top, fondo con blur al hacer scroll */
 #navigation {
   background: transparent;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, padding 0.3s ease;
 }
 #navigation.nav-scrolled {
+  padding-top: 0.5rem;
+  padding-bottom: 0.75rem;
   background: color-mix(in srgb, var(--color-page) 55%, transparent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   mask-image: linear-gradient(black 70%, transparent);
   -webkit-mask-image: linear-gradient(black 70%, transparent);
+}
+/* Al hacer scroll el logo se compacta junto con el padding del nav */
+#navigation .logo-container {
+  transition: font-size 0.3s ease;
+}
+#navigation.nav-scrolled .logo-container {
+  font-size: 1.9rem;
 }
 /* Con el menú móvil abierto la máscara no debe comerse el dropdown */
 #navigation.nav-open {
