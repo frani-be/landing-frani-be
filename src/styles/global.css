@@ -182,6 +182,11 @@ a.regular-link {
   color: var(--color-accent-text);
   background: rgba(181, 90, 255, 0.09);
 }
+.nav-link-active {
+  color: var(--color-accent-text);
+  background: rgba(181, 90, 255, 0.09);
+  font-weight: 600;
+}
 
 /* Hero background: soft orbs over lavender wash */
 .hero-home {
