@@ -873,7 +873,6 @@ a.regular-link {
 
 /* ---- Pilares-filtro de trayectoria ---- */
 .pillar-card {
-  padding: 1.25rem 1.25rem 1.35rem;
   background: var(--color-surface);
   border: 1.5px solid var(--color-border-soft);
   border-radius: var(--radius-card);
@@ -884,7 +883,7 @@ a.regular-link {
   transition: all 0.25s ease;
 }
 /* <button> no siempre establece containing block para hijos absolutos;
-   el wrapper sí, y posiciona el check en la esquina de la card */
+   el wrapper ocupa toda la card y posiciona el check en su esquina */
 .pillar-box {
   position: relative;
   display: flex;
@@ -892,6 +891,7 @@ a.regular-link {
   align-items: flex-start;
   gap: 0.3rem;
   width: 100%;
+  padding: 1.25rem 1.25rem 1.35rem;
 }
 .pillar-card:hover {
   transform: translateY(-2px);
@@ -908,8 +908,8 @@ a.regular-link {
 }
 .pillar-check {
   position: absolute;
-  top: -1.8rem;
-  right: -1.8rem;
+  top: 0;
+  right: 0;
   width: 1.35rem;
   height: 1.35rem;
   border-radius: 50%;
@@ -959,7 +959,7 @@ a.regular-link {
   margin: 0;
 }
 @media (max-width: 640px) {
-  .pillar-card { padding: 1rem; }
+  .pillar-box { padding: 1rem; }
   .pillar-icon { width: 2.4rem; height: 2.4rem; }
   .pillar-desc { font-size: 0.78rem; }
 }
