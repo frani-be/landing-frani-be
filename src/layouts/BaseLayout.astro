@@ -29,7 +29,6 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://frani.be
 // Ruta sin prefijo de idioma para calcular la URL alterna
 const pathname = Astro.url.pathname;
 const basePath = pathname.replace(/^\/en(?=\/|$)/, '') || '/';
-const altLang: Lang = lang === 'es' ? 'en' : 'es';
 const esUrl = new URL(basePath, Astro.site ?? 'https://frani.be').href;
 const enUrl = new URL(localePath(basePath, 'en'), Astro.site ?? 'https://frani.be').href;
 
@@ -201,12 +200,16 @@ const jsonLd = {
           ))}
           <a href="#contacto" class="btn btn-primary ml-2" style="padding:0.55rem 1.4rem">{t(lang, 'nav.contact')}</a>
         </div>
-        <button
-          id="lang-toggle"
-          class="nav-link font-mono text-[0.8rem] tracking-[0.08em] uppercase cursor-pointer bg-transparent border-0"
-          data-alt-url={localePath(basePath, altLang)}
-          aria-label={t(lang, 'nav.lang.switch')}
-        >{altLang}</button>
+        <div class="lang-switch" role="group" aria-label={t(lang, 'nav.lang.switch')}>
+          {(['es', 'en'] as const).map(l => (
+            <a
+              href={localePath(basePath, l)}
+              class:list={['lang-opt', { 'lang-opt-active': lang === l }]}
+              data-lang={l}
+              aria-current={lang === l ? 'true' : undefined}
+            >{l}</a>
+          ))}
+        </div>
         <button
           id="theme-toggle"
           class="flex items-center justify-center w-10 h-10 rounded-full text-custom-dark-gray hover:text-custom-purple hover:bg-custom-purple/10 transition-all"
@@ -339,11 +342,11 @@ const jsonLd = {
         syncThemeIcon();
       });
 
-      // Cambio de idioma: persiste la elección y navega a la URL equivalente
-      document.getElementById('lang-toggle')?.addEventListener('click', () => {
-        const url = document.getElementById('lang-toggle')!.dataset.altUrl!;
-        localStorage.setItem('lang', url === '/en' || url.startsWith('/en/') ? 'en' : 'es');
-        location.href = url;
+      // Cambio de idioma: persiste la elección; el link navega a la URL equivalente
+      document.querySelectorAll('.lang-opt').forEach(opt => {
+        opt.addEventListener('click', () => {
+          localStorage.setItem('lang', (opt as HTMLElement).dataset.lang!);
+        });
       });
     </script>
   </body>
