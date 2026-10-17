@@ -13,13 +13,14 @@ interface Props {
   ctaHref?: string;
   ctaIcon?: IconName;
   lang?: Lang;
+  align?: 'center' | 'left';
 }
 
-const { title, subtitle, path, ctaLabel, ctaHref, ctaIcon, lang = 'es' } = Astro.props;
+const { title, subtitle, path, ctaLabel, ctaHref, ctaIcon, lang = 'es', align = 'center' } = Astro.props;
 ---
 
-<header class="page-hero relative overflow-hidden text-white pt-40 pb-24 text-center">
-  <div class="container-mid relative z-[1]">
+<header class:list={['page-hero relative overflow-hidden text-white pt-40 pb-24', align === 'left' ? 'page-hero-left' : 'text-center']}>
+  <div class:list={[align === 'left' ? 'container-wide' : 'container-mid', 'relative z-[1]']}>
 
     <div data-reveal>
       {path && path.length > 0 && (

@@ -573,18 +573,25 @@ a.regular-link {
   z-index: 2;
   font-family: var(--font-family-titles);
   font-weight: 600;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  line-height: 1.1;
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  line-height: 1.08;
   color: #fff;
   letter-spacing: -0.02em;
-  padding: 2rem 0 1rem;
+  padding: 0.6rem 0 1.1rem;
 }
 .page-hero-subtitle {
-  font-size: 1.15rem;
+  font-size: 1.08rem;
   color: rgba(255,255,255,0.92);
-  max-width: 40rem;
+  max-width: 38rem;
   margin: 0.75rem auto 0;
-  line-height: 1.6;
+  line-height: 1.65;
+}
+/* Variante alineada a la izquierda: misma estructura tipográfica que el hero
+   de trayectoria (centrada en móvil, izquierda en desktop) */
+.page-hero-left { text-align: center; }
+@media (min-width: 1024px) {
+  .page-hero-left { text-align: left; }
+  .page-hero-left .page-hero-subtitle { margin-left: 0; max-width: 30rem; }
 }
 
 
@@ -1663,10 +1670,10 @@ button:hover .btn-arrow {
   0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
   50% { transform: translateY(-14px) rotate(var(--rot, 0deg)); }
 }
-.hero-sticker-0 { top: -1rem; left: -4%; --rot: -6deg; }
-.hero-sticker-1 { top: -2rem; right: -5%; --rot: 8deg; }
-.hero-sticker-2 { bottom: -1.5rem; left: -1%; --rot: 5deg; }
-.hero-sticker-3 { bottom: -2.5rem; right: -3%; --rot: -7deg; }
+.hero-sticker-0 { top: -1rem; left: -3%; --rot: -6deg; }
+.hero-sticker-1 { top: -2rem; right: 6%; --rot: 8deg; }
+.hero-sticker-2 { bottom: -1.5rem; left: 52%; --rot: 5deg; }
+.hero-sticker-3 { bottom: -2.5rem; right: -1%; --rot: -7deg; }
 @media (max-width: 768px) {
   .hero-sticker { width: 2.6rem; height: 2.6rem; }
   .hero-sticker-1, .hero-sticker-3 { display: none; }
