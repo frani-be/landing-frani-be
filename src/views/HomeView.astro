@@ -36,7 +36,7 @@ const copy = {
       { slug: 'estrategia-ux', title: 'Ordena tu producto', desc: 'UX con evidencia: research, prototipos y tests que hacen fluir tu producto.' },
       { slug: 'clases-particulares', title: 'Aprende a tu ritmo', desc: 'Clases 1 a 1 de diseño, UX o front-end, con proyectos reales y feedback directo.' },
     ],
-    learnMore: 'Saber más',
+    details: 'Ver detalles',
     viewAllServices: 'Ver todos los servicios',
     secProjects: 'Proyectos que me enorgullecen',
     viewAllProjects: 'Ver todos los proyectos',
@@ -71,7 +71,7 @@ const copy = {
       { slug: 'estrategia-ux', title: 'Streamline your product', desc: 'Evidence-backed UX: research, prototypes and tests that make your product flow.' },
       { slug: 'clases-particulares', title: 'Learn at your own pace', desc: '1-on-1 design, UX or front-end classes with real projects and direct feedback.' },
     ],
-    learnMore: 'Learn more',
+    details: 'View details',
     viewAllServices: 'View all services',
     secProjects: "Projects I'm proud of",
     viewAllProjects: 'View all projects',
@@ -185,14 +185,14 @@ const copy = {
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {copy.services.map((s, i) => (
-          <article class="service-card" data-reveal data-reveal-delay={String(i * 100)}>
+          <a href={localePath(`/servicios/${s.slug}`, lang)} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
             <div class="service-card-icon"><img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" /></div>
             <div class="p-6 flex flex-col flex-1">
-              <h4 class="text-xl mb-3">{s.title}</h4>
+              <h3 class="text-xl mb-3">{s.title}</h3>
               <p class="text-custom-dark-gray text-sm flex-1">{s.desc}</p>
-              <a href={localePath(`/servicios/${s.slug}`, lang)} class="btn btn-secondary">{copy.learnMore}</a>
+              <span class="service-link mt-5">{copy.details}<ArrowIcon name="upRight" class="btn-arrow" /></span>
             </div>
-          </article>
+          </a>
         ))}
       </div>
 
