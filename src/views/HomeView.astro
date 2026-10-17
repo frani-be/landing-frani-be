@@ -25,7 +25,6 @@ const copy = {
     roles: ['Diseñadora UX estratégica', 'Desarrolladora front-end', 'Charlista tech', 'Impulsora STEAM'],
     scrollAria: 'Ir a la sección de trayectoria profesional',
     scrollTitle: 'Conoce mi trayectoria profesional',
-    scrollLabel: 'Ver mi trayectoria',
     secTrajectory: 'Últimas 3 experiencias de mi trayectoria',
     viewFullTrajectory: 'Ver trayectoria completa',
     secServices: 'Todo lo que puedo hacer por ti',
@@ -60,7 +59,6 @@ const copy = {
     roles: ['Strategic UX designer', 'Front-end developer', 'Tech speaker', 'STEAM advocate'],
     scrollAria: 'Go to professional experience section',
     scrollTitle: 'See my professional experience',
-    scrollLabel: 'See my experience',
     secTrajectory: 'My 3 most recent experiences',
     viewFullTrajectory: 'View full experience',
     secServices: 'Everything I can do for you',
@@ -147,12 +145,11 @@ const copy = {
       <a
         href="#timeline"
         id="scroll-to-timeline"
-        class="text-custom-purple py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
+        class="scroll-arrow-btn inline-flex items-center justify-center w-11 h-11 rounded-full border border-border-soft text-custom-purple cursor-pointer transition-all hover:border-custom-purple/50 hover:text-custom-purple-dark"
         aria-label={copy.scrollAria}
         title={copy.scrollTitle}
       >
-        <ArrowIcon name="down" class="mr-1" />
-        {copy.scrollLabel}
+        <ArrowIcon name="down" />
       </a>
     </div>
   </header>
