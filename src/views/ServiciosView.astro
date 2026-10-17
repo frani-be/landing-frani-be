@@ -18,6 +18,8 @@ const copy = {
     heroSub: 'Lanza tu sitio, haz única tu marca, ordena tu producto o aprende a tu ritmo.',
     heroCta: 'Explorar servicios',
     mainTitle: 'Servicios principales',
+    mainSlots: '1 cupo disponible',
+    secondarySlots: '3 cupos disponibles',
     secondaryTitle: 'También puedo ayudarte con…',
     details: 'Ver detalles',
     ctaTitle: '¿Listo/a para empezar?',
@@ -54,6 +56,8 @@ const copy = {
     heroSub: 'Launch your site, make your brand unique, streamline your product or learn at your own pace.',
     heroCta: 'Explore services',
     mainTitle: 'Main services',
+    mainSlots: '1 slot available',
+    secondarySlots: '3 slots available',
     secondaryTitle: 'I can also help you with…',
     details: 'View details',
     ctaTitle: 'Ready to start?',
@@ -157,7 +161,10 @@ const stepIcons = [
   <!-- Principales -->
   <section class="section-block-sm bg-surface scroll-mt-24" id="principales">
     <div class="container-wide">
-      <h2 class="text-2xl text-custom-black mb-12 text-center" data-reveal>{copy.mainTitle}</h2>
+      <div class="text-center mb-12" data-reveal>
+        <h2 class="text-2xl text-custom-black mb-4">{copy.mainTitle}</h2>
+        <span class="hero-eyebrow">{copy.mainSlots}</span>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {copy.principales.map((s, i) => (
           <a href={localePath(`/servicios/${s.slug}`, lang)} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
@@ -176,7 +183,10 @@ const stepIcons = [
   <!-- Secundarios -->
   <section class="section-block-sm bg-custom-light-grey">
     <div class="container-wide">
-      <h2 class="text-2xl text-custom-black mb-12 text-center" data-reveal>{copy.secondaryTitle}</h2>
+      <div class="text-center mb-12" data-reveal>
+        <h2 class="text-2xl text-custom-black mb-4">{copy.secondaryTitle}</h2>
+        <span class="hero-eyebrow">{copy.secondarySlots}</span>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {copy.secundarios.map((s, i) => (
           <article class="bg-surface rounded-[var(--radius-card)] border border-border-soft p-6 flex gap-5 items-start hover:shadow-md hover:border-border-hover transition-all duration-300" data-reveal data-reveal-delay={String(i * 80)}>
