@@ -903,11 +903,12 @@ a.regular-link {
 }
 .pillar-check {
   position: absolute;
-  top: 0.3rem;
-  right: 0.3rem;
+  top: -0.45rem;
+  right: -0.45rem;
   width: 1.35rem;
   height: 1.35rem;
   border-radius: 50%;
+  box-shadow: 0 0 0 2.5px var(--color-page);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1248,10 +1249,10 @@ a.regular-link {
 .gantt-panel.open { transform: translateX(0); }
 .gantt-close {
   position: sticky;
-  top: 0.35rem;
+  top: 0.4rem;
   margin-left: auto;
-  margin-right: -1.1rem;
-  margin-top: -1.55rem;
+  margin-right: -1.35rem;
+  margin-top: -1.6rem;
   margin-bottom: -1rem;
   z-index: 1;
   width: 2rem;
