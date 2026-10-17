@@ -147,11 +147,14 @@ const jsonLd = {
     </script>
 
     <!-- Tema: aplicar clase antes del primer paint para evitar FOUC -->
+    <meta name="theme-color" content="#faf8fc" />
     <script is:inline>
       (function () {
         var t = localStorage.getItem('theme');
-        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        var dark = t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) {
           document.documentElement.classList.add('dark');
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#17101f');
         }
       })();
     </script>
@@ -208,6 +211,7 @@ const jsonLd = {
           id="theme-toggle"
           class="flex items-center justify-center w-10 h-10 rounded-full text-custom-dark-gray hover:text-custom-purple hover:bg-custom-purple/10 transition-all"
           aria-label={t(lang, 'nav.theme')}
+          aria-pressed="false"
         >
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
@@ -297,6 +301,8 @@ const jsonLd = {
         const dark = document.documentElement.classList.contains('dark');
         themeToggle?.querySelector('.icon-moon')?.classList.toggle('hidden', dark);
         themeToggle?.querySelector('.icon-sun')?.classList.toggle('hidden', !dark);
+        themeToggle?.setAttribute('aria-pressed', String(dark));
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#17101f' : '#faf8fc');
       };
       syncThemeIcon();
       themeToggle?.addEventListener('click', () => {

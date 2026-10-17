@@ -58,10 +58,11 @@ html, body {
   scroll-behavior: smooth;
 }
 
-:root { --mix-base: #ffffff; --cat-boost: 0%; }
+:root { --mix-base: #ffffff; --cat-boost: 0%; color-scheme: light; }
 
 /* ══ Tema oscuro: los tokens de superficie/tinta/borde voltean ══ */
 .dark {
+  color-scheme: dark;
   --color-page: #17101f;
   --color-surface: #2a2138;
   --color-custom-light-grey: #1f1829;
@@ -1468,6 +1469,12 @@ button:hover .btn-arrow {
 .dark ::selection {
   background: #6d3a94;
   color: #f2ecfa;
+}
+/* El skip link usa fondo tinta fijo: en dark necesita borde para no fundirse con la página */
+.dark .skip-link {
+  background: var(--color-surface);
+  color: var(--color-custom-black);
+  border: 1px solid var(--color-border-hover);
 }
 
 /* ── Spotlight: glow que sigue al cursor (vars --mx/--my vía spotlight.ts) ── */
