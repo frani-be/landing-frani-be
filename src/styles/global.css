@@ -1668,35 +1668,62 @@ button:hover .btn-arrow {
 .hero-deco-br { bottom: -2.5rem; right: -9%; transform: rotate(7deg); }
 .hero-sticker {
   position: absolute;
-  width: 3.6rem;
-  height: 3.6rem;
   object-fit: contain;
-  opacity: 0.92;
-  filter: drop-shadow(0 8px 14px rgba(60, 15, 90, 0.28));
-  animation: float-rot 7s ease-in-out infinite;
+  opacity: 0.95;
+  animation: float-soft 6s ease-in-out infinite;
   animation-delay: var(--float-delay, 0s);
   pointer-events: none;
   z-index: 0;
 }
-@keyframes float-rot {
-  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)) scale(var(--sc, 1)); }
-  50% { transform: translateY(-14px) rotate(var(--rot, 0deg)) scale(var(--sc, 1)); }
+/* Flotación vertical discreta (4–6px); la inclinación vive en --rot */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-5px) rotate(var(--rot, 0deg)); }
 }
-/* Posiciones estáticas de fallback (sin JS); el script de ServiciosView
-   las reubica aleatoriamente en cada carga */
-.hero-sticker:nth-of-type(1) { left: -3%; top: 2%; --rot: -7deg; }
-.hero-sticker:nth-of-type(2) { left: 74%; top: -3%; --rot: 6deg; }
-.hero-sticker:nth-of-type(3) { left: 88%; top: 14%; --rot: -5deg; }
-.hero-sticker:nth-of-type(4) { left: 58%; top: 28%; --rot: 9deg; }
-.hero-sticker:nth-of-type(5) { left: 90%; top: 56%; --rot: -8deg; }
-.hero-sticker:nth-of-type(6) { left: 70%; top: 70%; --rot: 4deg; }
-.hero-sticker:nth-of-type(7) { left: 52%; top: 80%; --rot: -4deg; }
-.hero-sticker:nth-of-type(8) { left: 28%; top: 82%; --rot: 7deg; }
-.hero-sticker:nth-of-type(9) { left: -2%; top: 52%; --rot: 11deg; }
-.hero-sticker:nth-of-type(10) { left: 82%; top: 38%; --rot: -10deg; }
+/* Tres tamaños ópticos: protagonistas 80px, medios 60px, pequeños 44px */
+.hero-sticker--p { width: 5rem; height: 5rem; }
+.hero-sticker--m { width: 3.75rem; height: 3.75rem; }
+.hero-sticker--s { width: 2.75rem; height: 2.75rem; }
+/* Arco deliberado abierto hacia el texto (ápex a la derecha) */
+.hero-sticker:nth-of-type(1) { left: 56%; top: 6%; --rot: -6deg; }
+.hero-sticker:nth-of-type(2) { left: 64%; top: 16%; --rot: 5deg; }
+.hero-sticker:nth-of-type(3) { left: 78%; top: 6%; --rot: -3deg; }
+.hero-sticker:nth-of-type(4) { left: 90%; top: 18%; --rot: 7deg; }
+.hero-sticker:nth-of-type(5) { left: 95%; top: 40%; --rot: -4deg; }
+.hero-sticker:nth-of-type(6) { left: 92%; top: 58%; --rot: 6deg; }
+.hero-sticker:nth-of-type(7) { left: 86%; top: 70%; --rot: -8deg; }
+.hero-sticker:nth-of-type(8) { left: 76%; top: 84%; --rot: 3deg; }
+.hero-sticker:nth-of-type(9) { left: 62%; top: 88%; --rot: -5deg; }
+.hero-sticker:nth-of-type(10) { left: 54%; top: 72%; --rot: 4deg; }
+/* El degradado se suaviza en el hero con stickers para que se lean sin halos */
+.page-hero:has(.hero-sticker) {
+  background:
+    radial-gradient(46rem 30rem at 85% 0%, rgba(255, 255, 255, 0.1), transparent 60%),
+    radial-gradient(38rem 26rem at 10% 110%, rgba(109, 26, 150, 0.4), transparent 65%),
+    linear-gradient(135deg, #9c48e2 0%, #7c2aa8 60%, #5d1d84 100%);
+}
+.dark .page-hero:has(.hero-sticker) {
+  background:
+    radial-gradient(46rem 30rem at 85% 0%, rgba(181, 90, 255, 0.1), transparent 60%),
+    radial-gradient(38rem 26rem at 10% 110%, rgba(18, 7, 32, 0.45), transparent 65%),
+    linear-gradient(135deg, #542787 0%, #421d72 55%, #311256 100%);
+}
 @media (max-width: 768px) {
-  .hero-sticker { width: 2.6rem; height: 2.6rem; }
-  .hero-sticker:nth-of-type(n + 6) { display: none; }
+  /* Espacio extra bajo el texto para el arco horizontal de stickers */
+  .page-hero:has(.hero-sticker) { padding-bottom: 15rem; }
+  .hero-sticker--p { width: 3.2rem; height: 3.2rem; }
+  .hero-sticker--m { width: 2.5rem; height: 2.5rem; }
+  .hero-sticker--s { width: 2rem; height: 2rem; }
+  .hero-sticker:nth-of-type(1) { left: 4%; top: auto; bottom: 4.4rem; }
+  .hero-sticker:nth-of-type(2) { left: 14%; top: auto; bottom: 1.6rem; }
+  .hero-sticker:nth-of-type(3) { left: 25%; top: auto; bottom: 4.8rem; }
+  .hero-sticker:nth-of-type(4) { left: 36%; top: auto; bottom: 2rem; }
+  .hero-sticker:nth-of-type(5) { left: 46%; top: auto; bottom: 4rem; }
+  .hero-sticker:nth-of-type(6) { left: 56%; top: auto; bottom: 1.4rem; }
+  .hero-sticker:nth-of-type(7) { left: 66%; top: auto; bottom: 4.2rem; }
+  .hero-sticker:nth-of-type(8) { left: 76%; top: auto; bottom: 1.8rem; }
+  .hero-sticker:nth-of-type(9) { left: 86%; top: auto; bottom: 4.4rem; }
+  .hero-sticker:nth-of-type(10) { left: 94%; top: auto; bottom: 2.2rem; }
   .hero-deco-br { display: none; }
 }
 

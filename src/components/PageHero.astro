@@ -36,7 +36,7 @@ const { title, subtitle, path, ctaLabel, ctaHref, ctaIcon, lang = 'es', align = 
           ))}
         </nav>
       )}
-      <h1 class="page-hero-title">{title}</h1>
+      <h1 class="page-hero-title" set:html={title} />
     </div>
 
     {subtitle && (

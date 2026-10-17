@@ -14,7 +14,7 @@ const copy = {
   es: {
     title: 'Servicios de Diseño UX y Desarrollo Web | Frani Medina',
     description: 'Desarrollo web, diseño gráfico, estrategia UX y clases particulares ofrecidos por Francisca Medina: diseño y código en una sola persona.',
-    heroTitle: 'Una sola persona, todo el proceso',
+    heroTitle: 'Una sola persona,<br>todo el proceso.',
     heroSub: 'Lanza tu sitio, haz única tu marca, ordena tu producto o aprende a tu ritmo.',
     heroCta: 'Explorar servicios',
     mainTitle: 'Servicios principales',
@@ -50,7 +50,7 @@ const copy = {
   en: {
     title: 'UX Design & Web Development Services | Frani Medina',
     description: 'Web development, graphic design, UX strategy and private classes by Francisca Medina: design and code in one person.',
-    heroTitle: 'One person, the whole process',
+    heroTitle: 'One person,<br>the whole process.',
     heroSub: 'Launch your site, make your brand unique, streamline your product or learn at your own pace.',
     heroCta: 'Explore services',
     mainTitle: 'Main services',
@@ -112,32 +112,32 @@ const stepIcons = [
     ctaHref="#principales"
     ctaIcon="down"
   >
-    <!-- Textura de bordado + stickers flotantes de todos los servicios -->
+    <!-- Textura de bordado + constelación de stickers: arco deliberado abierto
+         hacia el texto. Tres tamaños ópticos: p=protagonista, m=medio, s=pequeño -->
     <EmbroideryPattern class="embroidery--light hero-deco hero-deco-tl" cells={5} />
     <EmbroideryPattern class="embroidery--light hero-deco hero-deco-br" cells={4} />
-    {[...Object.values(serviceIcons), ...Object.values(secondaryIcons)].map(src => (
-      <img src={src} alt="" loading="lazy" aria-hidden="true" class="hero-sticker" />
+    {[
+      { src: secondaryIcons['asesorias-personales'], size: 's' },
+      { src: secondaryIcons['mentorias-charlas'], size: 'm' },
+      { src: serviceIcons['desarrollo-web'], size: 'p' },
+      { src: serviceIcons['estrategia-ux'], size: 'm' },
+      { src: secondaryIcons['auditoria-cro-seo'], size: 's' },
+      { src: secondaryIcons['ugc'], size: 's' },
+      { src: serviceIcons['clases-particulares'], size: 'm' },
+      { src: serviceIcons['diseno-grafico'], size: 'p' },
+      { src: secondaryIcons['generacion-contenido'], size: 'm' },
+      { src: secondaryIcons['apoyo-freelance'], size: 's' },
+    ].map((s, i) => (
+      <img
+        src={s.src}
+        alt=""
+        loading="lazy"
+        aria-hidden="true"
+        class={`hero-sticker hero-sticker--${s.size}`}
+        style={`--float-delay:${(i * 0.55).toFixed(2)}s`}
+      />
     ))}
   </PageHero>
-
-  <script>
-    // Stickers del hero: cada recarga los reposiciona aleatoriamente dentro
-    // de slots seguros (bordes y mitad derecha, lejos del texto)
-    const heroSlots: [number, number][] = [
-      [-3, 0], [8, -6], [26, -8], [44, 80], [56, 84],
-      [58, 2], [66, 52], [70, 68], [74, -3], [78, 36],
-      [84, 12], [88, 60], [90, 80], [-2, 52], [48, -7], [94, 40],
-    ];
-    const heroPool = [...heroSlots].sort(() => Math.random() - 0.5);
-    document.querySelectorAll<HTMLElement>('.hero-sticker').forEach((s, i) => {
-      const [x, y] = heroPool[i % heroPool.length];
-      s.style.left = `${x + (Math.random() * 8 - 4)}%`;
-      s.style.top = `${y + (Math.random() * 8 - 4)}%`;
-      s.style.setProperty('--rot', `${Math.random() * 26 - 13}deg`);
-      s.style.setProperty('--sc', (0.75 + Math.random() * 0.4).toFixed(2));
-      s.style.setProperty('--float-delay', `${(Math.random() * 6).toFixed(1)}s`);
-    });
-  </script>
 
   <!-- Principales -->
   <section class="section-block-sm bg-surface scroll-mt-24" id="principales">
