@@ -241,6 +241,7 @@ const copy = {
 
   function openPanel(item: TimelineItem) {
     const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
+    panel.style.setProperty('--category-color', cat.color);
     panelContent.style.setProperty('--category-color', cat.color);
     panelContent.innerHTML = `
       <span class="timeline-category mb-3" style="--category-color:${cat.color}">${cat.icon}${cat.label}</span>
