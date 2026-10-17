@@ -1129,7 +1129,11 @@ a.regular-link {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.l-cat { justify-self: end; }
+.l-cat {
+  justify-self: end;
+  width: 8.75rem;
+  justify-content: center;
+}
 .l-arrow { color: color-mix(in srgb, var(--category-color) calc(100% - var(--cat-boost)), #fff); flex-shrink: 0; }
 
 @media (max-width: 640px) {
