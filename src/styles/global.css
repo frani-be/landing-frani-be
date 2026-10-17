@@ -1261,6 +1261,7 @@ a.regular-link {
   position: sticky;
   top: -1.5rem;
   right: -1.25rem;
+  margin-right: -1rem;
   margin-left: auto;
   margin-top: -2rem;
   margin-bottom: -1rem;
