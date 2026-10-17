@@ -1,0 +1,481 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
+import { localePath, t, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const copy = {
+  es: {
+    title: 'Trayectoria | Frani Medina, UX Designer y Front-End',
+    description: 'Experiencia profesional de Francisca Medina: más de 10 años en diseño UX, desarrollo front-end, docencia universitaria y comunidades STEAM en Chile.',
+    h1: 'Mi trayectoria',
+    lead: 'Diseño, desarrollo, docencia y comunidad: un mismo recorrido entre productos digitales, aulas y espacios STEAM.',
+    ctaExplore: 'Explorar experiencias',
+    ctaCv: 'Descargar CV',
+    ctaCvAria: 'Descargar CV en formato PDF',
+    illusAlt: 'Ilustración de Frani frente a un tablero de trabajo, ordenando tarjetas que conectan diseño y código',
+    pillars: [
+      { filter: 'laboral', color: '#2555a3', icon: '/images/icons/pilar-codigo.png', cat: 'Profesional', title: 'Diseño + código', desc: 'Diseño y desarrollo productos digitales, conectando necesidades de las personas con objetivos de negocio.' },
+      { filter: 'docencia', color: '#7d1fc7', icon: '/images/icons/clases-particulares.png', cat: 'Docencia', title: 'Aprender compartiendo', desc: 'Enseño diseño, UX y programación en universidades, bootcamps y clases personalizadas.' },
+      { filter: 'voluntariados', color: '#bd2c97', icon: '/images/icons/pilar-comunidad.png', cat: 'Comunidad', title: 'Crecer en comunidad', desc: 'Participo en voluntariados y mentorías para abrir más espacios en tecnología.' },
+      { filter: 'academica', color: '#9f2eba', icon: '/images/icons/pilar-docencia.png', cat: 'Formación', title: 'Curiosidad en movimiento', desc: 'Mi formación en diseño, experiencia de usuario y software nutre una mirada interdisciplinaria.' },
+    ],
+    viewToggle: 'Cambiar vista del recorrido',
+    viewGantt: 'Línea de tiempo',
+    viewList: 'Lista',
+    seeAll: 'Ver todo',
+    panelLabel: 'Detalle de experiencia',
+    closeLabel: 'Cerrar detalle',
+  },
+  en: {
+    title: 'Experience | Frani Medina, UX Designer & Front-End',
+    description: "Francisca Medina's professional experience: 10+ years across UX design, front-end development, university teaching and STEAM communities in Chile.",
+    h1: 'My experience',
+    lead: 'Design, development, teaching and community: a single journey across digital products, classrooms and STEAM spaces.',
+    ctaExplore: 'Explore experiences',
+    ctaCv: 'Download CV',
+    ctaCvAria: 'Download CV as PDF',
+    illusAlt: 'Illustration of Frani in front of a work board, sorting cards connecting design and code',
+    pillars: [
+      { filter: 'laboral', color: '#2555a3', icon: '/images/icons/pilar-codigo.png', cat: 'Professional', title: 'Design + code', desc: 'I design and build digital products, connecting people\u2019s needs with business goals.' },
+      { filter: 'docencia', color: '#7d1fc7', icon: '/images/icons/clases-particulares.png', cat: 'Teaching', title: 'Learning by sharing', desc: 'I teach design, UX and programming at universities, bootcamps and personalized classes.' },
+      { filter: 'voluntariados', color: '#bd2c97', icon: '/images/icons/pilar-comunidad.png', cat: 'Community', title: 'Growing in community', desc: 'I volunteer and mentor to open more doors into technology.' },
+      { filter: 'academica', color: '#9f2eba', icon: '/images/icons/pilar-docencia.png', cat: 'Education', title: 'Curiosity in motion', desc: 'My background in design, user experience and software feeds an interdisciplinary perspective.' },
+    ],
+    viewToggle: 'Change journey view',
+    viewGantt: 'Timeline',
+    viewList: 'List',
+    seeAll: 'Show all',
+    panelLabel: 'Experience detail',
+    closeLabel: 'Close detail',
+  },
+}[lang];
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+  lang={lang}
+>
+  <!-- Editorial hero -->
+  <header class="tray-hero pt-40 pb-16 lg:pb-24">
+    <div class="container-wide flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
+      <div class="w-full lg:w-[55%] text-center lg:text-left">
+        <span class="tray-tag" data-reveal><a href={localePath('/', lang)} aria-label={t(lang, 'breadcrumb.home')}>~</a>/trayectoria</span>
+        <h1 class="tray-title" data-reveal data-reveal-delay="120">
+          {copy.h1}
+        </h1>
+        <p class="tray-lead" data-reveal data-reveal-delay="260">
+          {copy.lead}
+        </p>
+        <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="380">
+          <a href="#recorrido" class="btn btn-primary">{copy.ctaExplore}<ArrowIcon name="down" class="btn-arrow" /></a>
+          <a
+            href="/documents/cv-francisca-medina-concha.pdf"
+            download
+            class="btn btn-secondary"
+            aria-label={copy.ctaCvAria}
+          >{copy.ctaCv}<ArrowIcon name="upRight" class="btn-arrow" /></a>
+        </div>
+      </div>
+      <div class="w-full lg:w-[45%] flex justify-center" data-reveal data-reveal-delay="300">
+        <div class="tray-illus">
+          <div class="tray-blob" aria-hidden="true"></div>
+          <img
+            src="/images/trabajando.png"
+            alt={copy.illusAlt}
+            class="tray-illus-img"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="pt-10 pb-20 bg-custom-light-grey">
+    <div class="container-wide">
+
+      <!-- 4 Pillars: categorías + filtros -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-[1100px] mx-auto" id="pillar-filters">
+        {copy.pillars.map((p, i) => (
+          <button class="pillar-card" data-filter={p.filter} style={`--category-color:${p.color}`} data-reveal data-reveal-delay={String(i * 100)} aria-pressed="false">
+            <span class="pillar-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <img src={p.icon} alt="" loading="lazy" class="pillar-icon" />
+            <span class="pillar-cat">{p.cat}</span>
+            <h2 class="pillar-title">{p.title}</h2>
+            <p class="pillar-desc">{p.desc}</p>
+          </button>
+        ))}
+      </div>
+
+      <!-- Encabezado del recorrido: vista + reset -->
+      <div id="recorrido" class="flex flex-wrap items-center justify-between gap-3 max-w-[820px] mx-auto mb-6 scroll-mt-24">
+        <span class="recorrido-label">// recorrido</span>
+        <div class="flex items-center gap-2">
+          <div class="view-toggle" role="group" aria-label={copy.viewToggle}>
+            <button class="view-btn active" data-view="gantt" aria-pressed="true">{copy.viewGantt}</button>
+            <button class="view-btn" data-view="list" aria-pressed="false">{copy.viewList}</button>
+          </div>
+          <button id="ver-todo-btn" class="filter-btn" style="--category-color:#b55aff">{copy.seeAll}</button>
+        </div>
+      </div>
+
+      <!-- Actualmente -->
+      <div id="current-container" class="max-w-[820px] mx-auto"></div>
+
+      <!-- Línea de tiempo con carriles (ancho completo) -->
+      <div id="gantt-scroll" class="gantt-scroll w-screen relative left-1/2 -translate-x-1/2 px-4 md:px-8">
+        <div id="gantt-container" class="gantt"></div>
+      </div>
+
+      <!-- Vista lista -->
+      <div id="list-container" class="list-view max-w-[820px] mx-auto" hidden></div>
+
+      <!-- Panel de detalle -->
+      <div id="gantt-backdrop" class="gantt-backdrop" hidden></div>
+      <aside id="gantt-panel" class="gantt-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-label={copy.panelLabel} tabindex="-1">
+        <button id="gantt-close" class="gantt-close" aria-label={copy.closeLabel}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <div id="gantt-panel-content"></div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  initReveal();
+</script>
+
+<script>
+  import { svgIcon } from '../scripts/icons';
+  import { clientStrings, clientLang } from '../i18n/client';
+
+  interface TimelineItem {
+    id: number;
+    title: string;
+    company: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    category: string;
+    description: string;
+  }
+
+  const lang = clientLang();
+  const S = clientStrings[lang];
+
+  const strokeIcon = (inner: string) =>
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-icon" aria-hidden="true">${inner}</svg>`;
+
+  const CATEGORIES: Record<string, { label: string; color: string; icon: string }> = {
+    laboral:       { label: S['cat.laboral'],       color: '#2555a3', icon: strokeIcon('<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9.5 8.5 8 10.5l1.5 2"/><path d="M14.5 8.5 16 10.5l-1.5 2"/>') },
+    docencia:      { label: S['cat.docencia'],      color: '#7d1fc7', icon: strokeIcon('<path d="M4 4.5h5a4 4 0 0 1 3 1.7A4 4 0 0 1 15 4.5h5V19h-5a3 3 0 0 0-3 1.5A3 3 0 0 0 9 19H4z"/>') },
+    voluntariados: { label: S['cat.voluntariados'], color: '#bd2c97', icon: strokeIcon('<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>') },
+    academica:     { label: S['cat.academica'],     color: '#9f2eba', icon: strokeIcon('<path d="M2 9.5L12 5l10 4.5-10 4.5z"/><path d="M6 12v4c3 2 9 2 12 0v-4"/>') },
+  };
+
+  const MONTHS = S.months;
+
+  function formatRange(start: string, end: string) {
+    const s = start.slice(0, 4);
+    const e = end === 'actualidad' ? S.present : end.slice(0, 4);
+    return s === e ? s : `${s}–${e}`;
+  }
+
+  function formatFull(d: string) {
+    if (d === 'actualidad') return S.present;
+    const [y, m] = d.split('-');
+    return `${MONTHS[parseInt(m) - 1]} ${y}`;
+  }
+
+  function processBoldText(text: string) {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/__(.*?)__/g, '<strong>$1</strong>');
+  }
+
+  function parseMarkdown(text: string) {
+    if (!text) return '';
+    const lines = text.split('\n');
+    let inList = false;
+    const result: string[] = [];
+    const hasListItems = lines.some(l => l.trim().startsWith('- '));
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.startsWith('- ')) {
+        if (!inList) { result.push('<ul class="timeline-list">'); inList = true; }
+        result.push(`<li>${processBoldText(line.substring(2))}</li>`);
+      } else {
+        if (inList) { result.push('</ul>'); inList = false; }
+        if (line) {
+          if (hasListItems) {
+            result.push(`<p>${processBoldText(line)}</p>`);
+          } else {
+            if (result.length === 0) result.push('<p>');
+            result.push(processBoldText(line));
+            if (i < lines.length - 1 && lines[i + 1].trim()) result.push(' ');
+          }
+        }
+      }
+    }
+    if (inList) result.push('</ul>');
+    if (!hasListItems && result.length > 0) result.push('</p>');
+    return result.join('');
+  }
+
+  let allItems: TimelineItem[] = [];
+  const isCurrent = (i: TimelineItem) => i.endDate === 'actualidad';
+
+  /* ---- Panel lateral ---- */
+  const panel = document.getElementById('gantt-panel') as HTMLElement;
+  const panelContent = document.getElementById('gantt-panel-content') as HTMLElement;
+  const backdrop = document.getElementById('gantt-backdrop') as HTMLElement;
+
+  let lastTrigger: HTMLElement | null = null;
+
+  function openPanel(item: TimelineItem) {
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
+    panelContent.innerHTML = `
+      <span class="timeline-category mb-3" style="--category-color:${cat.color}">${cat.icon}${cat.label}</span>
+      <h3 class="g-panel-title">${item.title}</h3>
+      <p class="g-panel-meta">${item.company} • ${item.location}</p>
+      <p class="g-panel-dates">${formatFull(item.startDate)} - ${formatFull(item.endDate)}</p>
+      <div class="timeline-description expanded text-custom-black leading-relaxed g-panel-desc">${parseMarkdown(item.description)}</div>`;
+    if (document.activeElement instanceof HTMLElement) lastTrigger = document.activeElement;
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden', 'false');
+    backdrop.hidden = false;
+    document.body.style.overflow = 'hidden';
+    panel.focus();
+  }
+
+  function closePanel() {
+    const wasOpen = panel.classList.contains('open');
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden', 'true');
+    backdrop.hidden = true;
+    document.body.style.overflow = '';
+    document.querySelectorAll('.g-band.selected').forEach(b => b.classList.remove('selected'));
+    if (wasOpen && lastTrigger) lastTrigger.focus();
+  }
+
+  document.getElementById('gantt-close')?.addEventListener('click', closePanel);
+  backdrop.addEventListener('click', closePanel);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+  function selectBand(id: number, scroll = false) {
+    document.querySelectorAll('.g-band.selected').forEach(b => b.classList.remove('selected'));
+    const band = document.querySelector<HTMLElement>(`.g-band[data-id="${id}"]`);
+    if (band) {
+      band.classList.add('selected');
+      if (scroll) band.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+    const item = allItems.find(i => i.id === id);
+    if (item) openPanel(item);
+  }
+
+  /* ---- Bloque "Actualmente" ---- */
+  function renderCurrent(items: TimelineItem[]) {
+    const container = document.getElementById('current-container');
+    if (!container) return;
+    if (!items.length) { container.innerHTML = ''; return; }
+    container.innerHTML = `
+      <div class="current-block mb-10">
+        <p class="current-block-title">${S['timeline.currently']}</p>
+        ${items.map(item => {
+          const cat = CATEGORIES[item.category] || { color: '#5c5766' };
+          return `
+            <button class="current-item" data-id="${item.id}" style="--category-color:${cat.color}">
+              <span class="dot"></span>
+              <span class="role">${item.title}</span>
+              <span class="org">${item.company}</span>
+            </button>`;
+        }).join('')}
+      </div>`;
+    container.querySelectorAll('.current-item').forEach(btn => {
+      btn.addEventListener('click', () => selectBand(Number((btn as HTMLElement).dataset.id), true));
+    });
+  }
+
+  /* ---- Gantt: escala de años + carriles ---- */
+  function renderGantt(items: TimelineItem[], minYear: number, totalMonths: number, monthH: number) {
+    // Cada banda cubre años calendario completos: inicio -> enero, término -> diciembre.
+    // Así los bordes caen exactamente sobre las líneas de año de la grilla.
+    const bands = items.map(item => ({
+      item,
+      s: (parseInt(item.startDate.slice(0, 4)) - minYear) * 12,
+      e: isCurrent(item)
+        ? totalMonths - 1
+        : (parseInt(item.endDate.slice(0, 4)) - minYear) * 12 + 11,
+      lane: 0,
+    })).sort((a, b) => a.s - b.s || b.e - a.e);
+
+    // Asignación de carriles: cada experiencia toma el primer carril libre
+    const laneEnds: number[] = [];
+    bands.forEach(b => {
+      let lane = laneEnds.findIndex(end => end < b.s);
+      if (lane === -1) { laneEnds.push(b.e); lane = laneEnds.length - 1; }
+      else laneEnds[lane] = b.e;
+      b.lane = lane;
+    });
+    const nLanes = Math.max(1, laneEnds.length);
+
+    // Coordenadas: actualidad arriba
+    const posTop = (m: number) => (totalMonths - 1 - m) * monthH;
+    const totalH = totalMonths * monthH;
+    const maxYear = minYear + Math.ceil(totalMonths / 12) - 1;
+
+    // Grilla de años
+    let yearsHTML = '';
+    for (let y = maxYear; y >= minYear; y--) {
+      const top = (maxYear - y) * 12 * monthH;
+      yearsHTML += `<div class="g-year" style="top:${top}px"><span>${y}</span></div>`;
+    }
+
+    let bandsHTML = '';
+    bands.forEach(b => {
+      const cat = CATEGORIES[b.item.category] || { label: b.item.category, color: '#5c5766' };
+      const top = posTop(b.e);
+      const h = (b.e - b.s + 1) * monthH;
+      const cls = h >= 96 ? 'lg' : h >= 44 ? 'md' : 'sm';
+      // Margen vertical simétrico: la banda respira sin perder el centrado en su fila de año
+      const pad = 4;
+      bandsHTML += `
+        <button class="g-band g-${cls}" data-id="${b.item.id}"
+          style="--category-color:${cat.color};top:${top + pad}px;height:${Math.max(h - pad * 2, 10)}px;left:calc(${b.lane} * (100% / ${nLanes}));width:calc(100% / ${nLanes} - 8px);"
+          aria-label="${b.item.title}, ${b.item.company}">
+          <span class="g-band-inner">
+            <span class="g-band-title">${b.item.title}</span>
+            <span class="g-band-org">${b.item.company}</span>
+          </span>
+          <span class="g-band-dates">${formatRange(b.item.startDate, b.item.endDate)}</span>
+        </button>`;
+    });
+
+    const container = document.getElementById('gantt-container');
+    if (!container) return;
+    container.style.height = `${totalH}px`;
+    container.innerHTML = `
+      <div class="g-grid">${yearsHTML}</div>
+      <div class="g-lanes${nLanes >= 7 ? ' g-compact' : ''}" style="--lanes:${nLanes}">${bandsHTML}</div>`;
+
+    container.querySelectorAll('.g-band').forEach(band => {
+      band.addEventListener('click', () => selectBand(Number((band as HTMLElement).dataset.id)));
+    });
+  }
+
+  /* ---- Vista lista: filas con la estética de las bandas ---- */
+  function renderList(items: TimelineItem[]) {
+    const container = document.getElementById('list-container');
+    if (!container) return;
+
+    const byEndDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.endDate + '-01').getTime() - new Date(a.endDate + '-01').getTime();
+    const byStartDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime();
+    const ordered = [
+      ...items.filter(isCurrent).sort(byStartDesc),
+      ...items.filter(i => !isCurrent(i)).sort(byEndDesc),
+    ];
+
+    container.innerHTML = ordered.map(item => {
+      const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
+      return `
+        <button class="l-item" data-id="${item.id}" style="--category-color:${cat.color}">
+          <span class="l-dates">${formatRange(item.startDate, item.endDate)}</span>
+          <span class="l-body">
+            <span class="l-title">${item.title}</span>
+            <span class="l-org">${item.company} • ${item.location}</span>
+          </span>
+          <span class="timeline-category l-cat">${cat.icon}${cat.label}</span>
+          ${svgIcon('chevronRight', 'l-arrow')}
+        </button>`;
+    }).join('');
+
+    container.querySelectorAll('.l-item').forEach(row => {
+      row.addEventListener('click', () => selectBand(Number((row as HTMLElement).dataset.id)));
+    });
+  }
+
+  let currentView = 'gantt';
+  const activeFilters = new Set(Object.keys(CATEGORIES));
+
+  function renderTimeline() {
+    const filtered = allItems.filter(i => activeFilters.has(i.category));
+    closePanel();
+
+    const byStartDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime();
+    renderCurrent(filtered.filter(isCurrent).sort(byStartDesc));
+
+    if (currentView === 'gantt') {
+      // Escala fija: siempre desde el año más antiguo hasta el año actual completo
+      const minYear = Math.min(...allItems.map(i => parseInt(i.startDate.slice(0, 4))));
+      const now = new Date();
+      const totalMonths = (now.getFullYear() - minYear + 1) * 12;
+      const monthH = window.innerWidth < 768 ? 8 : 11;
+      renderGantt(filtered, minYear, totalMonths, monthH);
+    } else {
+      renderList(filtered);
+    }
+  }
+
+  function setView(view: string) {
+    if (view === currentView) return;
+    currentView = view;
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      const active = (btn as HTMLElement).dataset.view === view;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+    document.getElementById('gantt-scroll')!.hidden = view !== 'gantt';
+    document.getElementById('list-container')!.hidden = view !== 'list';
+    renderTimeline();
+  }
+
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => setView((btn as HTMLElement).dataset.view!));
+  });
+
+  function updateActiveFilter() {
+    document.querySelectorAll('.pillar-card').forEach(card => {
+      const isActive = activeFilters.has((card as HTMLElement).dataset.filter!);
+      card.classList.toggle('selected', isActive);
+      card.setAttribute('aria-pressed', String(isActive));
+    });
+  }
+
+  // Pillar cards actúan como filtros multi-selección
+  document.querySelectorAll('.pillar-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const filter = (card as HTMLElement).dataset.filter!;
+      if (activeFilters.has(filter)) activeFilters.delete(filter);
+      else activeFilters.add(filter);
+      renderTimeline();
+      updateActiveFilter();
+    });
+  });
+
+  // "Ver todo" restablece
+  document.getElementById('ver-todo-btn')?.addEventListener('click', () => {
+    Object.keys(CATEGORIES).forEach(k => activeFilters.add(k));
+    renderTimeline();
+    updateActiveFilter();
+  });
+
+  // Init
+  fetch(lang === 'en' ? '/data/timeline.en.json' : '/data/timeline.json')
+    .then(r => r.json())
+    .then(data => {
+      allItems = data.timeline || [];
+      renderTimeline();
+      updateActiveFilter();
+
+      // Deep-link desde home: /trayectoria#exp-<id>
+      const match = location.hash.match(/^#exp-(\d+)$/);
+      if (match) setTimeout(() => selectBand(Number(match[1]), true), 300);
+    });
+</script>
