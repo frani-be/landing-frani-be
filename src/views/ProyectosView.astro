@@ -1,9 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import CtaSection from '../components/CtaSection.astro';
 import LinksModal from '../components/LinksModal.astro';
-import type { Lang } from '../i18n/ui';
+import { localePath, type Lang } from '../i18n/ui';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -12,26 +10,40 @@ const copy = {
   es: {
     title: 'Proyectos de UX y front-end | Portafolio de Frani Medina',
     description: 'Proyectos de diseño UX y desarrollo front-end: sitios web, productos digitales e identidades de marca creados por Francisca Medina.',
-    heroTitle: 'Conoce más acerca de mis proyectos y portafolio',
-    heroSub: 'Diseño UX, desarrollo front-end y proyectos de impacto social. Cada uno con una historia detrás.',
-    heroCta: 'Explorar proyectos',
+    heroTitle: 'Cada proyecto,<br />una solución.',
+    heroSub: 'Diseño y desarrollo experiencias digitales con propósito. Cada proyecto cuenta una historia distinta, pero todos comparten una misma idea: tecnología al servicio de las personas.',
+    heroTag: 'diseño + desarrollo + propósito',
     pathLabel: 'proyectos',
+    filterAria: 'Filtrar proyectos',
+    filters: [
+      { key: 'all', label: 'Todos' },
+      { key: 'estrategia-ux', label: 'UX' },
+      { key: 'desarrollo-web', label: 'Desarrollo' },
+      { key: 'diseno-grafico', label: 'Identidad' },
+    ],
     moreTitle: 'Más exploraciones',
     ctaTitle: '¿Tienes una idea en mente?',
-    ctaSub: 'Me encanta conocer y trabajar en nuevas ideas, podemos hacerlo realidad juntas.',
+    ctaSub: 'Me encantaría conocer tu proyecto y explorar cómo podemos hacerlo realidad.',
     ctaPrimary: 'Conversemos',
     ctaSecondary: 'hola@frani.be',
   },
   en: {
     title: 'UX & Front-End Projects | Frani Medina Portfolio',
     description: 'UX design and front-end development projects: websites, digital products and brand identities created by Francisca Medina.',
-    heroTitle: 'Learn more about my Projects and Portfolio',
-    heroSub: 'UX design, front-end development and social impact projects. Each with a story behind it.',
-    heroCta: 'Explore projects',
-    pathLabel: 'projects',
+    heroTitle: 'Every project,<br />one solution.',
+    heroSub: 'I design and develop digital experiences with purpose. Every project tells a different story, but they all share one idea: technology at the service of people.',
+    heroTag: 'design + development + purpose',
+    pathLabel: 'proyectos',
+    filterAria: 'Filter projects',
+    filters: [
+      { key: 'all', label: 'All' },
+      { key: 'estrategia-ux', label: 'UX' },
+      { key: 'desarrollo-web', label: 'Development' },
+      { key: 'diseno-grafico', label: 'Identity' },
+    ],
     moreTitle: 'More explorations',
     ctaTitle: 'Have an idea in mind?',
-    ctaSub: 'I love discovering and working on new ideas, we can make them real together.',
+    ctaSub: 'I would love to hear about your project and explore how we can make it real.',
     ctaPrimary: "Let's talk",
     ctaSecondary: 'hola@frani.be',
   },
@@ -43,49 +55,83 @@ const copy = {
   description={copy.description}
   lang={lang}
 >
-  <PageHero
-    lang={lang}
-    title={copy.heroTitle}
-    path={[{ label: copy.pathLabel }]}
-    subtitle={copy.heroSub}
-    ctaLabel={copy.heroCta}
-    ctaHref="#destacados"
-    ctaIcon="down"
-  />
+  <!-- Hero editorial claro: texto + filtros a la izquierda, decoración a la derecha -->
+  <header class="proj-hero">
+    <div class="container-wide proj-hero-grid">
+      <div data-reveal>
+        <nav class="mono-path mb-6" aria-label={lang === 'en' ? 'Path' : 'Ruta'}>
+          <a href={localePath('/', lang)}>~</a>
+          <span class="mono-path-sep" aria-hidden="true">/</span>
+          <span>{copy.pathLabel}</span>
+        </nav>
+        <h1 class="proj-hero-title" set:html={copy.heroTitle} />
+        <p class="proj-hero-sub">{copy.heroSub}</p>
+        <div class="proj-filters" role="group" aria-label={copy.filterAria}>
+          {copy.filters.map((f, i) => (
+            <button
+              type="button"
+              class:list={['proj-filter', { 'is-active': i === 0 }]}
+              data-filter={f.key}
+              aria-pressed={i === 0 ? 'true' : 'false'}
+            >{f.label}</button>
+          ))}
+        </div>
+      </div>
+      <div class="proj-hero-deco" aria-hidden="true">
+        <span class="proj-hero-tag">{copy.heroTag}</span>
+        <svg class="proj-hero-curve" viewBox="0 0 280 110" fill="none" aria-hidden="true">
+          <path d="M8 82 C 70 18, 175 10, 272 88" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+        <svg class="proj-hero-sparkle proj-hero-sparkle--a" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C9.2 5.2 10.8 6.8 16 8c-5.2 1.2-6.8 2.8-8 8-1.2-5.2-2.8-6.8-8-8 5.2-1.2 6.8-2.8 8-8Z" /></svg>
+        <svg class="proj-hero-sparkle proj-hero-sparkle--b" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C9.2 5.2 10.8 6.8 16 8c-5.2 1.2-6.8 2.8-8 8-1.2-5.2-2.8-6.8-8-8 5.2-1.2 6.8-2.8 8-8Z" /></svg>
+        <svg class="proj-hero-sparkle proj-hero-sparkle--c" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C9.2 5.2 10.8 6.8 16 8c-5.2 1.2-6.8 2.8-8 8-1.2-5.2-2.8-6.8-8-8 5.2-1.2 6.8-2.8 8-8Z" /></svg>
+      </div>
+    </div>
+  </header>
 
-  <!-- Proyectos destacados: cards editoriales alternadas -->
+  <!-- Proyectos destacados: bloques editoriales alternados -->
   <section class="section-block-sm bg-surface scroll-mt-24" id="destacados">
     <div class="container-wide">
-      <div id="featured-projects" class="flex flex-col gap-14"></div>
+      <div id="featured-projects" class="proj-featured-list"></div>
     </div>
   </section>
 
-  <!-- Resto del portafolio -->
-  <section class="section-block-sm bg-custom-light-grey">
+  <!-- Resto del portafolio: galería compacta -->
+  <section class="section-block-sm bg-surface" id="exploraciones">
     <div class="container-wide">
-      <h2 class="text-2xl text-custom-black mb-12" data-reveal>{copy.moreTitle}</h2>
+      <div class="proj-more-head" data-reveal>
+        <h2 class="text-2xl text-custom-black">{copy.moreTitle}</h2>
+        <span class="proj-more-note">{lang === 'en' ? 'Other projects that also keep me inspired.' : 'Otros proyectos que también me inspiran.'}</span>
+      </div>
       <div id="all-projects-container" class="scroll-mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
     </div>
   </section>
 
-  <CtaSection
-    title={copy.ctaTitle}
-    subtitle={copy.ctaSub}
-    primaryLabel={copy.ctaPrimary}
-    primaryHref="#contacto"
-    secondaryLabel={copy.ctaSecondary}
-    secondaryHref="mailto:hola@frani.be"
-    lang={lang}
-  />
+  <!-- Cierre: bloque de contacto compacto -->
+  <section class="section-block-sm bg-surface">
+    <div class="container-mid">
+      <div class="proj-cta" data-reveal>
+        <h2 class="proj-cta-title">{copy.ctaTitle}</h2>
+        <p class="proj-cta-text">{copy.ctaSub}</p>
+        <div class="proj-cta-actions">
+          <a href="#contacto" class="btn btn-primary">{copy.ctaPrimary}</a>
+          <a href="mailto:hola@frani.be" class="proj-cta-mail">{copy.ctaSecondary}</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <LinksModal lang={lang} />
 </BaseLayout>
 
 <script>
   import { initReveal } from '../scripts/reveal';
-  import { buildProjectCardHTML, buildFeaturedCardHTML, extractYear, initLinksModal, revealProjectCards, type Project } from '../scripts/projects';
+  import { buildProjectMiniHTML, buildFeaturedCardHTML, extractYear, initLinksModal, revealProjectCards, type Project } from '../scripts/projects';
   import { clientLang } from '../i18n/client';
   initReveal();
+
+  /* Orden editorial de los destacados según la composición definida */
+  const FEATURED_ORDER = ['tanta-plata', 'agencia-de-borde', 'bitluxe'];
 
   async function initProjects() {
     const lang = clientLang();
@@ -94,21 +140,88 @@ const copy = {
     let projects: Project[] = data.projects || [];
     projects.sort((a, b) => extractYear(b.date ?? '') - extractYear(a.date ?? ''));
 
-    const featured = projects.filter(p => p.featured);
+    const featured = projects
+      .filter(p => p.featured)
+      .sort((a, b) => FEATURED_ORDER.indexOf(a.id) - FEATURED_ORDER.indexOf(b.id));
     const rest = projects.filter(p => !p.featured);
 
-    const featuredContainer = document.getElementById('featured-projects');
-    if (featuredContainer) {
-      featuredContainer.innerHTML = featured.map((p, i) => buildFeaturedCardHTML(p, i, lang)).join('');
-    }
+    const featuredContainer = document.getElementById('featured-projects')!;
+    featuredContainer.innerHTML = featured
+      .map((p, i) => buildFeaturedCardHTML(p, i, lang))
+      .join('<div class="proj-sep" aria-hidden="true"><span class="proj-sep-sparkle"></span></div>');
 
-    const container = document.getElementById('all-projects-container');
-    if (!container) return;
-    container.innerHTML = rest.map(p => buildProjectCardHTML(p, lang)).join('');
+    const container = document.getElementById('all-projects-container')!;
+    container.innerHTML = rest.map(p => buildProjectMiniHTML(p, lang)).join('');
 
     revealProjectCards();
     initLinksModal(projects);
+    initFilters();
+  }
+
+  /* Filtros: actúan sobre destacados y exploraciones; recalculan alternancia
+     de bloques visibles, separadores y visibilidad de secciones vacías */
+  function initFilters() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.proj-filter');
+    const featuredSection = document.getElementById('destacados')!;
+    const exploreSection = document.getElementById('exploraciones')!;
+    const featuredWrap = document.getElementById('featured-projects')!;
+
+    function applyFilter(key: string) {
+      const match = (el: HTMLElement) => key === 'all' || el.dataset.service === key;
+
+      // Alternancia recalculada solo entre bloques visibles
+      let visibleIdx = 0;
+      featuredWrap.querySelectorAll<HTMLElement>('.proj-feature').forEach(card => {
+        const show = match(card);
+        card.hidden = !show;
+        card.classList.toggle('proj-flip', show && visibleIdx++ % 2 === 1);
+      });
+      const featuredVisible = visibleIdx > 0;
+
+      // Separadores solo entre bloques visibles consecutivos
+      const seps = featuredWrap.querySelectorAll<HTMLElement>('.proj-sep');
+      let pendingVisible = 0;
+      featuredWrap.querySelectorAll<HTMLElement>('.proj-feature').forEach(card => {
+        if (!card.hidden) pendingVisible++;
+      });
+      let seen = 0;
+      seps.forEach(sep => {
+        let prev = sep.previousElementSibling as HTMLElement | null;
+        while (prev && prev.classList.contains('proj-sep')) prev = prev.previousElementSibling as HTMLElement;
+        const hasPrev = !!prev && !(prev as HTMLElement).hidden;
+        const hasNext = seen < pendingVisible - 1;
+        if (hasPrev) seen++;
+        sep.hidden = !(hasPrev && hasNext);
+      });
+
+      featuredSection.hidden = !featuredVisible;
+
+      let restVisible = 0;
+      document.querySelectorAll<HTMLElement>('#all-projects-container .proj-mini').forEach(card => {
+        const show = match(card);
+        card.hidden = !show;
+        if (show) restVisible++;
+      });
+      exploreSection.hidden = restVisible === 0;
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
+        applyFilter(btn.dataset.filter!);
+      });
+    });
+
+    // Estado inicial: marca alternancia según orden editorial
+    featuredWrap.querySelectorAll<HTMLElement>('.proj-feature').forEach((card, i) => {
+      card.classList.toggle('proj-flip', i % 2 === 1);
+    });
   }
 
   initProjects();
 </script>
+</file-view>

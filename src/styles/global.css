@@ -907,17 +907,161 @@ a.regular-link {
   }
 }
 
-/* ── Proyectos destacados: cards editoriales con media alternada ── */
+/* ── Proyectos: hero editorial claro con filtros ── */
+.proj-hero {
+  background: #fcfaff;
+  border-bottom: 1.5px solid var(--color-border-soft);
+  padding: 7.5rem 0 4rem;
+}
+.dark .proj-hero {
+  background: var(--color-custom-light-grey);
+}
+.proj-hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.proj-hero-title {
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4.5vw, 3.2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--color-custom-black);
+}
+.proj-hero-sub {
+  margin-top: 1.1rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--color-dark-gray);
+  max-width: 32rem;
+}
+.proj-hero-deco {
+  position: relative;
+  min-height: 11rem;
+}
+.proj-hero-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: var(--font-family-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--color-dark-gray);
+}
+.proj-hero-curve {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0;
+  width: min(17.5rem, 90%);
+  stroke: rgba(122, 43, 168, 0.4);
+}
+.dark .proj-hero-curve {
+  stroke: rgba(211, 166, 255, 0.5);
+}
+.proj-hero-sparkle {
+  position: absolute;
+  fill: rgba(158, 88, 216, 0.75);
+}
+.dark .proj-hero-sparkle {
+  fill: rgba(211, 166, 255, 0.85);
+}
+.proj-hero-sparkle--a { width: 0.85rem; top: 2.4rem; right: 8.5rem; }
+.proj-hero-sparkle--b { width: 0.6rem; top: 4.4rem; right: 15rem; }
+.proj-hero-sparkle--c { width: 1.1rem; top: 6.2rem; right: 4.2rem; }
+
+/* Filtros tipo pill: activo morado, resto transparente con borde lavanda */
+.proj-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.proj-filter {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.45rem 1.15rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border-soft);
+  background: transparent;
+  color: var(--color-custom-black);
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.proj-filter:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-accent-text);
+}
+.proj-filter.is-active {
+  background: var(--color-custom-purple);
+  border-color: var(--color-custom-purple);
+  color: #fff;
+}
+.proj-filter:focus-visible {
+  outline: 2px solid var(--color-custom-purple);
+  outline-offset: 2px;
+}
+@media (max-width: 768px) {
+  .proj-hero { padding: 6.5rem 0 3rem; }
+  .proj-hero-grid { grid-template-columns: 1fr; }
+  .proj-hero-deco { display: none; }
+}
+
+/* ── Proyectos destacados: bloques editoriales alternados ── */
+.proj-featured-list {
+  display: flex;
+  flex-direction: column;
+}
 .proj-feature {
   display: grid;
-  grid-template-columns: 5fr 6fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
+  grid-template-columns: 11fr 9fr;
+  gap: clamp(2.5rem, 5vw, 4rem);
   align-items: center;
 }
-.proj-feature:nth-child(even) .proj-feature-media {
+.proj-feature.proj-flip .proj-media-wrap {
   order: 2;
 }
+.proj-feature[hidden] {
+  display: none !important;
+}
+/* Superficie lavanda desplazada e inclinada detrás de la captura recta */
+.proj-media-wrap {
+  position: relative;
+}
+.proj-media-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -0.6rem -0.9rem -0.9rem -0.6rem;
+  border-radius: calc(var(--radius-card) + 0.35rem);
+  background: color-mix(in srgb, var(--color-custom-purple) 10%, var(--color-page));
+  transform: rotate(-2.2deg);
+}
+.proj-flip .proj-media-wrap::before {
+  background: color-mix(in srgb, #f6a8d8 26%, var(--color-page));
+  transform: rotate(2.2deg);
+}
+/* Par de trazos de acento cerca de la esquina superior */
+.proj-media-wrap::after {
+  content: '';
+  position: absolute;
+  top: -0.55rem;
+  left: 1.4rem;
+  width: 1.5rem;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--color-custom-purple);
+  transform: rotate(-38deg);
+  box-shadow: -0.55rem -0.6rem 0 0 color-mix(in srgb, var(--color-custom-purple) 55%, transparent);
+}
+.proj-flip .proj-media-wrap::after {
+  left: auto;
+  right: 1.4rem;
+  transform: rotate(38deg);
+  box-shadow: 0.55rem -0.6rem 0 0 color-mix(in srgb, #f6a8d8 80%, transparent);
+}
 .proj-feature-media {
+  position: relative;
   display: block;
   border-radius: var(--radius-card);
   border: 1.5px solid var(--color-border-soft);
@@ -966,14 +1110,146 @@ a.regular-link {
 .dark .proj-feature-media {
   background: linear-gradient(140deg, #332447 0%, #251b34 100%);
 }
+/* Separador: línea lavanda fina con destello central */
+.proj-sep {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  margin: clamp(1.9rem, 4vw, 2.6rem) 0;
+}
+.proj-sep[hidden] {
+  display: none !important;
+}
+.proj-sep::before,
+.proj-sep::after {
+  content: '';
+  flex: 1;
+  height: 1.5px;
+  background: var(--color-border-soft);
+}
+.proj-sep-sparkle {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--color-custom-purple);
+  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
+}
+/* Más exploraciones: galería ligera */
+.proj-more-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.proj-more-note {
+  font-family: var(--font-family-mono);
+  font-size: 0.78rem;
+  color: var(--color-dark-gray);
+}
+.proj-mini-thumb {
+  display: block;
+  border-radius: 0.9rem;
+  border: 1.5px solid var(--color-border-soft);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(140deg, #faf5ff 0%, #f0e3fc 100%);
+}
+.proj-mini-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.dark .proj-mini-thumb {
+  background: linear-gradient(140deg, #332447 0%, #251b34 100%);
+}
+.proj-mini-title {
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: 1.02rem;
+  line-height: 1.25;
+  color: var(--color-custom-black);
+  margin: 0.85rem 0 0.3rem;
+}
+.proj-mini-desc {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--color-dark-gray);
+  margin-bottom: 0.6rem;
+}
+.proj-mini-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: var(--color-accent-text);
+}
+.proj-mini-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.proj-mini[hidden] {
+  display: none !important;
+}
 @media (max-width: 900px) {
   .proj-feature {
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
-  .proj-feature:nth-child(even) .proj-feature-media {
+  .proj-feature.proj-flip .proj-media-wrap {
     order: 0;
   }
+  .proj-media-wrap::before {
+    inset: -0.45rem -0.6rem -0.6rem -0.45rem;
+    transform: rotate(-1.6deg);
+  }
+  .proj-flip .proj-media-wrap::before {
+    transform: rotate(1.6deg);
+  }
+}
+/* Cierre: bloque de contacto compacto lavanda */
+.proj-cta {
+  text-align: center;
+  background: #f7effd;
+  border: 1.5px solid var(--color-border-soft);
+  border-radius: calc(var(--radius-card) * 1.4);
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+}
+.dark .proj-cta {
+  background: var(--color-surface-muted);
+}
+.proj-cta-title {
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  letter-spacing: -0.015em;
+  color: var(--color-custom-black);
+}
+.proj-cta-text {
+  margin: 0.8rem auto 0;
+  max-width: 30rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--color-dark-gray);
+}
+.proj-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem 1.5rem;
+  margin-top: 1.9rem;
+}
+.proj-cta-mail {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-accent-text);
+}
+.proj-cta-mail:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 /* ---- Trayectoria: hero editorial ---- */
