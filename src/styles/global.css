@@ -796,6 +796,16 @@ a.regular-link {
   height: 2.4rem;
   object-fit: contain;
 }
+/* Misma idea que los stickers del hero: micro sombra/glow según tema
+   para que el arte PNG contraste sobre el tile */
+.icon-tile img,
+.svc-detail-icon {
+  filter: drop-shadow(0 2px 5px rgba(109, 26, 150, 0.18));
+}
+.dark .icon-tile img,
+.dark .svc-detail-icon {
+  filter: drop-shadow(0 0 3px rgba(196, 140, 255, 0.3)) drop-shadow(0 2px 5px rgba(10, 4, 20, 0.3));
+}
 /* Variante de íconos sólidos (pasos del proceso): relleno lavanda,
    detalles internos en blanco; en dark usa el accent claro del sistema */
 .icon-tile--fill {
