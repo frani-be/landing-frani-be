@@ -182,7 +182,7 @@ const jsonLd = {
   <body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
     <a href="#contenido" class="skip-link">{t(lang, 'a11y.skip')}</a>
     <!-- Navigation -->
-    <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation">
+    <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation" aria-label={t(lang, 'nav.main')}>
       <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex items-center justify-between gap-6">
         <div class="logo-container">
           <a href={localePath('/', lang)} aria-label={t(lang, 'nav.home')}>
@@ -287,6 +287,16 @@ const jsonLd = {
       navToggle?.addEventListener('click', () => setNavOpen(navMobile?.classList.contains('hidden') ?? false));
       navMobile?.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => setNavOpen(false));
+      });
+      // Cerrar al hacer click fuera del menú
+      document.addEventListener('click', (e) => {
+        if (navMobile && !navMobile.classList.contains('hidden') && !(e.target as HTMLElement).closest('#navigation')) {
+          setNavOpen(false);
+        }
+      });
+      // Si el viewport crece a desktop con el menú abierto, limpiar estado
+      matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+        if (e.matches && navMobile && !navMobile.classList.contains('hidden')) setNavOpen(false);
       });
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMobile && !navMobile.classList.contains('hidden')) {

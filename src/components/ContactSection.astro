@@ -7,7 +7,7 @@ interface Props { lang?: Lang; }
 const { lang = 'es' } = Astro.props;
 ---
 
-<section class="section-block contact-section text-white relative overflow-hidden" id="contacto">
+<section class="section-block contact-section text-white relative overflow-hidden scroll-mt-20" id="contacto">
   <div class="container-wide relative z-[1]">
     <SectionTitle title={t(lang, 'contact.title')} dark={true} class="mb-16" />
 
