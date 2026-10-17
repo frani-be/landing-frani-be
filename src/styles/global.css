@@ -873,12 +873,6 @@ a.regular-link {
 
 /* ---- Pilares-filtro de trayectoria ---- */
 .pillar-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 0.3rem;
   padding: 1.25rem 1.25rem 1.35rem;
   background: var(--color-surface);
   border: 1.5px solid var(--color-border-soft);
@@ -886,7 +880,18 @@ a.regular-link {
   cursor: pointer;
   font: inherit;
   color: inherit;
+  text-align: left;
   transition: all 0.25s ease;
+}
+/* <button> no siempre establece containing block para hijos absolutos;
+   el wrapper sí, y posiciona el check en la esquina de la card */
+.pillar-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  width: 100%;
 }
 .pillar-card:hover {
   transform: translateY(-2px);
@@ -903,8 +908,8 @@ a.regular-link {
 }
 .pillar-check {
   position: absolute;
-  top: -0.55rem;
-  right: -0.55rem;
+  top: -1.8rem;
+  right: -1.8rem;
   width: 1.35rem;
   height: 1.35rem;
   border-radius: 50%;
