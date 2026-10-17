@@ -951,6 +951,9 @@ a.regular-link {
   font-size: 1.05em;
   margin: 0;
   line-height: 1.3;
+  /* Iguala la altura entre cards para que las descripciones arranquen
+     alineadas aunque un título ocupe dos líneas */
+  min-height: 2.6em;
 }
 .pillar-desc {
   font-size: 0.82rem;
