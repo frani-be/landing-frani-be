@@ -1,4 +1,6 @@
 import { svgIcon } from './icons';
+import { clientStrings, clientLang } from '../i18n/client';
+import type { Lang } from '../i18n/ui';
 
 export interface ProjectLinks {
   demo?: string;
@@ -30,7 +32,9 @@ export function extractYear(d: string) {
   return m ? Math.max(...m.map(Number)) : 0;
 }
 
-export function buildProjectCardHTML(p: Project): string {
+export function buildProjectCardHTML(p: Project, lang: Lang = clientLang()): string {
+  const S = clientStrings[lang];
+  const prefix = lang === 'en' ? '/en' : '';
   const tagsHTML = p.tags.slice(0, 4)
     .map(t => `<span class="tag-mono">${t}</span>`)
     .join('');
@@ -43,13 +47,13 @@ export function buildProjectCardHTML(p: Project): string {
       <div class="p-6 flex-1 flex flex-col">
         <div class="flex flex-wrap gap-2 mb-3">
           ${p.type ? `<span class="tag-mono">${p.type}</span>` : ''}
-          ${p.service && p.serviceLabel ? `<a href="/servicios/${p.service}" class="tag-mono tag-mono--accent">${p.serviceLabel}</a>` : ''}
+          ${p.service && p.serviceLabel ? `<a href="${prefix}/servicios/${p.service}" class="tag-mono tag-mono--accent">${p.serviceLabel}</a>` : ''}
         </div>
         <h3 class="text-xl text-custom-black mb-3 leading-tight">${p.title}</h3>
         <p class="text-custom-dark-gray mb-4 flex-1 text-sm">${p.description}</p>
         <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border-soft">${tagsHTML}</div>
         <div class="mt-6 flex gap-3">
-          <a href="/proyectos/${p.id}" class="btn btn-secondary flex-1 text-center">Ver proyecto${svgIcon('upRight', 'btn-arrow')}</a>
+          <a href="${prefix}/proyectos/${p.id}" class="btn btn-secondary flex-1 text-center">${S['projects.view']}${svgIcon('upRight', 'btn-arrow')}</a>
           ${hasLinks ? `<button class="btn btn-tertiary links-btn" data-id="${p.id}">Links</button>` : ''}
         </div>
       </div>
@@ -62,16 +66,17 @@ export function initLinksModal(projects: Project[]) {
 
   function showLinksModal(links: ProjectLinks, trigger: HTMLElement) {
     const body = document.getElementById('links-modal-body')!;
-    const closeBtn = modal!.querySelector('button[aria-label="Cerrar"]') as HTMLElement;
+    const closeBtn = modal!.querySelector('.modal-close') as HTMLElement;
     const overlay = modal!.querySelector('.absolute.inset-0') as HTMLElement;
     const items: string[] = [];
     const iconLink = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
     const iconCode = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>';
     const iconDoc = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>';
     const itemClass = 'flex items-center gap-3 px-6 py-1 bg-surface-muted border border-border-soft rounded-[0.75rem] text-custom-black font-semibold hover:translate-x-1 transition-all';
+    const S = clientStrings[clientLang()];
     if (links.demo) items.push(`<a href="${links.demo}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconLink} Preview</a>`);
-    if (links.repo) items.push(`<a href="${links.repo}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconCode} Repositorio</a>`);
-    if (links.caseStudy) items.push(`<a href="${links.caseStudy}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconDoc} Caso de estudio</a>`);
+    if (links.repo) items.push(`<a href="${links.repo}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconCode} ${S['links.repo']}</a>`);
+    if (links.caseStudy) items.push(`<a href="${links.caseStudy}" target="_blank" rel="noopener noreferrer" class="${itemClass}">${iconDoc} ${S['links.case']}</a>`);
     body.innerHTML = items.join('');
     modal!.classList.remove('hidden');
     closeBtn.focus();

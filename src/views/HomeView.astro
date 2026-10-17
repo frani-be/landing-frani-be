@@ -1,0 +1,365 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionTitle from '../components/SectionTitle.astro';
+import LinksModal from '../components/LinksModal.astro';
+import EmbroideryPattern from '../components/EmbroideryPattern.astro';
+import ArrowIcon from '../components/ArrowIcon.astro';
+import { serviceIcons } from '../scripts/serviceIcons';
+import { localePath, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+
+const copy = {
+  es: {
+    title: 'Frani Medina | Diseñadora UX Estratégica y Front-End Engineer',
+    description: 'Portafolio de Francisca Medina (Frani): diseño UX estratégico, desarrollo front-end, charlas tech y mentorías STEAM desde Chile.',
+    eyebrow: '1 cupo disponible para nuevos proyectos',
+    hi: '¡Hola! Soy',
+    role: 'Diseñadora UX estratégica y desarrolladora front-end',
+    tagline: 'Impulso talento en STEAM y creo tecnología con propósito.',
+    ctaCall: 'Agenda una videollamada',
+    ctaContact: 'Contáctame',
+    imgAlt: 'Ilustración de Frani programando en su laptop junto a una taza de té',
+    rolesSr: 'Diseñadora UX estratégica, desarrolladora front-end, charlista tech e impulsora STEAM',
+    roles: ['Diseñadora UX estratégica', 'Desarrolladora front-end', 'Charlista tech', 'Impulsora STEAM'],
+    scrollAria: 'Ir a la sección de trayectoria profesional',
+    scrollTitle: 'Conoce mi trayectoria profesional',
+    scrollLabel: 'Ver mi trayectoria',
+    secTrajectory: 'Últimas 3 experiencias de mi Trayectoria',
+    viewFullTrajectory: 'Ver trayectoria completa',
+    secServices: 'Todo lo que puedo hacer por ti',
+    secServicesSub: 'Diseño, código y estrategia en una sola persona: sin fricción entre etapas ni tres proveedores distintos.',
+    services: [
+      { slug: 'desarrollo-web', title: 'Lanza tu sitio web', desc: 'Diseño y desarrollo tu sitio completo: rápido, autogestionable y a tu medida. De la idea al aire.' },
+      { slug: 'diseno-grafico', title: 'Haz única tu marca', desc: 'Identidad visual completa: logo, paleta y piezas coherentes que comunican lo mismo en todo canal.' },
+      { slug: 'estrategia-ux', title: 'Ordena tu producto', desc: 'Auditoría UX basada en evidencia: research, arquitectura, prototipos y tests que hacen fluir a usuarios.' },
+      { slug: 'clases-particulares', title: 'Aprende a tu ritmo', desc: 'Clases 1 a 1 de diseño, UX o front-end con proyectos reales y feedback directo en cada sesión.' },
+    ],
+    learnMore: 'Saber más',
+    viewAllServices: 'Ver todos los servicios',
+    secProjects: 'Proyectos que me enorgullecen',
+    viewAllProjects: 'Ver todos los proyectos',
+    commTitle: 'Docencia y comunidad',
+    commText: 'Llevo años en escenarios, bootcamps y comunidades STEAM enseñando diseño y código. El conocimiento también se comparte: por eso doy charlas, mentorías y clases.',
+    commAlt: 'Ilustración de Frani dando una charla tech desde un atril, con micrófono y credencial',
+    commTags: ['Charlas', 'Mentorías', 'Comunidad STEAM'],
+    commCta: 'Ver videos de charlas',
+  },
+  en: {
+    title: 'Frani Medina | Strategic UX Designer & Front-End Engineer',
+    description: 'Portfolio of Francisca Medina (Frani): strategic UX design, front-end development, tech talks and STEAM mentoring from Chile.',
+    eyebrow: '1 slot available for new projects',
+    hi: "Hi! I'm",
+    role: 'Strategic UX designer and front-end developer',
+    tagline: 'I champion STEAM talent and build technology with purpose.',
+    ctaCall: 'Book a video call',
+    ctaContact: 'Contact me',
+    imgAlt: 'Illustration of Frani coding on her laptop next to a cup of tea',
+    rolesSr: 'Strategic UX designer, front-end developer, tech speaker and STEAM advocate',
+    roles: ['Strategic UX designer', 'Front-end developer', 'Tech speaker', 'STEAM advocate'],
+    scrollAria: 'Go to professional experience section',
+    scrollTitle: 'See my professional experience',
+    scrollLabel: 'See my experience',
+    secTrajectory: 'My 3 most recent experiences',
+    viewFullTrajectory: 'View full experience',
+    secServices: 'Everything I can do for you',
+    secServicesSub: 'Design, code and strategy in one person: no friction between stages, no three different vendors.',
+    services: [
+      { slug: 'desarrollo-web', title: 'Launch your website', desc: 'I design and build your full site: fast, self-manageable and tailored. From idea to launch.' },
+      { slug: 'diseno-grafico', title: 'Make your brand unique', desc: 'Complete visual identity: logo, palette and consistent assets that speak the same language everywhere.' },
+      { slug: 'estrategia-ux', title: 'Streamline your product', desc: 'Evidence-based UX audit: research, architecture, prototypes and tests that make users flow.' },
+      { slug: 'clases-particulares', title: 'Learn at your own pace', desc: '1-on-1 classes in design, UX or front-end with real projects and direct feedback every session.' },
+    ],
+    learnMore: 'Learn more',
+    viewAllServices: 'View all services',
+    secProjects: "Projects I'm proud of",
+    viewAllProjects: 'View all projects',
+    commTitle: 'Teaching & community',
+    commText: "I've spent years on stages, bootcamps and STEAM communities teaching design and code. Knowledge is also meant to be shared: that's why I give talks, mentoring and classes.",
+    commAlt: 'Illustration of Frani giving a tech talk from a podium, with microphone and badge',
+    commTags: ['Talks', 'Mentoring', 'STEAM community'],
+    commCta: 'Watch my talks',
+  },
+}[lang];
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+  lang={lang}
+>
+  <!-- Header / Hero -->
+  <header
+    class="hero-home pt-40 pb-32 text-center lg:text-left min-h-screen w-screen relative overflow-hidden isolate"
+    id="header"
+  >
+    <div
+      class="container-wide flex flex-col lg:flex-row gap-12 items-center relative z-[1]"
+      id="header-container"
+    >
+      <div class="w-full lg:w-3/5">
+        <span class="hero-eyebrow" data-reveal data-reveal-delay="50">{copy.eyebrow}</span>
+        <h1 class="mt-6 text-custom-black leading-[0.95]" data-reveal data-reveal-delay="150">
+          <span class="block text-[1.05em] lg:text-[1.2em] font-medium">{copy.hi}</span>
+          <span class="text-gradient block text-[2.4em] lg:text-[3em]">Frani</span>
+        </h1>
+        <h2 class="text-[1.4em] mt-5" data-reveal data-reveal-delay="450">{copy.role}</h2>
+        <p class="text-[1.15em] mt-3 text-custom-dark-gray" data-reveal data-reveal-delay="650">{copy.tagline}</p>
+        <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="900">
+          <a
+            href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
+            class="btn btn-primary"
+            target="_blank"
+          >{copy.ctaCall}</a>
+          <a
+            href="#contacto"
+            class="btn btn-secondary"
+          >{copy.ctaContact}</a>
+        </div>
+      </div>
+
+      <div class="relative flex flex-col gap-6 items-center w-full lg:w-2/5" data-reveal data-reveal-delay="550">
+        <EmbroideryPattern class="absolute -top-8 right-0 lg:-right-8 rotate-6" cells={5} />
+        <figure class="hero-photo-wrap">
+          <img
+            src="/images/frani.png"
+            alt={copy.imgAlt}
+            id="main-image"
+            class="illus-frame"
+          />
+          <svg class="hero-sparkle" viewBox="0 0 46 46" aria-hidden="true">
+            <path d="M11 1l2.8 8.2L22 12l-8.2 2.8L11 23l-2.8-8.2L0 12l8.2-2.8z" fill="#f6a8d8"/>
+            <path d="M37 26l1.5 4.4 4.4 1.5-4.4 1.5L37 37.8l-1.5-4.4-4.4-1.5 4.4-1.5z" fill="#8b2db3"/>
+          </svg>
+        </figure>
+        <p id="message">
+          <span class="sr-only">{copy.rolesSr}</span>
+          <span class="iterate-message text-custom-purple" aria-hidden="true">
+            {copy.roles.map(r => <span>{r}</span>)}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Scroll button -->
+    <div class="text-center mt-16 scroll-btn relative">
+      <a
+        href="#timeline"
+        id="scroll-to-timeline"
+        class="text-custom-purple py-3 px-6 cursor-pointer transition-all font-primary font-medium inline-block"
+        aria-label={copy.scrollAria}
+        title={copy.scrollTitle}
+      >
+        <ArrowIcon name="down" class="mr-1" />
+        {copy.scrollLabel}
+      </a>
+    </div>
+  </header>
+
+  <!-- Timeline Section -->
+  <section class="bg-custom-light-grey section-block border-t border-custom-dark-gray/25" id="timeline">
+    <div class="container-wide">
+      <SectionTitle title={copy.secTrajectory} tag="01_trayectoria" />
+
+      <div class="max-w-[820px] mx-auto">
+        <div id="timeline-container" class="list-view"></div>
+        <div class="text-center mt-8">
+          <a href={localePath('/trayectoria', lang)} class="btn btn-primary">
+            {copy.viewFullTrajectory}<ArrowIcon name="upRight" class="btn-arrow" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section class="section-block bg-surface" id="servicios">
+    <div class="container-wide">
+      <SectionTitle
+        title={copy.secServices}
+        subtitle={copy.secServicesSub}
+        tag="02_servicios"
+        class="mb-16"
+      />
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {copy.services.map((s, i) => (
+          <article class="service-card" data-reveal data-reveal-delay={String(i * 100)}>
+            <div class="service-card-icon"><img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" /></div>
+            <div class="p-6 flex flex-col flex-1">
+              <h4 class="text-xl mb-3">{s.title}</h4>
+              <p class="text-custom-dark-gray text-sm flex-1">{s.desc}</p>
+              <a href={localePath(`/servicios/${s.slug}`, lang)} class="btn btn-secondary">{copy.learnMore}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="text-center mt-12" data-reveal data-reveal-delay="400">
+        <a href={localePath('/servicios', lang)} class="btn btn-primary">{copy.viewAllServices}<ArrowIcon name="upRight" class="btn-arrow" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section class="section-block bg-custom-light-grey" id="proyectos">
+    <div class="container-wide">
+      <SectionTitle title={copy.secProjects} tag="03_proyectos" />
+
+      <div id="featured-projects-container" class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+      <div class="text-center mt-12">
+        <a href={localePath('/proyectos', lang)} class="btn btn-primary">
+          {copy.viewAllProjects}<ArrowIcon name="upRight" class="btn-arrow" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Docencia y Comunidad -->
+  <section class="section-block-sm bg-surface" id="comunidad">
+    <div class="container-mid flex flex-col lg:flex-row items-center gap-12 lg:gap-16 text-center lg:text-left">
+      <figure class="shrink-0" data-reveal>
+        <img
+          src="/images/charla.png"
+          alt={copy.commAlt}
+          class="illus-frame max-w-[300px]"
+          loading="lazy"
+        />
+      </figure>
+      <div class="flex-1" data-reveal data-reveal-delay="150">
+        <span class="section-tag">04_comunidad</span>
+        <h3 class="text-2xl lg:text-3xl mb-4">{copy.commTitle}</h3>
+        <p class="text-custom-dark-gray leading-relaxed">{copy.commText}</p>
+        <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
+          {copy.commTags.map(tag => <span class="tag-mono">{tag}</span>)}
+        </div>
+        <a href={localePath('/charlas', lang)} class="btn btn-secondary mt-6">{copy.commCta}<ArrowIcon name="upRight" class="btn-arrow" /></a>
+      </div>
+    </div>
+  </section>
+
+  <LinksModal lang={lang} />
+</BaseLayout>
+
+<script>
+  import { initReveal } from '../scripts/reveal';
+  initReveal();
+</script>
+
+<script>
+  // Iterate message animation
+  const iterateMessage = document.querySelector('.iterate-message');
+  if (iterateMessage) {
+    const messages = iterateMessage.querySelectorAll('span');
+    const messageCount = messages.length;
+    const durationPerMessage = 4;
+    const totalDuration = messageCount * durationPerMessage;
+    messages.forEach((message, index) => {
+      const delay = -(messageCount - 1 - index) * durationPerMessage;
+      (message as HTMLElement).style.setProperty('--animation-duration', `${totalDuration}s`);
+      (message as HTMLElement).style.setProperty('--animation-delay', `${delay}s`);
+    });
+  }
+</script>
+
+<script>
+  import { svgIcon } from '../scripts/icons';
+  import { clientLang, cs, clientStrings } from '../i18n/client';
+
+  // Timeline (home preview - 3 items)
+  interface TimelineItem {
+    id: number;
+    title: string;
+    company: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    category: string;
+    description: string;
+  }
+
+  const lang = clientLang();
+  const S = clientStrings[lang];
+
+  const strokeIcon = (inner: string) =>
+    `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cat-icon" aria-hidden="true">${inner}</svg>`;
+
+  const CATEGORIES: Record<string, { label: string; color: string; icon: string }> = {
+    laboral:       { label: S['cat.laboral'],       color: '#2555a3', icon: strokeIcon('<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9.5 8.5 8 10.5l1.5 2"/><path d="M14.5 8.5 16 10.5l-1.5 2"/>') },
+    academica:     { label: S['cat.academica'],     color: '#9f2eba', icon: strokeIcon('<path d="M2 9.5L12 5l10 4.5-10 4.5z"/><path d="M6 12v4c3 2 9 2 12 0v-4"/>') },
+    docencia:      { label: S['cat.docencia'],      color: '#7d1fc7', icon: strokeIcon('<path d="M4 4.5h5a4 4 0 0 1 3 1.7A4 4 0 0 1 15 4.5h5V19h-5a3 3 0 0 0-3 1.5A3 3 0 0 0 9 19H4z"/>') },
+    voluntariados: { label: S['cat.voluntariados'], color: '#bd2c97', icon: strokeIcon('<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>') },
+  };
+
+  function formatRange(start: string, end: string) {
+    const s = start.slice(0, 4);
+    const e = end === 'actualidad' ? S.present : end.slice(0, 4);
+    return s === e ? s : `${s}–${e}`;
+  }
+
+  function createListItem(item: TimelineItem) {
+    const cat = CATEGORIES[item.category] || { label: item.category, color: '#5c5766', icon: '' };
+    return `
+      <a class="l-item opacity-0 transition-all duration-500"
+         href="${lang === 'en' ? '/en' : ''}/trayectoria#exp-${item.id}"
+         style="--category-color: ${cat.color}; transform: translateY(20px);">
+        <span class="l-dates">${formatRange(item.startDate, item.endDate)}</span>
+        <span class="l-body">
+          <span class="l-title">${item.title}</span>
+          <span class="l-org">${item.company} • ${item.location}</span>
+        </span>
+        <span class="timeline-category l-cat">${cat.icon}${cat.label}</span>
+        ${svgIcon('chevronRight', 'l-arrow')}
+      </a>`;
+  }
+
+  async function initTimeline() {
+    const res = await fetch(lang === 'en' ? '/data/timeline.en.json' : '/data/timeline.json');
+    const data = await res.json();
+    let items: TimelineItem[] = data.timeline || [];
+
+    const isCurrent = (i: TimelineItem) => i.endDate === 'actualidad';
+    const byEndDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.endDate + '-01').getTime() - new Date(a.endDate + '-01').getTime();
+    const byStartDesc = (a: TimelineItem, b: TimelineItem) =>
+      new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime();
+    items = [
+      ...items.filter(isCurrent).sort(byStartDesc),
+      ...items.filter(i => !isCurrent(i)).sort(byEndDesc),
+    ].slice(0, 3);
+
+    const container = document.getElementById('timeline-container');
+    if (!container) return;
+    container.innerHTML = items.map(createListItem).join('');
+
+    setTimeout(() => {
+      document.querySelectorAll('.l-item').forEach((el, i) => {
+        setTimeout(() => el.classList.add('animate-in'), i * 100);
+      });
+    }, 50);
+  }
+  initTimeline();
+</script>
+
+<script>
+  import { buildProjectCardHTML, extractYear, initLinksModal, revealProjectCards, type Project } from '../scripts/projects';
+  import { clientLang } from '../i18n/client';
+
+  async function initProjects() {
+    const lang = clientLang();
+    const res = await fetch(lang === 'en' ? '/data/projects.en.json' : '/data/projects.json');
+    const data = await res.json();
+    let projects: Project[] = (data.projects || []).filter((p: Project) => p.featured);
+    projects.sort((a, b) => extractYear(b.date ?? '') - extractYear(a.date ?? ''));
+
+    const container = document.getElementById('featured-projects-container');
+    if (!container) return;
+
+    container.innerHTML = projects.map(p => buildProjectCardHTML(p, lang)).join('');
+    revealProjectCards();
+    initLinksModal(data.projects || []);
+  }
+  initProjects();
+</script>

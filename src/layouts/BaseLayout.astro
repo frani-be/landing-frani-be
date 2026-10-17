@@ -2,20 +2,36 @@
 import '../styles/global.css';
 import ContactSection from '../components/ContactSection.astro';
 import EmbroideryPattern from '../components/EmbroideryPattern.astro';
+import { t, localePath, type Lang } from '../i18n/ui';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  lang?: Lang;
 }
+
+const defaultDescriptions: Record<Lang, string> = {
+  es: 'Portafolio de Francisca Medina (Frani): diseño UX estratégico, desarrollo front-end, charlas tech y mentorías STEAM desde Chile.',
+  en: 'Portfolio of Francisca Medina (Frani): strategic UX design, front-end development, tech talks and STEAM mentoring from Chile.',
+};
 
 const {
   title,
-  description = 'Portafolio de Francisca Medina (Frani): diseño UX estratégico, desarrollo front-end, charlas tech y mentorías STEAM desde Chile.',
+  description,
   ogImage = 'https://frani.be/images/logo.jpg',
+  lang = 'es',
 } = Astro.props;
+const metaDescription = description ?? defaultDescriptions[lang];
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? 'https://frani.be').href;
+
+// Ruta sin prefijo de idioma para calcular la URL alterna
+const pathname = Astro.url.pathname;
+const basePath = pathname.replace(/^\/en(?=\/|$)/, '') || '/';
+const altLang: Lang = lang === 'es' ? 'en' : 'es';
+const esUrl = new URL(basePath, Astro.site ?? 'https://frani.be').href;
+const enUrl = new URL(localePath(basePath, 'en'), Astro.site ?? 'https://frani.be').href;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +44,7 @@ const jsonLd = {
       url: 'https://frani.be/',
       image: 'https://frani.be/images/frani.png',
       jobTitle: 'Diseñadora UX Estratégica y Front-End Engineer',
-      description,
+      description: metaDescription,
       email: 'mailto:hola@frani.be',
       nationality: { '@type': 'Country', name: 'Chile' },
       knowsAbout: [
@@ -53,7 +69,7 @@ const jsonLd = {
       '@type': 'WebPage',
       url: canonicalUrl,
       name: title,
-      description,
+      description: metaDescription,
       inLanguage: 'es-CL',
       isPartOf: { '@id': 'https://frani.be/#sitio' },
     },
@@ -62,13 +78,13 @@ const jsonLd = {
 ---
 
 <!doctype html>
-<html lang="es" class="overflow-x-hidden">
+<html lang={lang} class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="author" content="Francisca Beatriz Medina Concha" />
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href={canonicalUrl} />
 
@@ -78,7 +94,7 @@ const jsonLd = {
     <meta property="og:site_name" content="frani.be" />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content="Francisca Medina (Frani), diseñadora UX estratégica y front-end" />
     <meta property="og:image:width" content="1200" />
@@ -88,11 +104,37 @@ const jsonLd = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
+    <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Datos estructurados -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
+
+    <!-- Idioma: primera visita detecta navigator.language; la elección persiste -->
+    <script is:inline>
+      (function () {
+        try {
+          if (!localStorage.getItem('lang')) {
+            var nav = (navigator.language || 'es').toLowerCase();
+            var detected = nav.indexOf('es') === 0 ? 'es' : 'en';
+            var path = location.pathname;
+            var isEn = path === '/en' || path.indexOf('/en/') === 0;
+            if (path === '/' && detected === 'en') {
+              localStorage.setItem('lang', 'en');
+              location.replace('/en/');
+              return;
+            }
+            // Deep links: si la URL es /en respétala; si no, guarda la preferencia detectada
+            localStorage.setItem('lang', isEn ? 'en' : detected);
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- Tema: aplicar clase antes del primer paint para evitar FOUC -->
     <script is:inline>
@@ -125,27 +167,33 @@ const jsonLd = {
   </head>
 
   <body class="overflow-x-hidden font-primary font-light text-custom-black text-base lg:text-lg">
-    <a href="#contenido" class="skip-link">Saltar al contenido</a>
+    <a href="#contenido" class="skip-link">{t(lang, 'a11y.skip')}</a>
     <!-- Navigation -->
     <nav class="fixed top-0 left-1/2 -translate-x-1/2 w-full py-4 pb-6 z-[3] overflow-visible" id="navigation">
       <div class="w-full px-8 mx-auto max-w-[540px] sm:max-w-[722px] md:max-w-[900px] lg:max-w-[1220px] xl:max-w-[1380px] flex items-center justify-between gap-6">
         <div class="logo-container">
-          <a href="/" aria-label="Ir al inicio">
+          <a href={localePath('/', lang)} aria-label={t(lang, 'nav.home')}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70.3">
               <use href="/images/icons.svg#logo"></use>
             </svg>
           </a>
         </div>
         <div class="hidden md:flex items-center gap-1">
-          <a href="/trayectoria" class="nav-link">Trayectoria</a>
-          <a href="/servicios" class="nav-link">Servicios</a>
-          <a href="/proyectos" class="nav-link">Proyectos</a>
-          <a href="#contacto" class="btn btn-primary ml-2" style="padding:0.55rem 1.4rem">Contacto</a>
+          <a href={localePath('/trayectoria', lang)} class="nav-link">{t(lang, 'nav.experience')}</a>
+          <a href={localePath('/servicios', lang)} class="nav-link">{t(lang, 'nav.services')}</a>
+          <a href={localePath('/proyectos', lang)} class="nav-link">{t(lang, 'nav.projects')}</a>
+          <a href="#contacto" class="btn btn-primary ml-2" style="padding:0.55rem 1.4rem">{t(lang, 'nav.contact')}</a>
         </div>
+        <button
+          id="lang-toggle"
+          class="nav-link font-mono text-[0.8rem] tracking-[0.08em] uppercase cursor-pointer bg-transparent border-0"
+          data-alt-url={localePath(basePath, altLang)}
+          aria-label={t(lang, 'nav.lang.switch')}
+        >{altLang}</button>
         <button
           id="theme-toggle"
           class="flex items-center justify-center w-10 h-10 rounded-full text-custom-dark-gray hover:text-custom-purple hover:bg-custom-purple/10 transition-all"
-          aria-label="Cambiar entre tema claro y oscuro"
+          aria-label={t(lang, 'nav.theme')}
         >
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
@@ -159,7 +207,9 @@ const jsonLd = {
           class="md:hidden flex items-center justify-center w-10 h-10 rounded-full text-custom-dark-gray hover:text-custom-purple hover:bg-custom-purple/10 transition-all"
           aria-expanded="false"
           aria-controls="nav-mobile"
-          aria-label="Abrir menú de navegación"
+          aria-label={t(lang, 'nav.menu.open')}
+          data-aria-open={t(lang, 'nav.menu.open')}
+          data-aria-close={t(lang, 'nav.menu.close')}
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
             <path class="nav-icon-open" d="M4 7h16M4 12h16M4 17h16" />
@@ -169,17 +219,17 @@ const jsonLd = {
       </div>
       <div id="nav-mobile" class="md:hidden hidden px-8 pb-4">
         <div class="flex flex-col gap-1 bg-surface/90 rounded-[var(--radius-card)] border border-border-soft shadow-lg p-3">
-          <a href="/trayectoria" class="nav-link">Trayectoria</a>
-          <a href="/servicios" class="nav-link">Servicios</a>
-          <a href="/proyectos" class="nav-link">Proyectos</a>
-          <a href="#contacto" class="btn btn-primary mt-2" style="padding:0.6rem 1.4rem">Contacto</a>
+          <a href={localePath('/trayectoria', lang)} class="nav-link">{t(lang, 'nav.experience')}</a>
+          <a href={localePath('/servicios', lang)} class="nav-link">{t(lang, 'nav.services')}</a>
+          <a href={localePath('/proyectos', lang)} class="nav-link">{t(lang, 'nav.projects')}</a>
+          <a href="#contacto" class="btn btn-primary mt-2" style="padding:0.6rem 1.4rem">{t(lang, 'nav.contact')}</a>
         </div>
       </div>
     </nav>
 
     <main id="contenido">
       <slot />
-      <ContactSection />
+      <ContactSection lang={lang} />
     </main>
 
     <!-- Footer -->
@@ -189,7 +239,7 @@ const jsonLd = {
         <p class="text-[0.75em] opacity-90">
           © <span id="current-year"></span> frani.be
         </p>
-        <p class="site-signature">// hecho con código, curiosidad y té</p>
+        <p class="site-signature">{t(lang, 'footer.signature')}</p>
       </div>
     </footer>
 
@@ -202,11 +252,13 @@ const jsonLd = {
       const navToggle = document.getElementById('nav-toggle');
       const navMobile = document.getElementById('nav-mobile');
       const nav = document.getElementById('navigation');
+      const ariaOpen = navToggle?.dataset.ariaOpen || 'Open navigation menu';
+      const ariaClose = navToggle?.dataset.ariaClose || 'Close navigation menu';
       const setNavOpen = (open: boolean) => {
         navMobile?.classList.toggle('hidden', !open);
         nav?.classList.toggle('nav-open', open);
         navToggle?.setAttribute('aria-expanded', String(open));
-        navToggle?.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+        navToggle?.setAttribute('aria-label', open ? ariaClose : ariaOpen);
         navToggle?.querySelector('.nav-icon-open')?.classList.toggle('hidden', open);
         navToggle?.querySelector('.nav-icon-close')?.classList.toggle('hidden', !open);
       };
@@ -233,6 +285,13 @@ const jsonLd = {
         const dark = document.documentElement.classList.toggle('dark');
         localStorage.setItem('theme', dark ? 'dark' : 'light');
         syncThemeIcon();
+      });
+
+      // Cambio de idioma: persiste la elección y navega a la URL equivalente
+      document.getElementById('lang-toggle')?.addEventListener('click', () => {
+        const url = document.getElementById('lang-toggle')!.dataset.altUrl!;
+        localStorage.setItem('lang', url === '/en' || url.startsWith('/en/') ? 'en' : 'es');
+        location.href = url;
       });
     </script>
   </body>
