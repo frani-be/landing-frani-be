@@ -311,6 +311,13 @@ const jsonLd = {
         syncThemeIcon();
       });
 
+      // Si el usuario no eligió tema, seguir cambios del sistema en vivo
+      matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('theme')) return;
+        document.documentElement.classList.toggle('dark', e.matches);
+        syncThemeIcon();
+      });
+
       // Cambio de idioma: persiste la elección y navega a la URL equivalente
       document.getElementById('lang-toggle')?.addEventListener('click', () => {
         const url = document.getElementById('lang-toggle')!.dataset.altUrl!;
