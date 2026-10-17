@@ -2,7 +2,7 @@
   "timeline": [
     {
       "id": 1,
-      "title": "Líder UX + Front-End",
+      "title": "Líder UX + front-end",
       "category": "laboral",
       "startDate": "2024-04",
       "endDate": "2025-07",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "title": "Desarrolladora UX + Front-End",
+      "title": "Desarrolladora UX + front-end",
       "category": "laboral",
       "startDate": "2023-09",
       "endDate": "2024-04",
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "title": "Analista de Negocio (CRO)",
+      "title": "Analista de negocio (CRO)",
       "category": "laboral",
       "startDate": "2022-03",
       "endDate": "2023-09",
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "title": "Gestora de Cuentas Clave (KAM)",
+      "title": "Gestora de cuentas clave (KAM)",
       "category": "laboral",
       "startDate": "2021-01",
       "endDate": "2021-08",
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "title": "Diseñadora Gráfica & Desarrolladora Web Freelance",
+      "title": "Diseñadora gráfica y desarrolladora web freelance",
       "category": "laboral",
       "startDate": "2016-07",
       "endDate": "actualidad",
@@ -62,11 +62,11 @@
     },
     {
       "id": 7,
-      "title": "Diplomado Postítulo en Ingeniería de Software",
+      "title": "Diplomado postítulo en Ingeniería de Software",
       "category": "academica",
       "startDate": "2025-04",
       "endDate": "2025-08",
-      "description": "Cursé el **Diploma de Postítulo en Ingeniería de Software** donde profundicé en técnicas de ingeniería de software, con foco en aplicar prácticas industriales y planificar técnicamente proyectos.\n- **Plan de estudios:** ingeniería de requisitos, programación orientada a objetos, arquitectura de software, seminario de actualización tecnológica y taller práctico.\n- **Objetivo principal:** dominar las técnicas actuales para diseñar, programar y dirigir el desarrollo de software de calidad.\n- **Proyecto final:** microservicio de filtrado inteligente de licitaciones públicas.",
+      "description": "Cursé el **diploma de postítulo en Ingeniería de Software** donde profundicé en técnicas de ingeniería de software, con foco en aplicar prácticas industriales y planificar técnicamente proyectos.\n- **Plan de estudios:** ingeniería de requisitos, programación orientada a objetos, arquitectura de software, seminario de actualización tecnológica y taller práctico.\n- **Objetivo principal:** dominar las técnicas actuales para diseñar, programar y dirigir el desarrollo de software de calidad.\n- **Proyecto final:** microservicio de filtrado inteligente de licitaciones públicas.",
       "company": "Universidad de Chile",
       "location": "Santiago, Chile"
     },
@@ -112,17 +112,17 @@
     },
     {
       "id": 12,
-      "title": "Título de Diseñadora Estratégica",
+      "title": "Título de Diseñadora estratégica",
       "category": "academica",
       "startDate": "2015-03",
       "endDate": "2020-12",
-      "description": "Obtuve el **Título Profesional de Diseñadora Integral**, completando la malla de bachillerato + licenciatura + título.\n- **Plan de estudios:** talleres de proyecto, identidad y producto; ergonomía, estructuras y materiales, procesos de producción, interacción y UX, programación creativa y visualización de datos.\n- **Prácticas profesionales:** 240 h en Cencosud S.A. (diseño UX/e-commerce) y 360 h en TECHO-Chile (diseño gráfico y comunicaciones).\n- **Proyecto de pre-título:** *Neotipos* — exploración de isotipos algorítmicos para identidades visuales adaptativas.\n- **Proyecto de título:** *Algórica* — plataforma web que utiliza visualizaciones interactivas para enseñar matemáticas en educación básica.",
+      "description": "Obtuve el **título profesional de Diseñadora integral**, completando la malla de bachillerato + licenciatura + título.\n- **Plan de estudios:** talleres de proyecto, identidad y producto; ergonomía, estructuras y materiales, procesos de producción, interacción y UX, programación creativa y visualización de datos.\n- **Prácticas profesionales:** 240 h en Cencosud S.A. (diseño UX/e-commerce) y 360 h en TECHO-Chile (diseño gráfico y comunicaciones).\n- **Proyecto de pre-título:** *Neotipos* — exploración de isotipos algorítmicos para identidades visuales adaptativas.\n- **Proyecto de título:** *Algórica* — plataforma web que utiliza visualizaciones interactivas para enseñar matemáticas en educación básica.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
     {
       "id": 13,
-      "title": "Certificado Interdisciplinario en Desarrollo de Productos y Servicios Digitales",
+      "title": "Certificado interdisciplinario en Desarrollo de Productos y Servicios Digitales",
       "category": "academica",
       "startDate": "2017-03",
       "endDate": "2020-12",
@@ -132,7 +132,7 @@
     },
     {
       "id": 14,
-      "title": "Profesora Adjunta – Narración Gráfica de No Ficción",
+      "title": "Profesora adjunta – Narración Gráfica de No Ficción",
       "category": "docencia",
       "startDate": "2023-08",
       "endDate": "2024-08",
@@ -142,7 +142,7 @@
     },
     {
       "id": 15,
-      "title": "Docente – Introducción a la IA para Niñas",
+      "title": "Docente – Introducción a la IA para niñas",
       "category": "docencia",
       "startDate": "2021-03",
       "endDate": "2021-06",
@@ -152,7 +152,7 @@
     },
     {
       "id": 16,
-      "title": "Coordinadora académica – Diplomado Visualización de Datos",
+      "title": "Coordinadora académica – Diplomado en Visualización de Datos",
       "category": "docencia",
       "startDate": "2021-04",
       "endDate": "2021-07",
@@ -162,7 +162,7 @@
     },
     {
       "id": 17,
-      "title": "Docente – Blended Learning y Planificación de Aulas Semi-presenciales",
+      "title": "Docente – Blended learning y planificación de aulas semipresenciales",
       "category": "docencia",
       "startDate": "2021-01",
       "endDate": "2021-03",
@@ -192,11 +192,11 @@
     },
     {
       "id": 20,
-      "title": "Tutora Particular de Diseño y Desarrollo Web",
+      "title": "Tutora particular de diseño y desarrollo web",
       "category": "docencia",
       "startDate": "2018-03",
       "endDate": "2018-11",
-      "description": "Impartí clases particulares de **Diseño Gráfico y Desarrollo Web** adaptadas a una estudiante sorda, comunicándonos directamente mediante lenguaje visual, gestos y apuntes escritos.\n- Enseñé herramientas Adobe (Illustrator, Photoshop e InDesign) para crear identidad visual y maquetar piezas gráficas.\n- Introduje HTML5 y CSS3, guiándola en la construcción de un portafolio web responsivo.\n- Preparé material de apoyo de alto contraste, diagramas paso a paso y video-tutoriales subtitulados para reforzar el aprendizaje.\n- Fomenté su autonomía y confianza, entregándole recursos inclusivos y rutas de aprendizaje continuo.",
+      "description": "Impartí clases particulares de **diseño gráfico y desarrollo web** adaptadas a una estudiante sorda, comunicándonos directamente mediante lenguaje visual, gestos y apuntes escritos.\n- Enseñé herramientas Adobe (Illustrator, Photoshop e InDesign) para crear identidad visual y maquetar piezas gráficas.\n- Introduje HTML5 y CSS3, guiándola en la construcción de un portafolio web responsivo.\n- Preparé material de apoyo de alto contraste, diagramas paso a paso y video-tutoriales subtitulados para reforzar el aprendizaje.\n- Fomenté su autonomía y confianza, entregándole recursos inclusivos y rutas de aprendizaje continuo.",
       "company": "Independiente",
       "location": "Santiago, Chile"
     },
@@ -212,7 +212,7 @@
     },
     {
       "id": 22,
-      "title": "Líder de Comunidad Front-End",
+      "title": "Líder de comunidad front-end",
       "category": "voluntariados",
       "startDate": "2022-06",
       "endDate": "2023-08",
@@ -222,7 +222,7 @@
     },
     {
       "id": 23,
-      "title": "Diseñadora Gráfica – Fundación Antonia",
+      "title": "Diseñadora gráfica – Fundación Antonia",
       "category": "voluntariados",
       "startDate": "2021-09",
       "endDate": "2024-05",
@@ -252,7 +252,7 @@
     },
     {
       "id": 26,
-      "title": "Contenidos Digitales y Desarrollo de Landings",
+      "title": "Contenidos digitales y desarrollo de landings",
       "category": "laboral",
       "startDate": "2026-01",
       "endDate": "actualidad",
@@ -262,7 +262,7 @@
     },
     {
       "id": 27,
-      "title": "Diseño y Desarrollo de Dashboard Institucional",
+      "title": "Diseño y desarrollo de dashboard institucional",
       "category": "laboral",
       "startDate": "2026-01",
       "endDate": "actualidad",
@@ -272,7 +272,7 @@
     },
     {
       "id": 28,
-      "title": "Profesora Adjunta – Escuela de Diseño",
+      "title": "Profesora adjunta – Escuela de Diseño",
       "category": "docencia",
       "startDate": "2026-03",
       "endDate": "actualidad",
@@ -282,7 +282,7 @@
     },
     {
       "id": 29,
-      "title": "Práctica Profesional en Diseño Gráfico",
+      "title": "Práctica profesional en diseño gráfico",
       "category": "laboral",
       "startDate": "2018-02",
       "endDate": "2018-05",
@@ -292,7 +292,7 @@
     },
     {
       "id": 30,
-      "title": "Práctica Profesional en Diseño UX",
+      "title": "Práctica profesional en diseño UX",
       "category": "laboral",
       "startDate": "2017-07",
       "endDate": "2017-09",

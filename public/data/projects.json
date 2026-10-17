@@ -3,7 +3,7 @@
     {
       "id": "pomodoro-timer",
       "title": "Pomodoro Timer",
-      "category": "Proyecto Personal",
+      "category": "Proyecto personal",
       "type": "Proyecto personal",
       "service": "desarrollo-web",
       "serviceLabel": "Desarrollo web",
@@ -30,7 +30,7 @@
     {
       "id": "logofolio-collection",
       "title": "Logofolio e identidad de marca",
-      "category": "Visual Design",
+      "category": "Diseño visual",
       "type": "Varios clientes",
       "service": "diseno-grafico",
       "serviceLabel": "Diseño gráfico",
@@ -84,7 +84,7 @@
     },
     {
       "id": "claudia-ortega",
-      "title": "Claudia Ortega: Portafolio de artista",
+      "title": "Claudia Ortega: portafolio de artista",
       "category": "Proyecto a cliente",
       "type": "Cliente",
       "service": "desarrollo-web",
@@ -141,7 +141,7 @@
     {
       "id": "bitluxe",
       "title": "Bitluxe",
-      "category": "Full Stack Development",
+      "category": "Desarrollo full stack",
       "type": "Proyecto académico",
       "service": "desarrollo-web",
       "serviceLabel": "Desarrollo web",
@@ -166,8 +166,8 @@
     },
     {
       "id": "tanta-plata",
-      "title": "Tanta Plata: Gestión financiera",
-      "category": "UX Research & Strategy",
+      "title": "Tanta Plata: gestión financiera",
+      "category": "Investigación y estrategia UX",
       "type": "Proyecto académico",
       "service": "estrategia-ux",
       "serviceLabel": "Estrategia UX",
