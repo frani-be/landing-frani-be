@@ -112,20 +112,32 @@ const stepIcons = [
     ctaHref="#principales"
     ctaIcon="down"
   >
-    <!-- Textura de bordado + stickers flotantes de los 4 servicios -->
+    <!-- Textura de bordado + stickers flotantes de todos los servicios -->
     <EmbroideryPattern class="embroidery--light hero-deco hero-deco-tl" cells={5} />
     <EmbroideryPattern class="embroidery--light hero-deco hero-deco-br" cells={4} />
-    {copy.principales.map((s, i) => (
-      <img
-        src={serviceIcons[s.slug as keyof typeof serviceIcons]}
-        alt=""
-        loading="lazy"
-        aria-hidden="true"
-        class={`hero-sticker hero-sticker-${i}`}
-        style={`--float-delay:${i * 1.3}s`}
-      />
+    {[...Object.values(serviceIcons), ...Object.values(secondaryIcons)].map(src => (
+      <img src={src} alt="" loading="lazy" aria-hidden="true" class="hero-sticker" />
     ))}
   </PageHero>
+
+  <script>
+    // Stickers del hero: cada recarga los reposiciona aleatoriamente dentro
+    // de slots seguros (bordes y mitad derecha, lejos del texto)
+    const heroSlots: [number, number][] = [
+      [-3, 0], [8, -6], [26, -8], [44, 80], [56, 84],
+      [58, 2], [66, 52], [70, 68], [74, -3], [78, 36],
+      [84, 12], [88, 60], [90, 80], [-2, 52], [48, -7], [94, 40],
+    ];
+    const heroPool = [...heroSlots].sort(() => Math.random() - 0.5);
+    document.querySelectorAll<HTMLElement>('.hero-sticker').forEach((s, i) => {
+      const [x, y] = heroPool[i % heroPool.length];
+      s.style.left = `${x + (Math.random() * 8 - 4)}%`;
+      s.style.top = `${y + (Math.random() * 8 - 4)}%`;
+      s.style.setProperty('--rot', `${Math.random() * 26 - 13}deg`);
+      s.style.setProperty('--sc', (0.75 + Math.random() * 0.4).toFixed(2));
+      s.style.setProperty('--float-delay', `${(Math.random() * 6).toFixed(1)}s`);
+    });
+  </script>
 
   <!-- Principales -->
   <section class="section-block-sm bg-surface scroll-mt-24" id="principales">
