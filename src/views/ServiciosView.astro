@@ -22,6 +22,15 @@ const copy = {
     details: 'Ver detalles',
     ctaTitle: '¿Listo/a para empezar?',
     ctaSub: 'Agendemos una videollamada sin compromiso para hablar de tu proyecto.',
+    processTitle: 'Cómo es trabajar conmigo',
+    processSub: 'El mismo proceso claro para cualquier proyecto: transparencia desde la primera llamada hasta la entrega final.',
+    process: [
+      { title: 'Videollamada inicial', desc: 'Nos conocemos: me cuentas tu idea, tus objetivos y tu contexto. Sin costo ni compromiso.' },
+      { title: 'Discovery', desc: 'Investigo tu contexto, usuarios y competencia para definir el alcance real del proyecto.' },
+      { title: 'Propuesta cerrada', desc: 'Plan concreto con entregables, tiempos y presupuesto. Sin sorpresas a mitad de camino.' },
+      { title: 'Diseño y desarrollo', desc: 'Iteramos juntos con entregas parciales y feedback continuo hasta dar con la solución.' },
+      { title: 'Entrega y lanzamiento', desc: 'Proyecto finalizado con archivos, handoff y soporte post-entrega incluido.' },
+    ],
     principales: [
       { slug: 'desarrollo-web', title: 'Lanza tu sitio web', short: 'Diseño y desarrollo tu sitio completo: rápido, autogestionable y a tu medida. De la idea al aire.' },
       { slug: 'diseno-grafico', title: 'Haz única tu marca', short: 'Identidad visual completa: logo, paleta y piezas coherentes que comunican lo mismo en todo canal.' },
@@ -49,6 +58,15 @@ const copy = {
     details: 'View details',
     ctaTitle: 'Ready to start?',
     ctaSub: "Let's book a no-commitment video call to talk about your project.",
+    processTitle: 'What working with me looks like',
+    processSub: 'The same clear process for any project: transparency from the first call to the final delivery.',
+    process: [
+      { title: 'Kickoff call', desc: 'We meet: tell me about your idea, goals and context. Free, no strings attached.' },
+      { title: 'Discovery', desc: 'I research your context, users and competitors to define the real scope of the project.' },
+      { title: 'Closed proposal', desc: 'A concrete plan with deliverables, timeline and budget. No surprises halfway.' },
+      { title: 'Design & build', desc: 'We iterate together with partial deliveries and continuous feedback until we nail it.' },
+      { title: 'Delivery & launch', desc: 'Final project with files, handoff and post-delivery support included.' },
+    ],
     principales: [
       { slug: 'desarrollo-web', title: 'Launch your website', short: 'I design and build your full site: fast, self-manageable and tailored. From idea to launch.' },
       { slug: 'diseno-grafico', title: 'Make your brand unique', short: 'Complete visual identity: logo, palette and consistent assets that speak the same language everywhere.' },
@@ -65,6 +83,17 @@ const copy = {
     ],
   },
 }[lang];
+
+const icon = (paths: string) =>
+  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+
+const stepIcons = [
+  icon('<path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2"/>'),
+  icon('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'),
+  icon('<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/>'),
+  icon('<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>'),
+  icon('<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>'),
+];
 ---
 
 <BaseLayout
@@ -116,6 +145,30 @@ const copy = {
           </article>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="section-block-sm bg-surface">
+    <div class="container-wide">
+      <div class="text-center mb-12" data-reveal>
+        <p class="section-tag mb-4">// proceso</p>
+        <h2 class="text-2xl md:text-3xl text-custom-black mb-4">{copy.processTitle}</h2>
+        <p class="text-custom-dark-gray max-w-2xl mx-auto">{copy.processSub}</p>
+      </div>
+      <ol class="process-steps grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-6">
+        {copy.process.map((step, i) => (
+          <li class="process-step" data-reveal data-reveal-delay={String(i * 90)}>
+            <div class="process-head">
+              <span class="process-num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="process-line" aria-hidden="true"></span>
+            </div>
+            <span class="icon-tile mb-4" set:html={stepIcons[i]} />
+            <h3 class="text-lg text-custom-black mb-2">{step.title}</h3>
+            <p class="text-custom-dark-gray text-sm leading-relaxed">{step.desc}</p>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
