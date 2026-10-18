@@ -955,6 +955,7 @@ a.regular-link {
   right: 0.5rem;
   bottom: 0;
   width: min(17.5rem, 90%);
+  fill: none;
   stroke: rgba(122, 43, 168, 0.4);
 }
 .dark .proj-hero-curve {
@@ -1012,11 +1013,12 @@ a.regular-link {
 .proj-featured-list {
   display: flex;
   flex-direction: column;
+  overflow-x: clip;
 }
 .proj-feature {
   display: grid;
   grid-template-columns: 11fr 9fr;
-  gap: clamp(2.5rem, 5vw, 4rem);
+  gap: clamp(2.5rem, 4vw, 3.5rem);
   align-items: center;
 }
 .proj-feature.proj-flip .proj-media-wrap {
@@ -1067,12 +1069,12 @@ a.regular-link {
   border: 1.5px solid var(--color-border-soft);
   background: linear-gradient(140deg, #faf5ff 0%, #f0e3fc 100%);
   overflow: hidden;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 2 / 1;
 }
 .proj-feature-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .proj-index {
@@ -1142,23 +1144,44 @@ a.regular-link {
   gap: 0.5rem 1.5rem;
   margin-bottom: 2.5rem;
 }
+.proj-more-title {
+  font-family: var(--font-family-titles);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.05rem);
+  letter-spacing: -0.015em;
+  color: var(--color-custom-black);
+}
 .proj-more-note {
   font-family: var(--font-family-mono);
   font-size: 0.78rem;
   color: var(--color-dark-gray);
+}
+/* Aire consistente antes del contacto global */
+.proj-explore {
+  padding-bottom: 2.75rem;
+}
+@media (min-width: 1024px) {
+  .proj-explore {
+    padding-bottom: 4.5rem;
+  }
+}
+.proj-mini {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .proj-mini-thumb {
   display: block;
   border-radius: 0.9rem;
   border: 1.5px solid var(--color-border-soft);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 2 / 1;
   background: linear-gradient(140deg, #faf5ff 0%, #f0e3fc 100%);
 }
 .proj-mini-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 .dark .proj-mini-thumb {
@@ -1182,6 +1205,7 @@ a.regular-link {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+  margin-top: auto;
   font-size: 0.83rem;
   font-weight: 600;
   color: var(--color-accent-text);
@@ -1208,48 +1232,6 @@ a.regular-link {
   .proj-flip .proj-media-wrap::before {
     transform: rotate(1.6deg);
   }
-}
-/* Cierre: bloque de contacto compacto lavanda */
-.proj-cta {
-  text-align: center;
-  background: #f7effd;
-  border: 1.5px solid var(--color-border-soft);
-  border-radius: calc(var(--radius-card) * 1.4);
-  padding: clamp(2.5rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
-}
-.dark .proj-cta {
-  background: var(--color-surface-muted);
-}
-.proj-cta-title {
-  font-family: var(--font-family-titles);
-  font-weight: 700;
-  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
-  letter-spacing: -0.015em;
-  color: var(--color-custom-black);
-}
-.proj-cta-text {
-  margin: 0.8rem auto 0;
-  max-width: 30rem;
-  font-size: 0.98rem;
-  line-height: 1.6;
-  color: var(--color-dark-gray);
-}
-.proj-cta-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.9rem 1.5rem;
-  margin-top: 1.9rem;
-}
-.proj-cta-mail {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--color-accent-text);
-}
-.proj-cta-mail:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
 }
 
 /* ---- Trayectoria: hero editorial ---- */
@@ -1968,6 +1950,15 @@ a:hover .btn-arrow,
 a:focus-visible .btn-arrow,
 button:hover .btn-arrow {
   transform: translate(2px, -2px);
+}
+a:hover .btn-arrow--right,
+a:focus-visible .btn-arrow--right,
+button:hover .btn-arrow--right {
+  transform: translate(3px, 0);
+}
+.btn:focus-visible {
+  outline: 2px solid var(--color-custom-purple);
+  outline-offset: 2px;
 }
 
 .site-signature {

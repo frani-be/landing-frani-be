@@ -54,7 +54,7 @@ export function buildProjectCardHTML(p: Project, lang: Lang = clientLang()): str
         <p class="text-custom-dark-gray mb-4 flex-1 text-sm">${p.description}</p>
         <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border-soft">${tagsHTML}</div>
         <div class="mt-6 flex gap-3">
-          <a href="${prefix}/proyectos/${p.id}" class="btn btn-secondary flex-1 text-center">${S['projects.view']}${svgIcon('upRight', 'btn-arrow')}</a>
+          <a href="${prefix}/proyectos/${p.id}" class="btn btn-secondary flex-1 text-center">${S['projects.view']}${svgIcon('right', 'btn-arrow btn-arrow--right')}</a>
           ${hasLinks ? `<button class="btn btn-tertiary links-btn" data-id="${p.id}">Links</button>` : ''}
         </div>
       </div>
@@ -81,7 +81,7 @@ export function buildFeaturedCardHTML(p: Project, index: number, lang: Lang = cl
           <p>${p.description}</p>
           ${p.contribution ? `<p><strong>${S['projects.contribution']}</strong></p><p>${p.contribution}</p>` : ''}
         </div>
-        <a href="${prefix}/proyectos/${p.id}" class="btn btn-primary proj-feature-cta">${S['projects.view']}${svgIcon('upRight', 'btn-arrow')}</a>
+        <a href="${prefix}/proyectos/${p.id}" class="btn btn-primary proj-feature-cta">${S['projects.view']}${svgIcon('right', 'btn-arrow btn-arrow--right')}</a>
       </div>
     </article>`;
 }
@@ -97,7 +97,7 @@ export function buildProjectMiniHTML(p: Project, lang: Lang = clientLang()): str
       </a>
       <h3 class="proj-mini-title">${p.title}</h3>
       <p class="proj-mini-desc">${p.description}</p>
-      <a href="${prefix}/proyectos/${p.id}" class="proj-mini-link">${S['projects.view']}${svgIcon('upRight', 'btn-arrow')}</a>
+      <a href="${prefix}/proyectos/${p.id}" class="proj-mini-link">${S['projects.view']}${svgIcon('right', 'btn-arrow btn-arrow--right')}</a>
     </article>`;
 }
 

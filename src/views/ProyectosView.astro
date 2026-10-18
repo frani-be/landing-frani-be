@@ -22,10 +22,6 @@ const copy = {
       { key: 'diseno-grafico', label: 'Identidad' },
     ],
     moreTitle: 'Más exploraciones',
-    ctaTitle: '¿Tienes una idea en mente?',
-    ctaSub: 'Me encantaría conocer tu proyecto y explorar cómo podemos hacerlo realidad.',
-    ctaPrimary: 'Conversemos',
-    ctaSecondary: 'hola@frani.be',
   },
   en: {
     title: 'UX & Front-End Projects | Frani Medina Portfolio',
@@ -42,10 +38,6 @@ const copy = {
       { key: 'diseno-grafico', label: 'Identity' },
     ],
     moreTitle: 'More explorations',
-    ctaTitle: 'Have an idea in mind?',
-    ctaSub: 'I would love to hear about your project and explore how we can make it real.',
-    ctaPrimary: "Let's talk",
-    ctaSecondary: 'hola@frani.be',
   },
 }[lang];
 ---
@@ -97,27 +89,13 @@ const copy = {
   </section>
 
   <!-- Resto del portafolio: galería compacta -->
-  <section class="section-block-sm bg-surface" id="exploraciones">
+  <section class="section-block-sm bg-surface proj-explore" id="exploraciones">
     <div class="container-wide">
       <div class="proj-more-head" data-reveal>
-        <h2 class="text-2xl text-custom-black">{copy.moreTitle}</h2>
-        <span class="proj-more-note">{lang === 'en' ? 'Other projects that also keep me inspired.' : 'Otros proyectos que también me inspiran.'}</span>
+        <h2 class="proj-more-title">{copy.moreTitle}</h2>
+        <span class="proj-more-note">{lang === 'en' ? 'More design and development projects.' : 'Más proyectos de diseño y desarrollo.'}</span>
       </div>
       <div id="all-projects-container" class="scroll-mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
-    </div>
-  </section>
-
-  <!-- Cierre: bloque de contacto compacto -->
-  <section class="section-block-sm bg-surface">
-    <div class="container-mid">
-      <div class="proj-cta" data-reveal>
-        <h2 class="proj-cta-title">{copy.ctaTitle}</h2>
-        <p class="proj-cta-text">{copy.ctaSub}</p>
-        <div class="proj-cta-actions">
-          <a href="#contacto" class="btn btn-primary">{copy.ctaPrimary}</a>
-          <a href="mailto:hola@frani.be" class="proj-cta-mail">{copy.ctaSecondary}</a>
-        </div>
-      </div>
     </div>
   </section>
 
