@@ -2083,6 +2083,26 @@ button:hover .btn-arrow--right {
 .l-item:hover::before {
   opacity: 1;
 }
+/* En los bloques editoriales de /proyectos el glow sangra fuera del div
+   (sin corte en los bordes): inset negativo + centro compensado +3rem */
+.proj-feature::before,
+.proj-mini::before {
+  inset: -3rem;
+  border-radius: 1.5rem;
+  background: radial-gradient(
+    13rem circle at calc(var(--mx, 50%) + 3rem) calc(var(--my, 50%) + 3rem),
+    rgba(181, 90, 255, 0.13),
+    transparent 70%
+  );
+}
+.dark .proj-feature::before,
+.dark .proj-mini::before {
+  background: radial-gradient(
+    13rem circle at calc(var(--mx, 50%) + 3rem) calc(var(--my, 50%) + 3rem),
+    rgba(196, 140, 255, 0.15),
+    transparent 70%
+  );
+}
 
 /* ── Microinteracciones ─────────────────────────────────────────── */
 /* Chevron de filas de lista: nudge al hover */
