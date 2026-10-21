@@ -15,7 +15,6 @@
   - [Diseño gráfico](https://frani.be/servicios/diseno-grafico): logo, paleta y piezas de marca coherentes
   - [Estrategia UX](https://frani.be/servicios/estrategia-ux): research, prototipos y tests de usabilidad
   - [Clases particulares](https://frani.be/servicios/clases-particulares): clases 1 a 1 de diseño, UX y front-end
-- [Proyectos](https://frani.be/proyectos): casos de diseño UX y desarrollo front-end
 - [Charlas](https://frani.be/charlas): videos de presentaciones sobre tecnología y diseño
 
 ## Contacto

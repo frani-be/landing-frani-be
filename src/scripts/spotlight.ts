@@ -1,11 +1,10 @@
 /**
- * Spotlight: glow radial que sigue al cursor dentro de cards y secciones.
+ * Spotlight: glow radial que sigue al cursor dentro de cards.
  * Actualiza --mx / --my en el elemento; el CSS pinta el ::before con esas vars.
- * Se propagan las vars a todos los ancestros que hagan match para que un
- * contenedor (.proj-spotlight) pueda pintar un glow fluido sobre sus hijos.
+ * Se propagan las vars a todos los ancestros que hagan match.
  */
 const SPOTLIGHT_SELECTOR =
-  '.service-card, .project-card, .pillar-card, .l-item, .proj-spotlight';
+  '.service-card, .pillar-card, .l-item';
 
 export function initSpotlight() {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;

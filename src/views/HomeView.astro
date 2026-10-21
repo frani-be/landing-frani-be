@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionTitle from '../components/SectionTitle.astro';
-import LinksModal from '../components/LinksModal.astro';
 import EmbroideryPattern from '../components/EmbroideryPattern.astro';
 import ArrowIcon from '../components/ArrowIcon.astro';
 import { serviceIcons } from '../scripts/serviceIcons';
@@ -37,8 +36,6 @@ const copy = {
     ],
     details: 'Ver detalles',
     viewAllServices: 'Ver todos los servicios',
-    secProjects: 'Proyectos que me enorgullecen',
-    viewAllProjects: 'Ver todos los proyectos',
     commTitle: 'Docencia y comunidad',
     commText: 'Llevo años en escenarios, bootcamps y comunidades STEAM enseñando diseño y código. El conocimiento también se comparte: por eso doy charlas, mentorías y clases.',
     commAlt: 'Ilustración de Frani dando una charla tech desde un atril, con micrófono y credencial',
@@ -71,8 +68,6 @@ const copy = {
     ],
     details: 'View details',
     viewAllServices: 'View all services',
-    secProjects: "Projects I'm proud of",
-    viewAllProjects: 'View all projects',
     commTitle: 'Teaching & community',
     commText: "I've spent years on stages, bootcamps and STEAM communities teaching design and code. Knowledge is also meant to be shared: that's why I give talks, mentoring and classes.",
     commAlt: 'Illustration of Frani giving a tech talk from a podium, with microphone and badge',
@@ -202,21 +197,6 @@ const copy = {
     </div>
   </section>
 
-  <!-- Proyectos Destacados -->
-  <section class="section-block bg-custom-light-grey" id="proyectos">
-    <div class="container-wide">
-      <SectionTitle title={copy.secProjects} tag="03_proyectos" />
-
-      <div id="featured-projects-container" class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-
-      <div class="text-center mt-12">
-        <a href={localePath('/proyectos', lang)} class="btn btn-primary">
-          {copy.viewAllProjects}<ArrowIcon name="right" class="btn-arrow btn-arrow--right" />
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- Docencia y Comunidad -->
   <section class="section-block-sm bg-surface" id="comunidad">
     <div class="container-mid flex flex-col lg:flex-row items-center gap-12 lg:gap-16 text-center lg:text-left">
@@ -231,7 +211,7 @@ const copy = {
         />
       </figure>
       <div class="flex-1" data-reveal data-reveal-delay="150">
-        <span class="section-tag">04_comunidad</span>
+        <span class="section-tag">03_comunidad</span>
         <h3 class="text-2xl lg:text-3xl mb-4">{copy.commTitle}</h3>
         <p class="text-custom-dark-gray leading-relaxed">{copy.commText}</p>
         <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
@@ -242,7 +222,6 @@ const copy = {
     </div>
   </section>
 
-  <LinksModal lang={lang} />
 </BaseLayout>
 
 <script>
@@ -343,25 +322,4 @@ const copy = {
     }, 50);
   }
   initTimeline();
-</script>
-
-<script>
-  import { buildProjectCardHTML, extractYear, initLinksModal, revealProjectCards, type Project } from '../scripts/projects';
-  import { clientLang } from '../i18n/client';
-
-  async function initProjects() {
-    const lang = clientLang();
-    const res = await fetch(lang === 'en' ? '/data/projects.en.json' : '/data/projects.json');
-    const data = await res.json();
-    let projects: Project[] = (data.projects || []).filter((p: Project) => p.featured);
-    projects.sort((a, b) => extractYear(b.date ?? '') - extractYear(a.date ?? ''));
-
-    const container = document.getElementById('featured-projects-container');
-    if (!container) return;
-
-    container.innerHTML = projects.map(p => buildProjectCardHTML(p, lang)).join('');
-    revealProjectCards();
-    initLinksModal(data.projects || []);
-  }
-  initProjects();
 </script>
