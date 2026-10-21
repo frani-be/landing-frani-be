@@ -315,6 +315,15 @@ a.regular-link {
   background: #dc2626;
   box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15);
 }
+/* Estado abierto: cupos disponibles. Mismo pill neutro, punto verde */
+.hero-eyebrow--available {
+  color: var(--color-dark-gray);
+  border-color: var(--color-border-soft);
+}
+.hero-eyebrow--available::before {
+  background: #16a34a;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.15);
+}
 
 
 .text-gradient {
@@ -794,7 +803,6 @@ a.regular-link {
 .mono-path {
   display: flex;
   align-items: center;
-  gap: 0.4em;
   font-family: var(--font-family-mono);
   font-size: 0.8rem;
   letter-spacing: 0.05em;
@@ -916,19 +924,22 @@ a.regular-link {
   .light-hero-deco { display: none; }
 }
 
-/* ---- Trayectoria: ilustración del hero sobre el banner .page-hero ---- */
-.tray-illus {
+/* ---- Ilustración del hero sobre el banner .page-hero (trayectoria y servicios) ---- */
+.hero-illus {
   position: relative;
   width: min(100%, 26rem);
 }
-.tray-illus-img {
+.hero-illus--portrait {
+  width: min(100%, 18.5rem);
+}
+.hero-illus-img {
   position: relative;
   z-index: 1;
   display: block;
   width: 100%;
   height: auto;
 }
-.tray-blob {
+.hero-blob {
   position: absolute;
   z-index: 0;
   inset: 12% -2% 6% 8%;
@@ -1606,11 +1617,6 @@ a.tag-mono--accent:hover {
   pointer-events: none;
   user-select: none;
 }
-.embroidery--light {
-  color: #fff;
-  opacity: 0.22;
-}
-
 .btn-arrow {
   display: inline-block;
   margin-left: 0.4rem;
@@ -1655,7 +1661,7 @@ button:not(:disabled) {
 .dark .text-gradient {
   background-image: linear-gradient(115deg, #d8a7ff 10%, #b55aff 90%);
 }
-.dark .tray-blob {
+.dark .hero-blob {
   background: #2c2140;
 }
 .dark .service-card-icon,
@@ -1771,160 +1777,8 @@ button:not(:disabled) {
   box-shadow: none;
 }
 
-/* ── Decoraciones del hero de servicios: bordado + stickers flotantes ── */
-.hero-deco {
-  position: absolute;
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-}
-.hero-deco-tl { top: -1.5rem; left: -9%; transform: rotate(-8deg); }
-.hero-deco-br { bottom: -2.5rem; right: -9%; transform: rotate(7deg); }
-.hero-sticker {
-  position: absolute;
-  object-fit: contain;
-  opacity: 0.95;
-  /* Sombra lavanda sutil: los stickers se levantan del degradé claro */
-  filter: drop-shadow(0 3px 7px rgba(109, 26, 150, 0.22));
-  /* left/top marca el centro de cada ícono (translate los ancla) */
-  transform: translate(-50%, 0) rotate(var(--rot, 0deg));
-  animation: float-soft 6s ease-in-out infinite;
-  animation-delay: var(--float-delay, 0s);
-  pointer-events: none;
-  z-index: 1;
-}
-/* Flotación vertical discreta (4–6px); la inclinación vive en --rot */
-@keyframes float-soft {
-  0%, 100% { transform: translate(-50%, 0) rotate(var(--rot, 0deg)); }
-  50% { transform: translate(-50%, -5px) rotate(var(--rot, 0deg)); }
-}
-/* Tres tamaños ópticos: protagonistas 80px, medios 60px, pequeños 44px */
-.hero-sticker--p { width: 5rem; height: 5rem; }
-.hero-sticker--m { width: 3.75rem; height: 3.75rem; }
-.hero-sticker--s { width: 2.75rem; height: 2.75rem; }
-/* Arco ovalado abierto a la izquierda: extremos curvados hacia el texto,
-   ápex con aire a la derecha. Posiciones = centro de cada ícono */
-.hero-sticker:nth-of-type(1) { left: 56%; top: 27%; --rot: -6deg; }
-.hero-sticker:nth-of-type(2) { left: 64%; top: 12%; --rot: 5deg; }
-.hero-sticker:nth-of-type(3) { left: 75%; top: 6%; --rot: -3deg; }
-.hero-sticker:nth-of-type(4) { left: 88%; top: 14%; --rot: 7deg; }
-.hero-sticker:nth-of-type(5) { left: 94.5%; top: 33%; --rot: -4deg; }
-.hero-sticker:nth-of-type(6) { left: 93.5%; top: 59%; --rot: 6deg; }
-.hero-sticker:nth-of-type(7) { left: 91%; top: 78%; --rot: -8deg; }
-.hero-sticker:nth-of-type(8) { left: 81%; top: 89%; --rot: 3deg; }
-.hero-sticker:nth-of-type(9) { left: 69%; top: 89%; --rot: -5deg; }
-.hero-sticker:nth-of-type(10) { left: 58%; top: 75%; --rot: 4deg; }
-/* Rastro decorativo discontinuo siguiendo la misma curva:
-   puntos 3–5px, destellos 10–16px, cruces + 8–12px */
-.hero-orn {
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-}
-.hero-sparkle {
-  fill: rgba(122, 43, 168, 0.75);
-}
-.hero-sparkle--a { width: 0.875rem; height: 0.875rem; left: 69.5%; top: 8%; }
-.hero-sparkle--b { width: 1rem; height: 1rem; left: 96.5%; top: 46.5%; fill: rgba(186, 62, 158, 0.7); }
-.hero-sparkle--c { width: 0.75rem; height: 0.75rem; left: 74.5%; top: 90.5%; }
-.hero-plus {
-  fill: none;
-  stroke: rgba(122, 43, 168, 0.6);
-  stroke-width: 1.6;
-}
-.hero-plus--a { width: 0.75rem; height: 0.75rem; left: 81%; top: 7.5%; }
-.hero-plus--b { width: 0.625rem; height: 0.625rem; left: 84%; top: 50%; }
-.hero-plus--c { width: 0.5rem; height: 0.5rem; left: 58%; top: 93%; }
-.hero-dots {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.28rem;
-}
-.hero-dots i {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: rgba(122, 43, 168, 0.6);
-}
-.hero-dots i:nth-child(2) {
-  width: 3px;
-  height: 3px;
-  background: rgba(186, 62, 158, 0.55);
-  transform: translateY(-3px);
-}
-.hero-dots i:nth-child(3) {
-  width: 5px;
-  height: 5px;
-  transform: translateY(1px);
-}
-/* La rotación de cada rastro vive en --drot para que la animación
-   de flotación pueda componerla sin pisarla */
-.hero-dots--a { left: 58.5%; top: 17%; --drot: -35deg; }
-.hero-dots--b { left: 92.5%; top: 25%; --drot: 55deg; }
-.hero-dots--c { left: 85%; top: 92%; --drot: 30deg; }
-/* Degradé horizontal: morado tras el texto, lavanda medio bajo los íconos
-   (suficientemente saturado para que el rastro decorativo se lea) */
-.page-hero:has(.hero-sticker) {
-  background: linear-gradient(
-    105deg,
-    #8b2db3 0%,
-    #9339c6 28%,
-    #aa5ed8 48%,
-    #c487e6 70%,
-    #d8aef1 85%,
-    #e3c9f7 100%
-  );
-}
-/* Versión dark ad hoc: profundiza hacia la derecha en vez de aclarar,
-   así el hero se sigue leyendo como modo oscuro */
-.dark .page-hero:has(.hero-sticker) {
-  background: linear-gradient(
-    105deg,
-    #47217a 0%,
-    #3f1b6d 30%,
-    #35175e 52%,
-    #291246 76%,
-    #1e0c36 100%
-  );
-}
-/* En dark: glow lavanda apenas perceptible + micro sombra, mismo "lift" que en light */
-.dark .hero-sticker {
-  filter: drop-shadow(0 0 4px rgba(196, 140, 255, 0.35)) drop-shadow(0 2px 6px rgba(10, 4, 20, 0.3));
-}
-.dark .hero-sparkle { fill: rgba(215, 178, 255, 0.85); }
 /* Sparkles del home con fill fijo: el morado oscuro se pierde sobre fondo dark */
 .dark .hero-sparkle path[fill="#8b2db3"] { fill: #c77de8; }
-.dark .hero-sparkle--b { fill: rgba(240, 190, 232, 0.8); }
-.dark .hero-plus { stroke: rgba(205, 160, 252, 0.7); }
-.dark .hero-dots i { background: rgba(218, 186, 255, 0.7); }
-.dark .hero-dots i:nth-child(2) { background: rgba(245, 190, 232, 0.65); }
-@media (max-width: 1023px) {
-  /* Bajo 1024 el texto del hero va centrado: el arco lateral chocaría con él,
-     así que los stickers pasan al arco horizontal bajo el texto */
-  .page-hero:has(.hero-sticker) { padding-bottom: 15rem; }
-  .hero-sticker--p { width: 3.2rem; height: 3.2rem; }
-  .hero-sticker--m { width: 2.5rem; height: 2.5rem; }
-  .hero-sticker--s { width: 2rem; height: 2rem; }
-  .hero-sticker:nth-of-type(1) { left: 4%; top: auto; bottom: 4.4rem; }
-  .hero-sticker:nth-of-type(2) { left: 14%; top: auto; bottom: 1.6rem; }
-  .hero-sticker:nth-of-type(3) { left: 25%; top: auto; bottom: 4.8rem; }
-  .hero-sticker:nth-of-type(4) { left: 36%; top: auto; bottom: 2rem; }
-  .hero-sticker:nth-of-type(5) { left: 46%; top: auto; bottom: 4rem; }
-  .hero-sticker:nth-of-type(6) { left: 56%; top: auto; bottom: 1.4rem; }
-  .hero-sticker:nth-of-type(7) { left: 66%; top: auto; bottom: 4.2rem; }
-  .hero-sticker:nth-of-type(8) { left: 76%; top: auto; bottom: 1.8rem; }
-  .hero-sticker:nth-of-type(9) { left: 86%; top: auto; bottom: 4.4rem; }
-  .hero-sticker:nth-of-type(10) { left: 94%; top: auto; bottom: 2.2rem; }
-  /* El rastro se adapta al arco horizontal; el tercer grupo se omite */
-  .hero-dots--a { left: 8.5%; top: auto; bottom: 3.2rem; --drot: -20deg; }
-  .hero-sparkle--a { left: 19%; top: auto; bottom: 3.4rem; width: 0.7rem; height: 0.7rem; }
-  .hero-plus--a { left: 41%; top: auto; bottom: 3rem; }
-  .hero-dots--b { left: 81%; top: auto; bottom: 3.4rem; --drot: 15deg; }
-  .hero-sparkle--b { left: 60.5%; top: auto; bottom: 3.2rem; width: 0.8rem; height: 0.8rem; }
-  .hero-plus--b { left: 90.5%; top: auto; bottom: 3.3rem; }
-  .hero-dots--c, .hero-sparkle--c, .hero-plus--c { display: none; }
-  .hero-deco-br { display: none; }
-}
 
 /* ── Diagrama de proceso (servicios): número mono + línea punteada conectora ── */
 .process-steps { list-style: none; }
@@ -1958,26 +1812,6 @@ button:not(:disabled) {
   animation: float-slow 7s ease-in-out infinite;
   transform-origin: center;
 }
-/* Cruces + y puntos del rastro: flotación más corta y desfasada
-   para que acompañen sin sincronizarse con los stickers */
-.hero-plus {
-  animation: float-orn 5.5s ease-in-out infinite;
-  transform-origin: center;
-}
-.hero-plus--b { animation-duration: 6.5s; animation-delay: -2s; }
-.hero-plus--c { animation-duration: 7s; animation-delay: -1.2s; }
-.hero-dots { animation: float-dots 8s ease-in-out infinite; }
-.hero-dots--b { animation-delay: -3s; }
-.hero-dots--c { animation-delay: -1.5s; }
-@keyframes float-orn {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-9px); }
-}
-@keyframes float-dots {
-  0%, 100% { transform: rotate(var(--drot, 0deg)) translateY(0); }
-  50% { transform: rotate(var(--drot, 0deg)) translateY(-5px); }
-}
-
 /* Respeta reduced-motion: desactiva animaciones y transiciones decorativas */
 @media (prefers-reduced-motion: reduce) {
   html, body { scroll-behavior: auto; }

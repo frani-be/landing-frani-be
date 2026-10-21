@@ -69,11 +69,11 @@ const copy = {
   description={copy.description}
   lang={lang}
 >
-  <!-- Banner púrpura compartido (PageHero) con ilustración propia -->
+  <!-- Banner púrpura compartido con ilustración propia -->
   <header class="page-hero page-hero-left relative overflow-hidden text-white pt-40 pb-16 lg:pb-24">
     <div class="container-wide relative z-[1] flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
       <div class="w-full lg:w-[55%] text-center lg:text-left">
-        <nav class="page-hero-path" aria-label="Ruta" data-reveal>
+        <nav class="page-hero-path" aria-label={lang === 'en' ? 'Path' : 'Ruta'} data-reveal>
           <a href={localePath('/', lang)} aria-label={t(lang, 'breadcrumb.home')}>~</a>
           <span class="sep">/</span>
           <span class="current">trayectoria</span>
@@ -95,14 +95,14 @@ const copy = {
         </div>
       </div>
       <div class="w-full lg:w-[45%] flex justify-center" data-reveal data-reveal-delay="300">
-        <div class="tray-illus">
-          <div class="tray-blob" aria-hidden="true"></div>
+        <div class="hero-illus">
+          <div class="hero-blob" aria-hidden="true"></div>
           <img
             src="/images/trabajando.webp"
             alt={copy.illusAlt}
             width="1200"
             height="1200"
-            class="tray-illus-img"
+            class="hero-illus-img"
           />
         </div>
       </div>

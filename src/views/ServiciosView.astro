@@ -1,11 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
 import CtaSection from '../components/CtaSection.astro';
 import ArrowIcon from '../components/ArrowIcon.astro';
-import EmbroideryPattern from '../components/EmbroideryPattern.astro';
 import { serviceIcons, secondaryIcons } from '../scripts/serviceIcons';
-import { localePath, type Lang } from '../i18n/ui';
+import { localePath, t, type Lang } from '../i18n/ui';
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -13,13 +11,14 @@ const { lang } = Astro.props;
 const copy = {
   es: {
     title: 'Servicios de diseño UX y desarrollo web | Frani Medina',
-    description: 'Desarrollo web, diseño gráfico, estrategia UX y clases particulares ofrecidos por Francisca Medina: diseño y código en una sola persona.',
+    description: 'Desarrollo web, estrategia UX y clases particulares ofrecidos por Francisca Medina: diseño y código en una sola persona.',
     heroTitle: 'Una sola persona,<br>todo el proceso.',
     heroSub: 'Lanza tu sitio, haz única tu marca, ordena tu producto o aprende a tu ritmo.',
     heroCta: 'Explorar servicios',
+    illusAlt: 'Ilustración de Frani saludando con su cuaderno lavanda',
     mainTitle: 'Servicios principales',
     mainSlots: 'Sin cupos disponibles',
-    secondarySlots: 'Sin cupos disponibles',
+    secondarySlots: '3 cupos disponibles',
     secondaryTitle: 'También puedo ayudarte con…',
     details: 'Ver detalles',
     ctaTitle: '¿Listo/a para empezar?',
@@ -36,7 +35,6 @@ const copy = {
     ],
     principales: [
       { slug: 'desarrollo-web', title: 'Lanza tu sitio web', short: 'Tu sitio completo, rápido y autogestionable. De la idea al aire.' },
-      { slug: 'diseno-grafico', title: 'Haz única tu marca', short: 'Logo, paleta y piezas coherentes que hablan el mismo idioma en todo canal.' },
       { slug: 'estrategia-ux', title: 'Ordena tu producto', short: 'UX con evidencia: research, prototipos y tests que hacen fluir tu producto.' },
       { slug: 'clases-particulares', title: 'Aprende a tu ritmo', short: 'Clases 1 a 1 de diseño, UX o front-end, con proyectos reales y feedback directo.' },
     ],
@@ -51,13 +49,14 @@ const copy = {
   },
   en: {
     title: 'UX Design & Web Development Services | Frani Medina',
-    description: 'Web development, graphic design, UX strategy and private classes by Francisca Medina: design and code in one person.',
+    description: 'Web development, UX strategy and private classes by Francisca Medina: design and code in one person.',
     heroTitle: 'One person,<br>the whole process.',
     heroSub: 'Launch your site, make your brand unique, streamline your product or learn at your own pace.',
     heroCta: 'Explore services',
+    illusAlt: 'Illustration of Frani waving with her lavender notebook',
     mainTitle: 'Main services',
     mainSlots: 'No slots available',
-    secondarySlots: 'No slots available',
+    secondarySlots: '3 spots available',
     secondaryTitle: 'I can also help you with…',
     details: 'View details',
     ctaTitle: 'Ready to start?',
@@ -74,7 +73,6 @@ const copy = {
     ],
     principales: [
       { slug: 'desarrollo-web', title: 'Launch your website', short: 'Your full site, fast and self-manageable. From idea to launch.' },
-      { slug: 'diseno-grafico', title: 'Make your brand unique', short: 'Logo, palette and consistent assets that speak the same language everywhere.' },
       { slug: 'estrategia-ux', title: 'Streamline your product', short: 'Evidence-backed UX: research, prototypes and tests that make your product flow.' },
       { slug: 'clases-particulares', title: 'Learn at your own pace', short: '1-on-1 design, UX or front-end classes with real projects and direct feedback.' },
     ],
@@ -110,53 +108,39 @@ const stepIcons = [
   description={copy.description}
   lang={lang}
 >
-  <PageHero
-    lang={lang}
-    align="left"
-    title={copy.heroTitle}
-    path={[{ label: 'servicios' }]}
-    subtitle={copy.heroSub}
-    ctaLabel={copy.heroCta}
-    ctaHref="#principales"
-    ctaIcon="down"
-  >
-    <!-- Textura de bordado + constelación de stickers: arco deliberado abierto
-         hacia el texto. Tres tamaños ópticos: p=protagonista, m=medio, s=pequeño -->
-    <EmbroideryPattern class="embroidery--light hero-deco hero-deco-tl" cells={5} />
-    <EmbroideryPattern class="embroidery--light hero-deco hero-deco-br" cells={4} />
-    {[
-      { src: secondaryIcons['asesorias-personales'], size: 's' },
-      { src: secondaryIcons['mentorias-charlas'], size: 'm' },
-      { src: serviceIcons['desarrollo-web'], size: 'p' },
-      { src: serviceIcons['estrategia-ux'], size: 'm' },
-      { src: secondaryIcons['auditoria-cro-seo'], size: 's' },
-      { src: secondaryIcons['ugc'], size: 's' },
-      { src: serviceIcons['clases-particulares'], size: 'm' },
-      { src: serviceIcons['diseno-grafico'], size: 'p' },
-      { src: secondaryIcons['generacion-contenido'], size: 'm' },
-      { src: secondaryIcons['apoyo-freelance'], size: 's' },
-    ].map((s, i) => (
-      <img
-        src={s.src}
-        alt=""
-        loading="lazy"
-        aria-hidden="true"
-        class={`hero-sticker hero-sticker--${s.size}`}
-        style={`--float-delay:${(i * 0.55).toFixed(2)}s`}
-      />
-    ))}
-    <!-- Rastro decorativo sobre la misma trayectoria: grupos de puntos,
-         destellos de cuatro puntas y puntadas curvas cortas -->
-    <span class="hero-orn hero-dots hero-dots--a" aria-hidden="true"><i /><i /><i /></span>
-    <svg class="hero-orn hero-sparkle hero-sparkle--a" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C9.2 5.2 10.8 6.8 16 8c-5.2 1.2-6.8 2.8-8 8-1.2-5.2-2.8-6.8-8-8 5.2-1.2 6.8-2.8 8-8Z" /></svg>
-    <svg class="hero-orn hero-plus hero-plus--a" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke-linecap="round" /></svg>
-    <span class="hero-orn hero-dots hero-dots--b" aria-hidden="true"><i /><i /></span>
-    <svg class="hero-orn hero-sparkle hero-sparkle--b" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C9.2 5.2 10.8 6.8 16 8c-5.2 1.2-6.8 2.8-8 8-1.2-5.2-2.8-6.8-8-8 5.2-1.2 6.8-2.8 8-8Z" /></svg>
-    <svg class="hero-orn hero-plus hero-plus--b" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke-linecap="round" /></svg>
-    <span class="hero-orn hero-dots hero-dots--c" aria-hidden="true"><i /><i /><i /></span>
-    <svg class="hero-orn hero-sparkle hero-sparkle--c" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C9.2 5.2 10.8 6.8 16 8c-5.2 1.2-6.8 2.8-8 8-1.2-5.2-2.8-6.8-8-8 5.2-1.2 6.8-2.8 8-8Z" /></svg>
-    <svg class="hero-orn hero-plus hero-plus--c" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11" fill="none" stroke-linecap="round" /></svg>
-  </PageHero>
+  <!-- Banner púrpura compartido (misma estructura que trayectoria) con ilustración propia -->
+  <header class="page-hero page-hero-left relative overflow-hidden text-white pt-40 pb-16 lg:pb-24">
+    <div class="container-wide relative z-[1] flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
+      <div class="w-full lg:w-[55%] text-center lg:text-left">
+        <nav class="page-hero-path" aria-label={lang === 'en' ? 'Path' : 'Ruta'} data-reveal>
+          <a href={localePath('/', lang)} aria-label={t(lang, 'breadcrumb.home')}>~</a>
+          <span class="sep">/</span>
+          <span class="current">servicios</span>
+        </nav>
+        <h1 class="page-hero-title" data-reveal data-reveal-delay="120" set:html={copy.heroTitle} />
+        <p class="page-hero-subtitle" data-reveal data-reveal-delay="260">
+          {copy.heroSub}
+        </p>
+        <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="380">
+          <a href="#principales" class="btn btn-outline-white">{copy.heroCta}<ArrowIcon name="down" class="btn-arrow" /></a>
+        </div>
+      </div>
+      <div class="w-full lg:w-[45%] flex justify-center" data-reveal data-reveal-delay="300">
+        <div class="hero-illus hero-illus--portrait">
+          <div class="hero-blob" aria-hidden="true"></div>
+          <img
+            src="/images/saludando.webp"
+            alt={copy.illusAlt}
+            width="1024"
+            height="1536"
+            class="hero-illus-img"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- Principales -->
   <section class="section-block-sm bg-surface scroll-mt-24" id="principales">
@@ -165,7 +149,7 @@ const stepIcons = [
         <h2 class="text-2xl text-custom-black mb-4">{copy.mainTitle}</h2>
         <span class="hero-eyebrow hero-eyebrow--closed">{copy.mainSlots}</span>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {copy.principales.map((s, i) => (
           <a href={localePath(`/servicios/${s.slug}`, lang)} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
             <div class="service-card-icon"><img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" loading="lazy" /></div>
@@ -185,7 +169,7 @@ const stepIcons = [
     <div class="container-wide">
       <div class="text-center mb-12" data-reveal>
         <h2 class="text-2xl text-custom-black mb-4">{copy.secondaryTitle}</h2>
-        <span class="hero-eyebrow hero-eyebrow--closed">{copy.secondarySlots}</span>
+        <span class="hero-eyebrow hero-eyebrow--available">{copy.secondarySlots}</span>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {copy.secundarios.map((s, i) => (
