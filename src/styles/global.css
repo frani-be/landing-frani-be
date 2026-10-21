@@ -2218,9 +2218,11 @@ button:not(:disabled) {
   height: 5px;
   transform: translateY(1px);
 }
-.hero-dots--a { left: 58.5%; top: 17%; transform: rotate(-35deg); }
-.hero-dots--b { left: 92.5%; top: 25%; transform: rotate(55deg); }
-.hero-dots--c { left: 86.5%; top: 83%; transform: rotate(30deg); }
+/* La rotación de cada rastro vive en --drot para que la animación
+   de flotación pueda componerla sin pisarla */
+.hero-dots--a { left: 58.5%; top: 17%; --drot: -35deg; }
+.hero-dots--b { left: 92.5%; top: 25%; --drot: 55deg; }
+.hero-dots--c { left: 86.5%; top: 83%; --drot: 30deg; }
 /* Degradé horizontal: morado tras el texto, lavanda medio bajo los íconos
    (suficientemente saturado para que el rastro decorativo se lea) */
 .page-hero:has(.hero-sticker) {
@@ -2275,10 +2277,10 @@ button:not(:disabled) {
   .hero-sticker:nth-of-type(9) { left: 86%; top: auto; bottom: 4.4rem; }
   .hero-sticker:nth-of-type(10) { left: 94%; top: auto; bottom: 2.2rem; }
   /* El rastro se adapta al arco horizontal; el tercer grupo se omite */
-  .hero-dots--a { left: 8.5%; top: auto; bottom: 3.2rem; transform: rotate(-20deg); }
+  .hero-dots--a { left: 8.5%; top: auto; bottom: 3.2rem; --drot: -20deg; }
   .hero-sparkle--a { left: 19%; top: auto; bottom: 3.4rem; width: 0.7rem; height: 0.7rem; }
   .hero-plus--a { left: 41%; top: auto; bottom: 3rem; }
-  .hero-dots--b { left: 81%; top: auto; bottom: 3.4rem; transform: rotate(15deg); }
+  .hero-dots--b { left: 81%; top: auto; bottom: 3.4rem; --drot: 15deg; }
   .hero-sparkle--b { left: 60.5%; top: auto; bottom: 3.2rem; width: 0.8rem; height: 0.8rem; }
   .hero-plus--b { left: 90.5%; top: auto; bottom: 3.3rem; }
   .hero-dots--c, .hero-sparkle--c, .hero-plus--c { display: none; }
@@ -2316,6 +2318,25 @@ button:not(:disabled) {
 .hero-sparkle {
   animation: float-slow 7s ease-in-out infinite;
   transform-origin: center;
+}
+/* Cruces + y puntos del rastro: flotación más corta y desfasada
+   para que acompañen sin sincronizarse con los stickers */
+.hero-plus {
+  animation: float-orn 5.5s ease-in-out infinite;
+  transform-origin: center;
+}
+.hero-plus--b { animation-duration: 6.5s; animation-delay: -2s; }
+.hero-plus--c { animation-duration: 7s; animation-delay: -1.2s; }
+.hero-dots { animation: float-dots 8s ease-in-out infinite; }
+.hero-dots--b { animation-delay: -3s; }
+.hero-dots--c { animation-delay: -1.5s; }
+@keyframes float-orn {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+@keyframes float-dots {
+  0%, 100% { transform: rotate(var(--drot, 0deg)) translateY(0); }
+  50% { transform: rotate(var(--drot, 0deg)) translateY(-5px); }
 }
 
 /* Respeta reduced-motion: desactiva animaciones y transiciones decorativas */
