@@ -306,6 +306,15 @@ a.regular-link {
   background: var(--color-custom-purple);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-custom-purple) 22%, transparent);
 }
+/* Estado cerrado: sin cupos. Punto rojo, texto y borde neutros */
+.hero-eyebrow--closed {
+  color: var(--color-dark-gray);
+  border-color: var(--color-border-soft);
+}
+.hero-eyebrow--closed::before {
+  background: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15);
+}
 
 
 .text-gradient {

@@ -18,8 +18,8 @@ const copy = {
     heroSub: 'Lanza tu sitio, haz única tu marca, ordena tu producto o aprende a tu ritmo.',
     heroCta: 'Explorar servicios',
     mainTitle: 'Servicios principales',
-    mainSlots: '1 cupo disponible',
-    secondarySlots: '3 cupos disponibles',
+    mainSlots: 'Sin cupos disponibles',
+    secondarySlots: 'Sin cupos disponibles',
     secondaryTitle: 'También puedo ayudarte con…',
     details: 'Ver detalles',
     ctaTitle: '¿Listo/a para empezar?',
@@ -56,8 +56,8 @@ const copy = {
     heroSub: 'Launch your site, make your brand unique, streamline your product or learn at your own pace.',
     heroCta: 'Explore services',
     mainTitle: 'Main services',
-    mainSlots: '1 slot available',
-    secondarySlots: '3 slots available',
+    mainSlots: 'No slots available',
+    secondarySlots: 'No slots available',
     secondaryTitle: 'I can also help you with…',
     details: 'View details',
     ctaTitle: 'Ready to start?',
@@ -163,7 +163,7 @@ const stepIcons = [
     <div class="container-wide">
       <div class="text-center mb-12" data-reveal>
         <h2 class="text-2xl text-custom-black mb-4">{copy.mainTitle}</h2>
-        <span class="hero-eyebrow">{copy.mainSlots}</span>
+        <span class="hero-eyebrow hero-eyebrow--closed">{copy.mainSlots}</span>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {copy.principales.map((s, i) => (
@@ -185,7 +185,7 @@ const stepIcons = [
     <div class="container-wide">
       <div class="text-center mb-12" data-reveal>
         <h2 class="text-2xl text-custom-black mb-4">{copy.secondaryTitle}</h2>
-        <span class="hero-eyebrow">{copy.secondarySlots}</span>
+        <span class="hero-eyebrow hero-eyebrow--closed">{copy.secondarySlots}</span>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {copy.secundarios.map((s, i) => (
