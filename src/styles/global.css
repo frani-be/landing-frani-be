@@ -1313,20 +1313,23 @@ a.regular-link {
   border-left: 4px solid color-mix(in srgb, var(--category-color, var(--color-border-soft)) 75%, var(--mix-base));
   box-shadow: -12px 0 32px rgba(36, 29, 46, 0.12);
   z-index: 50;
-  padding: 2rem 1.75rem;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   transform: translateX(105%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .gantt-panel.open { transform: translateX(0); }
+/* El scroll vive en el contenido: la X y la nav quedan fijas en los extremos */
+.g-panel-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 1.75rem 1.5rem;
+}
 .gantt-close {
-  position: sticky;
-  top: -1.5rem;
-  right: -1.25rem;
-  margin-right: -1rem;
-  margin-left: auto;
-  margin-top: -2rem;
-  margin-bottom: -1rem;
+  position: absolute;
+  top: 1.1rem;
+  right: 1.25rem;
   z-index: 1;
   width: 2rem;
   height: 2rem;
@@ -1367,6 +1370,40 @@ a.regular-link {
 .g-panel-desc p { margin: 0 0 0.75rem; line-height: 1.6; }
 .g-panel-desc ul { margin-bottom: 0.75rem; }
 
+/* Navegación anterior/siguiente fija al pie del panel */
+.g-panel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.8rem 1.75rem;
+  /* Separador punteado: eco del lenguaje de puntadas del sitio */
+  border-top: 1.5px dashed var(--color-border-soft);
+}
+.panel-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-family-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--color-custom-dark-gray);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border-soft);
+  border-radius: 999px;
+  padding: 0.5rem 0.95rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+.panel-nav-btn:hover:not(:disabled) {
+  color: var(--color-accent-text);
+  border-color: var(--color-border-hover);
+  transform: translateY(-1px);
+}
+.panel-nav-btn:disabled { opacity: 0.35; cursor: default; }
+.panel-nav-btn svg { flex-shrink: 0; }
+
 @media (max-width: 768px) {
   .gantt-panel {
     top: auto;
@@ -1382,13 +1419,6 @@ a.regular-link {
     box-shadow: 0 -12px 32px rgba(36, 29, 46, 0.15);
   }
   .gantt-panel.open { transform: translateY(0); }
-  /* En lámina inferior la X va dentro de la esquina: si sobresale,
-     el overflow del panel la corta sobre el backdrop */
-  .gantt-close {
-    top: 0;
-    right: 0;
-    margin: -1.25rem -1rem -0.5rem auto;
-  }
 }
 
 /* Icono dentro de pills de categoría */
@@ -1521,7 +1551,8 @@ a.tag-mono--accent:hover {
 .l-arrow,
 #nav-toggle svg,
 #theme-toggle svg,
-.gantt-close svg {
+.gantt-close svg,
+.panel-nav-btn svg {
   fill: none;
   stroke: currentColor;
 }
