@@ -1074,14 +1074,6 @@ a.regular-link {
   .pillar-desc { font-size: 0.78rem; }
 }
 
-/* Encabezado del recorrido */
-.recorrido-label {
-  font-family: var(--font-family-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  color: var(--color-custom-purple-dark);
-}
-
 /* ---- Bloque "Actualmente" ---- */
 .current-block-title {
   font-family: var(--font-family-mono);
@@ -1685,7 +1677,6 @@ button:not(:disabled) {
 }
 .dark .section-tag,
 .dark .tray-tag,
-.dark .recorrido-label,
 .dark .current-block-title,
 .dark .hero-eyebrow {
   color: var(--color-accent-text);
