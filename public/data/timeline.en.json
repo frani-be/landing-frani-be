@@ -132,17 +132,17 @@
     },
     {
       "id": 14,
-      "title": "Adjunct Professor – Graphic Nonfiction Narrative",
+      "title": "Adjunct Professor – Faculty of Communications",
       "category": "docencia",
       "startDate": "2023-08",
       "endDate": "2024-08",
-      "description": "Designed and facilitated the **Graphic Nonfiction Narrative** program at the Faculty of Communications, integrating visual storytelling, data journalism and programming.\n- Redesigned the syllabus incorporating data visualization and critical source analysis.\n- Taught Python, Pandas and Altair to process datasets and create interactive visualizations.\n- Guided student projects published in internal media and presented at academic events.\n- Implemented iterative feedback that raised narrative clarity and visual quality of deliverables.",
+      "description": "Designed and facilitated the **Graphic Nonfiction Narrative** program, integrating visual storytelling, data journalism and programming.\n- Redesigned the syllabus incorporating data visualization and critical source analysis.\n- Taught Python, Pandas and Altair to process datasets and create interactive visualizations.\n- Guided student projects published in internal media and presented at academic events.\n- Implemented iterative feedback that raised narrative clarity and visual quality of deliverables.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
     {
       "id": 15,
-      "title": "Instructor – Introduction to AI for Girls",
+      "title": "Instructor",
       "category": "docencia",
       "startDate": "2021-03",
       "endDate": "2021-06",
@@ -152,17 +152,17 @@
     },
     {
       "id": 16,
-      "title": "Academic Coordinator – Data Visualization Diploma",
+      "title": "Academic Coordinator – UC Continuing Education",
       "category": "docencia",
       "startDate": "2021-04",
       "endDate": "2021-07",
-      "description": "Provided comprehensive support to faculty and students of the **Data Visualization Diploma** at Educación Continua UC, ensuring the program ran smoothly.\n- Managed the academic platform (Canvas), uploading materials, moderating forums and monitoring student progress.\n- Coordinated communication between professors and 40+ participants, ensuring clarity on expectations and deadlines.\n- Automated feedback delivery and partial certifications, speeding up response times.\n- Provided technical assistance in synchronous classes (dataviz tools like Tableau, D3, Flourish), resolving issues in real time.\n- Collected participation and satisfaction metrics to inform improvements for future editions.",
+      "description": "Provided comprehensive support to faculty and students of the **Data Visualization Diploma**, ensuring the program ran smoothly.\n- Managed the academic platform (Canvas), uploading materials, moderating forums and monitoring student progress.\n- Coordinated communication between professors and 40+ participants, ensuring clarity on expectations and deadlines.\n- Automated feedback delivery and partial certifications, speeding up response times.\n- Provided technical assistance in synchronous classes (dataviz tools like Tableau, D3, Flourish), resolving issues in real time.\n- Collected participation and satisfaction metrics to inform improvements for future editions.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
     {
       "id": 17,
-      "title": "Instructor – Blended Learning & Hybrid Classroom Planning",
+      "title": "Instructor",
       "category": "docencia",
       "startDate": "2021-01",
       "endDate": "2021-03",
@@ -172,7 +172,7 @@
     },
     {
       "id": 18,
-      "title": "Instructor – Introduction to Ruby on Rails",
+      "title": "Instructor",
       "category": "docencia",
       "startDate": "2020-03",
       "endDate": "2020-03",
@@ -182,7 +182,7 @@
     },
     {
       "id": 19,
-      "title": "Instructor – Front-End Bootcamp Mujeres Programadoras Quilicura",
+      "title": "Instructor",
       "category": "docencia",
       "startDate": "2018-03",
       "endDate": "2018-11",
@@ -202,7 +202,7 @@
     },
     {
       "id": 21,
-      "title": "Volunteer – JavaScript Chile Conference",
+      "title": "Volunteer",
       "category": "voluntariados",
       "startDate": "2022-11",
       "endDate": "2023-03",
@@ -222,7 +222,7 @@
     },
     {
       "id": 23,
-      "title": "Graphic Designer – Fundación Antonia",
+      "title": "Graphic Designer",
       "category": "voluntariados",
       "startDate": "2021-09",
       "endDate": "2024-05",
@@ -232,7 +232,7 @@
     },
     {
       "id": 24,
-      "title": "Mentor – Technovation Girls Program",
+      "title": "Mentor",
       "category": "voluntariados",
       "startDate": "2019-03",
       "endDate": "2023-04",
@@ -242,7 +242,7 @@
     },
     {
       "id": 25,
-      "title": "Ambassador – Women Techmakers (WTM)",
+      "title": "Ambassador",
       "category": "voluntariados",
       "startDate": "2024-08",
       "endDate": "2025-12",
@@ -262,7 +262,7 @@
     },
     {
       "id": 27,
-      "title": "UX Designer & Front-End Developer",
+      "title": "UX + Front-End Designer",
       "category": "laboral",
       "startDate": "2026-01",
       "endDate": "actualidad",

@@ -132,7 +132,7 @@
     },
     {
       "id": 14,
-      "title": "Profesora adjunta – Narración Gráfica de No Ficción",
+      "title": "Profesora adjunta – Facultad de Comunicaciones",
       "category": "docencia",
       "startDate": "2023-08",
       "endDate": "2024-08",
@@ -142,7 +142,7 @@
     },
     {
       "id": 15,
-      "title": "Docente – Introducción a la IA para niñas",
+      "title": "Docente",
       "category": "docencia",
       "startDate": "2021-03",
       "endDate": "2021-06",
@@ -152,17 +152,17 @@
     },
     {
       "id": 16,
-      "title": "Coordinadora académica – Diplomado en Visualización de Datos",
+      "title": "Coordinadora académica – Educación Continua UC",
       "category": "docencia",
       "startDate": "2021-04",
       "endDate": "2021-07",
-      "description": "Brindé soporte integral a docentes y estudiantes del **Diplomado en Visualización de Datos** de Educación Continua UC, asegurando el buen desarrollo del programa.\n- Administré la plataforma académica (Canvas), subiendo material, gestionando foros y monitoreando el progreso del alumnado.\n- Coordiné la comunicación entre profesores y más de 40 participantes, garantizando claridad en expectativas y plazos.\n- Automatizé la entrega de feedback y certificaciones parciales, agilizando los tiempos de respuesta.\n- Brindé asistencia técnica en clases sincrónicas (herramientas de dataviz como Tableau, D3, Flourish), resolviendo incidentes en tiempo real.\n- Recopilé métricas de participación y satisfacción para informar mejoras del programa en futuras versiones.",
+      "description": "Brindé soporte integral a docentes y estudiantes del **Diplomado en Visualización de Datos**, asegurando el buen desarrollo del programa.\n- Administré la plataforma académica (Canvas), subiendo material, gestionando foros y monitoreando el progreso del alumnado.\n- Coordiné la comunicación entre profesores y más de 40 participantes, garantizando claridad en expectativas y plazos.\n- Automatizé la entrega de feedback y certificaciones parciales, agilizando los tiempos de respuesta.\n- Brindé asistencia técnica en clases sincrónicas (herramientas de dataviz como Tableau, D3, Flourish), resolviendo incidentes en tiempo real.\n- Recopilé métricas de participación y satisfacción para informar mejoras del programa en futuras versiones.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
     {
       "id": 17,
-      "title": "Docente – Blended learning y planificación de aulas semipresenciales",
+      "title": "Docente",
       "category": "docencia",
       "startDate": "2021-01",
       "endDate": "2021-03",
@@ -172,7 +172,7 @@
     },
     {
       "id": 18,
-      "title": "Docente – Introducción a Ruby on Rails",
+      "title": "Docente",
       "category": "docencia",
       "startDate": "2020-03",
       "endDate": "2020-03",
@@ -182,7 +182,7 @@
     },
     {
       "id": 19,
-      "title": "Docente – Bootcamp Front-End Mujeres Programadoras Quilicura",
+      "title": "Docente",
       "category": "docencia",
       "startDate": "2018-03",
       "endDate": "2018-11",
@@ -202,7 +202,7 @@
     },
     {
       "id": 21,
-      "title": "Voluntaria – Conferencia JavaScript Chile",
+      "title": "Voluntaria",
       "category": "voluntariados",
       "startDate": "2022-11",
       "endDate": "2023-03",
@@ -222,7 +222,7 @@
     },
     {
       "id": 23,
-      "title": "Diseñadora gráfica – Fundación Antonia",
+      "title": "Diseñadora gráfica",
       "category": "voluntariados",
       "startDate": "2021-09",
       "endDate": "2024-05",
@@ -232,7 +232,7 @@
     },
     {
       "id": 24,
-      "title": "Mentora – Programa Technovation Girls",
+      "title": "Mentora",
       "category": "voluntariados",
       "startDate": "2019-03",
       "endDate": "2023-04",
@@ -242,7 +242,7 @@
     },
     {
       "id": 25,
-      "title": "Embajadora – Women Techmakers (WTM)",
+      "title": "Embajadora",
       "category": "voluntariados",
       "startDate": "2024-08",
       "endDate": "2025-12",
@@ -262,7 +262,7 @@
     },
     {
       "id": 27,
-      "title": "Diseñadora UX y desarrolladora front-end",
+      "title": "Diseñadora UX + front-end",
       "category": "laboral",
       "startDate": "2026-01",
       "endDate": "actualidad",
