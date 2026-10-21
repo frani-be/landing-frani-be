@@ -2194,8 +2194,8 @@ button:not(:disabled) {
   stroke-width: 1.6;
 }
 .hero-plus--a { width: 0.75rem; height: 0.75rem; left: 81%; top: 7.5%; }
-.hero-plus--b { width: 0.625rem; height: 0.625rem; left: 94%; top: 68.5%; }
-.hero-plus--c { width: 0.5rem; height: 0.5rem; left: 61%; top: 82%; }
+.hero-plus--b { width: 0.625rem; height: 0.625rem; left: 84%; top: 50%; }
+.hero-plus--c { width: 0.5rem; height: 0.5rem; left: 58%; top: 93%; }
 .hero-dots {
   display: inline-flex;
   align-items: center;
@@ -2222,7 +2222,7 @@ button:not(:disabled) {
    de flotación pueda componerla sin pisarla */
 .hero-dots--a { left: 58.5%; top: 17%; --drot: -35deg; }
 .hero-dots--b { left: 92.5%; top: 25%; --drot: 55deg; }
-.hero-dots--c { left: 86.5%; top: 83%; --drot: 30deg; }
+.hero-dots--c { left: 85%; top: 92%; --drot: 30deg; }
 /* Degradé horizontal: morado tras el texto, lavanda medio bajo los íconos
    (suficientemente saturado para que el rastro decorativo se lea) */
 .page-hero:has(.hero-sticker) {
