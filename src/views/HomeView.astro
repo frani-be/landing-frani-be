@@ -30,7 +30,6 @@ const copy = {
     secServicesSub: 'Una sola persona, todo el proceso: sin fricción entre etapas ni tres proveedores distintos.',
     services: [
       { slug: 'desarrollo-web', title: 'Lanza tu sitio web', desc: 'Tu sitio completo, rápido y autogestionable. De la idea al aire.' },
-      { slug: 'diseno-grafico', title: 'Haz única tu marca', desc: 'Logo, paleta y piezas coherentes que hablan el mismo idioma en todo canal.' },
       { slug: 'estrategia-ux', title: 'Ordena tu producto', desc: 'UX con evidencia: research, prototipos y tests que hacen fluir tu producto.' },
       { slug: 'clases-particulares', title: 'Aprende a tu ritmo', desc: 'Clases 1 a 1 de diseño, UX o front-end, con proyectos reales y feedback directo.' },
     ],
@@ -62,7 +61,6 @@ const copy = {
     secServicesSub: 'One person, the whole process: no friction between stages, no three different vendors.',
     services: [
       { slug: 'desarrollo-web', title: 'Launch your website', desc: 'Your full site, fast and self-manageable. From idea to launch.' },
-      { slug: 'diseno-grafico', title: 'Make your brand unique', desc: 'Logo, palette and consistent assets that speak the same language everywhere.' },
       { slug: 'estrategia-ux', title: 'Streamline your product', desc: 'Evidence-backed UX: research, prototypes and tests that make your product flow.' },
       { slug: 'clases-particulares', title: 'Learn at your own pace', desc: '1-on-1 design, UX or front-end classes with real projects and direct feedback.' },
     ],
@@ -178,7 +176,7 @@ const copy = {
         class="mb-16"
       />
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {copy.services.map((s, i) => (
           <a href={localePath(`/servicios/${s.slug}`, lang)} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
             <div class="service-card-icon"><img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" /></div>
