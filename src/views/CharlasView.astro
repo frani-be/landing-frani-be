@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHero from '../components/PageHero.astro';
 import { localePath, type Lang } from '../i18n/ui';
 
 interface Props { lang: Lang; }
@@ -23,7 +22,7 @@ const copy = {
     description: 'Talks and presentations by Francisca Medina on UX design, front-end development, tech education and STEAM communities.',
     heroTitle: 'Talks and presentations',
     heroSub: 'Videos of my talks on UX, front-end, teaching and tech communities.',
-    pathLabel: 'talks',
+    pathLabel: 'charlas',
     alt: 'Illustration of Frani giving a tech talk from a podium, with microphone and badge',
     soon: '// coming soon',
     body: "I'm preparing this section with videos of my talks. Meanwhile, feel free to reach out if you're interested in a topic.",
@@ -37,27 +36,37 @@ const copy = {
   description={copy.description}
   lang={lang}
 >
-  <PageHero
-    lang={lang}
-    title={copy.heroTitle}
-    path={[{ label: copy.pathLabel }]}
-    subtitle={copy.heroSub}
-  />
+  <!-- Hero editorial claro, mismo sistema que proyectos -->
+  <header class="light-hero">
+    <div class="container-wide light-hero-grid">
+      <div data-reveal>
+        <nav class="mono-path mb-6" aria-label={lang === 'en' ? 'Path' : 'Ruta'}>
+          <a href={localePath('/', lang)}>~</a>
+          <span class="mono-path-sep" aria-hidden="true">/</span>
+          <span>{copy.pathLabel}</span>
+        </nav>
+        <h1 class="light-hero-title">{copy.heroTitle}</h1>
+        <p class="light-hero-sub">{copy.heroSub}</p>
+      </div>
+      <div class="light-hero-deco" aria-hidden="true">
+        <img
+          class="light-hero-img"
+          src="/images/charla.webp"
+          alt=""
+          width="1200"
+          height="1200"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </header>
 
   <section class="section-block-sm bg-custom-light-grey">
     <div class="container-narrow text-center" data-reveal>
-      <div class="tray-illus mx-auto mb-8" style="width:min(100%,20rem)">
-        <div class="tray-blob" aria-hidden="true"></div>
-        <img
-          src="/images/charla.png"
-          alt={copy.alt}
-          class="tray-illus-img"
-          loading="lazy"
-        />
-      </div>
       <p class="font-mono text-[0.9rem] text-custom-purple-dark mb-4">{copy.soon}</p>
       <p class="text-custom-dark-gray leading-relaxed mb-8">{copy.body}</p>
-      <a href={`${localePath('/', lang)}#contacto`} class="btn btn-primary">{copy.cta}</a>
+      <a href="#contacto" class="btn btn-primary">{copy.cta}</a>
     </div>
   </section>
 </BaseLayout>
