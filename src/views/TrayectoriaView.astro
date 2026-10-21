@@ -59,23 +59,27 @@ const copy = {
   description={copy.description}
   lang={lang}
 >
-  <!-- Editorial hero -->
-  <header class="tray-hero pt-40 pb-16 lg:pb-24">
-    <div class="container-wide flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
+  <!-- Banner púrpura compartido (PageHero) con ilustración propia -->
+  <header class="page-hero page-hero-left relative overflow-hidden text-white pt-40 pb-16 lg:pb-24">
+    <div class="container-wide relative z-[1] flex flex-col lg:flex-row items-center gap-12 lg:gap-10">
       <div class="w-full lg:w-[55%] text-center lg:text-left">
-        <span class="tray-tag" data-reveal><a href={localePath('/', lang)} aria-label={t(lang, 'breadcrumb.home')}>~</a>/trayectoria</span>
-        <h1 class="tray-title" data-reveal data-reveal-delay="120">
+        <nav class="page-hero-path" aria-label="Ruta" data-reveal>
+          <a href={localePath('/', lang)} aria-label={t(lang, 'breadcrumb.home')}>~</a>
+          <span class="sep">/</span>
+          <span class="current">trayectoria</span>
+        </nav>
+        <h1 class="page-hero-title" data-reveal data-reveal-delay="120">
           {copy.h1}
         </h1>
-        <p class="tray-lead" data-reveal data-reveal-delay="260">
+        <p class="page-hero-subtitle" data-reveal data-reveal-delay="260">
           {copy.lead}
         </p>
         <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="380">
-          <a href="#recorrido" class="btn btn-primary">{copy.ctaExplore}<ArrowIcon name="down" class="btn-arrow" /></a>
+          <a href="#recorrido" class="btn btn-outline-white">{copy.ctaExplore}<ArrowIcon name="down" class="btn-arrow" /></a>
           <a
             href="/documents/cv-francisca-medina-concha.pdf"
             download
-            class="btn btn-secondary"
+            class="btn btn-outline-white"
             aria-label={copy.ctaCvAria}
           >{copy.ctaCv}<ArrowIcon name="upRight" class="btn-arrow" /></a>
         </div>
