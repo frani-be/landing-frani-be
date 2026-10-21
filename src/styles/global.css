@@ -801,12 +801,14 @@ a.regular-link {
    para que el arte PNG contraste sobre el tile/banner */
 .icon-tile img,
 .svc-detail-icon,
-.service-card-icon img {
+.service-card-icon img,
+.proj-hero-img {
   filter: drop-shadow(0 2px 5px rgba(109, 26, 150, 0.18));
 }
 .dark .icon-tile img,
 .dark .svc-detail-icon,
-.dark .service-card-icon img {
+.dark .service-card-icon img,
+.dark .proj-hero-img {
   filter: drop-shadow(0 0 3px rgba(196, 140, 255, 0.3)) drop-shadow(0 2px 5px rgba(10, 4, 20, 0.3));
 }
 /* Variante de íconos sólidos (pasos del proceso): relleno lavanda,
@@ -940,7 +942,7 @@ a.regular-link {
 }
 .proj-hero-deco {
   position: relative;
-  min-height: 11rem;
+  padding-top: 2rem;
 }
 .proj-hero-tag {
   position: absolute;
@@ -951,27 +953,11 @@ a.regular-link {
   letter-spacing: 0.05em;
   color: var(--color-dark-gray);
 }
-.proj-hero-curve {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0;
-  width: min(17.5rem, 90%);
-  fill: none;
-  stroke: rgba(122, 43, 168, 0.4);
+.proj-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-.dark .proj-hero-curve {
-  stroke: rgba(211, 166, 255, 0.5);
-}
-.proj-hero-sparkle {
-  position: absolute;
-  fill: rgba(158, 88, 216, 0.75);
-}
-.dark .proj-hero-sparkle {
-  fill: rgba(211, 166, 255, 0.85);
-}
-.proj-hero-sparkle--a { width: 0.85rem; top: 2.4rem; right: 8.5rem; }
-.proj-hero-sparkle--b { width: 0.6rem; top: 4.4rem; right: 15rem; }
-.proj-hero-sparkle--c { width: 1.1rem; top: 6.2rem; right: 4.2rem; }
 
 /* Filtros tipo pill: activo morado, resto transparente con borde lavanda */
 .proj-filters {
