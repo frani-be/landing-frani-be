@@ -1504,6 +1504,9 @@ a.tag-mono--accent:hover {
   padding-right: 1.2rem;
 }
 .btn-tertiary:hover { background: rgba(181, 90, 255, 0.09); opacity: 1; transform: none; }
+/* Terciario sobre banner púrpura: blanco suave como los links de la nav */
+.page-hero .btn-tertiary { color: rgba(255, 255, 255, 0.85); }
+.page-hero .btn-tertiary:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
 
 /* Stroke icons: la regla global `svg { fill: currentColor }` pisa el
    fill="none" de los SVG estilo Lucide; estos contenedores lo revierten */
