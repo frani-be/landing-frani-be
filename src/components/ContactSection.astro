@@ -21,13 +21,14 @@ const { lang = 'es' } = Astro.props;
           <a
             href="https://calendar.app.google/NjSZEbvWrLfj56wy6"
             target="_blank"
+            rel="noopener noreferrer"
             class="btn btn-white"
           >{t(lang, 'contact.call')}</a>
         </div>
       </div>
 
       <!-- Formulario -->
-      <form id="contact-form" class="flex flex-col gap-5" novalidate data-reveal data-reveal-delay="250">
+      <form id="contact-form" class="flex flex-col gap-5" data-reveal data-reveal-delay="250">
         <div>
           <label for="contact-name" class="block text-sm font-semibold mb-1 text-white/90">{t(lang, 'contact.name')}</label>
           <input type="text" id="contact-name" name="name" required autocomplete="name"
