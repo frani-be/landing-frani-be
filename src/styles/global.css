@@ -1342,10 +1342,11 @@ a.regular-link {
 }
 .gantt-close:hover { background: var(--color-border-soft); color: var(--color-custom-black); }
 .g-panel-title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   line-height: 1.25;
   letter-spacing: -0.015em;
   margin: 0.5rem 0 0.35rem;
+  color: var(--color-custom-black);
 }
 .g-panel-meta {
   color: var(--color-custom-dark-gray);
@@ -1361,6 +1362,8 @@ a.regular-link {
   /* Separador punteado: eco del lenguaje de puntadas del sitio */
   border-bottom: 1.5px dashed var(--color-border-soft);
 }
+/* Cuerpo a escala editorial del sitio (títulos de lista 0.9rem, meta 0.92rem) */
+.g-panel-desc { font-size: 0.92rem; }
 .g-panel-desc p { margin: 0 0 0.75rem; line-height: 1.6; }
 .g-panel-desc ul { margin-bottom: 0.75rem; }
 
