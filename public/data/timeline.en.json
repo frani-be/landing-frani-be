@@ -6,7 +6,7 @@
       "category": "laboral",
       "startDate": "2024-04",
       "endDate": "2025-07",
-      "description": "Led a **Front-End** platform team empowering LATAM data squads to build internal front-ends for our collaborators: we delivered a component library (React + Ant Design) consumable by Dash and Next.js, freeing teams from building UI from scratch and letting them focus on business logic.\n- **Front-end →** we enable teams, promote coherent interfaces and speed up development cycles through guides and continuous support.\n- **UI →** we abstract the style layer, standardize visual presentation and surface component usage with monitoring dashboards.\n- **UX →** we co-design user-centered flows, ensuring usable products oriented to real problems.\n- **DevEx →** we created a self-service developer experience and fostered a user-focused engineering culture within the data & AI tribe.",
+      "description": "Led a **Front-End** platform team empowering LATAM data squads to build internal front-ends for our collaborators: we delivered a component library (React + Ant Design) consumable by Dash and Next.js, freeing teams from building UI from scratch and letting them focus on business logic.\n- **Front-end →** we enable teams, promote coherent interfaces and speed up development cycles through guides and continuous support.\n- **UI →** we abstract the style layer, standardize visual presentation and surface component usage with monitoring dashboards.\n- **UX →** we co-design user-centered flows, ensuring usable products oriented to real problems.\n- **DevEx →** we create a self-service developer experience and foster a user-focused engineering culture within the data & AI tribe.",
       "company": "LATAM Airlines",
       "location": "Santiago, Chile"
     },
@@ -26,7 +26,7 @@
       "category": "laboral",
       "startDate": "2022-03",
       "endDate": "2023-09",
-      "description": "Drove regional e-commerce optimization, focusing on experience and conversion.\n- Proposed optimization initiatives for e-commerce across several countries, focused on conversion and experience.\n- Coordinated joint efforts between commercial, UX, development and analytics teams.\n- Designed Google Data Studio (Looker Studio) dashboards enabling continuous tracking of the digital funnel.\n- Identified key friction points, prioritizing high-impact solutions for teams in Argentina, Brazil, Colombia and Peru.",
+      "description": "Led regional e-commerce optimization, focusing on experience and conversion.\n- Proposed optimization initiatives for sites in Argentina, Brazil, Colombia and Peru.\n- Coordinated joint efforts between commercial, UX, development and analytics teams.\n- Designed Google Data Studio (Looker Studio) dashboards enabling continuous tracking of the digital funnel.\n- Identified key friction points, prioritizing high-impact solutions for regional teams.",
       "company": "Cencosud S.A.",
       "location": "Santiago, Chile"
     },
@@ -46,7 +46,7 @@
       "category": "laboral",
       "startDate": "2021-01",
       "endDate": "2021-08",
-      "description": "Led the implementation of the programming and innovation curriculum for girls and young women at Technovation Girls Chile.\n- Coordinated volunteer teams to run interschool Technovation events.\n- Supervised program adoption in schools, supporting teachers and students.\n- Organized events and deliverables that sparked girls' interest in technology and entrepreneurship.\n- Delivered informational talks to attract and motivate new volunteers to the program.",
+      "description": "Led the implementation of the programming and innovation curriculum for girls and young women.\n- Coordinated volunteer teams to run interschool Technovation events.\n- Supervised program adoption in schools, supporting teachers and students.\n- Organized events and deliverables that sparked girls' interest in technology and entrepreneurship.\n- Delivered informational talks to attract and motivate new volunteers to the program.",
       "company": "Technovation Girls Chile",
       "location": "Santiago, Chile"
     },
@@ -56,7 +56,7 @@
       "category": "laboral",
       "startDate": "2016-07",
       "endDate": "actualidad",
-      "description": "Build WordPress sites that combine brand identity with high performance.\n- Design cross-platform graphic material (social media and stationery) that strengthens visual communication.\n- Implement on-page SEO and content strategies to increase organic visibility.\n- Configure security best practices and backups, keeping sites protected.\n- Guide clients on UX and content, strengthening their overall digital presence.\n- Featured projects include sites for artists, entrepreneurs and NGOs.",
+      "description": "Build WordPress sites that combine brand identity with high performance.\n- Design cross-platform graphic material (social media and stationery) that strengthens visual communication.\n- Implement on-page SEO and content strategies to increase organic visibility.\n- Configure security best practices and backups, keeping sites protected.\n- Guide clients on UX and content, strengthening their overall digital presence.\n- Have built sites for artists, entrepreneurs and NGOs.",
       "company": "Independent",
       "location": "Santiago, Chile"
     },
@@ -66,7 +66,7 @@
       "category": "academica",
       "startDate": "2025-04",
       "endDate": "2025-08",
-      "description": "Completed the **Postgraduate Diploma in Software Engineering**, deepening software engineering techniques with a focus on applying industry practices and planning technical projects.\n- **Curriculum:** requirements engineering, object-oriented programming, software architecture, technology update seminar and hands-on workshop.\n- **Main goal:** master current techniques to design, program and lead quality software development.\n- **Final project:** intelligent filtering microservice for public procurement bids.",
+      "description": "Completed the **Postgraduate Diploma in Software Engineering**, deepening software engineering techniques, focusing on industry practices and technical project planning.\n- **Curriculum:** requirements engineering, object-oriented programming, software architecture, technology update seminar and hands-on workshop.\n- **Main goal:** master current techniques to design, program and lead quality software development.\n- **Final project:** intelligent filtering microservice for public procurement bids.",
       "company": "Universidad de Chile",
       "location": "Santiago, Chile"
     },
@@ -116,7 +116,7 @@
       "category": "academica",
       "startDate": "2015-03",
       "endDate": "2020-12",
-      "description": "Earned the **Professional Degree in Design**, completing the bachelor's + licentiate + professional degree track.\n- **Curriculum:** project studios, identity and product; ergonomics, structures and materials, production processes, interaction and UX, creative coding and data visualization.\n- **Professional internships:** 240 h at Cencosud S.A. (UX design/e-commerce) and 360 h at TECHO-Chile (graphic design and communications).\n- **Pre-degree project:** *Neotipos*, an exploration of algorithmic isotypes for adaptive visual identities.\n- **Degree project:** *Algórica*, a web platform using interactive visualizations to teach mathematics in primary education.",
+      "description": "Earned the **Professional Degree in Design**, completing the bachelor's, licentiate and professional degree track.\n- **Curriculum:** project studios, identity and product; ergonomics, structures and materials, production processes, interaction and UX, creative coding and data visualization.\n- **Professional internships:** 240 h at Cencosud S.A. (UX design/e-commerce) and 360 h at TECHO-Chile (graphic design and communications).\n- **Pre-degree project:** *Neotipos*, an exploration of algorithmic isotypes for adaptive visual identities.\n- **Degree project:** *Algórica*, a web platform using interactive visualizations to teach mathematics in primary education.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
@@ -136,7 +136,7 @@
       "category": "docencia",
       "startDate": "2023-08",
       "endDate": "2024-08",
-      "description": "Designed and facilitated the **Graphic Nonfiction Narrative** program, integrating visual storytelling, data journalism and programming.\n- Redesigned the syllabus incorporating data visualization and critical source analysis.\n- Taught Python, Pandas and Altair to process datasets and create interactive visualizations.\n- Guided student projects published in internal media and presented at academic events.\n- Implemented iterative feedback that raised narrative clarity and visual quality of deliverables.",
+      "description": "Designed and facilitated the **Graphic Nonfiction Narrative** course, integrating visual storytelling, data journalism and programming.\n- Redesigned the syllabus incorporating data visualization and critical source analysis.\n- Taught Python, Pandas and Altair to process datasets and create interactive visualizations.\n- Guided student projects published in internal media and presented at academic events.\n- Implemented iterative feedback that raised narrative clarity and visual quality of deliverables.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
@@ -146,7 +146,7 @@
       "category": "docencia",
       "startDate": "2021-03",
       "endDate": "2021-06",
-      "description": "Taught the course **Introduction to AI for Girls** (4 sessions) for Fundación Mustakis & Tec Mujer, bringing artificial intelligence fundamentals to teenagers through playful activities and critical reflection.\n- Designed a curriculum covering AI history, applications, ethics and future scenarios.\n- Led debates and interactive games to stimulate participation and critical thinking.\n- Demonstrated machine learning live using Teachable Machine and neural network examples.\n- Promoted awareness of algorithmic bias and the importance of diverse teams in technology.",
+      "description": "Taught the course **Introduction to AI for Girls** (4 sessions), bringing artificial intelligence fundamentals to teenagers through playful activities and critical reflection.\n- Designed a curriculum covering AI history, applications, ethics and future scenarios.\n- Led debates and interactive games to stimulate participation and critical thinking.\n- Demonstrated machine learning live using Teachable Machine and neural network examples.\n- Promoted awareness of algorithmic bias and the importance of diverse teams in technology.",
       "company": "Fundación Mustakis & Tec Mujer",
       "location": "Remote"
     },
@@ -176,7 +176,7 @@
       "category": "docencia",
       "startDate": "2020-03",
       "endDate": "2020-03",
-      "description": "Delivered the **Introduction to Ruby on Rails Bootcamp**, taking junior developers from zero to deploying their first web application.\n- Structured an intensive 40 h program covering MVC, Active Record, REST routes and automated testing.\n- Guided each student through environment setup, Git workflow and continuous deployment on Heroku.\n- Designed practical challenges that consolidated clean code best practices and TDD.\n- Facilitated final project presentations where students demonstrated their skills building functional applications.\n- Implemented personalized feedback that helped each participant improve their code and framework understanding.",
+      "description": "Delivered the **Introduction to Ruby on Rails Bootcamp**, taking junior developers from zero to deploying their first web application.\n- Structured an intensive 40 h program covering MVC, Active Record, REST routes and automated testing.\n- Guided each student through environment setup, Git workflow and continuous deployment on Heroku.\n- Designed practical challenges that consolidated clean code best practices and TDD.\n- Facilitated final project presentations where students demonstrated their skills by building functional applications.\n- Implemented personalized feedback that helped each participant improve their code and framework understanding.",
       "company": "Academia Desafío Latam",
       "location": "Santiago, Chile"
     },
@@ -236,7 +236,7 @@
       "category": "voluntariados",
       "startDate": "2019-03",
       "endDate": "2023-04",
-      "description": "Guided teams of girls in the **Technovation Girls Chile** program as they created apps with social impact.\n- Guided the ideation, prototyping and pitch process, fostering leadership and critical thinking skills.\n- Used design thinking and low-code tools so participants could materialize their solutions.\n- Supported preparation for regional and national competitions; one team earned top regional recognition in Valparaíso and 2nd place nationally in \u201cLos Creadores\u201d.\n- Promoted long-term STEAM careers through continuous mentoring and support networks.\n- Fostered participants' confidence and empowerment, helping them overcome gender barriers in technology.",
+      "description": "Guided teams of girls in the **Technovation Girls Chile** program as they created apps with social impact.\n- Led the ideation, prototyping and pitch process, fostering leadership and critical thinking skills.\n- Used design thinking and low-code tools so participants could materialize their solutions.\n- Supported preparation for regional and national competitions; one team earned top regional recognition in Valparaíso and 2nd place nationally in \u201cLos Creadores\u201d.\n- Promoted long-term STEAM careers through continuous mentoring and support networks.\n- Fostered participants' confidence and empowerment, helping them overcome gender barriers in technology.",
       "company": "Technovation Girls Chile",
       "location": "Santiago, Chile"
     },
@@ -246,7 +246,7 @@
       "category": "voluntariados",
       "startDate": "2024-08",
       "endDate": "2025-12",
-      "description": "Served as a **Women Techmakers (WTM) Ambassador**, Google's global program providing visibility, community and resources for women in technology.\n- Organized and supported technical and community events (IWD, talks, workshops) alongside GDG/WTM communities.\n- Created content and learning opportunities, connecting people with resources and certifications from the Google ecosystem.\n- Championed diversity, equity and inclusion in technology, building networks across communities and organizations.",
+      "description": "Served as an ambassador of **Women Techmakers (WTM)**, Google's global program providing visibility, community and resources for women in technology.\n- Organized and supported technical and community events (IWD, talks, workshops) alongside GDG/WTM communities.\n- Created content and learning opportunities, connecting people with resources and certifications from the Google ecosystem.\n- Championed diversity, equity and inclusion in technology, building networks across communities and organizations.",
       "company": "Women Techmakers (Google)",
       "location": "Santiago, Chile / Remote"
     },
@@ -266,7 +266,7 @@
       "category": "laboral",
       "startDate": "2026-01",
       "endDate": "actualidad",
-      "description": "Design and develop an **interactive dashboard** for large touchscreens and tablets, visualizing Chilean transport data at national and regional scale.\n- It integrates real-time speed, congestion and travel-time metrics.\n- It lets each user customize the information and visualizations to their needs.",
+      "description": "Design and develop an **interactive dashboard** for large touchscreens and tablets, visualizing Chilean transport data at national and regional scale.\n- Integrate real-time speed, congestion and travel-time metrics.\n- Let each user customize the information and visualizations to their needs.",
       "company": "UOCT",
       "location": "Santiago, Chile"
     },
@@ -276,7 +276,7 @@
       "category": "docencia",
       "startDate": "2026-03",
       "endDate": "actualidad",
-      "description": "Teach the courses **Computational Thinking** and **Generative AI as an Engine for Design** at the School of Design, Pontificia Universidad Católica de Chile, connecting design, programming and creative exploration.\n- In **Computational Thinking**, teach programming fundamentals applied to design and the creative disciplines, through exercises and projects that explore code as a creation tool.\n- In **Generative AI as an Engine for Design**, guide AI-assisted image generation, branding and interface projects, integrating experimentation, results validation and critical reflection on their ethical implications.",
+      "description": "Teach the courses **Computational Thinking** and **Generative AI as an Engine for Design**, connecting design, programming and creative exploration.\n- In **Computational Thinking**, teach programming fundamentals applied to design and the creative disciplines, through exercises and projects that explore code as a creation tool.\n- In **Generative AI as an Engine for Design**, guide AI-assisted image generation, branding and interface projects, integrating experimentation, results validation and critical reflection on their ethical implications.",
       "company": "Pontificia Universidad Católica de Chile",
       "location": "Santiago, Chile"
     },
@@ -286,7 +286,7 @@
       "category": "laboral",
       "startDate": "2018-02",
       "endDate": "2018-05",
-      "description": "Completed my professional internship in the Communications department at **TECHO-Chile**, supporting the visual communication of its initiatives.\n- Designed digital and print graphic pieces and presentations for campaigns and programs.",
+      "description": "Supported the Communications department's visual initiatives at **TECHO-Chile**.\n- Designed digital and print graphic pieces and presentations for campaigns and programs.",
       "company": "TECHO-Chile",
       "location": "Santiago, Chile"
     },
@@ -296,7 +296,7 @@
       "category": "laboral",
       "startDate": "2017-07",
       "endDate": "2017-09",
-      "description": "Completed my professional internship at Cencosud's **Digital Business Management (Department Stores)**, combining interface design and internal communication.\n- Participated in the initial designs of the Paris app.\n- Supported usability testing within the division.\n- Developed visual identity pieces for the department.",
+      "description": "Combined interface design and internal communication within the **Digital Business Management (Department Stores)**.\n- Participated in the initial designs of the Paris app.\n- Supported internal usability testing.\n- Developed visual identity pieces for the division.",
       "company": "Cencosud S.A.",
       "location": "Santiago, Chile"
     }
