@@ -101,7 +101,7 @@ const copy = {
       <!-- 4 Pillars: categorías + filtros -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 max-w-[1100px] mx-auto" id="pillar-filters">
         {copy.pillars.map((p, i) => (
-          <button class="pillar-card" data-filter={p.filter} style={`--category-color:${p.color}`} data-reveal data-reveal-delay={String(i * 100)} aria-pressed="false">
+          <button class="pillar-card" data-filter={p.filter} style={`--category-color:${p.color}`} data-reveal data-reveal-delay={String(i * 100)} aria-pressed="true">
             <span class="pillar-box">
               <span class="pillar-check" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
