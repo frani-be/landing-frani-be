@@ -2294,16 +2294,17 @@ button:not(:disabled) {
   gap: 0.75rem;
   margin-bottom: 1.1rem;
 }
-.process-num {
-  font-family: var(--font-family-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--color-accent-text);
-  background: var(--color-surface-muted);
-  border: 1px solid var(--color-border-soft);
-  border-radius: 999px;
-  padding: 0.2rem 0.6rem;
+/* El ícono reemplaza al número como marcador del paso: tile pequeño
+   en línea con la línea punteada conectora */
+.process-step-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 0.55rem;
   flex-shrink: 0;
+}
+.process-step-icon svg {
+  width: 1.15rem;
+  height: 1.15rem;
 }
 .process-line {
   flex: 1;

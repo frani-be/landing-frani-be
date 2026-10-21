@@ -213,10 +213,9 @@ const stepIcons = [
         {copy.process.map((step, i) => (
           <li class="process-step" data-reveal data-reveal-delay={String(i * 90)}>
             <div class="process-head">
-              <span class="process-num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="icon-tile icon-tile--fill process-step-icon" set:html={stepIcons[i]} />
               <span class="process-line" aria-hidden="true"></span>
             </div>
-            <span class="icon-tile icon-tile--fill mb-4" set:html={stepIcons[i]} />
             <h3 class="text-lg text-custom-black mb-2">{step.title}</h3>
             <p class="text-custom-dark-gray text-sm leading-relaxed">{step.desc}</p>
           </li>
