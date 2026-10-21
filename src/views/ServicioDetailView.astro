@@ -136,6 +136,17 @@ const servicesEn: Record<string, Service> = {
 const services = lang === 'en' ? servicesEn : servicesEs;
 const service = services[slug];
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: service.title,
+  description: service.tagline,
+  serviceType: service.title,
+  url: new URL(localePath(`/servicios/${slug}`, lang), 'https://frani.be').href,
+  areaServed: { '@type': 'Country', name: 'Chile' },
+  provider: { '@id': 'https://frani.be/#persona' },
+};
+
 const copy = {
   es: {
     includes: '¿Qué incluye?',
@@ -167,6 +178,7 @@ const copy = {
   description={`${service.tagline} ${lang === 'en' ? 'Service by Francisca Medina, strategic UX designer and front-end engineer.' : 'Servicio a cargo de Francisca Medina, diseñadora UX estratégica y front-end engineer.'}`}
   lang={lang}
 >
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(serviceJsonLd)} />
   <!-- Encabezado editorial compacto: path mono + ícono + título + CTA -->
   <header class="svc-detail-hero bg-surface">
     <div class="container-mid">
