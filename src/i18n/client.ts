@@ -32,7 +32,7 @@ export const clientStrings = {
     present: 'Present',
     months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
     'timeline.currently': '// currently',
-    'timeline.empty': 'No results. Enable an area of the journey.',
+    'timeline.empty': 'No results. Turn on an area of the journey.',
     'form.sending': 'Sending…',
     'form.send': 'Send message',
     'form.ok': 'Message sent! I will get back to you soon.',
