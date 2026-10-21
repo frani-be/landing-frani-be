@@ -16,7 +16,7 @@
         "Sass",
         "Bootstrap"
       ],
-      "image": "assets/images/projects/pomodoro-cover.png",
+      "image": "assets/images/projects/pomodoro-cover.webp",
       "links": {
         "demo": "",
         "repo": "https://github.com/frani-be/neuralclocks-pomodoro/"
@@ -35,14 +35,14 @@
       "service": "diseno-grafico",
       "serviceLabel": "Diseño gráfico",
       "description": "Selección de identidades visuales y logotipos creados para startups y marcas personales. Síntesis gráfica y comunicación visual.",
-      "fullDescription": "## Identidad Visual\nEl diseño de una marca requiere capacidad de síntesis y entendimiento profundo de los valores del cliente. A continuación presento una colección de logotipos desarrollados para diversos sectores.\n\n### Ejemplos de la colección 2015-2025\n\n::: showcase\n![Liquida Solutions](assets/images/projects/logos/liquida-solutions.png)\n*Identidad visual para soluciones digitales. La geometría circular y las ondas representan adaptabilidad y flujo constante.*\n:::\n\n::: showcase\n![Orquesta USM](assets/images/projects/logos/orquesta-usm.png)\n*Identidad que equilibra el prestigio institucional con la sensibilidad artística. Uso de tipografía serif y tonos vino para denotar elegancia y tradición cultural.*\n:::\n\n::: showcase\n![Cure All](assets/images/projects/logos/cure-all.png)\n*Branding para HealthTech centrado en la empatía. La unión fluida entre corazón y estetoscopio, junto a tonos menta, reduce la fricción clínica y genera confianza.*\n:::\n\n### Herramientas\nTodo el trabajo vectorial ha sido realizado en **Adobe Illustrator**, priorizando la legibilidad en tamaños reducidos y la versatilidad de aplicaciones (monocromo, negativo, etc.).",
+      "fullDescription": "## Identidad Visual\nEl diseño de una marca requiere capacidad de síntesis y entendimiento profundo de los valores del cliente. A continuación presento una colección de logotipos desarrollados para diversos sectores.\n\n### Ejemplos de la colección 2015-2025\n\n::: showcase\n![Liquida Solutions](assets/images/projects/logos/liquida-solutions.webp)\n*Identidad visual para soluciones digitales. La geometría circular y las ondas representan adaptabilidad y flujo constante.*\n:::\n\n::: showcase\n![Orquesta USM](assets/images/projects/logos/orquesta-usm.webp)\n*Identidad que equilibra el prestigio institucional con la sensibilidad artística. Uso de tipografía serif y tonos vino para denotar elegancia y tradición cultural.*\n:::\n\n::: showcase\n![Cure All](assets/images/projects/logos/cure-all.webp)\n*Branding para HealthTech centrado en la empatía. La unión fluida entre corazón y estetoscopio, junto a tonos menta, reduce la fricción clínica y genera confianza.*\n:::\n\n### Herramientas\nTodo el trabajo vectorial ha sido realizado en **Adobe Illustrator**, priorizando la legibilidad en tamaños reducidos y la versatilidad de aplicaciones (monocromo, negativo, etc.).",
       "tags": [
         "Adobe Illustrator",
         "Branding",
         "Vector Art",
         "Graphic Design"
       ],
-      "image": "assets/images/projects/logofolio-cover.png",
+      "image": "assets/images/projects/logofolio-cover.webp",
       "links": {
         "demo": "",
         "repo": "",
@@ -71,7 +71,7 @@
         "Figma to Code",
         "JavaScript"
       ],
-      "image": "assets/images/projects/borde-cover.png",
+      "image": "assets/images/projects/borde-cover.webp",
       "links": {
         "demo": "https://agenciadeborde.com/en/",
         "repo": "",
@@ -99,7 +99,7 @@
         "UI Design",
         "Masonry Layout"
       ],
-      "image": "assets/images/projects/claudia-cover.png",
+      "image": "assets/images/projects/claudia-cover.webp",
       "links": {
         "demo": "http://claudiaortega.cl",
         "repo": "",
@@ -127,7 +127,7 @@
         "PHP",
         "Digitalización"
       ],
-      "image": "assets/images/projects/sindicato-cover.png",
+      "image": "assets/images/projects/sindicato-cover.webp",
       "links": {
         "demo": "https://www.sindicatonacional.cl/",
         "repo": "",
@@ -156,7 +156,7 @@
         "REST API",
         "Full Stack"
       ],
-      "image": "assets/images/projects/bitluxe-cover.png",
+      "image": "assets/images/projects/bitluxe-cover.webp",
       "links": {
         "repo": ""
       },
@@ -175,7 +175,7 @@
       "serviceLabel": "Estrategia UX",
       "description": "Investigación, ideación y prototipado de una App Fintech agnóstica para la gestión unificada de gastos y deudas.",
       "contribution": "Lideré la investigación con usuarias y usuarios, el mapeo de journeys y el prototipado en Figma, definiendo la estrategia y el modelo freemium del producto.",
-      "fullDescription": "## 1. El Problema y el Contexto\nLa ansiedad financiera es un problema sistémico en Chile. Nuestra investigación inicial reveló datos alarmantes sobre el endeudamiento y la falta de educación financiera, exacerbados por la inflación y el fácil acceso al crédito.\n\n![Contexto del endeudamiento en Chile](assets/images/projects/tantaplata/contexto-investigacion.png)\n\n## 2. Empatizando con el Usuario\nPara centrar el diseño, creamos arquetipos basados en entrevistas en profundidad, representando a los usuarios que luchan con la gestión de múltiples deudas y la incertidumbre del \"fin de mes\".\n\n![Arquetipos de usuario de Tanta Plata](assets/images/projects/tantaplata/personas.png)\n\n## 3. User Journey Mapping\nMapeamos la experiencia actual del usuario al intentar proyectar sus gastos, identificando los puntos de dolor (pain points) y las oportunidades clave para automatizar el ingreso de datos y reducir la carga cognitiva.\n\n![User Journey Map de Alejandro Ibáñez](assets/images/projects/tantaplata/user-journey.png)\n\n## 4. Estrategia y Competencia\nAnalizamos la competencia (Tenpo, Mobills, Monefy) y definimos una propuesta de valor única centrada en una visualización intuitiva, un lenguaje cercano y un modelo de negocio freemium viable.\n\n![Análisis competitivo y modelo de negocio](assets/images/projects/tantaplata/estrategia-negocio.png)\n\n## 5. Prototipado y Solución\nEl resultado fue un prototipo de baja fidelidad en Figma enfocado en la claridad visual y la accesibilidad, diseñado para reducir la ansiedad mediante una interfaz amigable que centraliza la salud financiera del usuario.\n\n![Prototipo Tanta Plata](assets/images/projects/tantaplata/prototipo.png)",
+      "fullDescription": "## 1. El Problema y el Contexto\nLa ansiedad financiera es un problema sistémico en Chile. Nuestra investigación inicial reveló datos alarmantes sobre el endeudamiento y la falta de educación financiera, exacerbados por la inflación y el fácil acceso al crédito.\n\n![Contexto del endeudamiento en Chile](assets/images/projects/tantaplata/contexto-investigacion.webp)\n\n## 2. Empatizando con el Usuario\nPara centrar el diseño, creamos arquetipos basados en entrevistas en profundidad, representando a los usuarios que luchan con la gestión de múltiples deudas y la incertidumbre del \"fin de mes\".\n\n![Arquetipos de usuario de Tanta Plata](assets/images/projects/tantaplata/personas.webp)\n\n## 3. User Journey Mapping\nMapeamos la experiencia actual del usuario al intentar proyectar sus gastos, identificando los puntos de dolor (pain points) y las oportunidades clave para automatizar el ingreso de datos y reducir la carga cognitiva.\n\n![User Journey Map de Alejandro Ibáñez](assets/images/projects/tantaplata/user-journey.webp)\n\n## 4. Estrategia y Competencia\nAnalizamos la competencia (Tenpo, Mobills, Monefy) y definimos una propuesta de valor única centrada en una visualización intuitiva, un lenguaje cercano y un modelo de negocio freemium viable.\n\n![Análisis competitivo y modelo de negocio](assets/images/projects/tantaplata/estrategia-negocio.webp)\n\n## 5. Prototipado y Solución\nEl resultado fue un prototipo de baja fidelidad en Figma enfocado en la claridad visual y la accesibilidad, diseñado para reducir la ansiedad mediante una interfaz amigable que centraliza la salud financiera del usuario.\n\n![Prototipo Tanta Plata](assets/images/projects/tantaplata/prototipo.webp)",
       "tags": [
         "UX Research",
         "User Journey Map",
@@ -183,7 +183,7 @@
         "User Flows",
         "Business Strategy"
       ],
-      "image": "assets/images/projects/tantaplata-cover.png",
+      "image": "assets/images/projects/tantaplata-cover.webp",
       "links": {
         "caseStudy": ""
       },

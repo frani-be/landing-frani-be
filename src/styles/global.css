@@ -802,13 +802,13 @@ a.regular-link {
 .icon-tile img,
 .svc-detail-icon,
 .service-card-icon img,
-.proj-hero-img {
+.light-hero-img {
   filter: drop-shadow(0 2px 5px rgba(109, 26, 150, 0.18));
 }
 .dark .icon-tile img,
 .dark .svc-detail-icon,
 .dark .service-card-icon img,
-.dark .proj-hero-img {
+.dark .light-hero-img {
   filter: drop-shadow(0 0 3px rgba(196, 140, 255, 0.3)) drop-shadow(0 2px 5px rgba(10, 4, 20, 0.3));
 }
 /* Variante de íconos sólidos (pasos del proceso): relleno lavanda,
@@ -911,21 +911,21 @@ a.regular-link {
 }
 
 /* ── Proyectos: hero editorial claro con filtros ── */
-.proj-hero {
+.light-hero {
   background: #fcfaff;
   border-bottom: 1.5px solid var(--color-border-soft);
   padding: 7.5rem 0 4rem;
 }
-.dark .proj-hero {
+.dark .light-hero {
   background: var(--color-custom-light-grey);
 }
-.proj-hero-grid {
+.light-hero-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
-.proj-hero-title {
+.light-hero-title {
   font-family: var(--font-family-titles);
   font-weight: 700;
   font-size: clamp(2.1rem, 4.5vw, 3.2rem);
@@ -933,18 +933,18 @@ a.regular-link {
   letter-spacing: -0.02em;
   color: var(--color-custom-black);
 }
-.proj-hero-sub {
+.light-hero-sub {
   margin-top: 1.1rem;
   font-size: 1.02rem;
   line-height: 1.6;
   color: var(--color-dark-gray);
   max-width: 32rem;
 }
-.proj-hero-deco {
+.light-hero-deco {
   position: relative;
   padding-top: 2rem;
 }
-.proj-hero-tag {
+.light-hero-tag {
   position: absolute;
   top: 0;
   right: 0;
@@ -953,7 +953,7 @@ a.regular-link {
   letter-spacing: 0.05em;
   color: var(--color-dark-gray);
 }
-.proj-hero-img {
+.light-hero-img {
   display: block;
   width: 100%;
   height: auto;
@@ -991,9 +991,9 @@ a.regular-link {
   outline-offset: 2px;
 }
 @media (max-width: 768px) {
-  .proj-hero { padding: 6.5rem 0 3rem; }
-  .proj-hero-grid { grid-template-columns: 1fr; }
-  .proj-hero-deco { display: none; }
+  .light-hero { padding: 6.5rem 0 3rem; }
+  .light-hero-grid { grid-template-columns: 1fr; }
+  .light-hero-deco { display: none; }
 }
 
 /* ── Proyectos destacados: bloques editoriales alternados ── */

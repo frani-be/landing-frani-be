@@ -48,16 +48,16 @@ const copy = {
   lang={lang}
 >
   <!-- Hero editorial claro: texto + filtros a la izquierda, decoración a la derecha -->
-  <header class="proj-hero">
-    <div class="container-wide proj-hero-grid">
+  <header class="light-hero">
+    <div class="container-wide light-hero-grid">
       <div data-reveal>
         <nav class="mono-path mb-6" aria-label={lang === 'en' ? 'Path' : 'Ruta'}>
           <a href={localePath('/', lang)}>~</a>
           <span class="mono-path-sep" aria-hidden="true">/</span>
           <span>{copy.pathLabel}</span>
         </nav>
-        <h1 class="proj-hero-title" set:html={copy.heroTitle} />
-        <p class="proj-hero-sub">{copy.heroSub}</p>
+        <h1 class="light-hero-title" set:html={copy.heroTitle} />
+        <p class="light-hero-sub">{copy.heroSub}</p>
         <div class="proj-filters" role="group" aria-label={copy.filterAria}>
           {copy.filters.map((f, i) => (
             <button
@@ -69,11 +69,11 @@ const copy = {
           ))}
         </div>
       </div>
-      <div class="proj-hero-deco" aria-hidden="true">
-        <span class="proj-hero-tag">{copy.heroTag}</span>
+      <div class="light-hero-deco" aria-hidden="true">
+        <span class="light-hero-tag">{copy.heroTag}</span>
         <img
-          class="proj-hero-img"
-          src="/images/proyectos-hero.png"
+          class="light-hero-img"
+          src="/images/proyectos-hero.webp"
           alt=""
           width="1200"
           height="800"
