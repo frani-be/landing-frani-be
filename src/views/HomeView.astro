@@ -24,9 +24,9 @@ const copy = {
     roles: ['Diseñadora UX estratégica', 'Desarrolladora front-end', 'Charlista tech', 'Impulsora STEAM'],
     scrollAria: 'Ir a la sección de trayectoria profesional',
     scrollTitle: 'Conoce mi trayectoria profesional',
-    secTrajectory: 'Últimas 3 experiencias de mi trayectoria',
+    secTrajectory: 'Mis últimas 4 experiencias',
     viewFullTrajectory: 'Ver trayectoria completa',
-    secServices: 'Todo lo que puedo hacer por ti',
+    secServices: 'Así puedo ayudarte',
     secServicesSub: 'Una sola persona, todo el proceso: sin fricción entre etapas ni tres proveedores distintos.',
     services: [
       { slug: 'desarrollo-web', title: 'Lanza tu sitio web', name: 'Desarrollo web', desc: 'Tu sitio completo, rápido y autogestionable. De la idea al aire.' },
@@ -55,9 +55,9 @@ const copy = {
     roles: ['Strategic UX designer', 'Front-end developer', 'Tech speaker', 'STEAM advocate'],
     scrollAria: 'Go to professional experience section',
     scrollTitle: 'See my professional experience',
-    secTrajectory: 'My 3 most recent experiences',
+    secTrajectory: 'My 4 most recent experiences',
     viewFullTrajectory: 'View full experience',
-    secServices: 'Everything I can do for you',
+    secServices: 'How I can help you',
     secServicesSub: 'One person, the whole process: no friction between stages, no three different vendors.',
     services: [
       { slug: 'desarrollo-web', title: 'Launch your website', name: 'Web development', desc: 'Your full site, fast and self-manageable. From idea to launch.' },
@@ -153,7 +153,7 @@ const copy = {
   <!-- Timeline Section -->
   <section class="bg-custom-light-grey section-block border-t border-custom-dark-gray/25 scroll-mt-20" id="timeline">
     <div class="container-wide">
-      <SectionTitle title={copy.secTrajectory} tag="01_trayectoria" />
+      <SectionTitle title={copy.secTrajectory} />
 
       <div class="max-w-[820px] mx-auto">
         <div id="timeline-container" class="list-view"></div>
@@ -172,7 +172,6 @@ const copy = {
       <SectionTitle
         title={copy.secServices}
         subtitle={copy.secServicesSub}
-        tag="02_servicios"
         class="mb-16"
       />
 
@@ -210,13 +209,17 @@ const copy = {
         />
       </figure>
       <div class="flex-1" data-reveal data-reveal-delay="150">
-        <span class="section-tag">03_comunidad</span>
         <h3 class="text-2xl lg:text-3xl mb-4">{copy.commTitle}</h3>
         <p class="text-custom-dark-gray leading-relaxed">{copy.commText}</p>
         <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
           {copy.commTags.map(tag => <span class="tag-mono">{tag}</span>)}
         </div>
-        <a href={localePath('/charlas', lang)} class="btn btn-secondary mt-6">{copy.commCta}<ArrowIcon name="right" class="btn-arrow btn-arrow--right" /></a>
+        <a
+          href="https://www.youtube.com/channel/UC4AXGCjQRpvCQeS-B86O8LQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary mt-6"
+        >{copy.commCta}<ArrowIcon name="upRight" class="btn-arrow" /></a>
       </div>
     </div>
   </section>
@@ -248,7 +251,7 @@ const copy = {
   import { svgIcon } from '../scripts/icons';
   import { clientLang, cs, clientStrings } from '../i18n/client';
 
-  // Timeline (home preview - 3 items)
+  // Timeline (home preview - 4 items)
   interface TimelineItem {
     id: number;
     title: string;
@@ -308,7 +311,7 @@ const copy = {
     items = [
       ...items.filter(isCurrent).sort(byStartDesc),
       ...items.filter(i => !isCurrent(i)).sort(byEndDesc),
-    ].slice(0, 3);
+    ].slice(0, 4);
 
     const container = document.getElementById('timeline-container');
     if (!container) return;
