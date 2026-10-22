@@ -29,6 +29,8 @@ const { lang = 'es' } = Astro.props;
 
       <!-- Formulario -->
       <form id="contact-form" class="flex flex-col gap-5" data-reveal data-reveal-delay="250">
+        <input type="hidden" name="_subject" value={t(lang, 'contact.mailSubject')} />
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
         <div>
           <label for="contact-name" class="block text-sm font-semibold mb-1 text-white/90">{t(lang, 'contact.name')}</label>
           <input type="text" id="contact-name" name="name" required autocomplete="name"
