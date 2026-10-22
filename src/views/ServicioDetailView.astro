@@ -155,9 +155,11 @@ const copy = {
   <header class="svc-detail-hero bg-surface">
     <div class="container-mid">
       <nav class="mono-path mb-10" aria-label={lang === 'en' ? 'Path' : 'Ruta'}>
-        <a href={localePath('/servicios', lang)}>~/{copy.servicesPath}</a>
+        <a href={localePath('/', lang)}>~</a>
         <span class="mono-path-sep" aria-hidden="true">/</span>
-        <span>{slug}</span>
+        <a href={localePath('/servicios', lang)}>{copy.servicesPath}</a>
+        <span class="mono-path-sep" aria-hidden="true">/</span>
+        <span aria-current="page">{slug}</span>
       </nav>
       <div class="svc-detail-head" data-reveal>
         <img src={serviceIcons[slug]} alt="" aria-hidden="true" class="svc-detail-icon" />
