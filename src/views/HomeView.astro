@@ -29,9 +29,9 @@ const copy = {
     secServices: 'Todo lo que puedo hacer por ti',
     secServicesSub: 'Una sola persona, todo el proceso: sin fricción entre etapas ni tres proveedores distintos.',
     services: [
-      { slug: 'desarrollo-web', title: 'Lanza tu sitio web', desc: 'Tu sitio completo, rápido y autogestionable. De la idea al aire.' },
-      { slug: 'estrategia-ux', title: 'Ordena tu producto', desc: 'UX con evidencia: research, prototipos y tests que hacen fluir tu producto.' },
-      { slug: 'clases-particulares', title: 'Aprende a tu ritmo', desc: 'Clases 1 a 1 de diseño, UX o front-end, con proyectos reales y feedback directo.' },
+      { slug: 'desarrollo-web', title: 'Lanza tu sitio web', name: 'Desarrollo web', desc: 'Tu sitio completo, rápido y autogestionable. De la idea al aire.' },
+      { slug: 'estrategia-ux', title: 'Ordena tu producto', name: 'Estrategia UX', desc: 'UX con evidencia: research, prototipos y tests que hacen fluir tu producto.' },
+      { slug: 'clases-particulares', title: 'Aprende a tu ritmo', name: 'Clases particulares', desc: 'Clases 1 a 1 de diseño, UX o front-end, con proyectos reales y feedback directo.' },
     ],
     details: 'Ver detalles',
     viewAllServices: 'Ver todos los servicios',
@@ -60,9 +60,9 @@ const copy = {
     secServices: 'Everything I can do for you',
     secServicesSub: 'One person, the whole process: no friction between stages, no three different vendors.',
     services: [
-      { slug: 'desarrollo-web', title: 'Launch your website', desc: 'Your full site, fast and self-manageable. From idea to launch.' },
-      { slug: 'estrategia-ux', title: 'Streamline your product', desc: 'Evidence-backed UX: research, prototypes and tests that make your product flow.' },
-      { slug: 'clases-particulares', title: 'Learn at your own pace', desc: '1-on-1 design, UX or front-end classes with real projects and direct feedback.' },
+      { slug: 'desarrollo-web', title: 'Launch your website', name: 'Web development', desc: 'Your full site, fast and self-manageable. From idea to launch.' },
+      { slug: 'estrategia-ux', title: 'Streamline your product', name: 'UX strategy', desc: 'Evidence-backed UX: research, prototypes and tests that make your product flow.' },
+      { slug: 'clases-particulares', title: 'Learn at your own pace', name: 'Private classes', desc: '1-on-1 design, UX or front-end classes with real projects and direct feedback.' },
     ],
     details: 'View details',
     viewAllServices: 'View all services',
@@ -181,7 +181,8 @@ const copy = {
           <a href={localePath(`/servicios/${s.slug}`, lang)} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
             <div class="service-card-icon"><img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" /></div>
             <div class="p-6 flex flex-col flex-1">
-              <h3 class="text-xl mb-3">{s.title}</h3>
+              <h3 class="text-xl mb-1">{s.title}</h3>
+              <p class="service-name">{s.name}</p>
               <p class="text-custom-dark-gray text-sm flex-1">{s.desc}</p>
               <span class="service-link mt-5">{copy.details}<ArrowIcon name="right" class="btn-arrow btn-arrow--right" /></span>
             </div>

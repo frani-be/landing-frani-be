@@ -34,9 +34,9 @@ const copy = {
       { title: 'Entrega y lanzamiento', desc: 'Archivos, handoff y soporte post-entrega incluidos.' },
     ],
     principales: [
-      { slug: 'desarrollo-web', title: 'Lanza tu sitio web', short: 'Tu sitio completo, rápido y autogestionable. De la idea al aire.' },
-      { slug: 'estrategia-ux', title: 'Ordena tu producto', short: 'UX con evidencia: research, prototipos y tests que hacen fluir tu producto.' },
-      { slug: 'clases-particulares', title: 'Aprende a tu ritmo', short: 'Clases 1 a 1 de diseño, UX o front-end, con proyectos reales y feedback directo.' },
+      { slug: 'desarrollo-web', title: 'Lanza tu sitio web', name: 'Desarrollo web', short: 'Tu sitio completo, rápido y autogestionable. De la idea al aire.' },
+      { slug: 'estrategia-ux', title: 'Ordena tu producto', name: 'Estrategia UX', short: 'UX con evidencia: research, prototipos y tests que hacen fluir tu producto.' },
+      { slug: 'clases-particulares', title: 'Aprende a tu ritmo', name: 'Clases particulares', short: 'Clases 1 a 1 de diseño, UX o front-end, con proyectos reales y feedback directo.' },
     ],
     secundarios: [
       { icon: 'auditoria-cro-seo', title: 'Auditoría CRO, SEO y GEO', short: 'Análisis para mejorar tu conversión y tu visibilidad en buscadores e IA.' },
@@ -72,9 +72,9 @@ const copy = {
       { title: 'Delivery & launch', desc: 'Files, handoff and post-delivery support included.' },
     ],
     principales: [
-      { slug: 'desarrollo-web', title: 'Launch your website', short: 'Your full site, fast and self-manageable. From idea to launch.' },
-      { slug: 'estrategia-ux', title: 'Streamline your product', short: 'Evidence-backed UX: research, prototypes and tests that make your product flow.' },
-      { slug: 'clases-particulares', title: 'Learn at your own pace', short: '1-on-1 design, UX or front-end classes with real projects and direct feedback.' },
+      { slug: 'desarrollo-web', title: 'Launch your website', name: 'Web development', short: 'Your full site, fast and self-manageable. From idea to launch.' },
+      { slug: 'estrategia-ux', title: 'Streamline your product', name: 'UX strategy', short: 'Evidence-backed UX: research, prototypes and tests that make your product flow.' },
+      { slug: 'clases-particulares', title: 'Learn at your own pace', name: 'Private classes', short: '1-on-1 design, UX or front-end classes with real projects and direct feedback.' },
     ],
     secundarios: [
       { icon: 'auditoria-cro-seo', title: 'CRO, SEO & GEO audit', short: 'Analysis to improve conversion and visibility in search engines and AI.' },
@@ -144,7 +144,7 @@ const stepIcons = [
 
   <!-- Principales -->
   <section class="section-block-sm bg-surface scroll-mt-24" id="principales">
-    <div class="container-wide">
+    <div class="container-mid">
       <div class="text-center mb-12" data-reveal>
         <h2 class="text-2xl text-custom-black mb-4">{copy.mainTitle}</h2>
         <span class="hero-eyebrow hero-eyebrow--closed">{copy.mainSlots}</span>
@@ -154,7 +154,8 @@ const stepIcons = [
           <a href={localePath(`/servicios/${s.slug}`, lang)} class="service-card group" data-reveal data-reveal-delay={String(i * 100)}>
             <div class="service-card-icon"><img src={serviceIcons[s.slug as keyof typeof serviceIcons]} alt="" loading="lazy" /></div>
             <div class="p-6 flex flex-col flex-1">
-              <h3 class="text-xl mb-3">{s.title}</h3>
+              <h3 class="text-xl mb-1">{s.title}</h3>
+              <p class="service-name">{s.name}</p>
               <p class="text-custom-dark-gray text-sm flex-1">{s.short}</p>
               <span class="service-link mt-5">{copy.details}<ArrowIcon name="right" class="btn-arrow btn-arrow--right" /></span>
             </div>

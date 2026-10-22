@@ -724,6 +724,16 @@ a.regular-link {
   transform: scale(1.08);
 }
 
+/* Nombre real del servicio bajo el titular orientado a resultado */
+.service-name {
+  font-family: var(--font-family-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-text);
+  margin-bottom: 0.65rem;
+}
+
 /* Link de acción dentro de cards (la card entera ya es el <a>) */
 .service-link {
   display: inline-flex;
