@@ -162,7 +162,7 @@ const copy = {
         <span aria-current="page">{slug}</span>
       </nav>
       <div class="svc-detail-head" data-reveal>
-        <img src={serviceIcons[slug]} alt="" aria-hidden="true" class="svc-detail-icon" />
+        <img src={serviceIcons[slug as keyof typeof serviceIcons]} alt="" aria-hidden="true" class="svc-detail-icon" />
         <div class="min-w-0">
           <h1 class="svc-detail-title">{service.title}</h1>
           <p class="svc-detail-tagline">{service.tagline}</p>
