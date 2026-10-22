@@ -17,8 +17,8 @@ const copy = {
     heroCta: 'Explorar servicios',
     illusAlt: 'Ilustración de Frani saludando con su cuaderno lavanda',
     mainTitle: 'Servicios principales',
-    mainSlots: 'Sin cupos disponibles',
-    secondarySlots: '3 cupos disponibles',
+    mainSlots: '1 cupo disponible',
+    secondarySlots: '4 cupos disponibles',
     secondaryTitle: 'También puedo ayudarte con…',
     details: 'Ver detalles',
     ctaTitle: '¿Listo/a para empezar?',
@@ -55,8 +55,8 @@ const copy = {
     heroCta: 'Explore services',
     illusAlt: 'Illustration of Frani waving with her lavender notebook',
     mainTitle: 'Main services',
-    mainSlots: 'No slots available',
-    secondarySlots: '3 spots available',
+    mainSlots: '1 spot available',
+    secondarySlots: '4 spots available',
     secondaryTitle: 'I can also help you with…',
     details: 'View details',
     ctaTitle: 'Ready to start?',
@@ -147,7 +147,7 @@ const stepIcons = [
     <div class="container-mid">
       <div class="text-center mb-12" data-reveal>
         <h2 class="text-2xl text-custom-black mb-4">{copy.mainTitle}</h2>
-        <span class="hero-eyebrow hero-eyebrow--closed">{copy.mainSlots}</span>
+        <span class="hero-eyebrow hero-eyebrow--available">{copy.mainSlots}</span>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {copy.principales.map((s, i) => (
