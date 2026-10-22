@@ -14,6 +14,7 @@ const copy = {
     lead: 'Diseño, desarrollo, docencia y comunidad: un mismo recorrido entre productos digitales, aulas y espacios STEAM.',
     ctaExplore: 'Explorar experiencias',
     ctaCv: 'Descargar CV',
+    ctaCvHref: '/documents/cv-francisca-medina-concha-es.pdf',
     ctaCvAria: 'Descargar CV en formato PDF',
     illusAlt: 'Ilustración de Frani frente a un tablero de trabajo, ordenando tarjetas que conectan diseño y código',
     pillars: [
@@ -41,6 +42,7 @@ const copy = {
     lead: 'Design, development, teaching and community: a single journey across digital products, classrooms and STEAM spaces.',
     ctaExplore: 'Explore experiences',
     ctaCv: 'Download CV',
+    ctaCvHref: '/documents/cv-francisca-medina-concha-en.pdf',
     ctaCvAria: 'Download CV as PDF',
     illusAlt: 'Illustration of Frani in front of a work board, sorting cards connecting design and code',
     pillars: [
@@ -87,7 +89,7 @@ const copy = {
         <div class="flex flex-wrap gap-4 mt-8 justify-center lg:justify-start" data-reveal data-reveal-delay="380">
           <a href="#recorrido" class="btn btn-outline-white">{copy.ctaExplore}<ArrowIcon name="down" class="btn-arrow" /></a>
           <a
-            href="/documents/cv-francisca-medina-concha.pdf"
+            href={copy.ctaCvHref}
             download
             class="btn btn-tertiary"
             aria-label={copy.ctaCvAria}
