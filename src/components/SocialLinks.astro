@@ -7,7 +7,7 @@ interface Props {
 const { variant = 'light', class: extraClass = '' } = Astro.props;
 
 const linkClass = variant === 'dark'
-  ? 'flex items-center gap-3 text-white font-semibold hover:text-custom-light-purple transition-colors'
+  ? 'flex items-center gap-3 text-white font-semibold hover:text-white/75 transition-colors'
   : 'text-sm text-custom-dark-gray border-border-soft border border-solid bg-surface py-0.5 px-4 font-bold rounded-full inline-block hover:text-custom-purple hover:border-custom-purple/40';
 
 const iconClass = variant === 'dark' ? 'contact-icon-pill' : '';
